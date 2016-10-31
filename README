@@ -1,13 +1,15 @@
-# Solutions to LeetCode problems
+                         Solutions to LeetCode problems
 
-This directory contains my solutions to [LeetCode][leetcode] problems, available
-at [http://leetcode.com/][leetcode]. These solutions are provided "as is". I
-give no guarantees that they will work as expected. Please refrain from using my
-solutions in the site.
 
-[leetcode]: http://leetcode.com/
+This directory contains my solutions to LeetCode [1] problems. These solutions
+are provided "as is". I give no guarantees that they will work as expected.
+Please refrain from using my solutions in the site.
 
-## Instructions
+[1]: http://leetcode.com/
+
+
+Instructions
+------------
 
 The source code doesn't actually compile by itself. In each file is a single
 class or the correct method implemented as needed by the LeetCode judge. If you

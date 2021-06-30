@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 private:
-  void gen(int o, int c, int n, string current, vector<string>& res) {
+  void gen(int o, int c, int n, string current, vector<string> &res) {
     if (current.size() >= n * 2) {
       res.push_back(current);
       return;

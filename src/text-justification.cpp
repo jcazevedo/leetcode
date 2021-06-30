@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 private:
-  string build_line(const vector<string>& words, int maxWidth) {
+  string build_line(const vector<string> &words, int maxWidth) {
     if (words.size() == 1)
       return words[0] + string(maxWidth - words[0].size(), ' ');
     int len = 0;
@@ -31,7 +31,7 @@ private:
   }
 
 public:
-  vector<string> fullJustify(vector<string>& words, int maxWidth) {
+  vector<string> fullJustify(vector<string> &words, int maxWidth) {
     vector<string> result;
     int n_words = words.size();
     vector<string> line;

@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution {
 public:
-  vector<int> topKFrequent(vector<int>& nums, int k) {
+  vector<int> topKFrequent(vector<int> &nums, int k) {
     unordered_map<int, int> f;
     for (auto e : nums)
       f[e]++;

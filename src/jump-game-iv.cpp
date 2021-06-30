@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution {
 public:
-  int minJumps(vector<int>& arr) {
+  int minJumps(vector<int> &arr) {
     unordered_map<int, vector<int>> idxs;
     unordered_map<int, bool> visited;
     int N = arr.size();
@@ -17,7 +17,8 @@ public:
     queue<int> q;
     q.push(0);
     while (!q.empty()) {
-      int i = q.front(); q.pop();
+      int i = q.front();
+      q.pop();
       if (i - 1 >= 0 && dist[i] + 1 < dist[i - 1]) {
         dist[i - 1] = dist[i] + 1;
         q.push(i - 1);

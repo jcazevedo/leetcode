@@ -8,5 +8,8 @@ all: $(BIN_FILES)
 %: src/%.cpp
 	$(CC) $(CC_FLAGS) -o $@ -c $<
 
+format:
+	clang-format -i src/*.cpp
+
 clean:
 	rm -f $(BIN_FILES)

@@ -13,7 +13,7 @@ private:
   }
 
 public:
-  string largestNumber(vector<int>& nums) {
+  string largestNumber(vector<int> &nums) {
     vector<string> numbers;
     bool all_zero = true;
     for (int num : nums) {
@@ -23,9 +23,7 @@ public:
     }
     if (all_zero)
       return "0";
-    sort(numbers.begin(), numbers.end(), [](const string &s1, const string &s2) {
-      return (s1 + s2) >= (s2 + s1);
-    });
+    sort(numbers.begin(), numbers.end(), [](const string &s1, const string &s2) { return (s1 + s2) >= (s2 + s1); });
     string ans = "";
     for (string number : numbers)
       ans += number;

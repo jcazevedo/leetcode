@@ -8,18 +8,14 @@ private:
   int W;
   vector<vector<int>> dists;
   vector<vector<bool>> visited;
-  int dirs[4][2] = {{0,  1},
-                    {0,  -1},
-                    {1,  0},
-                    {-1, 0}};
+  int dirs[4][2] = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
 
-  void dfs(vector<vector<int>>& grid, int i, int j, int s) {
+  void dfs(vector<vector<int>> &grid, int i, int j, int s) {
     for (int d = 0; d < 4; ++d) {
       int ni = i + dirs[d][0];
       int nj = j + dirs[d][1];
       int ns = s + 1;
-      if (ni >= 0 && ni < H && nj >= 0 && nj < W && grid[ni][nj] == 1 &&
-          (dists[ni][nj] == -1 || dists[ni][nj] > ns)) {
+      if (ni >= 0 && ni < H && nj >= 0 && nj < W && grid[ni][nj] == 1 && (dists[ni][nj] == -1 || dists[ni][nj] > ns)) {
         visited[ni][nj] = true;
         dists[ni][nj] = ns;
         dfs(grid, ni, nj, ns);
@@ -28,7 +24,7 @@ private:
   }
 
 public:
-  int orangesRotting(vector<vector<int>>& grid) {
+  int orangesRotting(vector<vector<int>> &grid) {
     H = grid.size();
     W = grid[0].size();
     dists.clear();

@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  bool increasingTriplet(vector<int>& nums) {
+  bool increasingTriplet(vector<int> &nums) {
     if (nums.size() == 0)
       return false;
     int N = nums.size();

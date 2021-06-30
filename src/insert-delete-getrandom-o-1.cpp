@@ -35,7 +35,5 @@ public:
     return true;
   }
 
-  int getRandom() {
-    return idx_to_elem[rand() % n_elems];
-  }
+  int getRandom() { return idx_to_elem[rand() % n_elems]; }
 };

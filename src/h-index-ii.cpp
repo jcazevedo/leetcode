@@ -4,8 +4,9 @@ using namespace std;
 
 class Solution {
 public:
-  int hIndex(vector<int>& citations) {
-    if (citations.size() == 0) return 0;
+  int hIndex(vector<int> &citations) {
+    if (citations.size() == 0)
+      return 0;
     int lo = 0, hi = citations.size() - 1, N = citations.size();
     while (lo < hi) {
       int mid = lo + (hi - lo + 1) / 2;
@@ -15,8 +16,10 @@ public:
       else
         lo = mid;
     }
-    if (citations[hi] > N - hi) return N;
-    if (citations[hi] == N - hi) return citations[hi];
+    if (citations[hi] > N - hi)
+      return N;
+    if (citations[hi] == N - hi)
+      return citations[hi];
     return N - hi - 1;
   }
 };

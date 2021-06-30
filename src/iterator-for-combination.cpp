@@ -8,7 +8,7 @@ private:
   vector<string> combinations;
   int idx;
 
-  void dfs(const string& characters, int idx, int curr, int n_set, int cnt) {
+  void dfs(const string &characters, int idx, int curr, int n_set, int cnt) {
     if (idx == characters.size()) {
       if (n_set == cnt) {
         string ans = "";
@@ -32,11 +32,7 @@ public:
     idx = 0;
   }
 
-  string next() {
-    return combinations[idx++];
-  }
+  string next() { return combinations[idx++]; }
 
-  bool hasNext() {
-    return idx < combinations.size();
-  }
+  bool hasNext() { return idx < combinations.size(); }
 };

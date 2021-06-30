@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int findMin(vector<int>& nums) {
+  int findMin(vector<int> &nums) {
     int N = nums.size();
     int m, l = 0, r = N - 1;
     while (r >= 0 && nums[r] == nums[l])

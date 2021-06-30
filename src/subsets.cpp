@@ -4,8 +4,7 @@ using namespace std;
 
 class Solution {
 private:
-  void aux(vector<int>& nums, vector<bool>& include, int N,
-           vector<vector<int>>& res) {
+  void aux(vector<int> &nums, vector<bool> &include, int N, vector<vector<int>> &res) {
     if (N == nums.size()) {
       vector<int> n;
       for (int i = 0; i < N; i++) {
@@ -22,7 +21,7 @@ private:
   }
 
 public:
-  vector<vector<int>> subsets(vector<int>& nums) {
+  vector<vector<int>> subsets(vector<int> &nums) {
     vector<bool> include;
     include.assign(nums.size(), false);
     vector<vector<int>> res;

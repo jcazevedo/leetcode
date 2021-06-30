@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int maxScore(vector<int>& cardPoints, int k) {
+  int maxScore(vector<int> &cardPoints, int k) {
     int N = cardPoints.size();
     vector<int> sum_left(N + 1, 0);
     vector<int> sum_right(N + 1, 0);

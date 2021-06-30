@@ -5,14 +5,14 @@ using namespace std;
 
 class Solution {
 private:
-  bool good(const vector<int>& A) {
+  bool good(const vector<int> &A) {
     int hours = A[0] * 10 + A[1];
     int minutes = A[2] * 10 + A[3];
     return hours <= 23 && minutes <= 59;
   }
 
 public:
-  string largestTimeFromDigits(vector<int>& A) {
+  string largestTimeFromDigits(vector<int> &A) {
     sort(A.begin(), A.end());
     vector<int> best;
     do {

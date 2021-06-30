@@ -7,7 +7,7 @@ private:
   vector<int> dist;
   vector<int> parent;
 
-  void dfs(int u, const vector<vector<int>>& graph) {
+  void dfs(int u, const vector<vector<int>> &graph) {
     for (int v : graph[u]) {
       if (dist[v] != -1)
         continue;
@@ -18,9 +18,9 @@ private:
   }
 
 public:
-  vector<int> findMinHeightTrees(int n, vector<vector<int>>& edges) {
+  vector<int> findMinHeightTrees(int n, vector<vector<int>> &edges) {
     vector<vector<int>> graph = vector<vector<int>>(n, vector<int>());
-    for (const vector<int>& edge : edges) {
+    for (const vector<int> &edge : edges) {
       graph[edge[0]].push_back(edge[1]);
       graph[edge[1]].push_back(edge[0]);
     }

@@ -16,8 +16,7 @@ public:
       cnt[s[i]]++;
     for (int i = 0; i < L; ++i) {
       if (cnt[s[i]] < k)
-        return max(longestSubstring(s.substr(0, i), k),
-                   longestSubstring(s.substr(i + 1), k));
+        return max(longestSubstring(s.substr(0, i), k), longestSubstring(s.substr(i + 1), k));
     }
     return L;
   }

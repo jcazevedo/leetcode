@@ -3,7 +3,7 @@
 using namespace std;
 
 class Solution {
-  int kadane(vector<int>& A) {
+  int kadane(vector<int> &A) {
     int max_so_far = INT_MIN, max_ending_here = 0, N = A.size();
     for (int i = 0; i < N; ++i) {
       max_ending_here += A[i];
@@ -14,7 +14,7 @@ class Solution {
   }
 
 public:
-  int maxSubarraySumCircular(vector<int>& A) {
+  int maxSubarraySumCircular(vector<int> &A) {
     bool all_negative = true;
     int max_value = INT_MIN;
     int N = A.size();

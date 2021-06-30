@@ -11,7 +11,8 @@ private:
 
 public:
   bool isPalindrome(int x) {
-    if (x < 0) return false;
+    if (x < 0)
+      return false;
     return x == reverse(x);
   }
 };

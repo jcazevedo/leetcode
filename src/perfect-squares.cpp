@@ -5,6 +5,7 @@ using namespace std;
 class Solution {
 private:
   vector<int> cache;
+
 public:
   int numSquares(int n) {
     if (cache.size() == 0)

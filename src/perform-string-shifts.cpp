@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-  string stringShift(string s, vector<vector<int>>& shift) {
+  string stringShift(string s, vector<vector<int>> &shift) {
     int N = s.size(), V = shift.size();
 
     int diff = 0;

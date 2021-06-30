@@ -22,7 +22,7 @@ private:
   }
 
 public:
-  bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
+  bool canFinish(int numCourses, vector<vector<int>> &prerequisites) {
     graph.assign(numCourses, vector<int>());
     for (vector<int> edge : prerequisites) {
       graph[edge[1]].push_back(edge[0]);

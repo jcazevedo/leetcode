@@ -5,22 +5,21 @@ using namespace std;
 
 struct TreeNode {
   int val;
-  TreeNode* left;
-  TreeNode* right;
+  TreeNode *left;
+  TreeNode *right;
 
   TreeNode() : val(0), left(nullptr), right(nullptr) {}
 
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-  TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left),
-                                                     right(right) {}
+  TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
 class Solution {
 private:
-  map<pair<TreeNode*, bool>, int> cache;
+  map<pair<TreeNode *, bool>, int> cache;
 
-  int aux(TreeNode* root, bool can_rob) {
+  int aux(TreeNode *root, bool can_rob) {
     if (root == nullptr)
       return 0;
     if (cache.find({root, can_rob}) == cache.end()) {
@@ -43,7 +42,7 @@ private:
   }
 
 public:
-  int rob(TreeNode* root) {
+  int rob(TreeNode *root) {
     cache.clear();
     return aux(root, true);
   }

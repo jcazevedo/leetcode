@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 private:
-  vector<vector<int>> aux(vector<int>& nums, vector<bool>& used, int T) {
+  vector<vector<int>> aux(vector<int> &nums, vector<bool> &used, int T) {
     vector<vector<int>> res;
     int N = nums.size();
     if (T == N) {
@@ -27,7 +27,7 @@ private:
   }
 
 public:
-  vector<vector<int>> permute(vector<int>& nums) {
+  vector<vector<int>> permute(vector<int> &nums) {
     vector<bool> used;
     used.assign(nums.size(), false);
     return aux(nums, used, 0);

@@ -6,8 +6,9 @@ int dirs[][4] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
 
 class Solution {
 private:
-  int dfs(int i, int j, vector<vector<int>>& grid, int H, int W, vector<vector<bool>>& visited, int expected, int n_visited) {
-    if (grid[i][j] == 2){
+  int dfs(int i, int j, vector<vector<int>> &grid, int H, int W, vector<vector<bool>> &visited, int expected,
+          int n_visited) {
+    if (grid[i][j] == 2) {
       if (n_visited == expected)
         return 1;
       return 0;
@@ -26,7 +27,7 @@ private:
   }
 
 public:
-  int uniquePathsIII(vector<vector<int>>& grid) {
+  int uniquePathsIII(vector<vector<int>> &grid) {
     int H = grid.size();
     int W = grid[0].size();
     int expected = 0;

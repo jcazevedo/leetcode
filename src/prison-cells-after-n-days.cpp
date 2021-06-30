@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 private:
-  vector<int> next_day(vector<int>& cells) {
+  vector<int> next_day(vector<int> &cells) {
     vector<int> res(8, 0);
     for (int i = 1; i < 7; ++i) {
       if (cells[i - 1] + cells[i + 1] != 1)
@@ -15,7 +15,7 @@ private:
   }
 
 public:
-  vector<int> prisonAfterNDays(vector<int>& cells, int N) {
+  vector<int> prisonAfterNDays(vector<int> &cells, int N) {
     vector<vector<int>> cell_days;
     map<vector<int>, int> visited;
     vector<int> curr = cells;

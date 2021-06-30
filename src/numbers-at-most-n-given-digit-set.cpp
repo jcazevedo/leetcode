@@ -36,7 +36,7 @@ private:
     return ans;
   }
 
-  int aux(int idx, string num, vector<string>& digits) {
+  int aux(int idx, string num, vector<string> &digits) {
     int L = num.size();
     if (idx >= L)
       return 1;
@@ -52,7 +52,7 @@ private:
   }
 
 public:
-  int atMostNGivenDigitSet(vector<string>& digits, int n) {
+  int atMostNGivenDigitSet(vector<string> &digits, int n) {
     int len = num_length(n);
     int n_digits = digits.size();
     int ans = 0;

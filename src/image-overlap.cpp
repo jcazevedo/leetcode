@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int largestOverlap(vector<vector<int>>& A, vector<vector<int>>& B) {
+  int largestOverlap(vector<vector<int>> &A, vector<vector<int>> &B) {
     int L = A.size(), ans = 0;
     for (int di = -L + 1; di < L; ++di) {
       for (int dj = -L + 1; dj < L; ++dj) {

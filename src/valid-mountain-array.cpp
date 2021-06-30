@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  bool validMountainArray(vector<int>& A) {
+  bool validMountainArray(vector<int> &A) {
     int N = A.size();
     if (N < 3)
       return false;

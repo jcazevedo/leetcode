@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 private:
-  bool good(int health, vector<vector<int>>& dungeon) {
+  bool good(int health, vector<vector<int>> &dungeon) {
     int M = dungeon.size();
     int N = dungeon[0].size();
     vector<vector<int>> dist(M, vector<int>(N, INT_MIN));
@@ -16,7 +16,8 @@ private:
     queue<pair<int, int>> q;
     q.push({0, 0});
     while (!q.empty()) {
-      pair<int, int> curr = q.front(); q.pop();
+      pair<int, int> curr = q.front();
+      q.pop();
       int m = curr.first;
       int n = curr.second;
       if (m + 1 < M) {
@@ -38,7 +39,7 @@ private:
   }
 
 public:
-  int calculateMinimumHP(vector<vector<int>>& dungeon) {
+  int calculateMinimumHP(vector<vector<int>> &dungeon) {
     int lo = 1, hi = INT_MAX;
     while (lo <= hi) {
       int mid = lo + (hi - lo) / 2;

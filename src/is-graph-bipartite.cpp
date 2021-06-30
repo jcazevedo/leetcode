@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 private:
-  bool bfs(int i, vector<int>& colors, vector<vector<int>>& graph) {
+  bool bfs(int i, vector<int> &colors, vector<vector<int>> &graph) {
     colors[i] = 1;
     queue<int> q;
     q.push(i);
@@ -25,11 +25,12 @@ private:
   }
 
 public:
-  bool isBipartite(vector<vector<int>>& graph) {
+  bool isBipartite(vector<vector<int>> &graph) {
     int N = graph.size();
     vector<int> colors(N, -1);
     for (int i = 0; i < N; ++i) {
-      if (colors[i] != -1) continue;
+      if (colors[i] != -1)
+        continue;
       if (!bfs(i, colors, graph))
         return false;
     }

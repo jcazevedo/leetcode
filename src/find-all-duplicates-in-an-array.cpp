@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  vector<int> findDuplicates(vector<int>& nums) {
+  vector<int> findDuplicates(vector<int> &nums) {
     vector<int> ans;
     for (int num : nums) {
       int idx = abs(num) - 1;

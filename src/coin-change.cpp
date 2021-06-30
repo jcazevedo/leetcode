@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int coinChange(vector<int>& coins, int amount) {
+  int coinChange(vector<int> &coins, int amount) {
     int C = coins.size();
     vector<int> ways;
     ways.assign(amount + 1, -1);

@@ -6,7 +6,7 @@ using namespace std;
 class Solution {
 public:
   int reverse(int x) {
-    long long n = abs((double) x);
+    long long n = abs((double)x);
     long long res = 0;
     while (n) {
       res = res * 10 + n % 10;

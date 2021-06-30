@@ -1,19 +1,18 @@
 struct TreeNode {
   int val;
-  TreeNode* left;
-  TreeNode* right;
+  TreeNode *left;
+  TreeNode *right;
 
   TreeNode() : val(0), left(nullptr), right(nullptr) {}
 
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-  TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left),
-                                                     right(right) {}
+  TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
 class Solution {
 private:
-  void dfs(TreeNode* curr, int curr_value, int& curr_sum) {
+  void dfs(TreeNode *curr, int curr_value, int &curr_sum) {
     if (curr == nullptr)
       return;
     bool is_leaf = curr->left == nullptr && curr->right == nullptr;
@@ -27,7 +26,7 @@ private:
   }
 
 public:
-  int sumRootToLeaf(TreeNode* root) {
+  int sumRootToLeaf(TreeNode *root) {
     int ans = 0;
     dfs(root, 0, ans);
     return ans;

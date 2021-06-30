@@ -4,9 +4,10 @@ using namespace std;
 
 class Solution {
 public:
-  vector<int> largestDivisibleSubset(vector<int>& nums) {
+  vector<int> largestDivisibleSubset(vector<int> &nums) {
     int N = nums.size();
-    if (N == 0) return {};
+    if (N == 0)
+      return {};
     sort(nums.begin(), nums.end());
     vector<int> cnt(N, 1);
     vector<int> prev(N, -1);

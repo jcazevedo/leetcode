@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 private:
-  double go(int i, vector<int>& nums1, int i1, vector<int>& nums2, int i2) {
+  double go(int i, vector<int> &nums1, int i1, vector<int> &nums2, int i2) {
     if (i1 >= nums1.size())
       return nums2[i2 + i];
     if (i2 >= nums2.size())
@@ -23,13 +23,11 @@ private:
   }
 
 public:
-  double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
+  double findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2) {
     int N1 = nums1.size(), N2 = nums2.size();
     int N = N1 + N2;
     if (N % 2 == 0)
-      return
-          (go(N / 2 - 1, nums1, 0, nums2, 0) + go(N / 2, nums1, 0, nums2, 0)) /
-          2.0;
+      return (go(N / 2 - 1, nums1, 0, nums2, 0) + go(N / 2, nums1, 0, nums2, 0)) / 2.0;
     return go(N / 2, nums1, 0, nums2, 0);
   }
 };

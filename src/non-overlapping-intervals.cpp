@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int eraseOverlapIntervals(vector<vector<int>>& intervals) {
+  int eraseOverlapIntervals(vector<vector<int>> &intervals) {
     vector<pair<int, int>> p_intervals;
     for (vector<int> interval : intervals)
       p_intervals.emplace_back(interval[1], interval[0]);

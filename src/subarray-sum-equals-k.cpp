@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-  int subarraySum(vector<int>& nums, int k) {
+  int subarraySum(vector<int> &nums, int k) {
     int N = nums.size();
     map<int, int> prev;
     int curr = 0, cnt = 0;

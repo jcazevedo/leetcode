@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 private:
-  bool good(int divisor, int threshold, const vector<int>& nums) {
+  bool good(int divisor, int threshold, const vector<int> &nums) {
     int sum = 0;
     for (int num : nums) {
       sum += ((num + divisor - 1) / divisor);
@@ -13,7 +13,7 @@ private:
   }
 
 public:
-  int smallestDivisor(vector<int>& nums, int threshold) {
+  int smallestDivisor(vector<int> &nums, int threshold) {
     int lo = 1, hi = 1000000;
     while (lo < hi) {
       int mid = lo + (hi - lo) / 2;

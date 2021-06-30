@@ -11,7 +11,7 @@ public:
 
 class Solution {
 private:
-  int best_at_row(BinaryMatrix& binaryMatrix, int row, int col) {
+  int best_at_row(BinaryMatrix &binaryMatrix, int row, int col) {
     int lo = 0, hi = col;
     while (lo < hi) {
       int mid = lo + (hi - lo) / 2;
@@ -27,7 +27,7 @@ private:
   }
 
 public:
-  int leftMostColumnWithOne(BinaryMatrix& binaryMatrix) {
+  int leftMostColumnWithOne(BinaryMatrix &binaryMatrix) {
     vector<int> d = binaryMatrix.dimensions();
     int N = d[0];
     int M = d[1];

@@ -4,22 +4,21 @@ using namespace std;
 
 struct TreeNode {
   int val;
-  TreeNode* left;
-  TreeNode* right;
+  TreeNode *left;
+  TreeNode *right;
 
   TreeNode() : val(0), left(nullptr), right(nullptr) {}
 
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-  TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left),
-                                                     right(right) {}
+  TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
 class Solution {
 private:
   unordered_map<int, int> sums;
 
-  int n_paths(TreeNode* curr, int target_sum, int curr_sum) {
+  int n_paths(TreeNode *curr, int target_sum, int curr_sum) {
     if (curr == nullptr)
       return 0;
     int ans = 0;
@@ -35,7 +34,7 @@ private:
   }
 
 public:
-  int pathSum(TreeNode* root, int sum) {
+  int pathSum(TreeNode *root, int sum) {
     sums.clear();
     return n_paths(root, sum, 0);
   }

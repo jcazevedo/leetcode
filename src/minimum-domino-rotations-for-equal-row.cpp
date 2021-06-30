@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-  int minDominoRotations(vector<int>& A, vector<int>& B) {
+  int minDominoRotations(vector<int> &A, vector<int> &B) {
     int N = A.size();
     unordered_map<int, int> cnt;
     for (int i = 0; i < N; ++i) {

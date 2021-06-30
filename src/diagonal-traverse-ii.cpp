@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution {
 public:
-  vector<int> findDiagonalOrder(vector<vector<int>>& nums) {
+  vector<int> findDiagonalOrder(vector<vector<int>> &nums) {
     int N = nums.size();
     map<int, priority_queue<pair<int, int>>> diags;
     for (int i = 0; i < N; ++i) {

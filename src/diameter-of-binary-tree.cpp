@@ -4,19 +4,21 @@ using namespace std;
 
 struct TreeNode {
   int val;
-  TreeNode* left;
-  TreeNode* right;
+  TreeNode *left;
+  TreeNode *right;
 
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
 class Solution {
 private:
-  map<TreeNode*, int> pathThrough;
-  map<TreeNode*, int> pathEnding;
+  map<TreeNode *, int> pathThrough;
+  map<TreeNode *, int> pathEnding;
 
-  int go(TreeNode* root) {
-    if (root == nullptr) { return 0; }
+  int go(TreeNode *root) {
+    if (root == nullptr) {
+      return 0;
+    }
     int best = 0;
     best = max(best, go(root->left));
     best = max(best, go(root->right));
@@ -27,7 +29,7 @@ private:
   }
 
 public:
-  int diameterOfBinaryTree(TreeNode* root) {
+  int diameterOfBinaryTree(TreeNode *root) {
     pathThrough.clear();
     pathEnding.clear();
     pathThrough[nullptr] = 0;

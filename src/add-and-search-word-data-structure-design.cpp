@@ -5,7 +5,7 @@ using namespace std;
 
 struct TrieNode {
   bool word_exists;
-  vector<TrieNode*> next;
+  vector<TrieNode *> next;
 
   TrieNode() {
     word_exists = false;
@@ -15,9 +15,9 @@ struct TrieNode {
 
 class WordDictionary {
 private:
-  TrieNode* root;
+  TrieNode *root;
 
-  bool search_aux(TrieNode* curr, const string& word, int i) {
+  bool search_aux(TrieNode *curr, const string &word, int i) {
     if (curr == nullptr)
       return false;
     if (i == word.size())
@@ -34,12 +34,10 @@ private:
   }
 
 public:
-  WordDictionary() {
-    root = new TrieNode();
-  }
+  WordDictionary() { root = new TrieNode(); }
 
   void addWord(string word) {
-    TrieNode* curr = root;
+    TrieNode *curr = root;
     for (char ch : word) {
       int idx = ch - 'a';
       if (curr->next[idx] == nullptr)
@@ -49,7 +47,5 @@ public:
     curr->word_exists = true;
   }
 
-  bool search(string word) {
-    return search_aux(root, word, 0);
-  }
+  bool search(string word) { return search_aux(root, word, 0); }
 };

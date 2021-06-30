@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int findJudge(int N, vector<vector<int>>& trust) {
+  int findJudge(int N, vector<vector<int>> &trust) {
     vector<int> in_degree(N + 1, 0);
     vector<int> out_degree(N + 1, 0);
     int L = trust.size();

@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  vector<int> plusOne(vector<int>& digits) {
+  vector<int> plusOne(vector<int> &digits) {
     vector<int> res;
     int i = digits.size() - 1, c = 1;
     while (i >= 0) {

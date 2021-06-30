@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int leastInterval(vector<char>& tasks, int n) {
+  int leastInterval(vector<char> &tasks, int n) {
     vector<int> cnts = vector<int>(26, 0);
     for (char task : tasks)
       cnts[task - 'A']++;

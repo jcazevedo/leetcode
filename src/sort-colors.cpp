@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  void sortColors(vector<int>& nums) {
+  void sortColors(vector<int> &nums) {
     int n0 = 0, n1 = 0, n2 = 0, N = nums.size();
     for (int i = 0; i < N; i++) {
       if (nums[i] == 2) {

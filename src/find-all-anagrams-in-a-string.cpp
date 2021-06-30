@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution {
 private:
-  bool is_anagram(map<char, int>& current, map<char, int>& expected) {
+  bool is_anagram(map<char, int> &current, map<char, int> &expected) {
     for (auto itr = expected.begin(); itr != expected.end(); ++itr) {
       if (current[itr->first] != itr->second)
         return false;
@@ -20,7 +20,8 @@ public:
     for (char ch : p)
       expected[ch]++;
     map<char, int> cnt;
-    int S = s.size(), P = p.size();;
+    int S = s.size(), P = p.size();
+    ;
     vector<int> res;
     if (S >= P) {
       for (int i = 0; i < P; ++i)

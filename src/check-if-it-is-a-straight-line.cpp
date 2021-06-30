@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-  bool checkStraightLine(vector<vector<int>>& coordinates) {
+  bool checkStraightLine(vector<vector<int>> &coordinates) {
     double EPS = 0.0000001;
     double dx = coordinates[1][0] - coordinates[0][0];
     double dy = coordinates[1][1] - coordinates[0][1];

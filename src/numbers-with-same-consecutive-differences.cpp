@@ -18,7 +18,8 @@ public:
     vector<int> ans;
     while (!q.empty()) {
       int len, num;
-      tie(len, num) = q.front(); q.pop();
+      tie(len, num) = q.front();
+      q.pop();
       if (len == N)
         ans.push_back(num);
       else {

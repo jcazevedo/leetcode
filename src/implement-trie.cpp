@@ -5,7 +5,7 @@ using namespace std;
 
 struct TrieNode {
   bool is_end;
-  vector<TrieNode*> next;
+  vector<TrieNode *> next;
 
   TrieNode() {
     is_end = false;
@@ -15,15 +15,13 @@ struct TrieNode {
 
 class Trie {
 private:
-  TrieNode* root;
+  TrieNode *root;
 
 public:
-  Trie() {
-    root = new TrieNode();
-  }
+  Trie() { root = new TrieNode(); }
 
   void insert(string word) {
-    TrieNode* curr = root;
+    TrieNode *curr = root;
     for (char ch : word) {
       if (curr->next[ch - 'a'] == nullptr) {
         curr->next[ch - 'a'] = new TrieNode();
@@ -34,7 +32,7 @@ public:
   }
 
   bool search(string word) {
-    TrieNode* curr = root;
+    TrieNode *curr = root;
     for (char ch : word) {
       if (curr->next[ch - 'a'] == nullptr)
         return false;
@@ -44,7 +42,7 @@ public:
   }
 
   bool startsWith(string prefix) {
-    TrieNode* curr = root;
+    TrieNode *curr = root;
     for (char ch : prefix) {
       if (curr->next[ch - 'a'] == nullptr)
         return false;

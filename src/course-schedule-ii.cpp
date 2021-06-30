@@ -58,7 +58,7 @@ private:
   }
 
 public:
-  vector<int> findOrder(int numCourses, vector<vector<int>>& prerequisites) {
+  vector<int> findOrder(int numCourses, vector<vector<int>> &prerequisites) {
     N = numCourses;
     graph.assign(N, vector<int>());
     for (vector<int> req : prerequisites) {

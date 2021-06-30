@@ -8,24 +8,22 @@ class Solution {
 private:
   static string translation[];
 
-  string translate(const string& word) {
+  string translate(const string &word) {
     string ans = "";
-    for (const char& ch : word)
+    for (const char &ch : word)
       ans += translation[ch - 'a'];
     return ans;
   }
 
 public:
-  int uniqueMorseRepresentations(vector<string>& words) {
+  int uniqueMorseRepresentations(vector<string> &words) {
     set<string> translations;
-    for (const string& word : words)
+    for (const string &word : words)
       translations.insert(translate(word));
     return translations.size();
   }
 };
 
-string Solution::translation[] = {".-", "-...", "-.-.", "-..", ".", "..-.",
-                                  "--.", "....", "..", ".---", "-.-", ".-..",
-                                  "--", "-.", "---", ".--.", "--.-", ".-.",
-                                  "...", "-", "..-", "...-", ".--", "-..-",
-                                  "-.--", "--.."};
+string Solution::translation[] = {".-",   "-...", "-.-.", "-..",  ".",   "..-.", "--.",  "....", "..",
+                                  ".---", "-.-",  ".-..", "--",   "-.",  "---",  ".--.", "--.-", ".-.",
+                                  "...",  "-",    "..-",  "...-", ".--", "-..-", "-.--", "--.."};

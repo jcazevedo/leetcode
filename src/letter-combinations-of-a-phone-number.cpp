@@ -6,15 +6,8 @@ using namespace std;
 
 class Solution {
 private:
-  map<char, string> m = {
-      {'2', "abc"},
-      {'3', "def"},
-      {'4', "ghi"},
-      {'5', "jkl"},
-      {'6', "mno"},
-      {'7', "pqrs"},
-      {'8', "tuv"},
-      {'9', "wxyz"}};
+  map<char, string> m = {{'2', "abc"}, {'3', "def"},  {'4', "ghi"}, {'5', "jkl"},
+                         {'6', "mno"}, {'7', "pqrs"}, {'8', "tuv"}, {'9', "wxyz"}};
 
   vector<string> aux(string digits) {
     vector<string> res;
@@ -34,7 +27,8 @@ private:
 
 public:
   vector<string> letterCombinations(string digits) {
-    if (digits.empty()) return vector<string>();
+    if (digits.empty())
+      return vector<string>();
     return aux(digits);
   }
 };

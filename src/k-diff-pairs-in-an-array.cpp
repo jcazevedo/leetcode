@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-  int findPairs(vector<int>& nums, int k) {
+  int findPairs(vector<int> &nums, int k) {
     unordered_set<int> visited, ans;
     for (int num : nums) {
       if (visited.count(num - k) != 0)

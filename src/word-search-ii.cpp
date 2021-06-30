@@ -6,7 +6,7 @@ using namespace std;
 
 struct TrieNode {
   bool is_end;
-  vector<TrieNode*> next;
+  vector<TrieNode *> next;
 
   TrieNode() {
     is_end = false;
@@ -16,13 +16,10 @@ struct TrieNode {
 
 class Solution {
 private:
-  vector<pair<int, int>> dirs = {{1,  0},
-                                 {-1, 0},
-                                 {0,  1},
-                                 {0,  -1}};
+  vector<pair<int, int>> dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
-  void insert(TrieNode* node, string word) {
-    TrieNode* curr = node;
+  void insert(TrieNode *node, string word) {
+    TrieNode *curr = node;
     for (char ch : word) {
       if (curr->next[ch - 'a'] == nullptr) {
         curr->next[ch - 'a'] = new TrieNode();
@@ -34,18 +31,17 @@ private:
 
   set<string> found;
 
-  void dfs(vector<vector<char>>& board, TrieNode* trie,
-                     vector<vector<bool>>& visited, int i, int j, string word) {
+  void dfs(vector<vector<char>> &board, TrieNode *trie, vector<vector<bool>> &visited, int i, int j, string word) {
     if (trie->next[board[i][j] - 'a'] != nullptr) {
-      TrieNode* next = trie->next[board[i][j] - 'a'];
+      TrieNode *next = trie->next[board[i][j] - 'a'];
       word += board[i][j];
-      if (next->is_end) found.insert(word);
+      if (next->is_end)
+        found.insert(word);
       visited[i][j] = true;
       for (pair<int, int> dir : dirs) {
         int ni = i + dir.first;
         int nj = j + dir.second;
-        if (ni >= 0 && ni < board.size() && nj >= 0 && nj < board[ni].size() &&
-            !visited[ni][nj]) {
+        if (ni >= 0 && ni < board.size() && nj >= 0 && nj < board[ni].size() && !visited[ni][nj]) {
           dfs(board, next, visited, ni, nj, word);
         }
       }
@@ -66,8 +62,8 @@ private:
   }
 
 public:
-  vector<string> findWords(vector<vector<char>>& board, vector<string>& words) {
-    TrieNode* trie = new TrieNode();
+  vector<string> findWords(vector<vector<char>> &board, vector<string> &words) {
+    TrieNode *trie = new TrieNode();
     for (string word : words)
       insert(trie, word);
     int H = board.size();

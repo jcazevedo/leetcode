@@ -23,8 +23,8 @@ private:
   }
 
 public:
-  int getImportance(vector<Employee*> employees, int id) {
-    for (Employee* e : employees) {
+  int getImportance(vector<Employee *> employees, int id) {
+    for (Employee *e : employees) {
       importance[e->id] = e->importance;
       subordinates[e->id] = e->subordinates;
     }

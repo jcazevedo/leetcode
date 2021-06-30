@@ -4,15 +4,12 @@ using namespace std;
 
 class Solution {
 public:
-  vector<int> spiralOrder(vector<vector<int>>& matrix) {
+  vector<int> spiralOrder(vector<vector<int>> &matrix) {
     int H = matrix.size();
     if (H == 0)
       return {};
     int W = matrix[0].size();
-    vector<pair<int, int>> dirs = {{0,  1},
-                                   {1,  0},
-                                   {0,  -1},
-                                   {-1, 0}};
+    vector<pair<int, int>> dirs = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
     vector<int> res;
     for (int i = 0; i < W; ++i)
       res.push_back(matrix[0][i]);

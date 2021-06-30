@@ -3,8 +3,8 @@
 using namespace std;
 
 struct node {
-  node* prev;
-  node* next;
+  node *prev;
+  node *next;
   int key;
   int value;
 
@@ -18,12 +18,12 @@ struct node {
 class LRUCache {
 private:
   int cap, len;
-  node* tail;
-  node* head;
-  unordered_map<int, node*> cache;
+  node *tail;
+  node *head;
+  unordered_map<int, node *> cache;
 
   void add_node(int k, int v) {
-    node* n = new node(k, v);
+    node *n = new node(k, v);
     if (head == nullptr) {
       head = tail = n;
       len = 1;
@@ -38,7 +38,7 @@ private:
     }
   }
 
-  void remove_node(node* node) {
+  void remove_node(node *node) {
     cache.erase(node->key);
     if (node->next != nullptr)
       node->next->prev = node->prev;
@@ -62,7 +62,7 @@ public:
   int get(int key) {
     if (cache.find(key) == cache.end())
       return -1;
-    node* node = cache[key];
+    node *node = cache[key];
     int value = node->value;
     remove_node(node);
     add_node(key, value);

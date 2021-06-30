@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int findMaxConsecutiveOnes(vector<int>& nums) {
+  int findMaxConsecutiveOnes(vector<int> &nums) {
     int cnt = 0, best = 0;
     for (int v : nums) {
       if (v == 0)

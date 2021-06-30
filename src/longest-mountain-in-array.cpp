@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-  int longestMountain(vector<int>& A) {
+  int longestMountain(vector<int> &A) {
     if (A.size() < 3)
       return 0;
     int N = A.size();

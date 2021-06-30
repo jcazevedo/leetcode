@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  vector<vector<int>> flipAndInvertImage(vector<vector<int>>& A) {
+  vector<vector<int>> flipAndInvertImage(vector<vector<int>> &A) {
     int H = A.size();
     int W = A[0].size();
     for (int i = 0; i < H; ++i) {

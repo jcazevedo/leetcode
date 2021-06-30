@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  vector<bool> kidsWithCandies(vector<int>& candies, int extraCandies) {
+  vector<bool> kidsWithCandies(vector<int> &candies, int extraCandies) {
     int N = candies.size();
     vector<bool> res(N, false);
     for (int i = 0; i < N; ++i) {

@@ -14,7 +14,8 @@ public:
     pq.push(1);
     visited.insert(1);
     while (n > 1) {
-      ll curr = pq.top(); pq.pop();
+      ll curr = pq.top();
+      pq.pop();
       ll n2 = curr * 2;
       ll n3 = curr * 3;
       ll n5 = curr * 5;

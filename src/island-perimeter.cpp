@@ -4,10 +4,7 @@ using namespace std;
 
 class Solution {
 private:
-  vector<pair<int, int>> dirs = {{1, 0},
-                                 {0, 1},
-                                 {-1, 0},
-                                 {0, -1}};
+  vector<pair<int, int>> dirs = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 
   vector<vector<int>> _grid;
   vector<vector<bool>> visited;
@@ -30,7 +27,7 @@ private:
   }
 
 public:
-  int islandPerimeter(vector<vector<int>>& grid) {
+  int islandPerimeter(vector<vector<int>> &grid) {
     H = grid.size();
     W = grid[0].size();
     visited.assign(H, vector<bool>(W, false));

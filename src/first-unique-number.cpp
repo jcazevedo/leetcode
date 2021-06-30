@@ -9,7 +9,7 @@ private:
   queue<int> q;
 
 public:
-  FirstUnique(vector<int>& nums) {
+  FirstUnique(vector<int> &nums) {
     for (int num : nums)
       add(num);
   }

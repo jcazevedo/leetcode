@@ -20,7 +20,7 @@ private:
   }
 
 public:
-  int longestConsecutive(vector<int>& nums) {
+  int longestConsecutive(vector<int> &nums) {
     elems.clear();
     cnt.clear();
     for (int num : nums)

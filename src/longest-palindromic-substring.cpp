@@ -8,7 +8,7 @@ class Solution {
 private:
   int dp[MAXN][MAXN];
 
-  int go(string& s, int l, int r) {
+  int go(string &s, int l, int r) {
     if (dp[l][r] == -1) {
       if (s[l] != s[r]) {
         dp[l][r] = 0;

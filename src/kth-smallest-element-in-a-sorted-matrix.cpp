@@ -6,11 +6,13 @@ using namespace std;
 
 class Solution {
 public:
-  int kthSmallest(vector<vector<int>>& matrix, int k) {
+  int kthSmallest(vector<vector<int>> &matrix, int k) {
     int H = matrix.size();
     int W = matrix[0].size();
     set<pair<int, int>> included;
-    priority_queue<pair<int, pair<int, int>>, vector<pair<int, pair<int, int>>>, std::greater<pair<int, pair<int, int>>>> pq;
+    priority_queue<pair<int, pair<int, int>>, vector<pair<int, pair<int, int>>>,
+                   std::greater<pair<int, pair<int, int>>>>
+        pq;
     included.insert(make_pair(0, 0));
     pq.push(make_pair(matrix[0][0], make_pair(0, 0)));
     while (k > 1) {

@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  bool canJump(vector<int>& nums) {
+  bool canJump(vector<int> &nums) {
     int N = nums.size();
     vector<int> max_j = vector<int>(N, 0);
     max_j[0] = nums[0];

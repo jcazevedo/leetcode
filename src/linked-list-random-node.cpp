@@ -3,21 +3,21 @@
 
 struct ListNode {
   int val;
-  ListNode* next;
+  ListNode *next;
 
   ListNode() : val(0), next(nullptr) {}
 
   ListNode(int x) : val(x), next(nullptr) {}
 
-  ListNode(int x, ListNode* next) : val(x), next(next) {}
+  ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
 class Solution {
 private:
-  ListNode* list;
+  ListNode *list;
 
 public:
-  Solution(ListNode* head) {
+  Solution(ListNode *head) {
     list = head;
     srand(time(NULL));
   }
@@ -28,7 +28,7 @@ public:
     while (head->next) {
       n += 1.0;
       head = head->next;
-      if (((double) rand() / RAND_MAX) < k / n) {
+      if (((double)rand() / RAND_MAX) < k / n) {
         ans = ans->next;
         k += 1.0;
       }

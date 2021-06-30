@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int twoCitySchedCost(vector<vector<int>>& costs) {
+  int twoCitySchedCost(vector<vector<int>> &costs) {
     int N = costs.size();
     int tot_sum = 0;
     vector<int> diffs;

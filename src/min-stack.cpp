@@ -4,7 +4,7 @@ using namespace std;
 
 class MinStack {
 private:
-  stack<pair<int, int> > inner;
+  stack<pair<int, int>> inner;
 
 public:
   /** initialize your data structure here. */
@@ -18,15 +18,9 @@ public:
     }
   }
 
-  void pop() {
-    inner.pop();
-  }
+  void pop() { inner.pop(); }
 
-  int top() {
-    return inner.top().first;
-  }
+  int top() { return inner.top().first; }
 
-  int getMin() {
-    return inner.top().second;
-  }
+  int getMin() { return inner.top().second; }
 };

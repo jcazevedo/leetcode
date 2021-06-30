@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-  bool canReach(vector<int>& arr, int start) {
+  bool canReach(vector<int> &arr, int start) {
     if (arr[start] == 0)
       return true;
     int N = arr.size();

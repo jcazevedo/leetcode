@@ -8,7 +8,7 @@ private:
   vector<vector<int>> dp_in;
   vector<vector<int>> dp_exactly;
 
-  void go(int left, int right, const string& s) {
+  void go(int left, int right, const string &s) {
     if (left > right)
       return;
     if (dp_in[left][right] == -1) {

@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  vector<int> productExceptSelf(vector<int>& nums) {
+  vector<int> productExceptSelf(vector<int> &nums) {
     int N = nums.size();
     vector<int> prefix_mult = vector<int>(N, 0);
     vector<int> suffix_mult = vector<int>(N, 0);

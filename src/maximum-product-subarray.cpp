@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int maxProduct(vector<int>& nums) {
+  int maxProduct(vector<int> &nums) {
     int best_neg = -1;
     int best_pos = -1;
     int ans = nums[0];

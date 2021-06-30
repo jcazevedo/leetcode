@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-  int maxProfit(int k, vector<int>& prices) {
+  int maxProfit(int k, vector<int> &prices) {
     int N = prices.size();
     if (k == 0 || N < 2)
       return 0;
@@ -18,8 +18,7 @@ public:
       }
       return ans;
     }
-    vector<pair<int, int>> dp = vector<pair<int, int>>(k + 1,
-                                                       make_pair(0, 0));
+    vector<pair<int, int>> dp = vector<pair<int, int>>(k + 1, make_pair(0, 0));
     int price = -prices[0];
     for (int i = 0; i <= k; ++i)
       dp[i].first = price;

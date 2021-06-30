@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int maxProfit(vector<int>& prices) {
+  int maxProfit(vector<int> &prices) {
     int N = prices.size();
     int end_with_sell = 0;
     int end_with_buy = INT_MIN;

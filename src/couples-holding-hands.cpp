@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int minSwapsCouples(vector<int>& row) {
+  int minSwapsCouples(vector<int> &row) {
     int N = row.size() / 2;
     vector<int> uf = vector<int>(N, -1);
     for (int i = 0; i < N; i++)
@@ -21,7 +21,7 @@ public:
     return tot;
   }
 
-  int findSet(vector<int>& uf, int v) {
+  int findSet(vector<int> &uf, int v) {
     while (v != uf[v])
       v = uf[v];
     return v;

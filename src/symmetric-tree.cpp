@@ -1,14 +1,14 @@
 struct TreeNode {
   int val;
-  TreeNode* left;
-  TreeNode* right;
+  TreeNode *left;
+  TreeNode *right;
 
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
 class Solution {
 private:
-  bool isSymmetricAux(TreeNode* left, TreeNode* right) {
+  bool isSymmetricAux(TreeNode *left, TreeNode *right) {
     if (left == nullptr && right == nullptr)
       return true;
     if (left == nullptr || right == nullptr)
@@ -22,7 +22,5 @@ private:
   }
 
 public:
-  bool isSymmetric(TreeNode* root) {
-    return isSymmetricAux(root, root);
-  }
+  bool isSymmetric(TreeNode *root) { return isSymmetricAux(root, root); }
 };

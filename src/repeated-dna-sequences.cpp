@@ -24,7 +24,7 @@ public:
         repeated.insert(curr);
       visited.insert(curr);
     }
-    for (const string& s : repeated)
+    for (const string &s : repeated)
       ans.push_back(s);
     return ans;
   }

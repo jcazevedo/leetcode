@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution {
 public:
-  bool wordBreak(string s, vector<string>& wordDict) {
+  bool wordBreak(string s, vector<string> &wordDict) {
     unordered_set<string> dict;
     for (string word : wordDict)
       dict.insert(word);

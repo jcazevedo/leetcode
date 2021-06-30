@@ -7,7 +7,7 @@ using namespace std;
 class Solution {
 public:
   int lengthOfLongestSubstring(string s) {
-    map<char, vector<int> > pos;
+    map<char, vector<int>> pos;
     int N = s.size();
     for (int i = 0; i < N; i++) {
       pos[s[i]].push_back(i);

@@ -9,14 +9,22 @@ public:
     while (si >= 0 || ti >= 0) {
       del = 0;
       while (si >= 0 && (S[si] == '#' || del > 0)) {
-        if (S[si] == '#') { del++; }
-        if (S[si] != '#') { del--; }
+        if (S[si] == '#') {
+          del++;
+        }
+        if (S[si] != '#') {
+          del--;
+        }
         si--;
       }
       del = 0;
       while (ti >= 0 && (T[ti] == '#' || del > 0)) {
-        if (T[ti] == '#') { del++; }
-        if (T[ti] != '#') { del--; }
+        if (T[ti] == '#') {
+          del++;
+        }
+        if (T[ti] != '#') {
+          del--;
+        }
         ti--;
       }
       if (ti >= 0 && si >= 0 && T[ti] != S[si])

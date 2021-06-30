@@ -14,7 +14,7 @@ private:
   }
 
 public:
-  int findNumbers(vector<int>& nums) {
+  int findNumbers(vector<int> &nums) {
     int cnt = 0;
     for (int v : nums) {
       if (n_digits(v) % 2 == 0)

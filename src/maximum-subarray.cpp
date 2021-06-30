@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int maxSubArray(vector<int>& nums) {
+  int maxSubArray(vector<int> &nums) {
     int N = nums.size();
     int curr = nums[0];
     int best = nums[0];

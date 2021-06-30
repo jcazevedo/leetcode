@@ -4,9 +4,8 @@ using namespace std;
 
 class Solution {
 private:
-  void fill(int i, int j, vector<vector<char>>& grid) {
-    if (i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size() ||
-        grid[i][j] == '0')
+  void fill(int i, int j, vector<vector<char>> &grid) {
+    if (i < 0 || i >= grid.size() || j < 0 || j >= grid[0].size() || grid[i][j] == '0')
       return;
     grid[i][j] = '0';
     fill(i + 1, j, grid);
@@ -16,7 +15,7 @@ private:
   }
 
 public:
-  int numIslands(vector<vector<char>>& grid) {
+  int numIslands(vector<vector<char>> &grid) {
     if (grid.size() == 0 || grid[0].size() == 0)
       return 0;
     int c = 0;

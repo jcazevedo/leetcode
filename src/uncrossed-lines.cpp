@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int maxUncrossedLines(vector<int>& A, vector<int>& B) {
+  int maxUncrossedLines(vector<int> &A, vector<int> &B) {
     int NA = A.size();
     int NB = B.size();
     vector<vector<int>> dp(NA + 1, vector<int>(NB + 1));

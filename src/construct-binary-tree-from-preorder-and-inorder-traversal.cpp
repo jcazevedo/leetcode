@@ -4,18 +4,18 @@ using namespace std;
 
 struct TreeNode {
   int val;
-  TreeNode* left;
-  TreeNode* right;
+  TreeNode *left;
+  TreeNode *right;
 
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
 class Solution {
 public:
-  TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
+  TreeNode *buildTree(vector<int> &preorder, vector<int> &inorder) {
     if (preorder.empty() && inorder.empty())
       return nullptr;
-    TreeNode* root = new TreeNode(preorder[0]);
+    TreeNode *root = new TreeNode(preorder[0]);
     vector<int> il, ir, pl, pr;
     bool l = true;
     int j = 1;

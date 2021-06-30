@@ -18,7 +18,8 @@ public:
 
     for (int i = N - 1; i >= 0; --i) {
       ways[i] = 0;
-      if (s[i] == '0') continue;
+      if (s[i] == '0')
+        continue;
       long long curr = 0;
       for (int j = i; j < N; ++j) {
         curr = curr * 10 + s[j] - '0';

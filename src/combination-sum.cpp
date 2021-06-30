@@ -8,7 +8,7 @@ class Solution {
 private:
   map<pair<int, int>, set<vector<int>>> cache;
 
-  void go(int target, int maxC, const vector<int>& candidates) {
+  void go(int target, int maxC, const vector<int> &candidates) {
     if (target <= 0)
       return;
     if (cache.count({target, maxC}) == 0) {
@@ -30,7 +30,7 @@ private:
   }
 
 public:
-  vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
+  vector<vector<int>> combinationSum(vector<int> &candidates, int target) {
     cache.clear();
     go(target, candidates.size() - 1, candidates);
     vector<vector<int>> res;

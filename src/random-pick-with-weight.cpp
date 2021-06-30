@@ -7,7 +7,7 @@ private:
   vector<int> values;
 
 public:
-  Solution(vector<int>& w) {
+  Solution(vector<int> &w) {
     srand(time(NULL));
     int N = w.size();
     values.assign(N, 0);
@@ -18,8 +18,5 @@ public:
     }
   }
 
-  int pickIndex() {
-    return upper_bound(values.begin(), values.end(), rand() % values.back()) -
-           values.begin();
-  }
+  int pickIndex() { return upper_bound(values.begin(), values.end(), rand() % values.back()) - values.begin(); }
 };

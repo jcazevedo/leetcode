@@ -1,8 +1,6 @@
 class Solution {
 private:
-  bool isBadVersion(int n) {
-    return true;
-  }
+  bool isBadVersion(int n) { return true; }
 
 public:
   int firstBadVersion(int n) {

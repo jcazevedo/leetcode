@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 private:
-  bool kmp(const string& W, const string& S) {
+  bool kmp(const string &W, const string &S) {
     int M = W.size(), N = S.size();
     vector<int> T(M, 0);
     int len = 0;

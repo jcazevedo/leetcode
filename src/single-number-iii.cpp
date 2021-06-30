@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  vector<int> singleNumber(vector<int>& nums) {
+  vector<int> singleNumber(vector<int> &nums) {
     int v = 0, L = nums.size();
     for (int i = 0; i < L; i++)
       v ^= nums[i];

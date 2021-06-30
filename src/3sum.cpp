@@ -4,10 +4,10 @@ using namespace std;
 
 class Solution {
 public:
-  vector<vector<int>> threeSum(vector<int>& nums) {
+  vector<vector<int>> threeSum(vector<int> &nums) {
     int N = nums.size();
     sort(nums.begin(), nums.end());
-    vector<vector<int> > res;
+    vector<vector<int>> res;
     for (int i = 0; i < N; i++) {
       if (i == 0 || nums[i] != nums[i - 1]) {
         int l = i + 1;
@@ -37,4 +37,3 @@ public:
     return res;
   }
 };
-

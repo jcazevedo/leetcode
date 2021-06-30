@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  void setZeroes(vector<vector<int>>& matrix) {
+  void setZeroes(vector<vector<int>> &matrix) {
     int H = matrix.size();
     if (H == 0)
       return;

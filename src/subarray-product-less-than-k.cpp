@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int numSubarrayProductLessThanK(vector<int>& nums, int k) {
+  int numSubarrayProductLessThanK(vector<int> &nums, int k) {
     int N = nums.size();
     int l = 0;
     int product = 1;

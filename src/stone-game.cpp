@@ -8,7 +8,7 @@ using namespace std;
 
 class Solution {
 private:
-  // dp[i][j][p] refers to the score of the first player in case there are piles between i and j available and its
+  // dp[i][j][p] refers to the score of the first player in case there are piles between i and j available and it's
   // player p turn to play.
   int dp[MAXN][MAXN][2];
 

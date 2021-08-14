@@ -14,10 +14,6 @@ private:
       return 0;
     if (dp[l][r][k] != -1)
       return dp[l][r][k];
-    while (l + 1 <= r && boxes[l] == boxes[l + 1]) {
-      l++;
-      k++;
-    }
     int ans = go(l + 1, r, 0, boxes) + (k + 1) * (k + 1);
     for (int j = l + 1; j <= r; ++j) {
       if (boxes[l] == boxes[j])

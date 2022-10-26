@@ -3,16 +3,14 @@
 using namespace std;
 
 class Solution {
-public:
-  vector<int> spiralOrder(vector<vector<int>> &matrix) {
+ public:
+  vector<int> spiralOrder(vector<vector<int>>& matrix) {
     int H = matrix.size();
-    if (H == 0)
-      return {};
+    if (H == 0) return {};
     int W = matrix[0].size();
     vector<pair<int, int>> dirs = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
     vector<int> res;
-    for (int i = 0; i < W; ++i)
-      res.push_back(matrix[0][i]);
+    for (int i = 0; i < W; ++i) res.push_back(matrix[0][i]);
     int cnt = W;
     int i = 0, j = W - 1, dir = 1, curr = 1;
     bool in_height = true;

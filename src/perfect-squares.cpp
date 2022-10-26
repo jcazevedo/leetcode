@@ -3,14 +3,13 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   vector<int> cache;
 
-public:
+ public:
   int numSquares(int n) {
-    if (cache.size() == 0)
-      cache.push_back(0);
-    while (cache.size() <= n) {
+    if (cache.size() == 0) cache.push_back(0);
+    while ((int)cache.size() <= n) {
       int c = cache.size();
       int best = c;
       for (int i = 1; i * i <= c; i++) {

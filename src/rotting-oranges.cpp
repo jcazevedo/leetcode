@@ -3,14 +3,14 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   int H;
   int W;
   vector<vector<int>> dists;
   vector<vector<bool>> visited;
   int dirs[4][2] = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
 
-  void dfs(vector<vector<int>> &grid, int i, int j, int s) {
+  void dfs(vector<vector<int>>& grid, int i, int j, int s) {
     for (int d = 0; d < 4; ++d) {
       int ni = i + dirs[d][0];
       int nj = j + dirs[d][1];
@@ -23,8 +23,8 @@ private:
     }
   }
 
-public:
-  int orangesRotting(vector<vector<int>> &grid) {
+ public:
+  int orangesRotting(vector<vector<int>>& grid) {
     H = grid.size();
     W = grid[0].size();
     dists.clear();
@@ -44,8 +44,7 @@ public:
     for (int i = 0; i < H; ++i) {
       for (int j = 0; j < W; ++j) {
         if (grid[i][j] == 1) {
-          if (dists[i][j] == -1)
-            return -1;
+          if (dists[i][j] == -1) return -1;
           ans = max(ans, dists[i][j]);
         }
       }

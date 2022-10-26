@@ -4,27 +4,23 @@
 using namespace std;
 
 class FirstUnique {
-private:
+ private:
   unordered_map<int, int> cnt;
   queue<int> q;
 
-public:
-  FirstUnique(vector<int> &nums) {
-    for (int num : nums)
-      add(num);
+ public:
+  FirstUnique(vector<int>& nums) {
+    for (int num : nums) add(num);
   }
 
   int showFirstUnique() {
-    while (!q.empty() && cnt[q.front()] > 1)
-      q.pop();
-    if (q.empty())
-      return -1;
+    while (!q.empty() && cnt[q.front()] > 1) q.pop();
+    if (q.empty()) return -1;
     return q.front();
   }
 
   void add(int value) {
-    if (cnt[value] == 0)
-      q.push(value);
+    if (cnt[value] == 0) q.push(value);
     cnt[value]++;
   }
 };

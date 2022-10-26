@@ -3,8 +3,8 @@
 using namespace std;
 
 class Solution {
-public:
-  vector<int> sortedSquares(vector<int> &A) {
+ public:
+  vector<int> sortedSquares(vector<int>& A) {
     int N = A.size();
     vector<int> res(N);
     int l = 0;

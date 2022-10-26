@@ -1,11 +1,12 @@
+#include <cmath>
 #include <queue>
 #include <vector>
 
 using namespace std;
 
 class Solution {
-public:
-  int lastStoneWeight(vector<int> &stones) {
+ public:
+  int lastStoneWeight(vector<int>& stones) {
     priority_queue<int> pq;
     for (int stone : stones) {
       pq.push(stone);

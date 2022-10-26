@@ -3,8 +3,8 @@
 using namespace std;
 
 class Solution {
-public:
-  int singleNonDuplicate(vector<int> &nums) {
+ public:
+  int singleNonDuplicate(vector<int>& nums) {
     int N = nums.size();
     int lo = 0, hi = N - 1;
     while (lo <= hi) {

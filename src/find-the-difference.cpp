@@ -4,16 +4,13 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   char findTheDifference(string s, string t) {
     unordered_map<char, int> cnt;
-    for (char c : t)
-      cnt[c]++;
-    for (char c : s)
-      cnt[c]--;
+    for (char c : t) cnt[c]++;
+    for (char c : s) cnt[c]--;
     for (auto itr = cnt.begin(); itr != cnt.end(); ++itr) {
-      if (itr->second != 0)
-        return itr->first;
+      if (itr->second != 0) return itr->first;
     }
     return -1;
   }

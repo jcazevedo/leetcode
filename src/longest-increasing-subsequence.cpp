@@ -4,8 +4,8 @@
 using namespace std;
 
 class Solution {
-public:
-  int lengthOfLIS(vector<int> &nums) {
+ public:
+  int lengthOfLIS(vector<int>& nums) {
     int N = nums.size();
     vector<int> p(N);
     vector<int> m(N + 1);

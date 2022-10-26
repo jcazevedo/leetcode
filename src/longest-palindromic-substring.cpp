@@ -1,3 +1,4 @@
+#include <cstring>
 #include <string>
 
 using namespace std;
@@ -5,10 +6,10 @@ using namespace std;
 #define MAXN 1000
 
 class Solution {
-private:
+ private:
   int dp[MAXN][MAXN];
 
-  int go(string &s, int l, int r) {
+  int go(string& s, int l, int r) {
     if (dp[l][r] == -1) {
       if (s[l] != s[r]) {
         dp[l][r] = 0;
@@ -29,10 +30,9 @@ private:
     return dp[l][r];
   }
 
-public:
+ public:
   string longestPalindrome(string s) {
-    if (s == "")
-      return s;
+    if (s == "") return s;
     memset(dp, -1, sizeof(dp));
     int N = s.size();
     int best = 0, l = -1, si = -1;

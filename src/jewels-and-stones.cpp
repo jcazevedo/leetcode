@@ -4,7 +4,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int numJewelsInStones(string J, string S) {
     unordered_set<char> jewels;
     for (char ch : J) {

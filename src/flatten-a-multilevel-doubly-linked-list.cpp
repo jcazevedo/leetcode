@@ -1,28 +1,25 @@
 class Node {
-public:
+ public:
   int val;
-  Node *prev;
-  Node *next;
-  Node *child;
+  Node* prev;
+  Node* next;
+  Node* child;
 };
 
 class Solution {
-public:
-  Node *flatten(Node *head) {
-    if (head == nullptr)
-      return head;
-    Node *curr = head;
+ public:
+  Node* flatten(Node* head) {
+    if (head == nullptr) return head;
+    Node* curr = head;
     while (curr != nullptr) {
       if (curr->child) {
-        Node *next = curr->next;
-        Node *child = flatten(curr->child);
+        Node* next = curr->next;
+        Node* child = flatten(curr->child);
         child->prev = curr;
         curr->next = child;
-        while (child->next)
-          child = child->next;
+        while (child->next) child = child->next;
         child->next = next;
-        if (next)
-          next->prev = child;
+        if (next) next->prev = child;
         curr->child = nullptr;
       }
       curr = curr->next;

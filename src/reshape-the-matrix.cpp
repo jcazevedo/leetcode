@@ -3,12 +3,11 @@
 using namespace std;
 
 class Solution {
-public:
-  vector<vector<int>> matrixReshape(vector<vector<int>> &mat, int r, int c) {
+ public:
+  vector<vector<int>> matrixReshape(vector<vector<int>>& mat, int r, int c) {
     int H = mat.size();
     int W = mat[0].size();
-    if (r * c != H * W)
-      return mat;
+    if (r * c != H * W) return mat;
     vector<vector<int>> ans(r, vector<int>(c, 0));
     int ni = 0, nj = 0;
     for (int i = 0; i < H; ++i) {

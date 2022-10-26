@@ -3,10 +3,9 @@
 using namespace std;
 
 class Solution {
-public:
-  int findPeakElement(vector<int> &nums) {
-    if (nums.size() <= 1)
-      return 0;
+ public:
+  int findPeakElement(vector<int>& nums) {
+    if (nums.size() <= 1) return 0;
     int m = 0, l = 0, h = nums.size() - 1;
 
     while (l < h) {

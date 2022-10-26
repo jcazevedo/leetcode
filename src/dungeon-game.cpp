@@ -1,17 +1,17 @@
+#include <climits>
 #include <queue>
 #include <vector>
 
 using namespace std;
 
 class Solution {
-private:
-  bool good(int health, vector<vector<int>> &dungeon) {
+ private:
+  bool good(int health, vector<vector<int>>& dungeon) {
     int M = dungeon.size();
     int N = dungeon[0].size();
     vector<vector<int>> dist(M, vector<int>(N, INT_MIN));
     int start = health + dungeon[0][0];
-    if (start <= 0)
-      return false;
+    if (start <= 0) return false;
     dist[0][0] = start;
     queue<pair<int, int>> q;
     q.push({0, 0});
@@ -38,8 +38,8 @@ private:
     return dist[M - 1][N - 1] > 0;
   }
 
-public:
-  int calculateMinimumHP(vector<vector<int>> &dungeon) {
+ public:
+  int calculateMinimumHP(vector<vector<int>>& dungeon) {
     int lo = 1, hi = INT_MAX;
     while (lo <= hi) {
       int mid = lo + (hi - lo) / 2;

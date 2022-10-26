@@ -4,11 +4,10 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int longestPalindrome(string s) {
     unordered_map<char, int> cnt;
-    for (char ch : s)
-      cnt[ch]++;
+    for (char ch : s) cnt[ch]++;
     int ans = 0;
     bool used_one = false;
     for (auto itr = cnt.begin(); itr != cnt.end(); ++itr) {

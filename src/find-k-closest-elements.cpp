@@ -4,8 +4,8 @@
 using namespace std;
 
 class Solution {
-public:
-  vector<int> findClosestElements(vector<int> &arr, int k, int x) {
+ public:
+  vector<int> findClosestElements(vector<int>& arr, int k, int x) {
     int N = arr.size();
     int lo = 0, hi = N;
     while (lo < hi) {
@@ -16,14 +16,12 @@ public:
         lo = mid + 1;
       }
     }
-    if (lo >= N)
-      --lo;
-    if (arr[lo] != x && lo > 0 && abs(x - arr[lo - 1]) <= abs(x - arr[lo]))
-      --lo;
+    if (lo >= N) --lo;
+    if (arr[lo] != x && lo > 0 && abs(x - arr[lo - 1]) <= abs(x - arr[lo])) --lo;
     vector<int> ans = {arr[lo]};
     int left = lo - 1;
     int right = lo + 1;
-    while (ans.size() < k) {
+    while ((int)ans.size() < k) {
       if (left < 0 && right < N) {
         ans.push_back(arr[right]);
         right++;

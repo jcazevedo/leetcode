@@ -3,8 +3,8 @@
 using namespace std;
 
 class Solution {
-public:
-  void merge(vector<int> &nums1, int m, vector<int> &nums2, int n) {
+ public:
+  void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
     int idx = m + n - 1, l = m - 1, r = n - 1;
     while (idx >= 0) {
       if (r < 0)

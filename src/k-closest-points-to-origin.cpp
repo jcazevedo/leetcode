@@ -4,8 +4,8 @@
 using namespace std;
 
 class Solution {
-public:
-  vector<vector<int>> kClosest(vector<vector<int>> &points, int K) {
+ public:
+  vector<vector<int>> kClosest(vector<vector<int>>& points, int K) {
     priority_queue<pair<long long, vector<int>>, vector<pair<long long, vector<int>>>,
                    greater<pair<long long, vector<int>>>>
         pq;
@@ -14,7 +14,7 @@ public:
       long long dist = point[0] * point[0] + point[1] * point[1];
       pq.emplace(dist, point);
     }
-    while (!pq.empty() && res.size() < K) {
+    while (!pq.empty() && (int)res.size() < K) {
       res.push_back(pq.top().second);
       pq.pop();
     }

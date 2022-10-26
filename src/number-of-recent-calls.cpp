@@ -3,10 +3,10 @@
 using namespace std;
 
 class RecentCounter {
-private:
+ private:
   vector<int> pings;
 
-public:
+ public:
   RecentCounter() {}
 
   int ping(int t) {

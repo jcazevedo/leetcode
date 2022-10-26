@@ -4,16 +4,15 @@
 using namespace std;
 
 class Solution {
-public:
-  int maxSumSubmatrix(vector<vector<int>> &matrix, int max_sum) {
+ public:
+  int maxSumSubmatrix(vector<vector<int>>& matrix, int max_sum) {
     int H = matrix.size();
     int W = matrix[0].size();
     vector<vector<int>> prefix = vector<vector<int>>(H, vector<int>(W, 0));
     for (int i = 0; i < H; ++i) {
       for (int j = 0; j < W; ++j) {
         prefix[i][j] = matrix[i][j];
-        if (j > 0)
-          prefix[i][j] += prefix[i][j - 1];
+        if (j > 0) prefix[i][j] += prefix[i][j - 1];
       }
     }
     bool is_set = false;
@@ -24,8 +23,7 @@ public:
         for (int k = 0; k < H; ++k) {
           int row_sum = 0;
           row_sum = prefix[k][j];
-          if (i > 0)
-            row_sum -= prefix[k][i - 1];
+          if (i > 0) row_sum -= prefix[k][i - 1];
           v.push_back(row_sum);
         }
         set<int> cum_set;

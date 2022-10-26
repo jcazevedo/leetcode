@@ -5,7 +5,7 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   map<char, string> m = {{'2', "abc"}, {'3', "def"},  {'4', "ghi"}, {'5', "jkl"},
                          {'6', "mno"}, {'7', "pqrs"}, {'8', "tuv"}, {'9', "wxyz"}};
 
@@ -17,18 +17,17 @@ private:
     }
     vector<string> other = aux(digits.substr(1));
     string t = m[digits[0]];
-    for (int i = 0; i < t.size(); i++) {
-      for (int j = 0; j < other.size(); j++) {
+    for (int i = 0; i < (int)t.size(); i++) {
+      for (int j = 0; j < (int)other.size(); j++) {
         res.push_back(t[i] + other[j]);
       }
     }
     return res;
   }
 
-public:
+ public:
   vector<string> letterCombinations(string digits) {
-    if (digits.empty())
-      return vector<string>();
+    if (digits.empty()) return vector<string>();
     return aux(digits);
   }
 };

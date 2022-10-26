@@ -4,8 +4,8 @@
 using namespace std;
 
 class Solution {
-private:
-  bool bfs(int i, vector<int> &colors, vector<vector<int>> &graph) {
+ private:
+  bool bfs(int i, vector<int>& colors, vector<vector<int>>& graph) {
     colors[i] = 1;
     queue<int> q;
     q.push(i);
@@ -24,15 +24,13 @@ private:
     return true;
   }
 
-public:
-  bool isBipartite(vector<vector<int>> &graph) {
+ public:
+  bool isBipartite(vector<vector<int>>& graph) {
     int N = graph.size();
     vector<int> colors(N, -1);
     for (int i = 0; i < N; ++i) {
-      if (colors[i] != -1)
-        continue;
-      if (!bfs(i, colors, graph))
-        return false;
+      if (colors[i] != -1) continue;
+      if (!bfs(i, colors, graph)) return false;
     }
     return true;
   }

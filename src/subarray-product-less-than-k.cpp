@@ -3,8 +3,8 @@
 using namespace std;
 
 class Solution {
-public:
-  int numSubarrayProductLessThanK(vector<int> &nums, int k) {
+ public:
+  int numSubarrayProductLessThanK(vector<int>& nums, int k) {
     int N = nums.size();
     int l = 0;
     int product = 1;
@@ -15,8 +15,7 @@ public:
         product /= nums[l];
         l++;
       }
-      if (l <= r)
-        ans += (r - l) + 1;
+      if (l <= r) ans += (r - l) + 1;
     }
     return ans;
   }

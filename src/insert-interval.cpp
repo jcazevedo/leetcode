@@ -3,8 +3,8 @@
 using namespace std;
 
 class Solution {
-public:
-  vector<vector<int>> insert(vector<vector<int>> &intervals, vector<int> &newInterval) {
+ public:
+  vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
     vector<vector<int>> result;
     for (vector<int> interval : intervals) {
       if (interval[1] < newInterval[0]) {

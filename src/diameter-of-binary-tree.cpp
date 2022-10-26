@@ -4,18 +4,18 @@ using namespace std;
 
 struct TreeNode {
   int val;
-  TreeNode *left;
-  TreeNode *right;
+  TreeNode* left;
+  TreeNode* right;
 
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
 class Solution {
-private:
-  map<TreeNode *, int> pathThrough;
-  map<TreeNode *, int> pathEnding;
+ private:
+  map<TreeNode*, int> pathThrough;
+  map<TreeNode*, int> pathEnding;
 
-  int go(TreeNode *root) {
+  int go(TreeNode* root) {
     if (root == nullptr) {
       return 0;
     }
@@ -28,8 +28,8 @@ private:
     return best;
   }
 
-public:
-  int diameterOfBinaryTree(TreeNode *root) {
+ public:
+  int diameterOfBinaryTree(TreeNode* root) {
     pathThrough.clear();
     pathEnding.clear();
     pathThrough[nullptr] = 0;

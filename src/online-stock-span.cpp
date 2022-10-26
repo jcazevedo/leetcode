@@ -3,10 +3,10 @@
 using namespace std;
 
 class StockSpanner {
-private:
+ private:
   stack<pair<int, int>> s;
 
-public:
+ public:
   StockSpanner() {}
 
   int next(int price) {

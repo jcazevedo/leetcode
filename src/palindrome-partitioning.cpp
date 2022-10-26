@@ -5,11 +5,11 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   unordered_map<int, vector<vector<string>>> cache;
   string _s;
 
-  bool is_palindrome(const string &s) {
+  bool is_palindrome(const string& s) {
     int N = s.size();
     for (int i = 0; i < N / 2; ++i) {
       if (s[i] != s[N - i - 1]) {
@@ -20,7 +20,7 @@ private:
   }
 
   vector<vector<string>> go(int idx) {
-    if (idx >= _s.size()) {
+    if (idx >= (int)_s.size()) {
       return {};
     }
     if (cache.count(idx) == 0) {
@@ -47,7 +47,7 @@ private:
     return cache[idx];
   }
 
-public:
+ public:
   vector<vector<string>> partition(string s) {
     cache.clear();
     _s = s;

@@ -5,8 +5,8 @@
 using namespace std;
 
 class Solution {
-public:
-  int kthSmallest(vector<vector<int>> &matrix, int k) {
+ public:
+  int kthSmallest(vector<vector<int>>& matrix, int k) {
     int H = matrix.size();
     int W = matrix[0].size();
     set<pair<int, int>> included;

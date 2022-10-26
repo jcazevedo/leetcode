@@ -3,8 +3,8 @@
 using namespace std;
 
 class Solution {
-public:
-  int numPairsDivisibleBy60(vector<int> &time) {
+ public:
+  int numPairsDivisibleBy60(vector<int>& time) {
     vector<int> cnt = vector<int>(60, 0);
     int ans = 0;
     for (int t : time) {

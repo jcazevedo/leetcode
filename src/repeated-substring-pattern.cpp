@@ -4,8 +4,8 @@
 using namespace std;
 
 class Solution {
-private:
-  bool kmp(const string &W, const string &S) {
+ private:
+  bool kmp(const string& W, const string& S) {
     int M = W.size(), N = S.size();
     vector<int> T(M, 0);
     int len = 0;
@@ -30,8 +30,7 @@ private:
         j++;
         i++;
       }
-      if (j == M)
-        return true;
+      if (j == M) return true;
       if (W[j] != S[i]) {
         if (j != 0)
           j = T[j - 1];
@@ -42,7 +41,7 @@ private:
     return false;
   }
 
-public:
+ public:
   bool repeatedSubstringPattern(string s) {
     string res = (s + s).substr(1, s.size() * 2 - 2);
     return kmp(s, res);

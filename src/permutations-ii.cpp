@@ -4,8 +4,8 @@
 using namespace std;
 
 class Solution {
-public:
-  vector<vector<int>> permuteUnique(vector<int> &nums) {
+ public:
+  vector<vector<int>> permuteUnique(vector<int>& nums) {
     sort(nums.begin(), nums.end());
     vector<vector<int>> ans;
     do {

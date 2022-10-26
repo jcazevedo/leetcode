@@ -3,10 +3,10 @@
 using namespace std;
 
 class MinStack {
-private:
+ private:
   stack<pair<int, int>> inner;
 
-public:
+ public:
   /** initialize your data structure here. */
   MinStack() {}
 

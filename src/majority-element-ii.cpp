@@ -3,12 +3,11 @@
 using namespace std;
 
 class Solution {
-public:
-  vector<int> majorityElement(vector<int> &nums) {
+ public:
+  vector<int> majorityElement(vector<int>& nums) {
     vector<int> ans;
     int N = nums.size();
-    if (N == 0)
-      return ans;
+    if (N == 0) return ans;
     int v1 = nums[0], v2 = nums[0], cnt1 = 1, cnt2 = 0;
     for (int i = 1; i < N; ++i) {
       if (nums[i] == v1) {
@@ -33,10 +32,8 @@ public:
       else if (nums[i] == v2)
         cnt2++;
     }
-    if (cnt1 > N / 3)
-      ans.push_back(v1);
-    if (cnt2 > N / 3)
-      ans.push_back(v2);
+    if (cnt1 > N / 3) ans.push_back(v1);
+    if (cnt2 > N / 3) ans.push_back(v2);
     return ans;
   }
 };

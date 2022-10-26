@@ -1,13 +1,15 @@
+#include <algorithm>
+#include <ctime>
 #include <vector>
 
 using namespace std;
 
 class Solution {
-private:
+ private:
   vector<int> values;
 
-public:
-  Solution(vector<int> &w) {
+ public:
+  Solution(vector<int>& w) {
     srand(time(NULL));
     int N = w.size();
     values.assign(N, 0);

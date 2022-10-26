@@ -1,10 +1,11 @@
+#include <algorithm>
 #include <vector>
 
 using namespace std;
 
 class Solution {
-public:
-  vector<int> intersect(vector<int> &nums1, vector<int> &nums2) {
+ public:
+  vector<int> intersect(vector<int>& nums1, vector<int>& nums2) {
     vector<int> res;
     sort(nums1.begin(), nums1.end());
     sort(nums2.begin(), nums2.end());

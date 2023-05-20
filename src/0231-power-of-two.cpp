@@ -1,0 +1,11 @@
+// 231. Power of Two
+// https://leetcode.com/problems/power-of-two/
+
+class Solution {
+public:
+  bool isPowerOfTwo(int n) {
+    if (n < 0)
+      return false;
+    return __builtin_popcount(n) == 1;
+  }
+};

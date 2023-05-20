@@ -6,7 +6,7 @@ class Solution {
 private:
   vector<vector<int>> dp;
 
-  int go(int i, int j, vector<vector<int>> &grid) {
+  int go(int i, int j, vector<vector<int>>& grid) {
     if (dp[i][j] != -1)
       return dp[i][j];
     if (grid[i][j] == 1)
@@ -22,7 +22,7 @@ private:
   }
 
 public:
-  int uniquePathsWithObstacles(vector<vector<int>> &obstacleGrid) {
+  int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
     int H = obstacleGrid.size();
     int W = obstacleGrid[0].size();
     dp.assign(H, vector<int>(W, -1));

@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int rob(vector<int> &nums) {
+  int rob(vector<int>& nums) {
     int N = nums.size();
     if (N == 0)
       return 0;

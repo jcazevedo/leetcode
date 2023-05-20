@@ -1,5 +1,5 @@
 class Solution {
- private:
+private:
   long long reverse(int x) {
     long long res = 0;
     while (x) {
@@ -9,9 +9,10 @@ class Solution {
     return res;
   }
 
- public:
+public:
   bool isPalindrome(int x) {
-    if (x < 0) return false;
+    if (x < 0)
+      return false;
     return x == reverse(x);
   }
 };

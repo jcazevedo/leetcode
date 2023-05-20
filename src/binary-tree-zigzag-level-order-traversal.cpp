@@ -4,15 +4,15 @@ using namespace std;
 
 struct TreeNode {
   int val;
-  TreeNode *left;
-  TreeNode *right;
+  TreeNode* left;
+  TreeNode* right;
 
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 };
 
 class Solution {
 private:
-  vector<int> nodeToVal(const vector<TreeNode *> &v) {
+  vector<int> nodeToVal(const vector<TreeNode*>& v) {
     vector<int> res;
     int N = v.size();
     for (int i = 0; i < N; i++)
@@ -21,11 +21,11 @@ private:
   }
 
 public:
-  vector<vector<int>> zigzagLevelOrder(TreeNode *root) {
+  vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
     if (root == nullptr)
       return vector<vector<int>>();
     vector<vector<int>> res;
-    vector<TreeNode *> curr, next;
+    vector<TreeNode*> curr, next;
     bool left = false;
     curr.push_back(root);
     while (!curr.empty()) {
@@ -33,7 +33,7 @@ public:
       next.clear();
       int N = curr.size();
       for (int i = N - 1; i >= 0; i--) {
-        TreeNode *n = curr[i];
+        TreeNode* n = curr[i];
         if (left) {
           if (n->left != nullptr)
             next.push_back(n->left);

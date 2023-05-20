@@ -1,5 +1,5 @@
 class Solution {
- private:
+private:
   int product(int n) {
     int ans = 1;
 
@@ -22,6 +22,6 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int subtractProductAndSum(int n) { return product(n) - sum(n); }
 };

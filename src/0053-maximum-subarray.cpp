@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   int maxSubArray(vector<int>& nums) {
     int N = nums.size();
     int curr = nums[0];

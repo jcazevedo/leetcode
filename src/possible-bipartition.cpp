@@ -4,7 +4,7 @@
 using namespace std;
 
 class Solution {
- private:
+private:
   vector<int> colors;
   vector<vector<int>> graph;
 
@@ -27,7 +27,7 @@ class Solution {
     return true;
   }
 
- public:
+public:
   bool possibleBipartition(int N, vector<vector<int>>& dislikes) {
     colors.assign(N + 1, -1);
     graph.assign(N + 1, vector<int>());
@@ -36,8 +36,10 @@ class Solution {
       graph[edge[1]].push_back(edge[0]);
     }
     for (int i = 1; i <= N; ++i) {
-      if (colors[i] != -1) continue;
-      if (!bfs(i)) return false;
+      if (colors[i] != -1)
+        continue;
+      if (!bfs(i))
+        return false;
     }
     return true;
   }

@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   int getMaxLen(vector<int>& nums) {
     int ans = 0;
 
@@ -18,7 +18,8 @@ class Solution {
     else if (nums[0] < 0)
       longest_neg[0] = 1;
 
-    if (nums[0] > 0) ans = 1;
+    if (nums[0] > 0)
+      ans = 1;
 
     for (int i = 1; i < (int)nums.size(); ++i) {
       if (nums[i] > 0) {

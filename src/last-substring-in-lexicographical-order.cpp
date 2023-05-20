@@ -3,7 +3,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   string lastSubstring(string s) {
     int i = 0, k = 0, j = 1, N = s.size();
     while (j + k < N) {

@@ -9,7 +9,7 @@ private:
   int H, W;
   vector<vector<int>> dirs = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 
-  int fill(int h, int w, vector<vector<int>> &grid) {
+  int fill(int h, int w, vector<vector<int>>& grid) {
     if (h < 0 || h >= H || w < 0 || w >= W || visited[h][w] || grid[h][w] == 0)
       return 0;
     visited[h][w] = true;
@@ -23,7 +23,7 @@ private:
   }
 
 public:
-  int maxAreaOfIsland(vector<vector<int>> &grid) {
+  int maxAreaOfIsland(vector<vector<int>>& grid) {
     H = grid.size();
     if (H == 0)
       return 0;

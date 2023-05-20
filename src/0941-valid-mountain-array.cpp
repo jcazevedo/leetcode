@@ -6,14 +6,18 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   bool validMountainArray(vector<int>& A) {
     int N = A.size();
-    if (N < 3) return false;
+    if (N < 3)
+      return false;
     int i = 1;
-    while (i < N && A[i] > A[i - 1]) i++;
-    if (i < 2 || i == N) return false;
-    while (i < N && A[i] < A[i - 1]) i++;
+    while (i < N && A[i] > A[i - 1])
+      i++;
+    if (i < 2 || i == N)
+      return false;
+    while (i < N && A[i] < A[i - 1])
+      i++;
     return i == N;
   }
 };

@@ -17,12 +17,14 @@ struct TrieNode {
 };
 
 class WordDictionary {
- private:
+private:
   TrieNode* root;
 
   bool search_aux(TrieNode* curr, const string& word, int i) {
-    if (curr == nullptr) return false;
-    if (i == (int)word.size()) return curr->word_exists;
+    if (curr == nullptr)
+      return false;
+    if (i == (int)word.size())
+      return curr->word_exists;
     if (word[i] == '.') {
       bool good = false;
       for (char ch = 'a'; ch <= 'z' && !good; ++ch) {
@@ -34,14 +36,15 @@ class WordDictionary {
     return search_aux(curr->next[word[i] - 'a'], word, i + 1);
   }
 
- public:
+public:
   WordDictionary() { root = new TrieNode(); }
 
   void addWord(string word) {
     TrieNode* curr = root;
     for (char ch : word) {
       int idx = ch - 'a';
-      if (curr->next[idx] == nullptr) curr->next[idx] = new TrieNode();
+      if (curr->next[idx] == nullptr)
+        curr->next[idx] = new TrieNode();
       curr = curr->next[idx];
     }
     curr->word_exists = true;

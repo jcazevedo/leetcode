@@ -11,7 +11,7 @@ struct TreeNode {
 };
 
 class Solution {
- private:
+private:
   void insert_into_bst_aux(TreeNode* curr, int val) {
     if (val > curr->val) {
       if (curr->right == nullptr)
@@ -26,9 +26,10 @@ class Solution {
     }
   }
 
- public:
+public:
   TreeNode* insertIntoBST(TreeNode* root, int val) {
-    if (root == nullptr) return new TreeNode(val);
+    if (root == nullptr)
+      return new TreeNode(val);
     insert_into_bst_aux(root, val);
     return root;
   }

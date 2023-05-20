@@ -13,10 +13,10 @@ struct ListNode {
 };
 
 class Solution {
- private:
+private:
   ListNode* list;
 
- public:
+public:
   Solution(ListNode* head) {
     list = head;
     srand(time(NULL));

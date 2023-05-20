@@ -5,7 +5,7 @@
 using namespace std;
 
 class Solution {
- private:
+private:
   unordered_map<int, vector<vector<string>>> cache;
   string _s;
 
@@ -47,7 +47,7 @@ class Solution {
     return cache[idx];
   }
 
- public:
+public:
   vector<vector<string>> partition(string s) {
     cache.clear();
     _s = s;

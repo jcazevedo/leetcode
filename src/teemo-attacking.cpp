@@ -3,7 +3,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   int findPoisonedDuration(vector<int>& timeSeries, int duration) {
     int ans = 0;
     int start = -1, end = -1;

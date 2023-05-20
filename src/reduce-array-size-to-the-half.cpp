@@ -5,7 +5,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   int minSetSize(vector<int>& arr) {
     map<int, int> cnt;
     for (int v : arr) {

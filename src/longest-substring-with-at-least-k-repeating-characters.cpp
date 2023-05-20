@@ -6,14 +6,17 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   int longestSubstring(string s, int k) {
     int L = s.size();
-    if (k > L) return 0;
+    if (k > L)
+      return 0;
     unordered_map<char, int> cnt;
-    for (int i = 0; i < L; ++i) cnt[s[i]]++;
+    for (int i = 0; i < L; ++i)
+      cnt[s[i]]++;
     for (int i = 0; i < L; ++i) {
-      if (cnt[s[i]] < k) return max(longestSubstring(s.substr(0, i), k), longestSubstring(s.substr(i + 1), k));
+      if (cnt[s[i]] < k)
+        return max(longestSubstring(s.substr(0, i), k), longestSubstring(s.substr(i + 1), k));
     }
     return L;
   }

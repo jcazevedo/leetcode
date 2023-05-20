@@ -7,7 +7,7 @@ class Solution {
 private:
   vector<vector<int>> cache;
 
-  int go(int i, int j, vector<int> &nums) {
+  int go(int i, int j, vector<int>& nums) {
     if (cache[i][j] == -1) {
       cache[i][j] = 0;
       if (j - i > 1) {
@@ -20,7 +20,7 @@ private:
   }
 
 public:
-  int maxCoins(vector<int> &nums) {
+  int maxCoins(vector<int>& nums) {
     vector<int> padded = {1};
     for (int num : nums)
       padded.push_back(num);

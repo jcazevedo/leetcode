@@ -3,12 +3,13 @@
 using namespace std;
 
 class Solution {
- private:
+private:
   void aux(vector<int>& nums, vector<bool>& include, int N, vector<vector<int>>& res) {
     if (N == (int)nums.size()) {
       vector<int> n;
       for (int i = 0; i < N; i++) {
-        if (include[i]) n.push_back(nums[i]);
+        if (include[i])
+          n.push_back(nums[i]);
       }
       res.push_back(n);
     } else {
@@ -19,7 +20,7 @@ class Solution {
     }
   }
 
- public:
+public:
   vector<vector<int>> subsets(vector<int>& nums) {
     vector<bool> include;
     include.assign(nums.size(), false);

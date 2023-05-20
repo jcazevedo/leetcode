@@ -6,14 +6,15 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   int maxScoreSightseeingPair(vector<int>& values) {
     int ans = 0;
 
     int best = values[0];
     for (int i = 1; i < (int)values.size(); ++i) {
       ans = max(ans, best + values[i] - i);
-      if (values[i] + i > best) best = values[i] + i;
+      if (values[i] + i > best)
+        best = values[i] + i;
     }
 
     return ans;

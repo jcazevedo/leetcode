@@ -7,7 +7,7 @@ using namespace std;
 
 class Solution {
 public:
-  bool canReorderDoubled(vector<int> &arr) {
+  bool canReorderDoubled(vector<int>& arr) {
     int N = arr.size();
     sort(arr.begin(), arr.end());
     unordered_map<int, set<int>> idxs;

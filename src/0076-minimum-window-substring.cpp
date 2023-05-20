@@ -8,17 +8,20 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   string minWindow(string s, string t) {
     unordered_map<char, int> target;
-    for (char ch : t) target[ch]++;
+    for (char ch : t)
+      target[ch]++;
     unordered_map<char, int> cnt;
     int N = s.size();
     string best = "";
     int left = 0, good = 0, len = INT_MAX;
     for (int i = 0; i < N; ++i) {
-      if (target[s[i]] == 0) continue;
-      if (cnt[s[i]] < target[s[i]]) good++;
+      if (target[s[i]] == 0)
+        continue;
+      if (cnt[s[i]] < target[s[i]])
+        good++;
       cnt[s[i]]++;
       if (good == (int)t.size()) {
         while (target[s[left]] == 0 || cnt[s[left]] > target[s[left]]) {

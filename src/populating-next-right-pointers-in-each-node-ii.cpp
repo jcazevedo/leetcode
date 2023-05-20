@@ -1,5 +1,5 @@
 class Node {
- public:
+public:
   int val;
   Node* left;
   Node* right;
@@ -13,7 +13,7 @@ class Node {
 };
 
 class Solution {
- public:
+public:
   Node* connect(Node* root) {
     Node* node = root;
     while (node != nullptr) {

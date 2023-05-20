@@ -5,7 +5,7 @@
 using namespace std;
 
 class CombinationIterator {
- private:
+private:
   vector<string> combinations;
   int idx;
 
@@ -14,18 +14,20 @@ class CombinationIterator {
       if (n_set == cnt) {
         string ans = "";
         for (size_t i = 0; i < characters.size(); ++i) {
-          if (curr & (1 << i)) ans += characters[characters.size() - i - 1];
+          if (curr & (1 << i))
+            ans += characters[characters.size() - i - 1];
         }
         reverse(ans.begin(), ans.end());
         combinations.push_back(ans);
       }
       return;
     }
-    if (n_set < cnt) dfs(characters, idx + 1, (curr << 1) + 1, n_set + 1, cnt);
+    if (n_set < cnt)
+      dfs(characters, idx + 1, (curr << 1) + 1, n_set + 1, cnt);
     dfs(characters, idx + 1, curr << 1, n_set, cnt);
   }
 
- public:
+public:
   CombinationIterator(string characters, int combinationLength) {
     dfs(characters, 0, 0, 0, combinationLength);
     idx = 0;

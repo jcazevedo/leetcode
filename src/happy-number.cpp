@@ -3,11 +3,12 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   bool isHappy(int n) {
     set<int> visited;
     while (true) {
-      if (visited.find(n) != visited.end()) return false;
+      if (visited.find(n) != visited.end())
+        return false;
       visited.insert(n);
       int next = 0;
       while (n) {
@@ -15,7 +16,8 @@ class Solution {
         next += d * d;
         n /= 10;
       }
-      if (next == 1) return true;
+      if (next == 1)
+        return true;
       n = next;
     }
   }

@@ -18,9 +18,10 @@ struct TreeNode {
 };
 
 class Solution {
- public:
+public:
   TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
-    if (inorder.empty() && postorder.empty()) return nullptr;
+    if (inorder.empty() && postorder.empty())
+      return nullptr;
     int root_val = postorder.back();
     vector<int> inorder_left, inorder_right;
     bool go_left = true;
@@ -36,8 +37,10 @@ class Solution {
     }
     vector<int> postorder_left, postorder_right;
     int i = 0;
-    while (postorder_left.size() < inorder_left.size()) postorder_left.push_back(postorder[i++]);
-    while (postorder_right.size() < inorder_right.size()) postorder_right.push_back(postorder[i++]);
+    while (postorder_left.size() < inorder_left.size())
+      postorder_left.push_back(postorder[i++]);
+    while (postorder_right.size() < inorder_right.size())
+      postorder_right.push_back(postorder[i++]);
     TreeNode* root = new TreeNode(root_val);
     root->left = buildTree(inorder_left, postorder_left);
     root->right = buildTree(inorder_right, postorder_right);

@@ -3,7 +3,7 @@
 using namespace std;
 
 class Solution {
- private:
+private:
   bool good(int divisor, int threshold, const vector<int>& nums) {
     int sum = 0;
     for (int num : nums) {
@@ -12,7 +12,7 @@ class Solution {
     return sum <= threshold;
   }
 
- public:
+public:
   int smallestDivisor(vector<int>& nums, int threshold) {
     int lo = 1, hi = 1000000;
     while (lo < hi) {

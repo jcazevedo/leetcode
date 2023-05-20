@@ -4,7 +4,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   vector<vector<int>> kClosest(vector<vector<int>>& points, int K) {
     priority_queue<pair<long long, vector<int>>, vector<pair<long long, vector<int>>>,
                    greater<pair<long long, vector<int>>>>

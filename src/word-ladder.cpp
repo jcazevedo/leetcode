@@ -6,7 +6,7 @@ using namespace std;
 
 class Solution {
 private:
-  bool is_connected(string &a, string &b) {
+  bool is_connected(string& a, string& b) {
     int N = a.size(), cnt = 0;
     for (int i = 0; i < N; ++i) {
       if (a[i] != b[i])
@@ -18,7 +18,7 @@ private:
   }
 
 public:
-  int ladderLength(string beginWord, string endWord, vector<string> &wordList) {
+  int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
     int N = wordList.size();
     vector<vector<int>> graph(N + 1, vector<int>());
     int target = -1;

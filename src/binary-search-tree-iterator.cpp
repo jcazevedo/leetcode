@@ -4,22 +4,22 @@ using namespace std;
 
 struct TreeNode {
   int val;
-  TreeNode *left;
-  TreeNode *right;
+  TreeNode* left;
+  TreeNode* right;
 
   TreeNode() : val(0), left(nullptr), right(nullptr) {}
 
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-  TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+  TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
 
 class BSTIterator {
 private:
-  stack<TreeNode *> visited;
+  stack<TreeNode*> visited;
 
 public:
-  BSTIterator(TreeNode *root) {
+  BSTIterator(TreeNode* root) {
     while (root != nullptr) {
       visited.push(root);
       root = root->left;
@@ -27,7 +27,7 @@ public:
   }
 
   int next() {
-    TreeNode *curr = visited.top();
+    TreeNode* curr = visited.top();
     visited.pop();
     int ans = curr->val;
     if (curr->right != nullptr) {

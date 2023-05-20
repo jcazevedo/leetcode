@@ -11,9 +11,10 @@ struct TreeNode {
 };
 
 class Solution {
- public:
+public:
   TreeNode* invertTree(TreeNode* root) {
-    if (root == nullptr) return root;
+    if (root == nullptr)
+      return root;
     TreeNode* left_inv = invertTree(root->left);
     TreeNode* right_inv = invertTree(root->right);
     root->left = right_inv;

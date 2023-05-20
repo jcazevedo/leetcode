@@ -5,8 +5,8 @@ using namespace std;
 
 class Solution {
 private:
-  void go(vector<vector<int>> &graph, int curr, int end, vector<vector<int>> &paths, vector<int> &curr_path,
-          unordered_set<int> &visited) {
+  void go(vector<vector<int>>& graph, int curr, int end, vector<vector<int>>& paths, vector<int>& curr_path,
+          unordered_set<int>& visited) {
     if (curr == end)
       paths.push_back(curr_path);
     else {
@@ -23,7 +23,7 @@ private:
   }
 
 public:
-  vector<vector<int>> allPathsSourceTarget(vector<vector<int>> &graph) {
+  vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
     int N = graph.size();
     vector<vector<int>> paths;
     vector<int> curr_path = {0};

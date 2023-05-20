@@ -3,7 +3,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   vector<int> grayCode(int n) {
     vector<int> ans(1 << n);
     ans[0] = 0;

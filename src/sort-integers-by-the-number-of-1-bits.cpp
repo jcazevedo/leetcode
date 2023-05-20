@@ -4,7 +4,7 @@
 using namespace std;
 
 class Solution {
- private:
+private:
   int bit_count(int num) {
     int ans = 0;
     while (num) {
@@ -14,7 +14,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   vector<int> sortByBits(vector<int>& arr) {
     vector<pair<int, int>> with_count;
     for (const int& num : arr) {

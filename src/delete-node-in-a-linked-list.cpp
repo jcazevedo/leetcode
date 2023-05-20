@@ -6,13 +6,14 @@ struct ListNode {
 };
 
 class Solution {
- public:
+public:
   void deleteNode(ListNode* node) {
     ListNode* prev = new ListNode(0);
     ListNode* curr = node;
     prev->next = curr;
     while (curr->next != nullptr) {
-      if (curr->next != nullptr) curr->val = curr->next->val;
+      if (curr->next != nullptr)
+        curr->val = curr->next->val;
       curr = curr->next;
       prev = prev->next;
     }

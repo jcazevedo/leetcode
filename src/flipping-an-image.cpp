@@ -3,7 +3,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   vector<vector<int>> flipAndInvertImage(vector<vector<int>>& A) {
     int H = A.size();
     int W = A[0].size();

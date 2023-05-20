@@ -3,7 +3,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   vector<int> searchRange(vector<int>& nums, int target) {
     int lb = -1, ub = -1, m, l = 0, r = nums.size() - 1;
     while (l <= r) {

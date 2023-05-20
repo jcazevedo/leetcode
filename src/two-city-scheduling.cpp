@@ -4,7 +4,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   int twoCitySchedCost(vector<vector<int>>& costs) {
     int N = costs.size();
     int tot_sum = 0;
@@ -14,7 +14,8 @@ class Solution {
       diffs.push_back(cost[1] - cost[0]);
     }
     sort(diffs.begin(), diffs.end());
-    for (int i = 0; i < N / 2; ++i) tot_sum += diffs[i];
+    for (int i = 0; i < N / 2; ++i)
+      tot_sum += diffs[i];
     return tot_sum;
   }
 };

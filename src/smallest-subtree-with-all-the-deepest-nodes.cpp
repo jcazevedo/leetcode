@@ -16,7 +16,7 @@ struct TreeNode {
 };
 
 class Solution {
- private:
+private:
   unordered_map<TreeNode*, int> depth_cache;
 
   int depth(TreeNode* root) {
@@ -29,15 +29,17 @@ class Solution {
     return depth_cache[root];
   }
 
- public:
+public:
   TreeNode* subtreeWithAllDeepest(TreeNode* root) {
     if (root == nullptr) {
       return root;
     }
     int depth_left = depth(root->left);
     int depth_right = depth(root->right);
-    if (depth_left == depth_right) return root;
-    if (depth_left > depth_right) return subtreeWithAllDeepest(root->left);
+    if (depth_left == depth_right)
+      return root;
+    if (depth_left > depth_right)
+      return subtreeWithAllDeepest(root->left);
     return subtreeWithAllDeepest(root->right);
   }
 };

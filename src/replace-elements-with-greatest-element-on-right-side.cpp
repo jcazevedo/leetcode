@@ -3,7 +3,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   vector<int> replaceElements(vector<int>& arr) {
     int N = arr.size();
     int largest = -1;

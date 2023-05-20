@@ -11,7 +11,7 @@ struct TreeNode {
 };
 
 class Solution {
- private:
+private:
   map<TreeNode*, int> pathThrough;
   map<TreeNode*, int> pathEnding;
 
@@ -28,7 +28,7 @@ class Solution {
     return best;
   }
 
- public:
+public:
   int diameterOfBinaryTree(TreeNode* root) {
     pathThrough.clear();
     pathEnding.clear();

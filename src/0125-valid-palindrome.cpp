@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   bool isPalindrome(string s) {
     int left = 0, right = s.size() - 1;
     while (left < right) {
@@ -15,7 +15,8 @@ class Solution {
       else if (!isalnum(s[right]))
         right--;
       else {
-        if (tolower(s[left]) != tolower(s[right])) return false;
+        if (tolower(s[left]) != tolower(s[right]))
+          return false;
         left++;
         right--;
       }

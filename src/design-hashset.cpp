@@ -4,11 +4,11 @@
 using namespace std;
 
 class MyHashSet {
- private:
+private:
   const static int N_BUCKETS = 1009;
   vector<vector<int>> buckets;
 
- public:
+public:
   /** Initialize your data structure here. */
   MyHashSet() { buckets.assign(N_BUCKETS, vector<int>()); }
 
@@ -21,7 +21,8 @@ class MyHashSet {
   void remove(int key) {
     int bucket = key % N_BUCKETS;
     vector<int>::iterator pos = find(buckets[bucket].begin(), buckets[bucket].end(), key);
-    if (pos != buckets[bucket].end()) buckets[bucket].erase(pos);
+    if (pos != buckets[bucket].end())
+      buckets[bucket].erase(pos);
   }
 
   /** Returns true if this set contains the specified element */

@@ -4,13 +4,14 @@
 using namespace std;
 
 class Solution {
- private:
+private:
   int fact(int v) {
-    if (v == 0) return 1;
+    if (v == 0)
+      return 1;
     return v * fact(v - 1);
   }
 
- public:
+public:
   string getPermutation(int n, int k) {
     vector<int> freq(n + 1, 1);
     vector<int> perm(n, -1);
@@ -18,7 +19,8 @@ class Solution {
     while (cnt != k) {
       cnt = 0;
       for (int i = 1; i <= n; ++i) {
-        if (freq[i] == 0) continue;
+        if (freq[i] == 0)
+          continue;
         freq[i]--;
         int xcnt = fact(n - 1 - idx);
         cnt += xcnt;
@@ -27,7 +29,8 @@ class Solution {
           k -= (cnt - xcnt);
           break;
         }
-        if (cnt < k) freq[i]++;
+        if (cnt < k)
+          freq[i]++;
       }
     }
     for (int i = n; idx < n && i >= 1; --i) {
@@ -37,7 +40,8 @@ class Solution {
       }
     }
     string res = "";
-    for (int v : perm) res += (v + '0');
+    for (int v : perm)
+      res += (v + '0');
     return res;
   }
 };

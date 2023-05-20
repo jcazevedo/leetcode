@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   bool carPooling(vector<vector<int>>& trips, int capacity) {
     map<int, int> diffs;
     for (vector<int> trip : trips) {
@@ -17,7 +17,8 @@ class Solution {
     int curr = 0;
     for (auto itr = diffs.begin(); itr != diffs.end(); ++itr) {
       curr += itr->second;
-      if (curr > capacity) return false;
+      if (curr > capacity)
+        return false;
     }
     return true;
   }

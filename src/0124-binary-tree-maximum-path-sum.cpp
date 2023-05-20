@@ -19,9 +19,10 @@ struct TreeNode {
 };
 
 class Solution {
- private:
+private:
   pair<long long, long long> go(TreeNode* root) {
-    if (root == nullptr) return {INT_MIN, INT_MIN};
+    if (root == nullptr)
+      return {INT_MIN, INT_MIN};
     long long curr = root->val;
     pair<long long, long long> left = go(root->left);
     pair<long long, long long> right = go(root->right);
@@ -32,6 +33,6 @@ class Solution {
     return {max(left.first, max(right.first, best_through)), best_ending};
   }
 
- public:
+public:
   int maxPathSum(TreeNode* root) { return go(root).first; }
 };

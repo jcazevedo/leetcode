@@ -3,9 +3,10 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   bool searchMatrix(vector<vector<int>>& matrix, int target) {
-    if (matrix.size() == 0 || matrix[0].size() == 0) return false;
+    if (matrix.size() == 0 || matrix[0].size() == 0)
+      return false;
     int m = matrix.size();
     int n = matrix[0].size();
     int lo = 0, hi = m - 1;
@@ -16,8 +17,10 @@ class Solution {
       else
         lo = mid;
     }
-    if (lo >= m) return false;
-    if (matrix[lo][0] > target) return false;
+    if (lo >= m)
+      return false;
+    if (matrix[lo][0] > target)
+      return false;
     int i = lo;
     lo = 0;
     hi = n;
@@ -28,7 +31,8 @@ class Solution {
       else
         hi = mid;
     }
-    if (lo >= n) return false;
+    if (lo >= n)
+      return false;
     return matrix[i][lo] == target;
   }
 };

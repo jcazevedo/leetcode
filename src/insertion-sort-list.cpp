@@ -10,9 +10,10 @@ struct ListNode {
 };
 
 class Solution {
- public:
+public:
   ListNode* insertionSortList(ListNode* head) {
-    if (head == nullptr) return head;
+    if (head == nullptr)
+      return head;
     ListNode* sorted = new ListNode();
     sorted->next = head;
     ListNode* to_sort = head->next;

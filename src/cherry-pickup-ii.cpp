@@ -41,7 +41,7 @@ private:
   }
 
 public:
-  int cherryPickup(vector<vector<int>> &grid) {
+  int cherryPickup(vector<vector<int>>& grid) {
     _grid = grid;
     R = grid.size();
     C = grid[0].size();

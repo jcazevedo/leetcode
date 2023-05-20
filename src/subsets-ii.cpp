@@ -5,14 +5,15 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   vector<vector<int>> subsetsWithDup(vector<int>& nums) {
     int N = nums.size();
     set<vector<int>> acc;
     for (int i = 0; i < 1 << N; ++i) {
       vector<int> curr;
       for (int j = 0; j < N; ++j) {
-        if ((1 << j) & i) curr.push_back(nums[j]);
+        if ((1 << j) & i)
+          curr.push_back(nums[j]);
       }
       sort(curr.begin(), curr.end());
       acc.insert(curr);

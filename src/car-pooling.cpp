@@ -5,7 +5,7 @@ using namespace std;
 
 class Solution {
 public:
-  bool carPooling(vector<vector<int>> &trips, int capacity) {
+  bool carPooling(vector<vector<int>>& trips, int capacity) {
     map<int, int> diffs;
     for (vector<int> trip : trips) {
       diffs[trip[1]] += trip[0];

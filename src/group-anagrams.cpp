@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   vector<vector<string>> groupAnagrams(vector<string>& strs) {
     map<string, vector<string>> m;
     int N = strs.size();
@@ -16,7 +16,8 @@ class Solution {
       m[s].push_back(strs[i]);
     }
     vector<vector<string>> res;
-    for (auto itr = m.begin(); itr != m.end(); itr++) res.push_back(itr->second);
+    for (auto itr = m.begin(); itr != m.end(); itr++)
+      res.push_back(itr->second);
     return res;
   }
 };

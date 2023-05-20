@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  bool canPlaceFlowers(vector<int> &flowerbed, int n) {
+  bool canPlaceFlowers(vector<int>& flowerbed, int n) {
     int L = flowerbed.size();
     for (int i = 0; i < L && n > 0; ++i) {
       if (flowerbed[i] == 0) {

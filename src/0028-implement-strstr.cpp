@@ -7,11 +7,13 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   int strStr(string haystack, string needle) {
-    if (needle.size() == 0) return 0;
+    if (needle.size() == 0)
+      return 0;
 
-    if (needle.size() > haystack.size()) return -1;
+    if (needle.size() > haystack.size())
+      return -1;
 
     vector<int> T = vector<int>(needle.size(), 0);
 

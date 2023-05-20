@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   int maxArea(vector<int>& height) {
     int H = height.size();
     int left = 0, right = H - 1;

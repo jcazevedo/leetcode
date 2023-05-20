@@ -5,10 +5,10 @@ using namespace std;
 #define MAXN 1010
 
 class Solution {
- private:
+private:
   bool exists[MAXN];
 
- public:
+public:
   int countElements(vector<int>& arr) {
     int N = arr.size();
     for (int i = 0; i < N; ++i) {

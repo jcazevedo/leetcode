@@ -3,14 +3,16 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   bool increasingTriplet(vector<int>& nums) {
-    if (nums.size() == 0) return false;
+    if (nums.size() == 0)
+      return false;
     int N = nums.size();
     bool h2 = false, h3 = false;
     int n1 = nums[0], n2, n3;
     for (int i = 1; i < N; i++) {
-      if (h2 && nums[i] > n2) return true;
+      if (h2 && nums[i] > n2)
+        return true;
 
       if (!h2 && nums[i] < n1) {
         n1 = nums[i];

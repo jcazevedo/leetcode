@@ -3,7 +3,7 @@
 using namespace std;
 
 class Solution {
- private:
+private:
   int H, W;
   vector<vector<bool>> visited;
 
@@ -34,7 +34,7 @@ class Solution {
     return closed;
   }
 
- public:
+public:
   int closedIsland(vector<vector<int>>& grid) {
     H = grid.size();
     W = grid[0].size();
@@ -44,7 +44,8 @@ class Solution {
 
     for (int i = 0; i < H; ++i)
       for (int j = 0; j < W; ++j)
-        if (!visited[i][j] && grid[i][j] == 0 && is_closed(grid, i, j)) ++ans;
+        if (!visited[i][j] && grid[i][j] == 0 && is_closed(grid, i, j))
+          ++ans;
 
     return ans;
   }

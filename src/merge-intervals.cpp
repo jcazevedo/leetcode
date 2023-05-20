@@ -4,7 +4,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   vector<vector<int>> merge(vector<vector<int>>& intervals) {
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
     for (const vector<int>& i : intervals) {

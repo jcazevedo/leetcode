@@ -12,11 +12,13 @@ struct TreeNode {
 };
 
 class Solution {
- public:
+public:
   int minDepth(TreeNode* root) {
-    if (root == nullptr) return 0;
+    if (root == nullptr)
+      return 0;
 
-    if (root->left == nullptr && root->right == nullptr) return 1;
+    if (root->left == nullptr && root->right == nullptr)
+      return 1;
 
     int left_min = root->left != nullptr ? minDepth(root->left) : INT_MAX;
     int right_min = root->right != nullptr ? minDepth(root->right) : INT_MAX;

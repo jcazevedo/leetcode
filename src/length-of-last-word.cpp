@@ -3,7 +3,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   int lengthOfLastWord(string s) {
     int ans = 0, N = s.size();
     bool new_word = true;

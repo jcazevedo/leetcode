@@ -4,11 +4,11 @@
 using namespace std;
 
 class MedianFinder {
- private:
+private:
   priority_queue<int> pq_left;
   priority_queue<int, vector<int>, greater<int>> pq_right;
 
- public:
+public:
   MedianFinder() {}
 
   void addNum(int num) {
@@ -28,8 +28,10 @@ class MedianFinder {
   }
 
   double findMedian() {
-    if (pq_left.size() == pq_right.size()) return (pq_left.top() + pq_right.top()) / 2.0;
-    if (pq_right.size() > pq_left.size()) return pq_right.top();
+    if (pq_left.size() == pq_right.size())
+      return (pq_left.top() + pq_right.top()) / 2.0;
+    if (pq_right.size() > pq_left.size())
+      return pq_right.top();
     return pq_left.top();
   }
 };

@@ -4,7 +4,7 @@ using namespace std;
 
 class Solution {
 public:
-  int maxArea(vector<int> &height) {
+  int maxArea(vector<int>& height) {
     int H = height.size();
     int left = 0, right = H - 1;
     int best_area = 0;

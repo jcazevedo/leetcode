@@ -4,17 +4,19 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   int firstUniqChar(string s) {
     int N = s.size();
     map<char, int> first_index;
     map<int, int> cnt;
     for (int i = 0; i < N; ++i) {
-      if (first_index.find(s[i]) == first_index.end()) first_index[s[i]] = i;
+      if (first_index.find(s[i]) == first_index.end())
+        first_index[s[i]] = i;
       cnt[first_index[s[i]]]++;
     }
     for (auto itr = cnt.begin(); itr != cnt.end(); ++itr) {
-      if (itr->second == 1) return itr->first;
+      if (itr->second == 1)
+        return itr->first;
     }
     return -1;
   }

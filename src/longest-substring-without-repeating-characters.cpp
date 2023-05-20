@@ -5,7 +5,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   int lengthOfLongestSubstring(string s) {
     map<char, vector<int>> pos;
     int N = s.size();

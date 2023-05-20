@@ -14,9 +14,10 @@ struct TreeNode {
 };
 
 class Solution {
- public:
+public:
   TreeNode* buildTree(vector<int>& preorder, vector<int>& inorder) {
-    if (preorder.empty() && inorder.empty()) return nullptr;
+    if (preorder.empty() && inorder.empty())
+      return nullptr;
     TreeNode* root = new TreeNode(preorder[0]);
     vector<int> il, ir, pl, pr;
     bool l = true;

@@ -4,7 +4,7 @@
 using namespace std;
 
 class Solution {
- private:
+private:
   const vector<pair<int, int>> dirs = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
 
   void flood_fill(vector<vector<int>>& image, int sr, int sc, int H, int W, int newColor,
@@ -21,7 +21,7 @@ class Solution {
     image[sr][sc] = newColor;
   }
 
- public:
+public:
   vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int newColor) {
     int H = image.size();
     int W = image[0].size();

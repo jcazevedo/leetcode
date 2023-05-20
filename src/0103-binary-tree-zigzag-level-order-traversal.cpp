@@ -14,17 +14,19 @@ struct TreeNode {
 };
 
 class Solution {
- private:
+private:
   vector<int> nodeToVal(const vector<TreeNode*>& v) {
     vector<int> res;
     int N = v.size();
-    for (int i = 0; i < N; i++) res.push_back(v[i]->val);
+    for (int i = 0; i < N; i++)
+      res.push_back(v[i]->val);
     return res;
   }
 
- public:
+public:
   vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
-    if (root == nullptr) return vector<vector<int>>();
+    if (root == nullptr)
+      return vector<vector<int>>();
     vector<vector<int>> res;
     vector<TreeNode*> curr, next;
     bool left = false;
@@ -36,11 +38,15 @@ class Solution {
       for (int i = N - 1; i >= 0; i--) {
         TreeNode* n = curr[i];
         if (left) {
-          if (n->left != nullptr) next.push_back(n->left);
-          if (n->right != nullptr) next.push_back(n->right);
+          if (n->left != nullptr)
+            next.push_back(n->left);
+          if (n->right != nullptr)
+            next.push_back(n->right);
         } else {
-          if (n->right != nullptr) next.push_back(n->right);
-          if (n->left != nullptr) next.push_back(n->left);
+          if (n->right != nullptr)
+            next.push_back(n->right);
+          if (n->left != nullptr)
+            next.push_back(n->left);
         }
       }
       left = !left;

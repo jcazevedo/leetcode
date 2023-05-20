@@ -7,7 +7,7 @@ using namespace std;
 typedef long long ll;
 
 class Solution {
- public:
+public:
   int nthUglyNumber(int n) {
     priority_queue<ll, vector<ll>, greater<ll>> pq;
     unordered_set<ll> visited;

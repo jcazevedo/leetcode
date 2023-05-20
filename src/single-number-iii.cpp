@@ -3,10 +3,11 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   vector<int> singleNumber(vector<int>& nums) {
     int v = 0, L = nums.size();
-    for (int i = 0; i < L; i++) v ^= nums[i];
+    for (int i = 0; i < L; i++)
+      v ^= nums[i];
     int d = v & -v, l = 0, r = 0;
     for (int i = 0; i < L; i++) {
       if ((nums[i] & d) > 0)

@@ -15,14 +15,16 @@ struct TreeNode {
 };
 
 class Solution {
- private:
+private:
   unordered_map<int, int> sums;
 
   int n_paths(TreeNode* curr, int target_sum, int curr_sum) {
-    if (curr == nullptr) return 0;
+    if (curr == nullptr)
+      return 0;
     int ans = 0;
     curr_sum += curr->val;
-    if (curr_sum == target_sum) ans++;
+    if (curr_sum == target_sum)
+      ans++;
     ans += sums[curr_sum - target_sum];
     sums[curr_sum]++;
     ans += n_paths(curr->left, target_sum, curr_sum);
@@ -31,7 +33,7 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int pathSum(TreeNode* root, int sum) {
     sums.clear();
     return n_paths(root, sum, 0);

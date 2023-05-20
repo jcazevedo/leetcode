@@ -7,14 +7,15 @@
 using namespace std;
 
 class Solution {
- private:
+private:
   void go(vector<vector<int>>& graph, int curr, int end, vector<vector<int>>& paths, vector<int>& curr_path,
           unordered_set<int>& visited) {
     if (curr == end)
       paths.push_back(curr_path);
     else {
       for (int next : graph[curr]) {
-        if (visited.count(next) > 0) continue;
+        if (visited.count(next) > 0)
+          continue;
         curr_path.push_back(next);
         visited.insert(next);
         go(graph, next, end, paths, curr_path, visited);
@@ -24,7 +25,7 @@ class Solution {
     }
   }
 
- public:
+public:
   vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
     int N = graph.size();
     vector<vector<int>> paths;

@@ -3,7 +3,7 @@
 using namespace std;
 
 class Solution {
- public:
+public:
   int countSquares(vector<vector<int>>& matrix) {
     int H = matrix.size(), W = matrix[0].size();
     vector<vector<int>> dp(H, vector<int>(W, 0));

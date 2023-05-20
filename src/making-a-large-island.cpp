@@ -8,14 +8,15 @@ using namespace std;
 #define MAXN 500
 
 class Solution {
- private:
+private:
   int dirs[4][2] = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
   int visited[MAXN][MAXN];
   int area[MAXN * MAXN];
   int N;
 
   int visit(vector<vector<int>>& grid, int i, int j, int idx) {
-    if (i < 0 || i >= N || j < 0 || j >= N || grid[i][j] == 0 || visited[i][j] != 0) return 0;
+    if (i < 0 || i >= N || j < 0 || j >= N || grid[i][j] == 0 || visited[i][j] != 0)
+      return 0;
     int area = 1;
     visited[i][j] = idx;
     for (int d = 0; d < 4; ++d) {
@@ -26,7 +27,7 @@ class Solution {
     return area;
   }
 
- public:
+public:
   int largestIsland(vector<vector<int>>& grid) {
     N = grid.size();
     memset(visited, 0, sizeof(visited));
@@ -48,10 +49,12 @@ class Solution {
           for (int d = 0; d < 4; ++d) {
             int ni = i + dirs[d][0];
             int nj = j + dirs[d][1];
-            if (ni >= 0 && ni < N && nj >= 0 && nj < N && visited[ni][nj] != 0) neighbors.insert(visited[ni][nj]);
+            if (ni >= 0 && ni < N && nj >= 0 && nj < N && visited[ni][nj] != 0)
+              neighbors.insert(visited[ni][nj]);
           }
           int tot_area = 1;
-          for (int n : neighbors) tot_area += area[n];
+          for (int n : neighbors)
+            tot_area += area[n];
           ans = max(ans, tot_area);
         }
       }

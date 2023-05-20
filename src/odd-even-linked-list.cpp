@@ -6,7 +6,7 @@ struct ListNode {
 };
 
 class Solution {
- private:
+private:
   void aux(ListNode* odd, ListNode* even, ListNode* current, int i, ListNode* evenHead) {
     if (current == nullptr) {
       odd->next = evenHead;
@@ -23,9 +23,10 @@ class Solution {
     }
   }
 
- public:
+public:
   ListNode* oddEvenList(ListNode* head) {
-    if (head == nullptr || head->next == nullptr) return head;
+    if (head == nullptr || head->next == nullptr)
+      return head;
     ListNode* odd = head;
     ListNode* even = head->next;
     ListNode* current = head->next->next;

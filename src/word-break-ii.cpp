@@ -33,7 +33,7 @@ private:
   }
 
 public:
-  vector<string> wordBreak(string s, vector<string> &wordDict) {
+  vector<string> wordBreak(string s, vector<string>& wordDict) {
     line = s;
     unordered_set<string> words;
     for (string word : wordDict)

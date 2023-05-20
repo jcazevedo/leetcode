@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
- private:
+private:
   int string_to_int(string s) {
     istringstream ss(s);
     int ans;
@@ -16,19 +16,21 @@ class Solution {
     return ans;
   }
 
- public:
+public:
   int calculate(string s) {
     stack<int> nums;
     string curr = "";
     char op = '+';
     string trimmed = "";
     for (char ch : s) {
-      if (ch != ' ') trimmed += ch;
+      if (ch != ' ')
+        trimmed += ch;
     }
     int N = trimmed.size();
     for (int i = 0; i < N; ++i) {
       if (trimmed[i] != ' ') {
-        if (isdigit(trimmed[i])) curr += trimmed[i];
+        if (isdigit(trimmed[i]))
+          curr += trimmed[i];
         if (!isdigit(trimmed[i]) || i + 1 == N) {
           if (op == '+')
             nums.push(string_to_int(curr));

@@ -1,3 +1,6 @@
+// 785. Is Graph Bipartite?
+// https://leetcode.com/problems/is-graph-bipartite/
+
 #include <queue>
 #include <vector>
 

@@ -1,6 +1,6 @@
-# Solutions for LeetCode problems
+# Solutions to LeetCode problems
 
-This directory contains my solutions for [LeetCode][leetcode] problems. These
+This directory contains my solutions to [LeetCode][leetcode] problems. These
 solutions are provided "as is". I give no guarantees that they will work as
 expected. Please refrain from using my solutions in the site.
 

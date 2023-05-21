@@ -34,30 +34,23 @@ public:
           floodFill(i, j, grid, H, W, island, nIslands++);
       }
     }
-    priority_queue<tuple<int, int, int>> pq;
-    vector<vector<int>> dists = vector<vector<int>>(H, vector<int>(W, -1));
-    for (int i = 0; i < H; ++i) {
-      for (int j = 0; j < W; ++j) {
-        if (island[i][j] == 0) {
-          pq.push({0, i, j});
-          dists[i][j] = 0;
-        }
-      }
-    }
-    while (!pq.empty()) {
+    queue<tuple<int, int, int>> q;
+    vector<vector<bool>> visited = vector<vector<bool>>(H, vector<bool>(W, false));
+    for (int i = 0; i < H; ++i)
+      for (int j = 0; j < W; ++j)
+        if (island[i][j] == 0)
+          q.push({0, i, j});
+    while (!q.empty()) {
       int dist, i, j;
-      tie(dist, i, j) = pq.top();
-      pq.pop();
-      dist = -dist;
-      if (dists[i][j] != -1 && dists[i][j] < dist)
-        continue;
+      tie(dist, i, j) = q.front();
+      q.pop();
       for (const vector<int>& dir : directions) {
         int ni = i + dir[0];
         int nj = j + dir[1];
         if (ni >= 0 && ni < H && nj >= 0 && nj < W) {
-          if (grid[ni][nj] == 0 && (dists[ni][nj] == -1 || (dist + 1) < dists[ni][nj])) {
-            dists[ni][nj] = dist + 1;
-            pq.push({-(dist + 1), ni, nj});
+          if (grid[ni][nj] == 0 && !visited[ni][nj]) {
+            visited[ni][nj] = true;
+            q.push({dist + 1, ni, nj});
           }
           if (grid[ni][nj] == 1 && island[ni][nj] == 1)
             return dist;

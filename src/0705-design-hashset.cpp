@@ -12,7 +12,6 @@ private:
   vector<vector<int>> buckets;
 
 public:
-  /** Initialize your data structure here. */
   MyHashSet() { buckets.assign(N_BUCKETS, vector<int>()); }
 
   void add(int key) {
@@ -28,7 +27,6 @@ public:
       buckets[bucket].erase(pos);
   }
 
-  /** Returns true if this set contains the specified element */
   bool contains(int key) {
     int bucket = key % N_BUCKETS;
     return find(buckets[bucket].begin(), buckets[bucket].end(), key) != buckets[bucket].end();

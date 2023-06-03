@@ -9,16 +9,16 @@ using namespace std;
 class Solution {
 public:
   int reverse(int x) {
-    long long n = abs((double)x);
-    long long res = 0;
-    while (n) {
-      res = res * 10 + n % 10;
-      if (res > INT_MAX)
+    int ans = 0, maxValue = numeric_limits<int>::max(), minValue = numeric_limits<int>::min();
+    while (x != 0) {
+      int digit = x % 10;
+      x /= 10;
+      if (ans > maxValue / 10 || (ans == maxValue / 10 && digit > 7))
         return 0;
-      n /= 10;
+      if (ans < minValue / 10 || (ans == minValue / 10 && digit < -8))
+        return 0;
+      ans = ans * 10 + digit;
     }
-    if (x < 0)
-      return -res;
-    return res;
+    return ans;
   }
 };

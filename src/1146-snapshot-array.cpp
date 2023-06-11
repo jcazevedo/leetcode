@@ -17,10 +17,7 @@ public:
 
   void set(int index, int val) { values[index].push_back(make_pair(snapId, val)); }
 
-  int snap() {
-    ++snapId;
-    return snapId - 1;
-  }
+  int snap() { return snapId++; }
 
   int get(int index, int snap_id) {
     int lo = 0, hi = values[index].size() - 1;

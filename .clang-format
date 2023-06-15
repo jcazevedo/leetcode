@@ -1,2 +1,6 @@
 ColumnLimit: 120
+IncludeCategories:
+  - Regex:           '.*'
+    Priority:        1
+    SortPriority:    0
 PointerAlignment: Left

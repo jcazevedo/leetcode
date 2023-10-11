@@ -19,9 +19,8 @@ public:
       pq.push({flower[0], FLOWER_IN});
       pq.push({flower[1], FLOWER_OUT});
     }
-    for (uint32_t i = 0; i < people.size(); ++i) {
-      pq.push({people[i], PEOPLE_IN, (int)i});
-    }
+    for (int i = 0; i < (int)people.size(); ++i)
+      pq.push({people[i], PEOPLE_IN, i});
     int currFlowers = 0;
     while (!pq.empty()) {
       vector<int> curr = pq.top();

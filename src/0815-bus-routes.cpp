@@ -18,26 +18,31 @@ public:
 
     int R = routes.size();
     unordered_map<int, vector<int>> routesInStop;
-    unordered_map<int, unordered_map<int, int>> indexInRoute;
     for (int i = 0; i < R; ++i) {
       int NR = routes[i].size();
-      for (int j = 0; j < NR; ++j) {
+      for (int j = 0; j < NR; ++j)
         routesInStop[routes[i][j]].push_back(i);
-        indexInRoute[routes[i][j]][i] = j;
-      }
     }
 
     unordered_set<int> visitedRoutes;
-    unordered_map<int, unordered_map<int, int>> distances;
+    unordered_map<int, int> distances;
     priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, greater<tuple<int, int, int>>> pq;
-    for (int i = 0; i < R; ++i)
-      if (indexInRoute[source].count(i) != 0) {
+    for (int i = 0; i < R; ++i) {
+      bool inStop = false;
+      for (int route : routesInStop[source])
+        if (route == i) {
+          inStop = true;
+          break;
+        }
+
+      if (inStop) {
         visitedRoutes.insert(i);
         for (int stop : routes[i]) {
-          distances[stop][i] = 0;
+          distances[stop] = 0;
           pq.push({0, stop, i});
         }
       }
+    }
 
     while (!pq.empty()) {
       int distance, stop, route;
@@ -50,8 +55,8 @@ public:
       if (visitedRoutes.count(route) == 0) {
         visitedRoutes.insert(route);
         for (int next : routes[route])
-          if (distances[next].count(route) == 0 || distance < distances[next][route]) {
-            distances[next][route] = distance;
+          if (distances.count(next) == 0 || distance < distances[next]) {
+            distances[next] = distance;
             pq.push({distance, next, route});
           }
       }
@@ -62,8 +67,8 @@ public:
 
         visitedRoutes.insert(nextRoute);
         for (int next : routes[nextRoute])
-          if (distances[next].count(nextRoute) == 0 || distance + 1 < distances[next][nextRoute]) {
-            distances[next][nextRoute] = distance + 1;
+          if (distances.count(next) == 0 || distance + 1 < distances[next]) {
+            distances[next] = distance + 1;
             pq.push({distance + 1, next, nextRoute});
           }
       }

@@ -23,30 +23,27 @@ class Solution {
       ni++;
       nj = 0;
     }
-    if (board[i][j] != '.') {
-      return solve(ni, nj, board, r, c, s);
-    } else {
-      set<char> possible;
-      for (char ch = '1'; ch <= '9'; ++ch) {
-        if (r[i].find(ch) != r[i].end() && c[j].find(ch) != c[j].end() &&
-            s[sq(i, j)].find(ch) != s[sq(i, j)].end()) {
-          possible.insert(ch);
-        }
+    if (board[i][j] != '.') { return solve(ni, nj, board, r, c, s); }
+    set<char> possible;
+    for (char ch = '1'; ch <= '9'; ++ch) {
+      if (r[i].find(ch) != r[i].end() && c[j].find(ch) != c[j].end() &&
+          s[sq(i, j)].find(ch) != s[sq(i, j)].end()) {
+        possible.insert(ch);
       }
-      if (possible.empty()) { return false; }
-      for (char ch : possible) {
-        r[i].erase(ch);
-        c[j].erase(ch);
-        s[sq(i, j)].erase(ch);
-        board[i][j] = ch;
-        if (solve(ni, nj, board, r, c, s)) { return true; }
-        board[i][j] = '.';
-        r[i].insert(ch);
-        c[j].insert(ch);
-        s[sq(i, j)].insert(ch);
-      }
-      return false;
     }
+    if (possible.empty()) { return false; }
+    for (char ch : possible) {
+      r[i].erase(ch);
+      c[j].erase(ch);
+      s[sq(i, j)].erase(ch);
+      board[i][j] = ch;
+      if (solve(ni, nj, board, r, c, s)) { return true; }
+      board[i][j] = '.';
+      r[i].insert(ch);
+      c[j].insert(ch);
+      s[sq(i, j)].insert(ch);
+    }
+    return false;
   }
 
  public:

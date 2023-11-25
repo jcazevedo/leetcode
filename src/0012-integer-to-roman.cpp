@@ -8,7 +8,8 @@ using namespace std;
 
 class Solution {
 private:
-  unordered_map<int, string> digits = {{1, "IVX"}, {2, "XLC"}, {3, "CDM"}, {4, "M  "}};
+  unordered_map<int, string> digits = {
+      {1, "IVX"}, {2, "XLC"}, {3, "CDM"}, {4, "M  "}};
 
 public:
   string intToRoman(int num) {

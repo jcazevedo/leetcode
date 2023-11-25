@@ -16,7 +16,8 @@ struct TreeNode {
 
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-  TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
+  TreeNode(int x, TreeNode* left, TreeNode* right)
+      : val(x), left(left), right(right) {}
 };
 
 class Solution {
@@ -26,9 +27,12 @@ private:
       return abs(max_value - min_value);
     int next_max = max(max_value, root->val);
     int next_min = min(min_value, root->val);
-    return max(dfs(root->left, next_max, next_min), dfs(root->right, next_max, next_min));
+    return max(dfs(root->left, next_max, next_min),
+               dfs(root->right, next_max, next_min));
   }
 
 public:
-  int maxAncestorDiff(TreeNode* root) { return dfs(root, numeric_limits<int>::min(), numeric_limits<int>::max()); }
+  int maxAncestorDiff(TreeNode* root) {
+    return dfs(root, numeric_limits<int>::min(), numeric_limits<int>::max());
+  }
 };

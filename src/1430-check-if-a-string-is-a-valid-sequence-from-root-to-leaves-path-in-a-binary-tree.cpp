@@ -1,4 +1,5 @@
-// 1430. Check if a String Is a Valid Sequence from Root to Leaves Path in a Binary Tree
+// 1430. Check if a String Is a Valid Sequence from Root to Leaves Path in a
+// Binary Tree
 // https://leetcode.com/problems/check-if-a-string-is-a-valid-sequence-from-root-to-leaves-path-in-a-binary-tree/
 
 #include <vector>
@@ -14,7 +15,8 @@ struct TreeNode {
 
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-  TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
+  TreeNode(int x, TreeNode* left, TreeNode* right)
+      : val(x), left(left), right(right) {}
 };
 
 class Solution {
@@ -30,5 +32,7 @@ private:
   }
 
 public:
-  bool isValidSequence(TreeNode* root, vector<int>& arr) { return dfs(root, arr, 0); }
+  bool isValidSequence(TreeNode* root, vector<int>& arr) {
+    return dfs(root, arr, 0);
+  }
 };

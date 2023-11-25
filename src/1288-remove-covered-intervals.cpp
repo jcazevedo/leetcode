@@ -7,7 +7,9 @@ using namespace std;
 
 class Solution {
 private:
-  bool is_covered(const vector<int>& i1, const vector<int>& i2) { return i1[0] >= i2[0] && i1[1] <= i2[1]; }
+  bool is_covered(const vector<int>& i1, const vector<int>& i2) {
+    return i1[0] >= i2[0] && i1[1] <= i2[1];
+  }
 
 public:
   int removeCoveredIntervals(vector<vector<int>>& intervals) {

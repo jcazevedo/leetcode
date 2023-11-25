@@ -28,7 +28,9 @@ public:
     for (int i = 0; i < N; ++i)
       distances[i] = -1;
 
-    priority_queue<tuple<int, int>, vector<tuple<int, int>>, std::greater<tuple<int, int>>> pq;
+    priority_queue<tuple<int, int>, vector<tuple<int, int>>,
+                   std::greater<tuple<int, int>>>
+        pq;
     distances[node1] = 0;
     pq.push({0, node1});
 

@@ -8,8 +8,9 @@ using namespace std;
 
 class Solution {
 private:
-  void solve(int i, const vector<int>& uniqueCandidates, map<int, int>& count, int currSum, int target,
-             vector<int>& curr, vector<vector<int>>& ans) {
+  void solve(int i, const vector<int>& uniqueCandidates, map<int, int>& count,
+             int currSum, int target, vector<int>& curr,
+             vector<vector<int>>& ans) {
     if (currSum == target) {
       ans.push_back(curr);
     } else {

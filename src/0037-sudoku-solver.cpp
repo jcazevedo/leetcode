@@ -10,8 +10,8 @@ class Solution {
 private:
   int sq(int i, int j) { return i / 3 + 3 * (j / 3); }
 
-  bool solve(int i, int j, vector<vector<char>>& board, vector<set<char>>& r, vector<set<char>>& c,
-             vector<set<char>>& s) {
+  bool solve(int i, int j, vector<vector<char>>& board, vector<set<char>>& r,
+             vector<set<char>>& c, vector<set<char>>& s) {
     if (i == 9) {
       return true;
     }
@@ -26,7 +26,8 @@ private:
     } else {
       set<char> possible;
       for (char ch = '1'; ch <= '9'; ++ch) {
-        if (r[i].find(ch) != r[i].end() && c[j].find(ch) != c[j].end() && s[sq(i, j)].find(ch) != s[sq(i, j)].end()) {
+        if (r[i].find(ch) != r[i].end() && c[j].find(ch) != c[j].end() &&
+            s[sq(i, j)].find(ch) != s[sq(i, j)].end()) {
           possible.insert(ch);
         }
       }

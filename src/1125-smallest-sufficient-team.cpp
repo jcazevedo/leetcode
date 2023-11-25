@@ -9,7 +9,8 @@ using namespace std;
 
 class Solution {
 public:
-  vector<int> smallestSufficientTeam(vector<string>& req_skills, vector<vector<string>>& people) {
+  vector<int> smallestSufficientTeam(vector<string>& req_skills,
+                                     vector<vector<string>>& people) {
     unordered_map<string, int> idxs;
     int idx = 0;
     int P = people.size();

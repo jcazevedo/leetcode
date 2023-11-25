@@ -9,7 +9,8 @@ using namespace std;
 
 class Solution {
 public:
-  vector<double> calcEquation(vector<vector<string>>& equations, vector<double>& values,
+  vector<double> calcEquation(vector<vector<string>>& equations,
+                              vector<double>& values,
                               vector<vector<string>>& queries) {
     unordered_map<string, int> var_to_idx;
     int n_vars = 0;
@@ -19,7 +20,8 @@ public:
       if (var_to_idx.find(equation[1]) == var_to_idx.end())
         var_to_idx[equation[1]] = n_vars++;
     }
-    vector<vector<double>> dists = vector<vector<double>>(n_vars, vector<double>(n_vars, -1));
+    vector<vector<double>> dists =
+        vector<vector<double>>(n_vars, vector<double>(n_vars, -1));
     for (int i = 0; i < n_vars; ++i)
       dists[i][i] = 1.0;
     int n_equations = equations.size();

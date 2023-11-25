@@ -38,7 +38,8 @@ private:
 
 public:
   int numOfArrays(int n, int m, int k) {
-    vector<vector<vector<int>>> cache(n + 1, vector<vector<int>>(m + 1, vector<int>(k + 1, -1)));
+    vector<vector<vector<int>>> cache(
+        n + 1, vector<vector<int>>(m + 1, vector<int>(k + 1, -1)));
     long long ans = 0;
     for (int i = 1; i <= m; ++i)
       ans = (ans + ways(n, i, k, cache)) % MOD;

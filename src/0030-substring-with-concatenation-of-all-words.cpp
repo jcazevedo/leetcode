@@ -9,7 +9,8 @@ using namespace std;
 
 class Solution {
 private:
-  bool good(int si, unordered_map<string, int> count, const string& s, int wordLen, int wordsLen) {
+  bool good(int si, unordered_map<string, int> count, const string& s,
+            int wordLen, int wordsLen) {
     for (int i = 0; i < wordsLen; i += wordLen) {
       string curr = s.substr(i + si, wordLen);
       if (count[curr] == 0)

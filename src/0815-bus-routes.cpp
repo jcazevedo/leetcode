@@ -12,7 +12,8 @@ using namespace std;
 
 class Solution {
 public:
-  int numBusesToDestination(vector<vector<int>>& routes, int source, int target) {
+  int numBusesToDestination(vector<vector<int>>& routes, int source,
+                            int target) {
     if (source == target)
       return 0;
 
@@ -26,7 +27,9 @@ public:
 
     unordered_set<int> visitedRoutes;
     unordered_map<int, int> distances;
-    priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, greater<tuple<int, int, int>>> pq;
+    priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>,
+                   greater<tuple<int, int, int>>>
+        pq;
     for (int i = 0; i < R; ++i) {
       bool inStop = false;
       for (int route : routesInStop[source])

@@ -1,7 +1,14 @@
-ColumnLimit: 120
+# Limit to 80 columns.
+ColumnLimit: 80
+
+# Organize imports alphabetically.
 IncludeCategories:
   - Regex:           '.*'
     Priority:        1
     SortPriority:    0
+
+# Indent using 2 chars.
 IndentWidth: 2
+
+# Align pointers to the left.
 PointerAlignment: Left

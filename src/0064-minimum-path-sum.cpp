@@ -23,7 +23,8 @@ private:
 public:
   int minPathSum(vector<vector<int>>& grid) {
     int H = grid.size(), W = grid[0].size();
-    vector<vector<ll>> dp = vector<vector<ll>>(H, vector<ll>(W, numeric_limits<ll>::max()));
+    vector<vector<ll>> dp =
+        vector<vector<ll>>(H, vector<ll>(W, numeric_limits<ll>::max()));
     dp[0][0] = grid[0][0];
     return minPath(H - 1, W - 1, grid, dp);
   }

@@ -10,7 +10,8 @@ struct ListNode {
 
 class Solution {
 private:
-  void aux(ListNode* odd, ListNode* even, ListNode* current, int i, ListNode* evenHead) {
+  void aux(ListNode* odd, ListNode* even, ListNode* current, int i,
+           ListNode* evenHead) {
     if (current == nullptr) {
       odd->next = evenHead;
     } else if (i % 2 == 0) {

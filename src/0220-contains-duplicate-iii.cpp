@@ -17,9 +17,11 @@ public:
     int N = nums.size();
     for (int i = 1; i < N; ++i) {
       auto l_itr = current.lower_bound(nums[i]);
-      if (l_itr != current.end() && abs(((long long)*l_itr) - ((long long)nums[i])) <= t)
+      if (l_itr != current.end() &&
+          abs(((long long)*l_itr) - ((long long)nums[i])) <= t)
         return true;
-      if (l_itr != current.begin() && abs(((long long)*(--l_itr)) - ((long long)nums[i])) <= t)
+      if (l_itr != current.begin() &&
+          abs(((long long)*(--l_itr)) - ((long long)nums[i])) <= t)
         return true;
       current.insert(nums[i]);
       if ((int)current.size() > k)

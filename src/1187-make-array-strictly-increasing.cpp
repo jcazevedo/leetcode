@@ -23,7 +23,8 @@ private:
 
   map<pair<int, int>, int> cache;
 
-  int minOps(int i, int prev, const vector<int>& arr1, const vector<int>& arr2) {
+  int minOps(int i, int prev, const vector<int>& arr1,
+             const vector<int>& arr2) {
     if (i == (int)arr1.size())
       return 0;
     pair<int, int> key = make_pair(i, prev);
@@ -34,7 +35,8 @@ private:
       int toSwap = getNext(arr2, prev);
       if (toSwap < (int)arr2.size()) {
         int nextSwapCost = minOps(i + 1, arr2[toSwap], arr1, arr2);
-        if (nextSwapCost != -1 && (cache[key] == -1 || (nextSwapCost + 1) < cache[key]))
+        if (nextSwapCost != -1 &&
+            (cache[key] == -1 || (nextSwapCost + 1) < cache[key]))
           cache[key] = 1 + nextSwapCost;
       }
     }

@@ -7,7 +7,9 @@ using namespace std;
 
 class Solution {
 private:
-  bool isVowel(char ch) { return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u'; }
+  bool isVowel(char ch) {
+    return ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u';
+  }
 
 public:
   int maxVowels(string s, int k) {

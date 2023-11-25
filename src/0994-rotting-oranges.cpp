@@ -18,7 +18,8 @@ private:
       int ni = i + dirs[d][0];
       int nj = j + dirs[d][1];
       int ns = s + 1;
-      if (ni >= 0 && ni < H && nj >= 0 && nj < W && grid[ni][nj] == 1 && (dists[ni][nj] == -1 || dists[ni][nj] > ns)) {
+      if (ni >= 0 && ni < H && nj >= 0 && nj < W && grid[ni][nj] == 1 &&
+          (dists[ni][nj] == -1 || dists[ni][nj] > ns)) {
         visited[ni][nj] = true;
         dists[ni][nj] = ns;
         dfs(grid, ni, nj, ns);

@@ -14,7 +14,8 @@ private:
 
   int mod_sub(int a, int b) { return ((long long)a + MOD - b) % MOD; }
 
-  int go(int i, int j, int ch, const string& s, vector<vector<vector<int>>>& dp) {
+  int go(int i, int j, int ch, const string& s,
+         vector<vector<vector<int>>>& dp) {
     if (i > j)
       return 0;
     if (i == j) {
@@ -40,7 +41,8 @@ private:
 public:
   int countPalindromicSubsequences(string s) {
     int N = s.size();
-    vector<vector<vector<int>>> dp(N, vector<vector<int>>(N, vector<int>(4, -1)));
+    vector<vector<vector<int>>> dp(N,
+                                   vector<vector<int>>(N, vector<int>(4, -1)));
     int ans = 0;
     for (int i = 0; i < 4; ++i)
       ans = mod_add(ans, go(0, N - 1, i, s, dp));

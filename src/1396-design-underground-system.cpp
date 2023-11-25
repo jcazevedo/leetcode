@@ -15,7 +15,9 @@ private:
 public:
   UndergroundSystem() {}
 
-  void checkIn(int id, string stationName, int t) { passenger[id] = {stationName, t}; }
+  void checkIn(int id, string stationName, int t) {
+    passenger[id] = {stationName, t};
+  }
 
   void checkOut(int id, string stationName, int t) {
     string startStation;

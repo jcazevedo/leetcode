@@ -34,7 +34,8 @@ private:
 
   set<string> found;
 
-  void dfs(vector<vector<char>>& board, TrieNode* trie, vector<vector<bool>>& visited, int i, int j, string word) {
+  void dfs(vector<vector<char>>& board, TrieNode* trie,
+           vector<vector<bool>>& visited, int i, int j, string word) {
     if (trie->next[board[i][j] - 'a'] != nullptr) {
       TrieNode* next = trie->next[board[i][j] - 'a'];
       word += board[i][j];
@@ -44,7 +45,8 @@ private:
       for (pair<int, int> dir : dirs) {
         int ni = i + dir.first;
         int nj = j + dir.second;
-        if (ni >= 0 && ni < (int)board.size() && nj >= 0 && nj < (int)board[ni].size() && !visited[ni][nj]) {
+        if (ni >= 0 && ni < (int)board.size() && nj >= 0 &&
+            nj < (int)board[ni].size() && !visited[ni][nj]) {
           dfs(board, next, visited, ni, nj, word);
         }
       }

@@ -10,7 +10,8 @@ using namespace std;
 
 class Solution {
 private:
-  int bestAux(int from, int to, vector<int>& cuts, map<tuple<int, int>, int>& cache) {
+  int bestAux(int from, int to, vector<int>& cuts,
+              map<tuple<int, int>, int>& cache) {
     if (cache.find({from, to}) == cache.end()) {
       int length = to - from;
       int best = numeric_limits<int>::max();
@@ -19,7 +20,8 @@ private:
         if (cut <= from || cut >= to)
           continue;
         hasCutToDo = true;
-        best = min(best, length + bestAux(from, cut, cuts, cache) + bestAux(cut, to, cuts, cache));
+        best = min(best, length + bestAux(from, cut, cuts, cache) +
+                             bestAux(cut, to, cuts, cache));
       }
       if (!hasCutToDo)
         cache[{from, to}] = 0;

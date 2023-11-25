@@ -37,6 +37,7 @@ public:
     }
     if (N < (int)cell_days.size())
       return cell_days[N];
-    return cell_days[(N - loop_start) % (cell_days.size() - loop_start) + loop_start];
+    return cell_days[(N - loop_start) % (cell_days.size() - loop_start) +
+                     loop_start];
   }
 };

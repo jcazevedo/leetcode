@@ -9,7 +9,8 @@ using namespace std;
 
 class Solution {
 public:
-  vector<bool> checkArithmeticSubarrays(vector<int>& nums, vector<int>& l, vector<int>& r) {
+  vector<bool> checkArithmeticSubarrays(vector<int>& nums, vector<int>& l,
+                                        vector<int>& r) {
     int M = l.size();
     vector<bool> ans(M, false);
     for (int m = 0; m < M; ++m) {

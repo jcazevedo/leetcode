@@ -18,7 +18,8 @@ private:
   int N;
 
   int visit(vector<vector<int>>& grid, int i, int j, int idx) {
-    if (i < 0 || i >= N || j < 0 || j >= N || grid[i][j] == 0 || visited[i][j] != 0)
+    if (i < 0 || i >= N || j < 0 || j >= N || grid[i][j] == 0 ||
+        visited[i][j] != 0)
       return 0;
     int area = 1;
     visited[i][j] = idx;

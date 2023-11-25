@@ -9,7 +9,8 @@ using namespace std;
 
 class Solution {
 private:
-  bool inCircle(long long x, long long y, long long cx, long long cy, long long radius) {
+  bool inCircle(long long x, long long y, long long cx, long long cy,
+                long long radius) {
     return (x - cx) * (x - cx) + (y - cy) * (y - cy) <= radius * radius;
   }
 
@@ -29,7 +30,8 @@ public:
         for (int j = 0; j < N; ++j) {
           if (visited[j])
             continue;
-          if (inCircle(bombs[j][0], bombs[j][1], bombs[curr][0], bombs[curr][1], bombs[curr][2])) {
+          if (inCircle(bombs[j][0], bombs[j][1], bombs[curr][0], bombs[curr][1],
+                       bombs[curr][2])) {
             visited[j] = true;
             q.push(j);
             detonations += 1;

@@ -11,7 +11,8 @@ struct TreeNode {
   TreeNode* right;
   TreeNode() : val(0), left(nullptr), right(nullptr) {}
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-  TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
+  TreeNode(int x, TreeNode* left, TreeNode* right)
+      : val(x), left(left), right(right) {}
 };
 
 class Solution {
@@ -21,7 +22,8 @@ public:
     if (root == nullptr) {
       return ans;
     }
-    if (targetSum == root->val && root->left == nullptr && root->right == nullptr) {
+    if (targetSum == root->val && root->left == nullptr &&
+        root->right == nullptr) {
       ans.push_back({root->val});
       return ans;
     }

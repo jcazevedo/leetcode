@@ -13,9 +13,12 @@ private:
 
 public:
   SnapshotArray(int length)
-      : snapId(0), values(vector<vector<pair<int, int>>>(length, vector<pair<int, int>>(1, make_pair(0, 0)))) {}
+      : snapId(0), values(vector<vector<pair<int, int>>>(
+                       length, vector<pair<int, int>>(1, make_pair(0, 0)))) {}
 
-  void set(int index, int val) { values[index].push_back(make_pair(snapId, val)); }
+  void set(int index, int val) {
+    values[index].push_back(make_pair(snapId, val));
+  }
 
   int snap() { return snapId++; }
 

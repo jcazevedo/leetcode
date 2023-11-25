@@ -8,7 +8,8 @@ using namespace std;
 
 class Solution {
 private:
-  void go(vector<vector<int>>& graph, int curr, int end, vector<vector<int>>& paths, vector<int>& curr_path,
+  void go(vector<vector<int>>& graph, int curr, int end,
+          vector<vector<int>>& paths, vector<int>& curr_path,
           unordered_set<int>& visited) {
     if (curr == end)
       paths.push_back(curr_path);

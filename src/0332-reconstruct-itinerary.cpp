@@ -10,8 +10,9 @@ using namespace std;
 
 class Solution {
 private:
-  vector<string> dfs(vector<string>& curr, unordered_map<string, vector<int>>& graph, vector<bool>& used,
-                     vector<vector<string>>& tickets) {
+  vector<string> dfs(vector<string>& curr,
+                     unordered_map<string, vector<int>>& graph,
+                     vector<bool>& used, vector<vector<string>>& tickets) {
     if (curr.size() == tickets.size() + 1)
       return curr;
     vector<pair<string, int>> next_tickets;

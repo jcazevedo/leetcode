@@ -31,7 +31,9 @@ public:
     int N1 = nums1.size(), N2 = nums2.size();
     int N = N1 + N2;
     if (N % 2 == 0)
-      return (go(N / 2 - 1, nums1, 0, nums2, 0) + go(N / 2, nums1, 0, nums2, 0)) / 2.0;
+      return (go(N / 2 - 1, nums1, 0, nums2, 0) +
+              go(N / 2, nums1, 0, nums2, 0)) /
+             2.0;
     return go(N / 2, nums1, 0, nums2, 0);
   }
 };

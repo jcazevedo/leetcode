@@ -9,7 +9,8 @@ using namespace std;
 
 class Solution {
 private:
-  bool lessThanOrEqual(string word1, string word2, unordered_map<char, int>& idx) {
+  bool lessThanOrEqual(string word1, string word2,
+                       unordered_map<char, int>& idx) {
     int N1 = word1.size(), N2 = word2.size(), i = 0;
     while (i < N1 && i < N2) {
       if (idx[word1[i]] < idx[word2[i]])

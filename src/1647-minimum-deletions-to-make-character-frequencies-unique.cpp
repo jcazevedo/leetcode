@@ -24,7 +24,8 @@ public:
       while (reverseCnts[it->first].size() > 1) {
         char ch = *reverseCnts[it->first].begin();
         for (int targetCnt = it->first - 1; targetCnt >= 0; --targetCnt) {
-          if (targetCnt == 0 || reverseCnts.find(targetCnt) == reverseCnts.end()) {
+          if (targetCnt == 0 ||
+              reverseCnts.find(targetCnt) == reverseCnts.end()) {
             ans += (it->first - targetCnt);
             reverseCnts[it->first].erase(ch);
             if (targetCnt != 0)

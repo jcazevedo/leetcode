@@ -21,13 +21,15 @@ private:
     return lo;
   }
 
-  int dfs(int curr, const vector<vector<int>>& events, vector<vector<int>>& cache, int k) {
+  int dfs(int curr, const vector<vector<int>>& events,
+          vector<vector<int>>& cache, int k) {
     if (curr >= (int)events.size() || k == 0) {
       return 0;
     }
     if (cache[curr][k] == -1) {
       int next = binarySearch(events, events[curr][1]);
-      cache[curr][k] = max(dfs(curr + 1, events, cache, k), events[curr][2] + dfs(next, events, cache, k - 1));
+      cache[curr][k] = max(dfs(curr + 1, events, cache, k),
+                           events[curr][2] + dfs(next, events, cache, k - 1));
     }
     return cache[curr][k];
   }

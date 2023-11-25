@@ -11,7 +11,8 @@ class Solution {
 private:
   static vector<vector<int>> directions;
 
-  int pathsEnding(int i, int j, int M, int N, const vector<vector<int>>& grid, vector<vector<int>>& cache) {
+  int pathsEnding(int i, int j, int M, int N, const vector<vector<int>>& grid,
+                  vector<vector<int>>& cache) {
     if (cache[i][j] == -1) {
       long long ans = 1;
       for (int d = 0; d < (int)directions.size(); ++d) {

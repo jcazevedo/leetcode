@@ -17,7 +17,8 @@ private:
     for (int d = 0; d < (int)directions.size(); ++d) {
       int ni = i + directions[d][0];
       int nj = j + directions[d][1];
-      if (ni >= 0 && ni < row && nj >= 0 && nj < col && visited.find(make_pair(ni, nj)) == visited.end()) {
+      if (ni >= 0 && ni < row && nj >= 0 && nj < col &&
+          visited.find(make_pair(ni, nj)) == visited.end()) {
         visited.insert(make_pair(ni, nj));
         if (floodFill(ni, nj, row, col, visited))
           return true;

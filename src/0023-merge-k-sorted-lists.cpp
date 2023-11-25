@@ -22,7 +22,9 @@ public:
   ListNode* mergeKLists(vector<ListNode*>& lists) {
     ListNode* head = new ListNode();
     ListNode* curr = head;
-    priority_queue<pair<int, ListNode*>, vector<pair<int, ListNode*>>, greater<pair<int, ListNode*>>> pq;
+    priority_queue<pair<int, ListNode*>, vector<pair<int, ListNode*>>,
+                   greater<pair<int, ListNode*>>>
+        pq;
     for (ListNode* list : lists) {
       if (list != nullptr)
         pq.emplace(list->val, list);

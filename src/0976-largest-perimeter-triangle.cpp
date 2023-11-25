@@ -8,7 +8,9 @@ using namespace std;
 
 class Solution {
 private:
-  bool is_triangle(int a, int b, int c) { return a + b > c && a + c > b && b + c > a; }
+  bool is_triangle(int a, int b, int c) {
+    return a + b > c && a + c > b && b + c > a;
+  }
 
 public:
   int largestPerimeter(vector<int>& nums) {

@@ -21,7 +21,8 @@ public:
       d2 = l2->val;
     int res = d1 + d2 + carry;
     ListNode* l = new ListNode(res % 10);
-    l->next = addTwoNumbers(l1 != nullptr ? l1->next : nullptr, l2 != nullptr ? l2->next : nullptr, res / 10);
+    l->next = addTwoNumbers(l1 != nullptr ? l1->next : nullptr,
+                            l2 != nullptr ? l2->next : nullptr, res / 10);
     return l;
   }
 };

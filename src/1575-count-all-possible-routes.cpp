@@ -10,7 +10,8 @@ using namespace std;
 
 class Solution {
 private:
-  int getRoutes(int curr, int finish, int fuel, const vector<int>& locations, vector<vector<int>>& cache) {
+  int getRoutes(int curr, int finish, int fuel, const vector<int>& locations,
+                vector<vector<int>>& cache) {
     if (fuel < 0)
       return 0;
     if (cache[curr][fuel] == -1) {
@@ -20,7 +21,9 @@ private:
           continue;
         int requiredFuel = abs(locations[i] - locations[curr]);
         if (fuel - requiredFuel >= 0)
-          ans = (ans + getRoutes(i, finish, fuel - requiredFuel, locations, cache)) % MOD;
+          ans = (ans +
+                 getRoutes(i, finish, fuel - requiredFuel, locations, cache)) %
+                MOD;
       }
       cache[curr][fuel] = ans;
     }
@@ -29,7 +32,8 @@ private:
 
 public:
   int countRoutes(vector<int>& locations, int start, int finish, int fuel) {
-    vector<vector<int>> cache = vector<vector<int>>(locations.size(), vector<int>(fuel + 1, -1));
+    vector<vector<int>> cache =
+        vector<vector<int>>(locations.size(), vector<int>(fuel + 1, -1));
     return getRoutes(start, finish, fuel, locations, cache);
   }
 };

@@ -8,8 +8,8 @@ using namespace std;
 
 class Solution {
 private:
-  long long getMinimumToKeep(int u, const vector<vector<int>>& connections, const vector<int>& values,
-                             vector<bool>& inPath) {
+  long long getMinimumToKeep(int u, const vector<vector<int>>& connections,
+                             const vector<int>& values, vector<bool>& inPath) {
     long long removeRoot = values[u];
 
     long long removeFromChildren = 0L;
@@ -28,7 +28,8 @@ private:
   }
 
 public:
-  long long maximumScoreAfterOperations(vector<vector<int>>& edges, vector<int>& values) {
+  long long maximumScoreAfterOperations(vector<vector<int>>& edges,
+                                        vector<int>& values) {
     int N = values.size();
 
     long long totalScore = 0L;
@@ -43,7 +44,8 @@ public:
 
     vector<bool> inPath(N, false);
     inPath[0] = true;
-    long long minimumRemaining = getMinimumToKeep(0, connections, values, inPath);
+    long long minimumRemaining =
+        getMinimumToKeep(0, connections, values, inPath);
 
     return totalScore - minimumRemaining;
   }

@@ -8,7 +8,8 @@ using namespace std;
 
 class Solution {
 private:
-  int maxRequests(int curr, vector<int>& buildingDiff, vector<vector<int>>& requests, int count, int bestSoFar) {
+  int maxRequests(int curr, vector<int>& buildingDiff,
+                  vector<vector<int>>& requests, int count, int bestSoFar) {
     if (curr == (int)requests.size()) {
       for (int d : buildingDiff)
         if (d != 0)
@@ -19,13 +20,15 @@ private:
     if ((int)requests.size() - curr + count > bestSoFar) {
       --buildingDiff[requests[curr][0]];
       ++buildingDiff[requests[curr][1]];
-      bestSoFar = max(bestSoFar, maxRequests(curr + 1, buildingDiff, requests, count + 1, bestSoFar));
+      bestSoFar = max(bestSoFar, maxRequests(curr + 1, buildingDiff, requests,
+                                             count + 1, bestSoFar));
       ++buildingDiff[requests[curr][0]];
       --buildingDiff[requests[curr][1]];
     }
 
     if ((int)requests.size() - curr + count > bestSoFar) {
-      bestSoFar = max(bestSoFar, maxRequests(curr + 1, buildingDiff, requests, count, bestSoFar));
+      bestSoFar = max(bestSoFar, maxRequests(curr + 1, buildingDiff, requests,
+                                             count, bestSoFar));
     }
 
     return bestSoFar;

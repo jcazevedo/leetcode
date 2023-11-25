@@ -12,7 +12,8 @@ using namespace std;
 
 class Solution {
 public:
-  vector<int> fullBloomFlowers(vector<vector<int>>& flowers, vector<int>& people) {
+  vector<int> fullBloomFlowers(vector<vector<int>>& flowers,
+                               vector<int>& people) {
     vector<int> ans(people.size());
     priority_queue<vector<int>, vector<vector<int>>, greater<vector<int>>> pq;
     for (const vector<int>& flower : flowers) {

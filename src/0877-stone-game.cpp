@@ -11,8 +11,8 @@ using namespace std;
 
 class Solution {
 private:
-  // dp[i][j][p] refers to the score of the first player in case there are piles between i and j available and it's
-  // player p turn to play.
+  // dp[i][j][p] refers to the score of the first player in case there are piles
+  // between i and j available and it's player p turn to play.
   int dp[MAXN][MAXN][2];
 
 public:
@@ -27,7 +27,8 @@ public:
     for (int l = 1; l <= N; ++l) {
       for (int i = 0; i < N && i + l <= N; ++i) {
         int j = i + l;
-        dp[i][j][0] = max(piles[i] + dp[i + 1][j][1], piles[j - 1] + dp[i][j - 1][1]);
+        dp[i][j][0] =
+            max(piles[i] + dp[i + 1][j][1], piles[j - 1] + dp[i][j - 1][1]);
         dp[i][j][1] = min(dp[i + 1][j][0], dp[i][j - 1][0]);
       }
     }

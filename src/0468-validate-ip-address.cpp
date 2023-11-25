@@ -53,7 +53,8 @@ private:
     if (group.size() > 4 || group.size() < 1)
       return false;
     for (char ch : group) {
-      if (!(isdigit(ch) || (ch >= 'a' && ch <= 'f') || (ch >= 'A' && ch <= 'F')))
+      if (!(isdigit(ch) || (ch >= 'a' && ch <= 'f') ||
+            (ch >= 'A' && ch <= 'F')))
         return false;
     }
     return true;

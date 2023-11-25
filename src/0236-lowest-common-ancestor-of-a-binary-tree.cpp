@@ -25,8 +25,10 @@ public:
       return right;
     if (right == nullptr)
       return left;
-    if ((left->val == p->val && right->val == q->val) || (left->val == q->val && right->val == p->val) ||
-        (root->val == p->val && (right->val == q->val || left->val == q->val)) ||
+    if ((left->val == p->val && right->val == q->val) ||
+        (left->val == q->val && right->val == p->val) ||
+        (root->val == p->val &&
+         (right->val == q->val || left->val == q->val)) ||
         (root->val == q->val && (right->val == p->val || left->val == p->val)))
       return root;
     return nullptr;

@@ -7,7 +7,8 @@ struct TreeNode {
   TreeNode* right;
   TreeNode() : val(0), left(nullptr), right(nullptr) {}
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-  TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
+  TreeNode(int x, TreeNode* left, TreeNode* right)
+      : val(x), left(left), right(right) {}
 };
 
 class Solution {
@@ -17,9 +18,12 @@ private:
       return 0;
     if (root->left == nullptr && root->right == nullptr)
       return isLeft ? root->val : 0;
-    return sumOfLeftLeavesAux(root->left, true) + sumOfLeftLeavesAux(root->right, false);
+    return sumOfLeftLeavesAux(root->left, true) +
+           sumOfLeftLeavesAux(root->right, false);
   }
 
 public:
-  int sumOfLeftLeaves(TreeNode* root) { return sumOfLeftLeavesAux(root, false); }
+  int sumOfLeftLeaves(TreeNode* root) {
+    return sumOfLeftLeavesAux(root, false);
+  }
 };

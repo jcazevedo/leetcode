@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int longestSubarray(vector<int>& nums) {
     int ans = 0, withZero = 0, withOne = 0;
     for (int num : nums) {

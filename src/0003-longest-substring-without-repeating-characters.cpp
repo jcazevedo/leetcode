@@ -8,13 +8,11 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int lengthOfLongestSubstring(string s) {
     map<char, vector<int>> pos;
     int N = s.size();
-    for (int i = 0; i < N; i++) {
-      pos[s[i]].push_back(i);
-    }
+    for (int i = 0; i < N; i++) { pos[s[i]].push_back(i); }
     map<char, int> curr;
     map<char, int> idx;
     int best = 0, start = 0;

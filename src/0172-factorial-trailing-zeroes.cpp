@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/factorial-trailing-zeroes/
 
 class Solution {
-public:
+ public:
   int trailingZeroes(int n) {
     int ans = 0;
     while (n / 5 > 0) {

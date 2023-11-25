@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   void reverse(vector<int>& nums, int left, int right) {
     while (left < right) {
       int tmp = nums[left];
@@ -17,11 +17,10 @@ private:
     }
   }
 
-public:
+ public:
   void rotate(vector<int>& nums, int k) {
     int L = nums.size();
-    if (L <= 1)
-      return;
+    if (L <= 1) return;
     k %= L;
     reverse(nums, 0, L - 1);
     reverse(nums, 0, k - 1);

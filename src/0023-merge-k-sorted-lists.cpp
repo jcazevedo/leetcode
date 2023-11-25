@@ -18,7 +18,7 @@ struct ListNode {
 };
 
 class Solution {
-public:
+ public:
   ListNode* mergeKLists(vector<ListNode*>& lists) {
     ListNode* head = new ListNode();
     ListNode* curr = head;
@@ -26,8 +26,7 @@ public:
                    greater<pair<int, ListNode*>>>
         pq;
     for (ListNode* list : lists) {
-      if (list != nullptr)
-        pq.emplace(list->val, list);
+      if (list != nullptr) pq.emplace(list->val, list);
     }
     while (!pq.empty()) {
       ListNode* next = pq.top().second;
@@ -35,8 +34,7 @@ public:
       curr->next = next;
       curr = next;
       next = next->next;
-      if (next != nullptr)
-        pq.emplace(next->val, next);
+      if (next != nullptr) pq.emplace(next->val, next);
     }
     return head->next;
   }

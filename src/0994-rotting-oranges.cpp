@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   int H;
   int W;
   vector<vector<int>> dists;
@@ -27,7 +27,7 @@ private:
     }
   }
 
-public:
+ public:
   int orangesRotting(vector<vector<int>>& grid) {
     H = grid.size();
     W = grid[0].size();
@@ -48,8 +48,7 @@ public:
     for (int i = 0; i < H; ++i) {
       for (int j = 0; j < W; ++j) {
         if (grid[i][j] == 1) {
-          if (dists[i][j] == -1)
-            return -1;
+          if (dists[i][j] == -1) return -1;
           ans = max(ans, dists[i][j]);
         }
       }

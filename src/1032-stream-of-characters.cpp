@@ -18,10 +18,10 @@ struct TrieNode {
 };
 
 class Trie {
-private:
+ private:
   TrieNode* root;
 
-public:
+ public:
   Trie() { root = new TrieNode(); }
 
   void insert(string word) {
@@ -36,25 +36,22 @@ public:
 
   bool hasPrefix(string word) {
     TrieNode* curr = root;
-    if (curr->hasWord)
-      return true;
+    if (curr->hasWord) return true;
     for (char ch : word) {
-      if (curr->next.find(ch) == curr->next.end())
-        return false;
+      if (curr->next.find(ch) == curr->next.end()) return false;
       curr = curr->next[ch];
-      if (curr->hasWord)
-        return true;
+      if (curr->hasWord) return true;
     }
     return false;
   }
 };
 
 class StreamChecker {
-private:
+ private:
   Trie* trie;
   string current;
 
-public:
+ public:
   StreamChecker(vector<string>& words) : current("") {
     trie = new Trie();
     for (string word : words) {
@@ -65,8 +62,7 @@ public:
 
   bool query(char letter) {
     current = letter + current;
-    if (current.size() > MAXL)
-      current = current.substr(0, MAXL);
+    if (current.size() > MAXL) current = current.substr(0, MAXL);
     return trie->hasPrefix(current);
   }
 };

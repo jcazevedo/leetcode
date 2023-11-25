@@ -8,10 +8,14 @@ using namespace std;
 #define MOD 1000000007
 
 class Solution {
-private:
+ private:
   static vector<vector<int>> directions;
 
-  int pathsEnding(int i, int j, int M, int N, const vector<vector<int>>& grid,
+  int pathsEnding(int i,
+                  int j,
+                  int M,
+                  int N,
+                  const vector<vector<int>>& grid,
                   vector<vector<int>>& cache) {
     if (cache[i][j] == -1) {
       long long ans = 1;
@@ -26,7 +30,7 @@ private:
     return cache[i][j];
   }
 
-public:
+ public:
   int countPaths(vector<vector<int>>& grid) {
     int M = grid.size();
     int N = grid[0].size();

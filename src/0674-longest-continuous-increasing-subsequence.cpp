@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int findLengthOfLCIS(vector<int>& nums) {
     int N = nums.size(), ans = 1, curr = 1;
     for (int i = 1; i < N; ++i) {

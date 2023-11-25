@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<vector<int>> intervalIntersection(vector<vector<int>>& A,
                                            vector<vector<int>>& B) {
     vector<vector<int>> intersection;
@@ -14,8 +14,7 @@ public:
     while (a < (int)A.size() && b < (int)B.size()) {
       int left = max(A[a][0], B[b][0]);
       int right = min(A[a][1], B[b][1]);
-      if (left <= right)
-        intersection.push_back({left, right});
+      if (left <= right) intersection.push_back({left, right});
       if (A[a][1] < B[b][1])
         a++;
       else

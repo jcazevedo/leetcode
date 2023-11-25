@@ -12,10 +12,9 @@ struct TreeNode {
 };
 
 class Solution {
-public:
+ public:
   bool hasPathSum(TreeNode* root, int targetSum) {
-    if (root == nullptr)
-      return false;
+    if (root == nullptr) return false;
     if (root->val == targetSum && root->left == nullptr &&
         root->right == nullptr)
       return true;

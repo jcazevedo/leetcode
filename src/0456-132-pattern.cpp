@@ -8,22 +8,19 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   bool find132pattern(vector<int>& nums) {
     int N = nums.size();
-    if (N < 3)
-      return false;
+    if (N < 3) return false;
 
     multiset<int> rightVs;
     int minV = nums[0];
-    for (int i = 2; i < N; ++i)
-      rightVs.insert(nums[i]);
+    for (int i = 2; i < N; ++i) rightVs.insert(nums[i]);
 
     for (int i = 1; i < N - 1; ++i) {
       if (nums[i] > minV) {
         multiset<int>::iterator leftItr = rightVs.upper_bound(minV);
-        if (leftItr != rightVs.end() && *leftItr < nums[i])
-          return true;
+        if (leftItr != rightVs.end() && *leftItr < nums[i]) return true;
       }
 
       minV = min(minV, nums[i]);

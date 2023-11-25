@@ -19,12 +19,11 @@ struct TreeNode {
 };
 
 class Solution {
-private:
+ private:
   vector<int> rightmost;
 
   void dfs(TreeNode* root, int level = 0) {
-    if (root == nullptr)
-      return;
+    if (root == nullptr) return;
     if (level >= (int)rightmost.size())
       rightmost.push_back(root->val);
     else
@@ -33,7 +32,7 @@ private:
     dfs(root->right, level + 1);
   }
 
-public:
+ public:
   vector<int> rightSideView(TreeNode* root) {
     dfs(root);
     return rightmost;

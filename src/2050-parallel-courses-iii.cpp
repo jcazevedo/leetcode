@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int minimumTime(int n, vector<vector<int>>& relations, vector<int>& time) {
     vector<vector<int>> graph(n, vector<int>());
     vector<int> inDegree(n, 0);
@@ -30,15 +30,11 @@ public:
       for (int v : graph[u]) {
         timeToFinish[v] = max(timeToFinish[v], timeToFinish[u] + time[v]);
         inDegree[v]--;
-        if (inDegree[v] == 0) {
-          q.push(v);
-        }
+        if (inDegree[v] == 0) { q.push(v); }
       }
     }
     int ans = 0;
-    for (int u = 0; u < n; ++u) {
-      ans = max(ans, timeToFinish[u]);
-    }
+    for (int u = 0; u < n; ++u) { ans = max(ans, timeToFinish[u]); }
     return ans;
   }
 };

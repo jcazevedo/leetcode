@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int longestValidParentheses(string s) {
     int N = s.size(), i = 0, j = 0, cnt = 0, ans = 0;
     while (j < N) {
@@ -14,8 +14,7 @@ public:
         ++cnt;
       else if (cnt > 0) {
         --cnt;
-        if (cnt == 0)
-          ans = max(ans, j - i + 1);
+        if (cnt == 0) ans = max(ans, j - i + 1);
       } else
         i = j + 1;
       ++j;
@@ -28,8 +27,7 @@ public:
         ++cnt;
       else if (cnt > 0) {
         --cnt;
-        if (cnt == 0)
-          ans = max(ans, j - i + 1);
+        if (cnt == 0) ans = max(ans, j - i + 1);
       } else
         j = i - 1;
       --i;

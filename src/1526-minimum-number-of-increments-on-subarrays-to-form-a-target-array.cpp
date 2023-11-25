@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int minNumberOperations(vector<int>& target) {
     target.push_back(0);
     int ans = 0, N = target.size();

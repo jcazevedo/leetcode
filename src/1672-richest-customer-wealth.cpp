@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int maximumWealth(vector<vector<int>>& accounts) {
     int ans = 0;
     for (int i = 0; i < (int)accounts.size(); ++i) {

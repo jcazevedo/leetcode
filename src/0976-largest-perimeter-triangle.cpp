@@ -7,12 +7,12 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   bool is_triangle(int a, int b, int c) {
     return a + b > c && a + c > b && b + c > a;
   }
 
-public:
+ public:
   int largestPerimeter(vector<int>& nums) {
     sort(nums.begin(), nums.end());
 

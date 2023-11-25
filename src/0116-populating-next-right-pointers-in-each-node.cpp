@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/populating-next-right-pointers-in-each-node/
 
 class Node {
-public:
+ public:
   int val;
   Node* left;
   Node* right;
@@ -17,17 +17,15 @@ public:
 };
 
 class Solution {
-public:
+ public:
   Node* connect(Node* root) {
-    if (root == nullptr)
-      return root;
+    if (root == nullptr) return root;
     Node* level = root;
     while (level->left) {
       Node* curr = level;
       while (curr) {
         curr->left->next = curr->right;
-        if (curr->next)
-          curr->right->next = curr->next->left;
+        if (curr->next) curr->right->next = curr->next->left;
         curr = curr->next;
       }
       level = level->left;

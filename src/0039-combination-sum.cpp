@@ -8,12 +8,11 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   map<pair<int, int>, set<vector<int>>> cache;
 
   void go(int target, int maxC, const vector<int>& candidates) {
-    if (target <= 0)
-      return;
+    if (target <= 0) return;
     if (cache.count({target, maxC}) == 0) {
       set<vector<int>> curr;
       for (int i = maxC; i >= 0; --i) {
@@ -25,14 +24,13 @@ private:
           vv.push_back(n);
           curr.insert(vv);
         }
-        if (next == 0)
-          curr.insert({n});
+        if (next == 0) curr.insert({n});
       }
       cache[{target, maxC}] = curr;
     }
   }
 
-public:
+ public:
   vector<vector<int>> combinationSum(vector<int>& candidates, int target) {
     cache.clear();
     go(target, candidates.size() - 1, candidates);

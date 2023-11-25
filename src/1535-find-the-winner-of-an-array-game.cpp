@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int getWinner(vector<int>& arr, int k) {
     int N = arr.size();
     unordered_map<int, int> wins;
@@ -16,8 +16,7 @@ public:
     for (int i = 1; i < N; ++i) {
       curr = max(curr, arr[i]);
       wins[curr]++;
-      if (wins[curr] == k)
-        return curr;
+      if (wins[curr] == k) return curr;
     }
     return curr;
   }

@@ -7,14 +7,16 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   int sq(int i, int j) { return i / 3 + 3 * (j / 3); }
 
-  bool solve(int i, int j, vector<vector<char>>& board, vector<set<char>>& r,
-             vector<set<char>>& c, vector<set<char>>& s) {
-    if (i == 9) {
-      return true;
-    }
+  bool solve(int i,
+             int j,
+             vector<vector<char>>& board,
+             vector<set<char>>& r,
+             vector<set<char>>& c,
+             vector<set<char>>& s) {
+    if (i == 9) { return true; }
     int ni = i;
     int nj = j + 1;
     if (nj >= 9) {
@@ -31,17 +33,13 @@ private:
           possible.insert(ch);
         }
       }
-      if (possible.empty()) {
-        return false;
-      }
+      if (possible.empty()) { return false; }
       for (char ch : possible) {
         r[i].erase(ch);
         c[j].erase(ch);
         s[sq(i, j)].erase(ch);
         board[i][j] = ch;
-        if (solve(ni, nj, board, r, c, s)) {
-          return true;
-        }
+        if (solve(ni, nj, board, r, c, s)) { return true; }
         board[i][j] = '.';
         r[i].insert(ch);
         c[j].insert(ch);
@@ -51,7 +49,7 @@ private:
     }
   }
 
-public:
+ public:
   void solveSudoku(vector<vector<char>>& board) {
     vector<set<char>> r(9, set<char>());
     vector<set<char>> c(9, set<char>());

@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<vector<int>> flipAndInvertImage(vector<vector<int>>& A) {
     int H = A.size();
     int W = A[0].size();
@@ -16,9 +16,7 @@ public:
         A[i][j] = A[i][W - 1 - j];
         A[i][W - 1 - j] = tmp;
       }
-      for (int j = 0; j < W; ++j) {
-        A[i][j] = A[i][j] ? 0 : 1;
-      }
+      for (int j = 0; j < W; ++j) { A[i][j] = A[i][j] ? 0 : 1; }
     }
     return A;
   }

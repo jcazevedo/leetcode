@@ -18,7 +18,7 @@ struct TrieNode {
 };
 
 class Solution {
-private:
+ private:
   vector<pair<int, int>> dirs = {{1, 0}, {-1, 0}, {0, 1}, {0, -1}};
 
   void insert(TrieNode* node, string word) {
@@ -34,13 +34,16 @@ private:
 
   set<string> found;
 
-  void dfs(vector<vector<char>>& board, TrieNode* trie,
-           vector<vector<bool>>& visited, int i, int j, string word) {
+  void dfs(vector<vector<char>>& board,
+           TrieNode* trie,
+           vector<vector<bool>>& visited,
+           int i,
+           int j,
+           string word) {
     if (trie->next[board[i][j] - 'a'] != nullptr) {
       TrieNode* next = trie->next[board[i][j] - 'a'];
       word += board[i][j];
-      if (next->is_end)
-        found.insert(word);
+      if (next->is_end) found.insert(word);
       visited[i][j] = true;
       for (pair<int, int> dir : dirs) {
         int ni = i + dir.first;
@@ -60,25 +63,21 @@ private:
         ni = i + 1;
         nj = 0;
       }
-      if (ni < (int)board.size()) {
-        dfs(board, trie, visited, ni, nj, word);
-      }
+      if (ni < (int)board.size()) { dfs(board, trie, visited, ni, nj, word); }
     }
   }
 
-public:
+ public:
   vector<string> findWords(vector<vector<char>>& board, vector<string>& words) {
     TrieNode* trie = new TrieNode();
-    for (string word : words)
-      insert(trie, word);
+    for (string word : words) insert(trie, word);
     int H = board.size();
     int W = board[0].size();
     vector<vector<bool>> visited(H, vector<bool>(W, false));
     found.clear();
     dfs(board, trie, visited, 0, 0, "");
     vector<string> res;
-    for (string word : found)
-      res.push_back(word);
+    for (string word : found) res.push_back(word);
     return res;
   }
 };

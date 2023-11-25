@@ -9,16 +9,17 @@ using namespace std;
 #define MOD 1000000007
 
 class Solution {
-private:
-  int getRoutes(int curr, int finish, int fuel, const vector<int>& locations,
+ private:
+  int getRoutes(int curr,
+                int finish,
+                int fuel,
+                const vector<int>& locations,
                 vector<vector<int>>& cache) {
-    if (fuel < 0)
-      return 0;
+    if (fuel < 0) return 0;
     if (cache[curr][fuel] == -1) {
       long long ans = curr == finish ? 1L : 0L;
       for (int i = 0; i < (int)locations.size(); ++i) {
-        if (i == curr)
-          continue;
+        if (i == curr) continue;
         int requiredFuel = abs(locations[i] - locations[curr]);
         if (fuel - requiredFuel >= 0)
           ans = (ans +
@@ -30,7 +31,7 @@ private:
     return cache[curr][fuel];
   }
 
-public:
+ public:
   int countRoutes(vector<int>& locations, int start, int finish, int fuel) {
     vector<vector<int>> cache =
         vector<vector<int>>(locations.size(), vector<int>(fuel + 1, -1));

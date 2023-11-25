@@ -10,21 +10,19 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   vector<string> split(string str) {
     istringstream ss(str);
     vector<string> ans;
     string curr;
-    while (ss >> curr)
-      ans.push_back(curr);
+    while (ss >> curr) ans.push_back(curr);
     return ans;
   }
 
-public:
+ public:
   bool wordPattern(string pattern, string str) {
     vector<string> words = split(str);
-    if (words.size() != pattern.size())
-      return false;
+    if (words.size() != pattern.size()) return false;
     unordered_map<string, char> pat;
     set<char> used;
     int N = words.size();

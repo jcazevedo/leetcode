@@ -18,8 +18,9 @@ struct TreeNode {
 };
 
 class Solution {
-private:
-  long long getMinimumDifferenceAux(TreeNode* root, long long left,
+ private:
+  long long getMinimumDifferenceAux(TreeNode* root,
+                                    long long left,
                                     long long right) {
     long long diffLeft = abs(root->val - left);
     long long diffRight = abs(root->val - right);
@@ -31,7 +32,7 @@ private:
     return ans;
   }
 
-public:
+ public:
   int minDiffInBST(TreeNode* root) {
     return getMinimumDifferenceAux(root, numeric_limits<int>::min(),
                                    numeric_limits<int>::max());

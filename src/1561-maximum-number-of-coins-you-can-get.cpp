@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int maxCoins(vector<int>& piles) {
     sort(piles.begin(), piles.end());
     int N = piles.size(), bob = 0, you = N - 2, ans = 0;

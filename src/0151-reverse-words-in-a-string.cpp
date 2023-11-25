@@ -8,18 +8,15 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   string reverseWords(string s) {
     stack<string> st;
     istringstream ss(s);
     string tmp;
-    while (ss >> tmp) {
-      st.push(tmp);
-    }
+    while (ss >> tmp) { st.push(tmp); }
     string res = "";
     while (!st.empty()) {
-      if (!res.empty())
-        res += " ";
+      if (!res.empty()) res += " ";
       res += st.top();
       st.pop();
     }

@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   string shortestCommonSupersequence(string str1, string str2) {
     int N1 = str1.size(), N2 = str2.size();
     vector<vector<int>> dp(N1 + 1, vector<int>(N2 + 1, 0));
@@ -32,10 +32,8 @@ public:
         N2--;
       }
     }
-    while (N1 > 0)
-      ans += str1[--N1];
-    while (N2 > 0)
-      ans += str2[--N2];
+    while (N1 > 0) ans += str1[--N1];
+    while (N2 > 0) ans += str2[--N2];
     reverse(ans.begin(), ans.end());
     return ans;
   }

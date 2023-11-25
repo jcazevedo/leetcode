@@ -6,12 +6,11 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   void duplicateZeros(vector<int>& arr) {
     int zeros = 0;
     for (int v : arr) {
-      if (v == 0)
-        zeros++;
+      if (v == 0) zeros++;
     }
     int N = arr.size();
     for (int i = N - 1, target = N - 1 + zeros; i >= 0 && target >= 0;

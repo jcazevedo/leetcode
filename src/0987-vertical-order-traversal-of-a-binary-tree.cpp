@@ -21,11 +21,10 @@ struct TreeNode {
 };
 
 class Solution {
-private:
+ private:
   struct pair_compare {
     bool operator()(const pair<int, int>& l, const pair<int, int>& r) const {
-      if (l.first != r.first)
-        return l.first > r.first;
+      if (l.first != r.first) return l.first > r.first;
       return l.second < r.second;
     }
   };
@@ -33,14 +32,13 @@ private:
   map<int, set<pair<int, int>, pair_compare>> vis;
 
   void dfs(TreeNode* curr, int x, int y) {
-    if (curr == nullptr)
-      return;
+    if (curr == nullptr) return;
     vis[x].insert({y, curr->val});
     dfs(curr->left, x - 1, y - 1);
     dfs(curr->right, x + 1, y - 1);
   }
 
-public:
+ public:
   vector<vector<int>> verticalTraversal(TreeNode* root) {
     vis.clear();
     dfs(root, 0, 0);

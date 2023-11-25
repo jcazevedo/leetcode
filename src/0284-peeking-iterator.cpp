@@ -9,7 +9,7 @@ class Iterator {
   struct Data;
   Data* data;
 
-public:
+ public:
   Iterator(const vector<int>& nums);
   Iterator(const Iterator& iter);
 
@@ -21,15 +21,14 @@ public:
 };
 
 class PeekingIterator : public Iterator {
-private:
+ private:
   bool _hasNext;
   int _next;
 
-public:
+ public:
   PeekingIterator(const vector<int>& nums) : Iterator(nums) {
     _hasNext = Iterator::hasNext();
-    if (_hasNext)
-      _next = Iterator::next();
+    if (_hasNext) _next = Iterator::next();
   }
 
   int peek() { return _next; }
@@ -37,8 +36,7 @@ public:
   int next() {
     int ans = _next;
     _hasNext = Iterator::hasNext();
-    if (_hasNext)
-      _next = Iterator::next();
+    if (_hasNext) _next = Iterator::next();
     return ans;
   }
 

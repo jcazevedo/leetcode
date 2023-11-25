@@ -6,8 +6,9 @@
 using namespace std;
 
 class Solution {
-private:
-  void visit(int curr, const vector<vector<int>>& isConnected,
+ private:
+  void visit(int curr,
+             const vector<vector<int>>& isConnected,
              vector<bool>& visited) {
     for (int i = 0; i < (int)isConnected[curr].size(); ++i)
       if (isConnected[curr][i] && !visited[i]) {
@@ -16,7 +17,7 @@ private:
       }
   }
 
-public:
+ public:
   int findCircleNum(vector<vector<int>>& isConnected) {
     int N = isConnected.size();
     vector<bool> visited = vector<bool>(N, false);

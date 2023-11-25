@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int longestArithSeqLength(vector<int>& nums) {
     int ans = 0, N = nums.size();
     vector<unordered_map<int, int>> dp =

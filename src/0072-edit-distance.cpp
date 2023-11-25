@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int minDistance(string word1, string word2) {
     int N = word1.size();
     int M = word2.size();

@@ -6,13 +6,12 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<vector<int>> generateMatrix(int n) {
     vector<vector<int>> ans = vector<vector<int>>(n, vector<int>(n, -1));
     vector<pair<int, int>> dirs = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
     int i = 0, j, dir = 1, curr = 1, cnt = 0, W = n, H = n;
-    for (j = 0; j < n; ++j)
-      ans[i][j] = ++cnt;
+    for (j = 0; j < n; ++j) ans[i][j] = ++cnt;
     --j;
     bool in_height = false;
     int expected = H * W;

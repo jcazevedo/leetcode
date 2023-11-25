@@ -7,14 +7,14 @@
 using namespace std;
 
 class Employee {
-public:
+ public:
   int id;
   int importance;
   vector<int> subordinates;
 };
 
 class Solution {
-private:
+ private:
   unordered_map<int, int> importance;
   unordered_map<int, vector<int>> subordinates;
 
@@ -25,7 +25,7 @@ private:
     return res;
   }
 
-public:
+ public:
   int getImportance(vector<Employee*> employees, int id) {
     for (Employee* e : employees) {
       importance[e->id] = e->importance;

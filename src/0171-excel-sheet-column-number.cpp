@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int titleToNumber(string s) {
     long long ans = 0;
     for (char ch : s) {

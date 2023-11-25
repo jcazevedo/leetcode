@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int findMinFibonacciNumbers(int k) {
     vector<long long> fib = {1, 1};
     while (fib.back() < k)
@@ -14,8 +14,7 @@ public:
     int cnt = 0;
     while (k > 0) {
       int idx = lower_bound(fib.begin(), fib.end(), k) - fib.begin();
-      if (fib[idx] > k)
-        idx--;
+      if (fib[idx] > k) idx--;
       k -= fib[idx];
       cnt++;
     }

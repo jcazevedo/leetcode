@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int myAtoi(string str) {
     int N = str.size();
     long long res = 0;

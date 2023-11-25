@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<int> getRow(int rowIndex) {
     vector<int> prev = {1};
     vector<int> next;

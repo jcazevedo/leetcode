@@ -12,7 +12,7 @@ struct TreeNode {
 };
 
 class Solution {
-private:
+ private:
   TreeNode* addLeftmost(TreeNode* root, TreeNode* toAdd) {
     if (root->left == nullptr)
       root->left = toAdd;
@@ -21,10 +21,9 @@ private:
     return root;
   }
 
-public:
+ public:
   TreeNode* deleteNode(TreeNode* root, int key) {
-    if (root == nullptr)
-      return root;
+    if (root == nullptr) return root;
     if (root->val == key)
       if (root->left == nullptr && root->right == nullptr)
         return nullptr;

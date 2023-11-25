@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int minCostToMoveChips(vector<int>& position) {
     int to_even = 0, to_odd = 0;
     for (int pos : position) {

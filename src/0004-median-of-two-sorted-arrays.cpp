@@ -7,14 +7,11 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   double go(int i, vector<int>& nums1, int i1, vector<int>& nums2, int i2) {
-    if (i1 >= (int)nums1.size())
-      return nums2[i2 + i];
-    if (i2 >= (int)nums2.size())
-      return nums1[i1 + i];
-    if (i == 0)
-      return min(nums1[i1], nums2[i2]);
+    if (i1 >= (int)nums1.size()) return nums2[i2 + i];
+    if (i2 >= (int)nums2.size()) return nums1[i1 + i];
+    if (i == 0) return min(nums1[i1], nums2[i2]);
     int m1 = i1 + i / 2;
     int m2 = i2 + i / 2;
     int v1 = m1 < (int)nums1.size() ? nums1[m1] : numeric_limits<int>::max();
@@ -26,7 +23,7 @@ private:
     }
   }
 
-public:
+ public:
   double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
     int N1 = nums1.size(), N2 = nums2.size();
     int N = N1 + N2;

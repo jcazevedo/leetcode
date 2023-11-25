@@ -7,13 +7,12 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int reductionOperations(vector<int>& nums) {
     sort(nums.begin(), nums.end());
     int N = nums.size(), ans = 0;
     for (int i = N - 2; i >= 0; --i)
-      if (nums[i] != nums[i + 1])
-        ans += N - i - 1;
+      if (nums[i] != nums[i + 1]) ans += N - i - 1;
     return ans;
   }
 };

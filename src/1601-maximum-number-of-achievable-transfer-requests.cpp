@@ -7,13 +7,15 @@
 using namespace std;
 
 class Solution {
-private:
-  int maxRequests(int curr, vector<int>& buildingDiff,
-                  vector<vector<int>>& requests, int count, int bestSoFar) {
+ private:
+  int maxRequests(int curr,
+                  vector<int>& buildingDiff,
+                  vector<vector<int>>& requests,
+                  int count,
+                  int bestSoFar) {
     if (curr == (int)requests.size()) {
       for (int d : buildingDiff)
-        if (d != 0)
-          return -1;
+        if (d != 0) return -1;
       return max(count, bestSoFar);
     }
 
@@ -34,7 +36,7 @@ private:
     return bestSoFar;
   }
 
-public:
+ public:
   int maximumRequests(int n, vector<vector<int>>& requests) {
     vector<int> buildingDiff = vector<int>(n, 0);
     return maxRequests(0, buildingDiff, requests, 0, 0);

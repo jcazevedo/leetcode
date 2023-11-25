@@ -2,20 +2,18 @@
 // https://leetcode.com/problems/maximum-value-at-a-given-index-in-a-bounded-array/
 
 class Solution {
-private:
+ private:
   long long sumTo(long long n) { return n * (n + 1) / 2; }
 
   long long totSumFor(int n, int index, int value) {
     long long sumLeft = sumTo(value);
-    if (value > index + 1)
-      sumLeft -= sumTo(value - index - 1);
+    if (value > index + 1) sumLeft -= sumTo(value - index - 1);
     long long sumRight = sumTo(value - 1);
-    if (value > n - index)
-      sumRight -= sumTo(value - n + index);
+    if (value > n - index) sumRight -= sumTo(value - n + index);
     return sumLeft + sumRight;
   }
 
-public:
+ public:
   int maxValue(int n, int index, int maxSum) {
     int lo = 0, hi = maxSum - n;
     while (lo < hi) {

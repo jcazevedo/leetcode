@@ -7,11 +7,10 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<int> findRightInterval(vector<vector<int>>& intervals) {
     int N = intervals.size();
-    for (int i = 0; i < N; ++i)
-      intervals[i].push_back(i);
+    for (int i = 0; i < N; ++i) intervals[i].push_back(i);
     sort(intervals.begin(), intervals.end());
     vector<int> ans = vector<int>(N, -1);
     for (int i = 0; i < N; ++i) {

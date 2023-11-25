@@ -13,7 +13,7 @@ struct ListNode {
 };
 
 class Solution {
-public:
+ public:
   void reorderList(ListNode* head) {
     ListNode* prev = new ListNode();
     prev->next = head;

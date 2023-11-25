@@ -11,7 +11,7 @@ using namespace std;
 #define FLOWER_OUT 2
 
 class Solution {
-public:
+ public:
   vector<int> fullBloomFlowers(vector<vector<int>>& flowers,
                                vector<int>& people) {
     vector<int> ans(people.size());
@@ -26,12 +26,9 @@ public:
     while (!pq.empty()) {
       vector<int> curr = pq.top();
       pq.pop();
-      if (curr[1] == FLOWER_IN)
-        currFlowers++;
-      if (curr[1] == FLOWER_OUT)
-        currFlowers--;
-      if (curr[1] == PEOPLE_IN)
-        ans[curr[2]] = currFlowers;
+      if (curr[1] == FLOWER_IN) currFlowers++;
+      if (curr[1] == FLOWER_OUT) currFlowers--;
+      if (curr[1] == PEOPLE_IN) ans[curr[2]] = currFlowers;
     }
     return ans;
   }

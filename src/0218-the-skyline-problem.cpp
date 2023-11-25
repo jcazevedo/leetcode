@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<vector<int>> getSkyline(vector<vector<int>>& buildings) {
     // {false, height} means a building exits with height 'height'.
     // {true, height} means a building enters with height 'height'.
@@ -30,8 +30,7 @@ public:
           heights.erase(heights.find(event.second));
       }
       int next_height = heights.empty() ? 0 : *heights.rbegin();
-      if (next_height != curr_height)
-        ans.push_back({x, next_height});
+      if (next_height != curr_height) ans.push_back({x, next_height});
       curr_height = next_height;
     }
     return ans;

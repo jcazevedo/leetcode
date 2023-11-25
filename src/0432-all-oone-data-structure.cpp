@@ -9,17 +9,16 @@
 using namespace std;
 
 class AllOne {
-private:
+ private:
   unordered_map<string, int> counts;
   set<tuple<int, string>> countPairs;
 
-public:
+ public:
   AllOne() {}
 
   void inc(string key) {
     int current = counts[key];
-    if (current != 0)
-      countPairs.erase(countPairs.find({current, key}));
+    if (current != 0) countPairs.erase(countPairs.find({current, key}));
     counts[key]++;
     countPairs.insert({current + 1, key});
   }
@@ -35,14 +34,12 @@ public:
   }
 
   string getMaxKey() {
-    if (countPairs.empty())
-      return "";
+    if (countPairs.empty()) return "";
     return get<1>(*countPairs.rbegin());
   }
 
   string getMinKey() {
-    if (countPairs.empty())
-      return "";
+    if (countPairs.empty()) return "";
     return get<1>(*countPairs.begin());
   }
 };

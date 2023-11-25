@@ -2,13 +2,13 @@
 // https://leetcode.com/problems/first-bad-version/
 
 class Solution {
-private:
+ private:
   bool isBadVersion(int n) {
     // This API is defined for us.
     return true;
   }
 
-public:
+ public:
   int firstBadVersion(int n) {
     int lo = 1, hi = n;
     while (lo <= hi) {

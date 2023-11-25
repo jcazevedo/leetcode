@@ -16,7 +16,7 @@ struct TreeNode {
 };
 
 class Solution {
-private:
+ private:
   TreeNode* go(const vector<int>& nums, int from, int to) {
     int mid = from + (to - from) / 2;
     return new TreeNode(nums[mid],
@@ -24,7 +24,7 @@ private:
                         mid < to ? go(nums, mid + 1, to) : nullptr);
   }
 
-public:
+ public:
   TreeNode* sortedArrayToBST(vector<int>& nums) {
     int N = nums.size();
     return go(nums, 0, N - 1);

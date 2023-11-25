@@ -8,10 +8,10 @@ using namespace std;
 #define MOD 1000000007
 
 class Solution {
-private:
+ private:
   int modAdd(long long a, long long b) { return (a + b) % MOD; }
 
-public:
+ public:
   int countHomogenous(string s) {
     int N = s.size();
 

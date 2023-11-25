@@ -6,7 +6,7 @@
 using namespace std;
 
 class BinaryMatrix {
-public:
+ public:
   int get(int x, int y) {
     // This API is provided for us.
     return -1;
@@ -16,7 +16,7 @@ public:
 };
 
 class Solution {
-private:
+ private:
   int best_at_row(BinaryMatrix& binaryMatrix, int row, int col) {
     int lo = 0, hi = col;
     while (lo < hi) {
@@ -27,12 +27,11 @@ private:
       else
         lo = mid + 1;
     }
-    if (binaryMatrix.get(row, lo) == 0)
-      return -1;
+    if (binaryMatrix.get(row, lo) == 0) return -1;
     return lo;
   }
 
-public:
+ public:
   int leftMostColumnWithOne(BinaryMatrix& binaryMatrix) {
     vector<int> d = binaryMatrix.dimensions();
     int N = d[0];
@@ -40,8 +39,7 @@ public:
     int best = -1;
     for (int i = 0; i < N; ++i) {
       int at_row = best_at_row(binaryMatrix, i, best == -1 ? M - 1 : best - 1);
-      if (at_row != -1)
-        best = at_row;
+      if (at_row != -1) best = at_row;
     }
     return best;
   }

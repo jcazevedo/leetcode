@@ -7,8 +7,10 @@
 using namespace std;
 
 class Solution {
-public:
-  int fourSumCount(vector<int>& A, vector<int>& B, vector<int>& C,
+ public:
+  int fourSumCount(vector<int>& A,
+                   vector<int>& B,
+                   vector<int>& C,
                    vector<int>& D) {
     unordered_map<int, int> ab_sum, cd_sum;
     int N = A.size();

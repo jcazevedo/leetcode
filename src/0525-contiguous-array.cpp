@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int findMaxLength(vector<int>& nums) {
     map<int, int> min_diff;
     min_diff[0] = 0;
@@ -18,8 +18,7 @@ public:
       else
         cnt_1++;
       int diff = cnt_0 - cnt_1;
-      if (min_diff.find(diff) == min_diff.end())
-        min_diff[diff] = i + 1;
+      if (min_diff.find(diff) == min_diff.end()) min_diff[diff] = i + 1;
       best = max(best, i + 1 - min_diff[diff]);
     }
     return best;

@@ -8,12 +8,10 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int minSetSize(vector<int>& arr) {
     map<int, int> cnt;
-    for (int v : arr) {
-      cnt[v]++;
-    }
+    for (int v : arr) { cnt[v]++; }
     int N = arr.size();
     vector<int> tot;
     for (auto itr = cnt.begin(); itr != cnt.end(); ++itr) {

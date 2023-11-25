@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<int> eventualSafeNodes(vector<vector<int>>& graph) {
     int N = graph.size();
     vector<int> inDegree(N, 0);
@@ -20,9 +20,7 @@ public:
     }
     queue<int> q;
     for (int i = 0; i < N; ++i) {
-      if (inDegree[i] == 0) {
-        q.push(i);
-      }
+      if (inDegree[i] == 0) { q.push(i); }
     }
     vector<bool> safe(N, false);
     while (!q.empty()) {
@@ -32,16 +30,12 @@ public:
       for (unsigned int i = 0; i < inverted[u].size(); ++i) {
         int v = inverted[u][i];
         inDegree[v]--;
-        if (inDegree[v] == 0) {
-          q.push(v);
-        }
+        if (inDegree[v] == 0) { q.push(v); }
       }
     }
     vector<int> ans;
     for (int i = 0; i < N; ++i) {
-      if (safe[i]) {
-        ans.push_back(i);
-      }
+      if (safe[i]) { ans.push_back(i); }
     }
     return ans;
   }

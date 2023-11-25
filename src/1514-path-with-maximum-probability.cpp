@@ -9,9 +9,12 @@
 using namespace std;
 
 class Solution {
-public:
-  double maxProbability(int n, vector<vector<int>>& edges,
-                        vector<double>& succProb, int start, int end) {
+ public:
+  double maxProbability(int n,
+                        vector<vector<int>>& edges,
+                        vector<double>& succProb,
+                        int start,
+                        int end) {
     vector<vector<tuple<int, double>>> graph =
         vector<vector<tuple<int, double>>>(n, vector<tuple<int, double>>());
     int E = edges.size();
@@ -31,8 +34,7 @@ public:
       int u;
       tie(currProb, u) = pq.top();
       pq.pop();
-      if (u == end)
-        return currProb;
+      if (u == end) return currProb;
       for (int i = 0; i < (int)graph[u].size(); ++i) {
         int v = get<0>(graph[u][i]);
         double nextProb = get<1>(graph[u][i]) * currProb;

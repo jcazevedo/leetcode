@@ -6,10 +6,10 @@
 using namespace std;
 
 class ParkingSystem {
-private:
+ private:
   vector<int> spaces;
 
-public:
+ public:
   ParkingSystem(int big, int medium, int small) {
     spaces = {0, big, medium, small};
   }

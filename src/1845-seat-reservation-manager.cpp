@@ -6,13 +6,12 @@
 using namespace std;
 
 class SeatManager {
-private:
+ private:
   set<int> unreserved;
 
-public:
+ public:
   SeatManager(int n) {
-    for (int i = 1; i <= n; ++i)
-      unreserved.insert(i);
+    for (int i = 1; i <= n; ++i) unreserved.insert(i);
   }
 
   int reserve() {

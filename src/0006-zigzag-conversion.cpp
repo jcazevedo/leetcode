@@ -7,10 +7,9 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   string convert(string s, int numRows) {
-    if (numRows == 1)
-      return s;
+    if (numRows == 1) return s;
     int N = s.size(), row = 0, rowDiff = 1;
     vector<string> rows = vector<string>(numRows, "");
     for (int i = 0; i < N; ++i) {
@@ -25,8 +24,7 @@ public:
       }
     }
     string ans = "";
-    for (int i = 0; i < numRows; ++i)
-      ans += rows[i];
+    for (int i = 0; i < numRows; ++i) ans += rows[i];
     return ans;
   }
 };

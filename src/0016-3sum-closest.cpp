@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int threeSumClosest(vector<int>& nums, int target) {
     int N = nums.size();
     sort(nums.begin(), nums.end());
@@ -18,13 +18,10 @@ public:
       int r = N - 1;
       while (l < r) {
         int s = nums[i] + nums[l] + nums[r];
-        if (abs(best - target) > abs(s - target))
-          best = s;
+        if (abs(best - target) > abs(s - target)) best = s;
         if (s - target == 0) {
-          while (l < r && nums[l] == nums[l + 1])
-            ++l;
-          while (l < r && nums[r] == nums[r - 1])
-            --r;
+          while (l < r && nums[l] == nums[l + 1]) ++l;
+          while (l < r && nums[r] == nums[r - 1]) --r;
           ++l;
           --r;
         } else if (s - target > 0) {

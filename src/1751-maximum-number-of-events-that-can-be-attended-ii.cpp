@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   int binarySearch(const vector<vector<int>>& events, int endTime) {
     int lo = 0, hi = events.size();
     while (lo < hi) {
@@ -21,11 +21,11 @@ private:
     return lo;
   }
 
-  int dfs(int curr, const vector<vector<int>>& events,
-          vector<vector<int>>& cache, int k) {
-    if (curr >= (int)events.size() || k == 0) {
-      return 0;
-    }
+  int dfs(int curr,
+          const vector<vector<int>>& events,
+          vector<vector<int>>& cache,
+          int k) {
+    if (curr >= (int)events.size() || k == 0) { return 0; }
     if (cache[curr][k] == -1) {
       int next = binarySearch(events, events[curr][1]);
       cache[curr][k] = max(dfs(curr + 1, events, cache, k),
@@ -34,7 +34,7 @@ private:
     return cache[curr][k];
   }
 
-public:
+ public:
   int maxValue(vector<vector<int>>& events, int k) {
     sort(events.begin(), events.end());
     vector<vector<int>> cache(events.size(), vector<int>(k + 1, -1));

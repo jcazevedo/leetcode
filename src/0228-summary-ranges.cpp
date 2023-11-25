@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   string toRange(int start, int end) {
     ostringstream ss;
     if (start == end)
@@ -18,10 +18,9 @@ private:
     return ss.str();
   }
 
-public:
+ public:
   vector<string> summaryRanges(vector<int>& nums) {
-    if (nums.empty())
-      return vector<string>();
+    if (nums.empty()) return vector<string>();
     int start = nums[0], end = nums[0];
     vector<string> ans;
     for (int i = 1; i < (int)nums.size(); ++i) {

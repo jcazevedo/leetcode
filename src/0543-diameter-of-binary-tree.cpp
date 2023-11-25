@@ -14,14 +14,12 @@ struct TreeNode {
 };
 
 class Solution {
-private:
+ private:
   map<TreeNode*, int> pathThrough;
   map<TreeNode*, int> pathEnding;
 
   int go(TreeNode* root) {
-    if (root == nullptr) {
-      return 0;
-    }
+    if (root == nullptr) { return 0; }
     int best = 0;
     best = max(best, go(root->left));
     best = max(best, go(root->right));
@@ -31,7 +29,7 @@ private:
     return best;
   }
 
-public:
+ public:
   int diameterOfBinaryTree(TreeNode* root) {
     pathThrough.clear();
     pathEnding.clear();

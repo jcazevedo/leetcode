@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   bool good(int maxDiff, int p, const vector<int>& nums) {
     int i = 0, c = 0, N = nums.size();
     while (i < N - 1) {
@@ -20,7 +20,7 @@ private:
     return c >= p;
   }
 
-public:
+ public:
   int minimizeMax(vector<int>& nums, int p) {
     int N = nums.size();
     sort(nums.begin(), nums.end());

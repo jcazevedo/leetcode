@@ -9,12 +9,11 @@ using namespace std;
 #define MOD 1000000007
 
 class Solution {
-private:
+ private:
   long long pt[MAXN + 1][MAXN + 1];
 
   long long go(vector<int>& nums) {
-    if (nums.size() <= 1)
-      return 1L;
+    if (nums.size() <= 1) return 1L;
     vector<int> left, right;
     for (int i = 1; i < (int)nums.size(); ++i)
       if (nums[i] < nums[0])
@@ -25,7 +24,7 @@ private:
            MOD;
   }
 
-public:
+ public:
   int numOfWays(vector<int>& nums) {
     for (int i = 0; i <= MAXN; ++i)
       for (int j = 0; j <= i; ++j)

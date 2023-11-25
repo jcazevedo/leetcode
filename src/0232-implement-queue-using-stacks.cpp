@@ -6,7 +6,7 @@
 using namespace std;
 
 class MyQueue {
-private:
+ private:
   stack<int> in;
   stack<int> out;
 
@@ -19,7 +19,7 @@ private:
     }
   }
 
-public:
+ public:
   MyQueue() {}
 
   void push(int x) { in.push(x); }

@@ -14,7 +14,7 @@ struct ListNode {
 };
 
 class Solution {
-public:
+ public:
   vector<ListNode*> splitListToParts(ListNode* head, int k) {
     int len = 0;
     ListNode* curr = head;
@@ -30,20 +30,17 @@ public:
     while (head != nullptr) {
       ListNode* prev = head;
       head = head->next;
-      if (currLen == 0)
-        ans.push_back(prev);
+      if (currLen == 0) ans.push_back(prev);
 
       currLen++;
       if ((rem > 0 && currLen == size + 1) || (rem == 0 && currLen == size)) {
         prev->next = nullptr;
-        if (rem > 0)
-          --rem;
+        if (rem > 0) --rem;
         currLen = 0;
       }
     }
 
-    while ((int)ans.size() < k)
-      ans.push_back(nullptr);
+    while ((int)ans.size() < k) ans.push_back(nullptr);
 
     return ans;
   }

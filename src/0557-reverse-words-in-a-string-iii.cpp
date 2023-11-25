@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   string reverseWords(string s) {
     int N = s.size();
     int wordStart = 0;

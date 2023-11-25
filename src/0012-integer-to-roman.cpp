@@ -7,11 +7,11 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   unordered_map<int, string> digits = {
       {1, "IVX"}, {2, "XLC"}, {3, "CDM"}, {4, "M  "}};
 
-public:
+ public:
   string intToRoman(int num) {
     string ans = "";
     int pow = 1;

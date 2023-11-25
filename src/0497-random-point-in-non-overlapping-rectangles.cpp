@@ -7,10 +7,10 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   vector<vector<int>> rects;
 
-public:
+ public:
   Solution(vector<vector<int>>& rects) : rects(rects) {}
 
   vector<int> pick() {
@@ -19,8 +19,7 @@ public:
     for (const vector<int>& rect : rects) {
       int area = (rect[2] - rect[0] + 1) * (rect[3] - rect[1] + 1);
       totArea += area;
-      if (rand() % totArea < area)
-        selectedRectangle = rect;
+      if (rand() % totArea < area) selectedRectangle = rect;
     }
     int x = rand() % (selectedRectangle[2] - selectedRectangle[0] + 1) +
             selectedRectangle[0];

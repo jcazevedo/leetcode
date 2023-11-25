@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<int> findDiagonalOrder(vector<vector<int>>& nums) {
     int N = nums.size();
     map<int, priority_queue<pair<int, int>>> diags;

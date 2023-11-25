@@ -8,10 +8,10 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   static vector<vector<int>> dirs;
 
-public:
+ public:
   vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
     vector<vector<int>> dist =
         vector<vector<int>>(mat.size(), vector<int>(mat[0].size(), -1));

@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<vector<int>> insert(vector<vector<int>>& intervals,
                              vector<int>& newInterval) {
     vector<vector<int>> result;

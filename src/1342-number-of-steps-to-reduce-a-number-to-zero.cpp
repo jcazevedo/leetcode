@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
 
 class Solution {
-public:
+ public:
   int numberOfSteps(int num) {
     int ans = 0;
     while (num != 0) {

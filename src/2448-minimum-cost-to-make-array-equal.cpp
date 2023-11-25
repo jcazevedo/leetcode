@@ -8,17 +8,15 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   long long minCost(vector<int>& nums, vector<int>& cost) {
     int N = nums.size();
     vector<pair<int, long long>> ncs;
-    for (int i = 0; i < N; ++i)
-      ncs.push_back(make_pair(nums[i], cost[i]));
+    for (int i = 0; i < N; ++i) ncs.push_back(make_pair(nums[i], cost[i]));
     sort(ncs.begin(), ncs.end());
     vector<long long> costs = vector<long long>(N, 0L);
     costs[0] = ncs[0].second;
-    for (int i = 1; i < N; ++i)
-      costs[i] = ncs[i].second + costs[i - 1];
+    for (int i = 1; i < N; ++i) costs[i] = ncs[i].second + costs[i - 1];
     long long curr = 0L;
     for (int i = 1; i < N; ++i)
       curr += ncs[i].second * (ncs[i].first - ncs[0].first);

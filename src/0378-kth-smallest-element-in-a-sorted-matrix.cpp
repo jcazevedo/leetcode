@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int kthSmallest(vector<vector<int>>& matrix, int k) {
     int H = matrix.size();
     int W = matrix[0].size();

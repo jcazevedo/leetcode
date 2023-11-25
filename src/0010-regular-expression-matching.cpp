@@ -7,8 +7,11 @@
 using namespace std;
 
 class Solution {
-private:
-  bool matches(int i, int j, const string& s, const string& p,
+ private:
+  bool matches(int i,
+               int j,
+               const string& s,
+               const string& p,
                vector<vector<short>>& cache) {
     if (cache[i][j] == -1) {
       bool good;
@@ -27,7 +30,7 @@ private:
     return cache[i][j] == 1;
   }
 
-public:
+ public:
   bool isMatch(string s, string p) {
     vector<vector<short>> cache =
         vector<vector<short>>(s.size() + 1, vector<short>(p.size() + 1, -1));

@@ -7,16 +7,12 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int numJewelsInStones(string J, string S) {
     unordered_set<char> jewels;
-    for (char ch : J) {
-      jewels.insert(ch);
-    }
+    for (char ch : J) { jewels.insert(ch); }
     int cnt = 0;
-    for (char ch : S) {
-      cnt += jewels.count(ch);
-    }
+    for (char ch : S) { cnt += jewels.count(ch); }
     return cnt;
   }
 };

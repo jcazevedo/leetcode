@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   vector<string> getWords(string sentence) {
     vector<string> ans;
     string currentWord = "";
@@ -19,8 +19,7 @@ private:
         currentWord = "";
       }
     }
-    if (!currentWord.empty())
-      ans.push_back(currentWord);
+    if (!currentWord.empty()) ans.push_back(currentWord);
     return ans;
   }
 
@@ -31,19 +30,17 @@ private:
       word += "ma";
     else
       word = word.substr(1) + word[0] + "ma";
-    for (int i = 0; i < index; ++i)
-      word += 'a';
+    for (int i = 0; i < index; ++i) word += 'a';
     return word;
   }
 
-public:
+ public:
   string toGoatLatin(string sentence) {
     vector<string> words = getWords(sentence);
     string ans = "";
     for (int i = 0; i < (int)words.size(); ++i) {
       ans += transform(words[i], i + 1);
-      if (i + 1 < (int)words.size())
-        ans += ' ';
+      if (i + 1 < (int)words.size()) ans += ' ';
     }
     return ans;
   }

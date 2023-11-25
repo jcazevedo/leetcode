@@ -4,10 +4,9 @@
 #include <cmath>
 
 class Solution {
-public:
+ public:
   bool isPowerOfThree(int n) {
-    if (n <= 0)
-      return false;
+    if (n <= 0) return false;
     double logNum = log10(n);
     double log3 = log10(3);
     double power = logNum / log3;

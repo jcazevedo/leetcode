@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int lengthOfLIS(vector<int>& nums) {
     int N = nums.size();
     vector<int> p(N);

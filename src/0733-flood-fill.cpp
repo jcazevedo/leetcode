@@ -7,11 +7,16 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   const vector<pair<int, int>> dirs = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
 
-  void flood_fill(vector<vector<int>>& image, int sr, int sc, int H, int W,
-                  int newColor, vector<vector<bool>>& visited) {
+  void flood_fill(vector<vector<int>>& image,
+                  int sr,
+                  int sc,
+                  int H,
+                  int W,
+                  int newColor,
+                  vector<vector<bool>>& visited) {
     visited[sr][sc] = true;
     for (pair<int, int> new_dir : dirs) {
       int new_sr = sr + new_dir.first;
@@ -24,8 +29,10 @@ private:
     image[sr][sc] = newColor;
   }
 
-public:
-  vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc,
+ public:
+  vector<vector<int>> floodFill(vector<vector<int>>& image,
+                                int sr,
+                                int sc,
                                 int newColor) {
     int H = image.size();
     int W = image[0].size();

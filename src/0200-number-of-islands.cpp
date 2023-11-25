@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   void fill(int i, int j, vector<vector<char>>& grid) {
     if (i < 0 || i >= (int)grid.size() || j < 0 || j >= (int)grid[0].size() ||
         grid[i][j] == '0')
@@ -18,10 +18,9 @@ private:
     fill(i, j - 1, grid);
   }
 
-public:
+ public:
   int numIslands(vector<vector<char>>& grid) {
-    if (grid.size() == 0 || grid[0].size() == 0)
-      return 0;
+    if (grid.size() == 0 || grid[0].size() == 0) return 0;
     int c = 0;
     for (int i = 0; i < (int)grid.size(); i++) {
       for (int j = 0; j < (int)grid[0].size(); j++) {

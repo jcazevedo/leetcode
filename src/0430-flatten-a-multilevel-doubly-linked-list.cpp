@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/flatten-a-multilevel-doubly-linked-list/
 
 class Node {
-public:
+ public:
   int val;
   Node* prev;
   Node* next;
@@ -10,10 +10,9 @@ public:
 };
 
 class Solution {
-public:
+ public:
   Node* flatten(Node* head) {
-    if (head == nullptr)
-      return head;
+    if (head == nullptr) return head;
     Node* curr = head;
     while (curr != nullptr) {
       if (curr->child) {
@@ -21,11 +20,9 @@ public:
         Node* child = flatten(curr->child);
         child->prev = curr;
         curr->next = child;
-        while (child->next)
-          child = child->next;
+        while (child->next) child = child->next;
         child->next = next;
-        if (next)
-          next->prev = child;
+        if (next) next->prev = child;
         curr->child = nullptr;
       }
       curr = curr->next;

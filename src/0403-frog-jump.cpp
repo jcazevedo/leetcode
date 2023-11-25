@@ -8,14 +8,14 @@
 using namespace std;
 
 class Solution {
-private:
-  bool goodAux(int stone, int lastJump, const unordered_set<int>& positions,
+ private:
+  bool goodAux(int stone,
+               int lastJump,
+               const unordered_set<int>& positions,
                int lastStone,
                unordered_map<int, unordered_map<int, bool>>& cache) {
-    if (stone == lastStone)
-      return true;
-    if (positions.find(stone) == positions.end())
-      return false;
+    if (stone == lastStone) return true;
+    if (positions.find(stone) == positions.end()) return false;
     if (cache.find(stone) == cache.end() ||
         cache[stone].find(lastJump) == cache[stone].end()) {
       bool ans = false;
@@ -32,18 +32,19 @@ private:
     return cache[stone][lastJump];
   }
 
-  bool good(int stone, int lastJump, const unordered_set<int>& positions,
+  bool good(int stone,
+            int lastJump,
+            const unordered_set<int>& positions,
             int lastStone) {
     unordered_map<int, unordered_map<int, bool>> cache;
     return goodAux(stone, lastJump, positions, lastStone, cache);
   }
 
-public:
+ public:
   bool canCross(vector<int>& stones) {
     unordered_set<int> positions;
     int lastStone = stones.back();
-    for (int stone : stones)
-      positions.insert(stone);
+    for (int stone : stones) positions.insert(stone);
     return good(0, 0, positions, lastStone);
   }
 };

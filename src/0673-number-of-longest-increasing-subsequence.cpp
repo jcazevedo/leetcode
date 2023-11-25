@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int findNumberOfLIS(vector<int>& nums) {
     int N = nums.size();
     vector<int> count(N, 1);
@@ -22,12 +22,10 @@ public:
             count[i] += count[j];
         }
     int maxLength = 0;
-    for (int i = 0; i < N; ++i)
-      maxLength = max(length[i], maxLength);
+    for (int i = 0; i < N; ++i) maxLength = max(length[i], maxLength);
     int ans = 0;
     for (int i = 0; i < N; ++i)
-      if (length[i] == maxLength)
-        ans += count[i];
+      if (length[i] == maxLength) ans += count[i];
     return ans;
   }
 };

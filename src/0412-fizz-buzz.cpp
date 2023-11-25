@@ -8,14 +8,14 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   string toString(int n) {
     ostringstream ss;
     ss << n;
     return ss.str();
   }
 
-public:
+ public:
   vector<string> fizzBuzz(int n) {
     vector<string> ans;
     for (int i = 1; i <= n; ++i)

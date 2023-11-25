@@ -7,12 +7,10 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int findMinArrowShots(vector<vector<int>>& points) {
-    if (points.size() == 0)
-      return 0;
-    if (points.size() == 1)
-      return 1;
+    if (points.size() == 0) return 0;
+    if (points.size() == 1) return 1;
     sort(points.begin(), points.end(),
          [](const vector<int>& v1, const vector<int>& v2) {
            return v1[1] < v2[1];

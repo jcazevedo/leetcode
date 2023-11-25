@@ -16,11 +16,10 @@ struct TreeNode {
 };
 
 class Codec {
-private:
+ private:
   string vec_to_string(const vector<int>& v) {
     ostringstream ss;
-    for (int num : v)
-      ss << num << " ";
+    for (int num : v) ss << num << " ";
     return ss.str();
   }
 
@@ -28,8 +27,7 @@ private:
     istringstream ss(s);
     vector<int> ans;
     int num;
-    while (ss >> num)
-      ans.push_back(num);
+    while (ss >> num) ans.push_back(num);
     return ans;
   }
 
@@ -38,18 +36,15 @@ private:
     if (root != nullptr) {
       ans.push_back(root->val);
       vector<int> left = tree_to_vec(root->left);
-      for (int num : left)
-        ans.push_back(num);
+      for (int num : left) ans.push_back(num);
       vector<int> right = tree_to_vec(root->right);
-      for (int num : right)
-        ans.push_back(num);
+      for (int num : right) ans.push_back(num);
     }
     return ans;
   }
 
   TreeNode* vec_to_tree(vector<int> v) {
-    if (v.empty())
-      return nullptr;
+    if (v.empty()) return nullptr;
     TreeNode* root = new TreeNode(v[0]);
     vector<int> left, right;
     int N = v.size();
@@ -64,7 +59,7 @@ private:
     return root;
   }
 
-public:
+ public:
   // Encodes a tree to a single string.
   string serialize(TreeNode* root) { return vec_to_string(tree_to_vec(root)); }
 

@@ -9,8 +9,9 @@
 using namespace std;
 
 class Solution {
-public:
-  vector<vector<int>> kSmallestPairs(vector<int>& nums1, vector<int>& nums2,
+ public:
+  vector<vector<int>> kSmallestPairs(vector<int>& nums1,
+                                     vector<int>& nums2,
                                      int k) {
     int N1 = nums1.size(), N2 = nums2.size();
     vector<vector<int>> ans;

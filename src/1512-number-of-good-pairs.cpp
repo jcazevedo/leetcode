@@ -7,11 +7,10 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int numIdenticalPairs(vector<int>& nums) {
     int N = nums.size();
-    if (N <= 1)
-      return 0;
+    if (N <= 1) return 0;
     int ans = 0;
     unordered_map<int, int> counts;
     counts[nums[N - 1]]++;

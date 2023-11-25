@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int mySqrt(int x) {
     long long lo = 0, hi = x;
     while (lo < hi) {

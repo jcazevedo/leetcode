@@ -7,7 +7,7 @@
 using namespace std;
 
 class Node {
-public:
+ public:
   int val;
   vector<Node*> neighbors;
 
@@ -28,7 +28,7 @@ public:
 };
 
 class Solution {
-private:
+ private:
   unordered_map<Node*, Node*> copies;
 
   Node* copy(Node* node) {
@@ -44,10 +44,9 @@ private:
     return curr;
   }
 
-public:
+ public:
   Node* cloneGraph(Node* node) {
-    if (node != nullptr)
-      return copy(node);
+    if (node != nullptr) return copy(node);
     return nullptr;
   }
 };

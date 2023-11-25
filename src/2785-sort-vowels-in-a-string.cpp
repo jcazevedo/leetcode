@@ -8,27 +8,25 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   bool isVowel(char ch) {
     char lch = tolower(ch);
     return lch == 'a' || lch == 'e' || lch == 'i' || lch == 'o' || lch == 'u';
   }
 
-public:
+ public:
   string sortVowels(string s) {
     int N = s.size();
 
     string vowels = "";
     for (int i = 0; i < N; ++i)
-      if (isVowel(s[i]))
-        vowels += s[i];
+      if (isVowel(s[i])) vowels += s[i];
 
     sort(vowels.begin(), vowels.end());
 
     int v = 0;
     for (int i = 0; i < N; ++i)
-      if (isVowel(s[i]))
-        s[i] = vowels[v++];
+      if (isVowel(s[i])) s[i] = vowels[v++];
 
     return s;
   }

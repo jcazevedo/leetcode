@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int longestPalindromeSubseq(string s) {
     int N = s.size();
     vector<vector<int>> dp(N + 1, vector<int>(N + 1, 0));

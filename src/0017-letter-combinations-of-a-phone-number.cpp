@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   map<char, string> m = {{'2', "abc"}, {'3', "def"}, {'4', "ghi"},
                          {'5', "jkl"}, {'6', "mno"}, {'7', "pqrs"},
                          {'8', "tuv"}, {'9', "wxyz"}};
@@ -29,10 +29,9 @@ private:
     return res;
   }
 
-public:
+ public:
   vector<string> letterCombinations(string digits) {
-    if (digits.empty())
-      return vector<string>();
+    if (digits.empty()) return vector<string>();
     return aux(digits);
   }
 };

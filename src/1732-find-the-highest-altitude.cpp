@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int largestAltitude(vector<int>& gain) {
     int ans = 0, curr = 0;
     for (int v : gain) {

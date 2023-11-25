@@ -15,10 +15,9 @@ struct TreeNode {
 };
 
 class Solution {
-public:
+ public:
   vector<int> inorderTraversal(TreeNode* root) {
-    if (root == nullptr)
-      return vector<int>();
+    if (root == nullptr) return vector<int>();
     vector<int> res;
     stack<TreeNode*> s;
     s.push(root);

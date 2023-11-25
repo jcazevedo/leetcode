@@ -18,20 +18,18 @@ struct TreeNode {
 };
 
 class Solution {
-private:
+ private:
   int levels = 0;
   unordered_map<int, int> levelSum;
 
   void go(TreeNode* curr, int level) {
     levels = max(levels, level);
     levelSum[level] += curr->val;
-    if (curr->left != nullptr)
-      go(curr->left, level + 1);
-    if (curr->right != nullptr)
-      go(curr->right, level + 1);
+    if (curr->left != nullptr) go(curr->left, level + 1);
+    if (curr->right != nullptr) go(curr->right, level + 1);
   }
 
-public:
+ public:
   int maxLevelSum(TreeNode* root) {
     go(root, 1);
     int ans = 0, best = numeric_limits<int>::min();

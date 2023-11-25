@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<int> sortedSquares(vector<int>& A) {
     int N = A.size();
     vector<int> res(N);

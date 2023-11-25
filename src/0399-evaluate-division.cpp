@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<double> calcEquation(vector<vector<string>>& equations,
                               vector<double>& values,
                               vector<vector<string>>& queries) {
@@ -22,8 +22,7 @@ public:
     }
     vector<vector<double>> dists =
         vector<vector<double>>(n_vars, vector<double>(n_vars, -1));
-    for (int i = 0; i < n_vars; ++i)
-      dists[i][i] = 1.0;
+    for (int i = 0; i < n_vars; ++i) dists[i][i] = 1.0;
     int n_equations = equations.size();
     for (int i = 0; i < n_equations; ++i) {
       int u = var_to_idx[equations[i][0]];
@@ -33,11 +32,9 @@ public:
     }
     for (int k = 0; k < n_vars; ++k) {
       for (int i = 0; i < n_vars; ++i) {
-        if (dists[i][k] == -1)
-          continue;
+        if (dists[i][k] == -1) continue;
         for (int j = 0; j < n_vars; ++j) {
-          if (dists[k][j] == -1)
-            continue;
+          if (dists[k][j] == -1) continue;
           if (dists[i][j] == -1 || dists[i][j] > dists[i][k] * dists[k][j])
             dists[i][j] = dists[i][k] * dists[k][j];
         }

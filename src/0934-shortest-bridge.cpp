@@ -8,11 +8,16 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   static vector<vector<int>> directions;
 
-  void floodFill(int i, int j, const vector<vector<int>>& grid, int H, int W,
-                 vector<vector<int>>& island, int currIsland) {
+  void floodFill(int i,
+                 int j,
+                 const vector<vector<int>>& grid,
+                 int H,
+                 int W,
+                 vector<vector<int>>& island,
+                 int currIsland) {
     island[i][j] = currIsland;
     for (const vector<int>& dir : directions) {
       int ni = i + dir[0];
@@ -23,7 +28,7 @@ private:
     }
   }
 
-public:
+ public:
   int shortestBridge(vector<vector<int>>& grid) {
     int H = grid.size();
     int W = grid[0].size();
@@ -40,8 +45,7 @@ public:
         vector<vector<bool>>(H, vector<bool>(W, false));
     for (int i = 0; i < H; ++i)
       for (int j = 0; j < W; ++j)
-        if (island[i][j] == 0)
-          q.push({0, i, j});
+        if (island[i][j] == 0) q.push({0, i, j});
     while (!q.empty()) {
       int dist, i, j;
       tie(dist, i, j) = q.front();
@@ -54,8 +58,7 @@ public:
             visited[ni][nj] = true;
             q.push({dist + 1, ni, nj});
           }
-          if (grid[ni][nj] == 1 && island[ni][nj] == 1)
-            return dist;
+          if (grid[ni][nj] == 1 && island[ni][nj] == 1) return dist;
         }
       }
     }

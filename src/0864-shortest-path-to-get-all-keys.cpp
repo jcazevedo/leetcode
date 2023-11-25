@@ -12,7 +12,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int shortestPathAllKeys(vector<string>& grid) {
     unordered_map<char, int> keyToIdx;
     unordered_map<int, char> idxToKey;
@@ -59,8 +59,7 @@ public:
           if (islower(grid[nextI][nextJ])) {
             int nextKey = keyToIdx[grid[nextI][nextJ]];
             int nextKeys = (1 << nextKey) | currKeys;
-            if (nextKeys == (1 << nKeys) - 1)
-              return currDist + 1;
+            if (nextKeys == (1 << nKeys) - 1) return currDist + 1;
             if (visited.find({nextI, nextJ, nextKeys}) == visited.end()) {
               q.push({nextI, nextJ, nextKeys, currDist + 1});
               visited.insert({nextI, nextJ, nextKeys});

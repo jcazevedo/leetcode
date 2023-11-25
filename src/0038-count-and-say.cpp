@@ -7,18 +7,16 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   string intToString(int v) {
     ostringstream ss;
     ss << v;
     return ss.str();
   }
 
-public:
+ public:
   string countAndSay(int n) {
-    if (n == 1) {
-      return "1";
-    }
+    if (n == 1) { return "1"; }
     string prev = countAndSay(n - 1);
     int N = prev.size();
     string ans = "";

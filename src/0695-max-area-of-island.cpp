@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   vector<vector<bool>> visited;
   int H, W;
   vector<vector<int>> dirs = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
@@ -25,14 +25,12 @@ private:
     return area;
   }
 
-public:
+ public:
   int maxAreaOfIsland(vector<vector<int>>& grid) {
     H = grid.size();
-    if (H == 0)
-      return 0;
+    if (H == 0) return 0;
     W = grid[0].size();
-    if (W == 0)
-      return 0;
+    if (W == 0) return 0;
     visited.assign(H, vector<bool>(W, false));
     int max_area = 0;
     for (int h = 0; h < H; ++h) {

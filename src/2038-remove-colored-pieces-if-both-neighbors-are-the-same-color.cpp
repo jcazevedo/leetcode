@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   bool winnerOfGame(string colors) {
     int aCnt = 0, bCnt = 0, N = colors.size();
     char last = colors[0];
@@ -15,17 +15,13 @@ public:
       if (colors[i] == last)
         currentCnt++;
       else {
-        if (last == 'A' && currentCnt > 2)
-          aCnt += currentCnt - 2;
-        if (last == 'B' && currentCnt > 2)
-          bCnt += currentCnt - 2;
+        if (last == 'A' && currentCnt > 2) aCnt += currentCnt - 2;
+        if (last == 'B' && currentCnt > 2) bCnt += currentCnt - 2;
         last = colors[i];
         currentCnt = 1;
       }
-    if (last == 'A' && currentCnt > 2)
-      aCnt += currentCnt - 2;
-    if (last == 'B' && currentCnt > 2)
-      bCnt += currentCnt - 2;
+    if (last == 'A' && currentCnt > 2) aCnt += currentCnt - 2;
+    if (last == 'B' && currentCnt > 2) bCnt += currentCnt - 2;
     return aCnt > bCnt;
   }
 };

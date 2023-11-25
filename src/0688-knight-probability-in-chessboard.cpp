@@ -6,10 +6,10 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   static vector<vector<int>> directions;
 
-public:
+ public:
   double knightProbability(int n, int k, int row, int column) {
     vector<vector<vector<double>>> probability(
         k + 1, vector<vector<double>>(n, vector<double>(n, 0.0)));
@@ -30,9 +30,7 @@ public:
     }
     double ans = 0.0;
     for (int i = 0; i < n; ++i) {
-      for (int j = 0; j < n; ++j) {
-        ans += probability[k][i][j];
-      }
+      for (int j = 0; j < n; ++j) { ans += probability[k][i][j]; }
     }
     return ans;
   }

@@ -17,10 +17,10 @@ struct TrieNode {
 };
 
 class Trie {
-private:
+ private:
   TrieNode* root;
 
-public:
+ public:
   Trie() { root = new TrieNode(); }
 
   void insert(string word) {
@@ -37,8 +37,7 @@ public:
   bool search(string word) {
     TrieNode* curr = root;
     for (char ch : word) {
-      if (curr->next[ch - 'a'] == nullptr)
-        return false;
+      if (curr->next[ch - 'a'] == nullptr) return false;
       curr = curr->next[ch - 'a'];
     }
     return curr->is_end;
@@ -47,8 +46,7 @@ public:
   bool startsWith(string prefix) {
     TrieNode* curr = root;
     for (char ch : prefix) {
-      if (curr->next[ch - 'a'] == nullptr)
-        return false;
+      if (curr->next[ch - 'a'] == nullptr) return false;
       curr = curr->next[ch - 'a'];
     }
     return true;

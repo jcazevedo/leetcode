@@ -7,14 +7,12 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<vector<int>> merge(vector<vector<int>>& intervals) {
     priority_queue<pair<int, int>, vector<pair<int, int>>,
                    greater<pair<int, int>>>
         pq;
-    for (const vector<int>& i : intervals) {
-      pq.push(make_pair(i[0], i[1]));
-    }
+    for (const vector<int>& i : intervals) { pq.push(make_pair(i[0], i[1])); }
     vector<vector<int>> res;
     while (!pq.empty()) {
       pair<int, int> curr = pq.top();

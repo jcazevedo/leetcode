@@ -8,10 +8,10 @@ using namespace std;
 #define MOD 1000000007
 
 class Solution {
-private:
+ private:
   inline long long sum_to(int n) { return (long long)n * (n + 1) / 2; }
 
-public:
+ public:
   int countOrders(int n) {
     vector<long long> dp(n + 1, 0L);
     dp[1] = 1L;

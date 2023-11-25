@@ -17,7 +17,7 @@ struct ListNode {
 };
 
 class Solution {
-public:
+ public:
   ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
     stack<ListNode*> s1, s2;
     while (l1 != nullptr) {

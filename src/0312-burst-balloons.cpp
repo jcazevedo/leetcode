@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   vector<vector<int>> cache;
 
   int go(int i, int j, vector<int>& nums) {
@@ -23,11 +23,10 @@ private:
     return cache[i][j];
   }
 
-public:
+ public:
   int maxCoins(vector<int>& nums) {
     vector<int> padded = {1};
-    for (int num : nums)
-      padded.push_back(num);
+    for (int num : nums) padded.push_back(num);
     padded.push_back(1);
     int N = padded.size();
     cache = vector<vector<int>>(N, vector<int>(N, -1));

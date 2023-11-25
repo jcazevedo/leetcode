@@ -8,7 +8,7 @@ using namespace std;
 #define MOD 1000000007
 
 class Solution {
-public:
+ public:
   int numOfSubarrays(vector<int>& arr) {
     int N = arr.size(), currOdd = 0, currEven = 0, ans = 0;
     for (int i = 0; i < N; ++i) {

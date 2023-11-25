@@ -8,11 +8,11 @@
 using namespace std;
 
 class MyHashMap {
-private:
+ private:
   const static int N_BUCKETS = 1009;
   vector<vector<pair<int, int>>> buckets;
 
-public:
+ public:
   MyHashMap() { buckets.assign(N_BUCKETS, vector<pair<int, int>>()); }
 
   void put(int key, int value) {
@@ -31,8 +31,7 @@ public:
     int bucket = key % N_BUCKETS;
     vector<pair<int, int>>::iterator itr = upper_bound(
         buckets[bucket].begin(), buckets[bucket].end(), make_pair(key, -1));
-    if (itr == buckets[bucket].end() || itr->first != key)
-      return -1;
+    if (itr == buckets[bucket].end() || itr->first != key) return -1;
     return itr->second;
   }
 
@@ -40,8 +39,7 @@ public:
     int bucket = key % N_BUCKETS;
     vector<pair<int, int>>::iterator itr = upper_bound(
         buckets[bucket].begin(), buckets[bucket].end(), make_pair(key, -1));
-    if (itr == buckets[bucket].end() || itr->first != key)
-      return;
+    if (itr == buckets[bucket].end() || itr->first != key) return;
     buckets[bucket].erase(itr);
   }
 };

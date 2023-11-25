@@ -11,7 +11,7 @@ using namespace std;
 #define MAXN 500
 
 class Solution {
-private:
+ private:
   int dirs[4][2] = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
   int visited[MAXN][MAXN];
   int area[MAXN * MAXN];
@@ -31,7 +31,7 @@ private:
     return area;
   }
 
-public:
+ public:
   int largestIsland(vector<vector<int>>& grid) {
     N = grid.size();
     memset(visited, 0, sizeof(visited));
@@ -57,8 +57,7 @@ public:
               neighbors.insert(visited[ni][nj]);
           }
           int tot_area = 1;
-          for (int n : neighbors)
-            tot_area += area[n];
+          for (int n : neighbors) tot_area += area[n];
           ans = max(ans, tot_area);
         }
       }

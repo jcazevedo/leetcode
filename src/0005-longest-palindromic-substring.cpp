@@ -9,7 +9,7 @@ using namespace std;
 #define MAXN 1000
 
 class Solution {
-private:
+ private:
   int dp[MAXN][MAXN];
 
   int go(string& s, int l, int r) {
@@ -33,10 +33,9 @@ private:
     return dp[l][r];
   }
 
-public:
+ public:
   string longestPalindrome(string s) {
-    if (s == "")
-      return s;
+    if (s == "") return s;
     memset(dp, -1, sizeof(dp));
     int N = s.size();
     int best = 0, l = -1, si = -1;

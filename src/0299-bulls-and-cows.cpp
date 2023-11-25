@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   string getHint(string secret, string guess) {
     int N = secret.size();
     int bulls = 0, cows = 0;

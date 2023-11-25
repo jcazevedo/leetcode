@@ -10,14 +10,12 @@ struct ListNode {
 };
 
 class Solution {
-public:
+ public:
   ListNode* reverseList(ListNode* head, ListNode* prev = nullptr) {
-    if (head == nullptr)
-      return head;
+    if (head == nullptr) return head;
     ListNode* next = head->next;
     head->next = prev;
-    if (next == nullptr)
-      return head;
+    if (next == nullptr) return head;
     return reverseList(next, head);
   }
 };

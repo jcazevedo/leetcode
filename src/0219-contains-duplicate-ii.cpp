@@ -7,16 +7,14 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   bool containsNearbyDuplicate(vector<int>& nums, int k) {
     int N = nums.size();
     unordered_map<int, int> counts;
     for (int i = 0; i < N; ++i) {
-      if (counts[nums[i]] > 0)
-        return true;
+      if (counts[nums[i]] > 0) return true;
       counts[nums[i]]++;
-      if (i - k >= 0)
-        counts[nums[i - k]]--;
+      if (i - k >= 0) counts[nums[i - k]]--;
     }
     return false;
   }

@@ -7,25 +7,19 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int maxConsecutiveAnswers(string answerKey, int k) {
     int ans = k, ts = 0, fs = 0, l = 0;
     for (int i = 0; i < k; ++i) {
-      if (answerKey[i] == 'T')
-        ++ts;
-      if (answerKey[i] == 'F')
-        ++fs;
+      if (answerKey[i] == 'T') ++ts;
+      if (answerKey[i] == 'F') ++fs;
     }
     for (int r = k; r < (int)answerKey.size(); ++r) {
-      if (answerKey[r] == 'T')
-        ++ts;
-      if (answerKey[r] == 'F')
-        ++fs;
+      if (answerKey[r] == 'T') ++ts;
+      if (answerKey[r] == 'F') ++fs;
       while (l <= r && min(ts, fs) > k) {
-        if (answerKey[l] == 'T')
-          --ts;
-        if (answerKey[l] == 'F')
-          --fs;
+        if (answerKey[l] == 'T') --ts;
+        if (answerKey[l] == 'F') --fs;
         ++l;
       }
       ans = max(ans, r - l + 1);

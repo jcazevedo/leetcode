@@ -9,7 +9,7 @@ using namespace std;
 #define MOD 1000000007
 
 class Solution {
-private:
+ private:
   int rev(int n) {
     int ans = 0;
     while (n) {
@@ -20,7 +20,7 @@ private:
     return ans;
   }
 
-public:
+ public:
   int countNicePairs(vector<int>& nums) {
     int N = nums.size();
     unordered_map<int, int> count;

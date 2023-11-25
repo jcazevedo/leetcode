@@ -16,16 +16,14 @@ struct TreeNode {
 };
 
 class Solution {
-private:
+ private:
   vector<TreeNode*> go(vector<int> nodesToAssign) {
-    if (nodesToAssign.empty())
-      return {nullptr};
+    if (nodesToAssign.empty()) return {nullptr};
     vector<TreeNode*> ans;
     for (int node : nodesToAssign) {
       vector<int> nodesLeft, nodesRight;
       for (int other : nodesToAssign) {
-        if (other == node)
-          continue;
+        if (other == node) continue;
         if (other < node)
           nodesLeft.push_back(other);
         else
@@ -45,11 +43,10 @@ private:
     return ans;
   }
 
-public:
+ public:
   vector<TreeNode*> generateTrees(int n) {
     vector<int> nodesToAssign(n);
-    for (int i = 1; i <= n; ++i)
-      nodesToAssign[i - 1] = i;
+    for (int i = 1; i <= n; ++i) nodesToAssign[i - 1] = i;
     return go(nodesToAssign);
   }
 };

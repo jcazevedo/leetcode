@@ -10,16 +10,14 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   string removeDuplicateLetters(string s) {
     unordered_map<char, int> last_idx;
-    for (size_t i = 0; i < s.size(); ++i)
-      last_idx[s[i]] = i;
+    for (size_t i = 0; i < s.size(); ++i) last_idx[s[i]] = i;
     vector<bool> visited = vector<bool>('z' - 'a' + 1, false);
     stack<char> st;
     for (int i = 0; i < (int)s.size(); ++i) {
-      if (visited[s[i] - 'a'])
-        continue;
+      if (visited[s[i] - 'a']) continue;
       while (!st.empty() && s[i] < st.top() && last_idx[st.top()] > i) {
         char to_rem = st.top();
         st.pop();

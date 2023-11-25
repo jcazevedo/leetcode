@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   double getTime(const vector<int>& dist, int speed) {
     double ans = 0;
     for (unsigned int i = 0; i < dist.size(); ++i) {
@@ -19,7 +19,7 @@ private:
     return ans;
   }
 
-public:
+ public:
   int minSpeedOnTime(vector<int>& dist, double hour) {
     int lo = 1, hi = 1e7;
     while (lo < hi) {
@@ -30,8 +30,7 @@ public:
         lo = mid + 1;
       }
     }
-    if (getTime(dist, lo) <= hour)
-      return lo;
+    if (getTime(dist, lo) <= hour) return lo;
     return -1;
   }
 };

@@ -13,10 +13,9 @@ struct ListNode {
 };
 
 class Solution {
-public:
+ public:
   ListNode* rotateRight(ListNode* head, int k) {
-    if (head == nullptr)
-      return head;
+    if (head == nullptr) return head;
     int len = 1;
     ListNode* curr = head;
     while (curr->next != nullptr) {
@@ -25,9 +24,7 @@ public:
     }
     curr->next = head;
     k = len - k % len;
-    while (k-- > 0) {
-      curr = curr->next;
-    }
+    while (k-- > 0) { curr = curr->next; }
     ListNode* ans = curr->next;
     curr->next = nullptr;
     return ans;

@@ -2,10 +2,10 @@
 // https://leetcode.com/problems/minimum-flips-to-make-a-or-b-equal-to-c/
 
 class Solution {
-private:
+ private:
   bool isSet(int num, int bit) { return num & (1 << bit); }
 
-public:
+ public:
   int minFlips(int a, int b, int c) {
     int ans = 0;
     for (int i = 0; i < 30; ++i)

@@ -19,10 +19,10 @@ struct TreeNode {
 };
 
 class BSTIterator {
-private:
+ private:
   stack<TreeNode*> visited;
 
-public:
+ public:
   BSTIterator(TreeNode* root) {
     while (root != nullptr) {
       visited.push(root);

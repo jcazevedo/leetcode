@@ -6,10 +6,9 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   bool isReachableAtTime(int sx, int sy, int fx, int fy, int t) {
-    if (fx == sx && fy == sy)
-      return t == 0 || t > 1;
+    if (fx == sx && fy == sy) return t == 0 || t > 1;
     return t >= max(abs(fx - sx), abs(fy - sy));
   }
 };

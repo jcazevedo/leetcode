@@ -7,21 +7,19 @@
 using namespace std;
 
 class KthLargest {
-private:
+ private:
   priority_queue<int, vector<int>, greater<int>> pq;
   int N;
 
-public:
+ public:
   KthLargest(int k, vector<int>& nums) {
     N = k;
-    for (const int& num : nums)
-      pq.push(num);
+    for (const int& num : nums) pq.push(num);
   }
 
   int add(int val) {
     pq.push(val);
-    while ((int)pq.size() > N)
-      pq.pop();
+    while ((int)pq.size() > N) pq.pop();
     return pq.top();
   }
 };

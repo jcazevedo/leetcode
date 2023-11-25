@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int longestSubsequence(vector<int>& arr, int difference) {
     int N = arr.size();
     unordered_map<int, int> dp;

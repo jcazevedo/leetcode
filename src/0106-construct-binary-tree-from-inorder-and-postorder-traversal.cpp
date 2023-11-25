@@ -19,10 +19,9 @@ struct TreeNode {
 };
 
 class Solution {
-public:
+ public:
   TreeNode* buildTree(vector<int>& inorder, vector<int>& postorder) {
-    if (inorder.empty() && postorder.empty())
-      return nullptr;
+    if (inorder.empty() && postorder.empty()) return nullptr;
     int root_val = postorder.back();
     vector<int> inorder_left, inorder_right;
     bool go_left = true;

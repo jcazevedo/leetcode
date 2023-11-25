@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   char getChar(string s) {
     if (s.back() == '#') {
       istringstream ss(s.substr(0, s.size() - 1));
@@ -18,7 +18,7 @@ private:
     return s[0] - '0' - 1 + 'a';
   }
 
-public:
+ public:
   string freqAlphabets(string s) {
     string ans = "";
     int i = 0, N = s.size();

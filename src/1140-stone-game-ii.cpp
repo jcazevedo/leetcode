@@ -11,11 +11,14 @@ using namespace std;
 #define BOB 1
 
 class Solution {
-private:
-  int maxStonesAux(int player, int minStone, int M, vector<int>& piles,
-                   vector<int>& sumUntil, vector<vector<vector<int>>>& cache) {
-    if (minStone >= (int)piles.size())
-      return 0;
+ private:
+  int maxStonesAux(int player,
+                   int minStone,
+                   int M,
+                   vector<int>& piles,
+                   vector<int>& sumUntil,
+                   vector<vector<vector<int>>>& cache) {
+    if (minStone >= (int)piles.size()) return 0;
     if (cache[player][minStone][M] == -1) {
       int ans = player == ALICE ? numeric_limits<int>::min()
                                 : numeric_limits<int>::max();
@@ -48,6 +51,6 @@ private:
     return maxStonesAux(ALICE, 0, 1, piles, sumUntil, cache);
   }
 
-public:
+ public:
   int stoneGameII(vector<int>& piles) { return maxStones(piles); }
 };

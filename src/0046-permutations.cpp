@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   vector<vector<int>> aux(vector<int>& nums, vector<bool>& used, int T) {
     vector<vector<int>> res;
     int N = nums.size();
@@ -16,8 +16,7 @@ private:
       return res;
     }
     for (int i = 0; i < N; i++) {
-      if (used[i])
-        continue;
+      if (used[i]) continue;
       used[i] = true;
       vector<vector<int>> other = aux(nums, used, T + 1);
       used[i] = false;
@@ -29,7 +28,7 @@ private:
     return res;
   }
 
-public:
+ public:
   vector<vector<int>> permute(vector<int>& nums) {
     vector<bool> used;
     used.assign(nums.size(), false);

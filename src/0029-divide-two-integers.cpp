@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int divide(int dividend, int divisor) {
     if (divisor == 0 ||
         (dividend == numeric_limits<int>::min() && divisor == -1))
@@ -17,8 +17,7 @@ public:
     long long ans = 0;
     while (absDividend >= absDivisor) {
       int p = 0;
-      while (absDividend >= (absDivisor << p))
-        ++p;
+      while (absDividend >= (absDivisor << p)) ++p;
       ans += 1 << (p - 1);
       absDividend -= absDivisor << (p - 1);
     }

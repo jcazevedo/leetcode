@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   int str_to_int(string str) {
     int ans;
     istringstream ss(str);
@@ -27,7 +27,7 @@ private:
     return ans;
   }
 
-public:
+ public:
   int compareVersion(string version1, string version2) {
     vector<int> v1 = split_version(version1);
     vector<int> v2 = split_version(version2);
@@ -35,10 +35,8 @@ public:
     while (i < N1 || i < N2) {
       int p1 = i < N1 ? v1[i] : 0;
       int p2 = i < N2 ? v2[i] : 0;
-      if (p1 < p2)
-        return -1;
-      if (p1 > p2)
-        return 1;
+      if (p1 < p2) return -1;
+      if (p1 > p2) return 1;
       i++;
     }
     return 0;

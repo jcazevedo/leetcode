@@ -6,7 +6,7 @@
 using namespace std;
 
 class NumArray {
-private:
+ private:
   int N;
   vector<int> bit;
   vector<int> prev;
@@ -20,13 +20,12 @@ private:
     return ans;
   }
 
-public:
+ public:
   NumArray(vector<int>& nums) {
     N = nums.size();
     bit = vector<int>(N, 0);
     prev = vector<int>(N, 0);
-    for (int i = 0; i < N; ++i)
-      update(i, nums[i]);
+    for (int i = 0; i < N; ++i) update(i, nums[i]);
   }
 
   void update(int index, int val) {

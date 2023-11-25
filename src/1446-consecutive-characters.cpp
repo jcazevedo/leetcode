@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int maxPower(string s) {
     int curr = 1;
     char prev = s[0];

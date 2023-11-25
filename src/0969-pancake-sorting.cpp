@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<int> pancakeSort(vector<int>& arr) {
     int N = arr.size();
     vector<int> ans;
@@ -23,8 +23,7 @@ public:
         itr++;
       }
       itr = arr.begin();
-      for (int j = 0; j <= i; ++j)
-        itr++;
+      for (int j = 0; j <= i; ++j) itr++;
       ans.push_back(target);
       reverse(arr.begin(), itr);
     }

@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   int H, W;
   vector<vector<bool>> visited;
   vector<pair<int, int>> dirs = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
@@ -21,10 +21,8 @@ private:
         good = good && false;
         continue;
       }
-      if (board[ni][nj] == 'X' || visited[ni][nj])
-        continue;
-      if (!is_surrounded(ni, nj, board))
-        good = good && false;
+      if (board[ni][nj] == 'X' || visited[ni][nj]) continue;
+      if (!is_surrounded(ni, nj, board)) good = good && false;
     }
     return good;
   }
@@ -40,21 +38,17 @@ private:
     }
   }
 
-public:
+ public:
   void solve(vector<vector<char>>& board) {
     H = board.size();
-    if (H == 0)
-      return;
+    if (H == 0) return;
     W = board[0].size();
-    if (W == 0)
-      return;
+    if (W == 0) return;
     visited.assign(H, vector<bool>(W, false));
     for (int i = 0; i < H; ++i) {
       for (int j = 0; j < W; ++j) {
-        if (visited[i][j] || board[i][j] == 'X')
-          continue;
-        if (is_surrounded(i, j, board))
-          flip(i, j, board);
+        if (visited[i][j] || board[i][j] == 'X') continue;
+        if (is_surrounded(i, j, board)) flip(i, j, board);
       }
     }
   }

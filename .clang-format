@@ -1,3 +1,12 @@
+# Use Google's style.
+BasedOnStyle: Google
+
+# Don't attempt to binpack parameters.
+BinPackParameters: false
+
+# Always merge short blocks into a single line.
+AllowShortBlocksOnASingleLine: Always
+
 # Limit to 80 columns.
 ColumnLimit: 80
 

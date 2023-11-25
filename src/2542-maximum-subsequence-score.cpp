@@ -9,12 +9,11 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   long long maxScore(vector<int>& nums1, vector<int>& nums2, int k) {
     vector<tuple<int, int>> values;
     int N = nums1.size();
-    for (int i = 0; i < N; ++i)
-      values.push_back({nums2[i], nums1[i]});
+    for (int i = 0; i < N; ++i) values.push_back({nums2[i], nums1[i]});
     sort(values.begin(), values.end());
     priority_queue<int, vector<int>, greater<int>> bestValues;
     long long currSum = 0L;

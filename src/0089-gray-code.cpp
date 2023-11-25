@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<int> grayCode(int n) {
     vector<int> ans(1 << n);
     ans[0] = 0;
@@ -14,9 +14,7 @@ public:
     for (int l = 2; l <= n; ++l) {
       int len = 1 << (l - 1);
       int j = len - 1;
-      for (int i = len; i < len * 2; ++i, --j) {
-        ans[i] = ans[j] | len;
-      }
+      for (int i = len; i < len * 2; ++i, --j) { ans[i] = ans[j] | len; }
     }
     return ans;
   }

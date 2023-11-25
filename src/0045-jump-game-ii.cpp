@@ -8,10 +8,9 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   int go(vector<int>& nums, vector<int>& cache, int i) {
-    if (i >= (int)nums.size())
-      return nums.size() + 1;
+    if (i >= (int)nums.size()) return nums.size() + 1;
     if (cache[i] == -1) {
       if (i == (int)nums.size() - 1)
         cache[i] = 0;
@@ -25,7 +24,7 @@ private:
     return cache[i];
   }
 
-public:
+ public:
   int jump(vector<int>& nums) {
     vector<int> cache = vector<int>(nums.size(), -1);
     return go(nums, cache, 0);

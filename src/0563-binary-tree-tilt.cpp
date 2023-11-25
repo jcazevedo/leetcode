@@ -19,12 +19,11 @@ struct TreeNode {
 };
 
 class Solution {
-private:
+ private:
   int ans;
 
   int dfs(TreeNode* root) {
-    if (root == nullptr)
-      return 0;
+    if (root == nullptr) return 0;
     int sum_left = dfs(root->left);
     int sum_right = dfs(root->right);
     int diff = abs(sum_left - sum_right);
@@ -32,7 +31,7 @@ private:
     return sum_left + sum_right + root->val;
   }
 
-public:
+ public:
   int findTilt(TreeNode* root) {
     ans = 0;
     dfs(root);

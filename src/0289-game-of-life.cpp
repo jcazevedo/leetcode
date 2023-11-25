@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   void gameOfLife(vector<vector<int>>& board) {
     int M = board.size(), N = board[0].size();
     for (int i = 0; i < M; ++i) {
@@ -30,7 +30,6 @@ public:
       }
     }
     for (int i = 0; i < M; ++i)
-      for (int j = 0; j < N; ++j)
-        board[i][j] /= 2;
+      for (int j = 0; j < N; ++j) board[i][j] /= 2;
   }
 };

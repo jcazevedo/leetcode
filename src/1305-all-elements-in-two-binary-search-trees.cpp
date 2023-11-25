@@ -19,7 +19,7 @@ struct TreeNode {
 };
 
 class Solution {
-private:
+ private:
   void in_order_traverse(TreeNode* curr, vector<int>& list) {
     if (curr != nullptr) {
       in_order_traverse(curr->left, list);
@@ -28,7 +28,7 @@ private:
     }
   }
 
-public:
+ public:
   vector<int> getAllElements(TreeNode* root1, TreeNode* root2) {
     vector<int> list1, list2;
     in_order_traverse(root1, list1);

@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   double average(vector<int>& salary) {
     double sum = 0.0;
     int minimum = salary[0];

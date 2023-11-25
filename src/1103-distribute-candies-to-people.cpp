@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   /**
    * Example for num_people = 4
    *

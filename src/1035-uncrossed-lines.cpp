@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int maxUncrossedLines(vector<int>& A, vector<int>& B) {
     int NA = A.size();
     int NB = B.size();

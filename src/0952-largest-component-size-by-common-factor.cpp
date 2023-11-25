@@ -11,15 +11,14 @@ using namespace std;
 #define MAXN 100000
 
 class UnionFind {
-private:
+ private:
   vector<int> p, rank;
 
-public:
+ public:
   UnionFind(int N) {
     rank.assign(N, 0);
     p.assign(N, 0);
-    for (int i = 0; i < N; i++)
-      p[i] = i;
+    for (int i = 0; i < N; i++) p[i] = i;
   }
 
   int findSet(int i) { return (p[i] == i) ? i : (p[i] = findSet(p[i])); }
@@ -34,15 +33,14 @@ public:
         p[y] = x;
       else {
         p[x] = y;
-        if (rank[x] == rank[y])
-          rank[y]++;
+        if (rank[x] == rank[y]) rank[y]++;
       }
     }
   }
 };
 
 class Solution {
-private:
+ private:
   set<int> factors(int n) {
     set<int> ans;
     for (int i = 1; i <= sqrt(n); ++i)
@@ -53,7 +51,7 @@ private:
     return ans;
   }
 
-public:
+ public:
   int largestComponentSize(vector<int>& nums) {
     unordered_map<int, vector<int>> byFactor;
     set<int> totalFactors;
@@ -61,20 +59,17 @@ public:
     for (int num : nums) {
       set<int> facts = factors(num);
       for (int fact : facts) {
-        if (fact == 1)
-          continue;
+        if (fact == 1) continue;
         byFactor[fact].push_back(num);
       }
     }
     for (auto itr = byFactor.begin(); itr != byFactor.end(); ++itr) {
       vector<int> nums = itr->second;
       int u = nums[0];
-      for (int i = 1; i < (int)nums.size(); ++i)
-        uf.unionSet(u, nums[i]);
+      for (int i = 1; i < (int)nums.size(); ++i) uf.unionSet(u, nums[i]);
     }
     unordered_map<int, int> groupSize;
-    for (int num : nums)
-      groupSize[uf.findSet(num)]++;
+    for (int num : nums) groupSize[uf.findSet(num)]++;
     int ans = 0;
     for (auto itr = groupSize.begin(); itr != groupSize.end(); ++itr)
       ans = max(ans, itr->second);

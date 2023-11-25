@@ -7,10 +7,9 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   bool isIsomorphic(string s, string t) {
-    if (s.size() != t.size())
-      return false;
+    if (s.size() != t.size()) return false;
     int N = s.size();
     unordered_map<char, char> mapping, reverseMapping;
     for (int i = 0; i < N; ++i) {

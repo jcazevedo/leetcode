@@ -10,10 +10,9 @@ struct ListNode {
 };
 
 class Solution {
-public:
+ public:
   ListNode* swapPairs(ListNode* head) {
-    if (head == nullptr || head->next == nullptr)
-      return head;
+    if (head == nullptr || head->next == nullptr) return head;
 
     ListNode* ans = head->next;
     ListNode* curr = head;

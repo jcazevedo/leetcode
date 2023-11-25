@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int eraseOverlapIntervals(vector<vector<int>>& intervals) {
     vector<pair<int, int>> p_intervals;
     for (vector<int> interval : intervals)

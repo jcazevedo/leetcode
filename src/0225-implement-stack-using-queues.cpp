@@ -6,11 +6,11 @@
 using namespace std;
 
 class MyStack {
-private:
+ private:
   queue<int> stack;
   queue<int> tmp;
 
-public:
+ public:
   MyStack() {}
 
   void push(int x) { stack.push(x); }

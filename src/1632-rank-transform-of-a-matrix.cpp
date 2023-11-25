@@ -10,15 +10,14 @@
 using namespace std;
 
 class UnionFind {
-private:
+ private:
   vector<int> p, rank;
 
-public:
+ public:
   UnionFind(int N) {
     rank.assign(N, 0);
     p.assign(N, 0);
-    for (int i = 0; i < N; i++)
-      p[i] = i;
+    for (int i = 0; i < N; i++) p[i] = i;
   }
 
   int findSet(int i) { return (p[i] == i) ? i : (p[i] = findSet(p[i])); }
@@ -33,23 +32,21 @@ public:
         p[y] = x;
       else {
         p[x] = y;
-        if (rank[x] == rank[y])
-          rank[y]++;
+        if (rank[x] == rank[y]) rank[y]++;
       }
     }
   }
 };
 
 class Solution {
-public:
+ public:
   vector<vector<int>> matrixRankTransform(vector<vector<int>>& matrix) {
     int M = matrix.size();
     int N = matrix[0].size();
     vector<vector<int>> ans(M, vector<int>(N, 0));
     map<int, vector<pair<int, int>>> grouped;
     for (int i = 0; i < M; ++i)
-      for (int j = 0; j < N; ++j)
-        grouped[matrix[i][j]].push_back({i, j});
+      for (int j = 0; j < N; ++j) grouped[matrix[i][j]].push_back({i, j});
     vector<int> rank(M + N, 0);
     for (auto const& entry : grouped) {
       UnionFind uf(M + N);
@@ -65,10 +62,8 @@ public:
       }
       for (auto const& entry : groups) {
         int max_rank = 0;
-        for (int i : entry.second)
-          max_rank = max(max_rank, rank[i]);
-        for (int i : entry.second)
-          rank[i] = max_rank + 1;
+        for (int i : entry.second) max_rank = max(max_rank, rank[i]);
+        for (int i : entry.second) rank[i] = max_rank + 1;
       }
       for (auto const& coord : coords)
         ans[coord.first][coord.second] = rank[coord.first];

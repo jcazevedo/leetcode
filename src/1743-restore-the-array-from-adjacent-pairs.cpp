@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<int> restoreArray(vector<vector<int>>& adjacentPairs) {
     map<int, vector<int>> adjacent;
     for (const vector<int>& pair : adjacentPairs) {

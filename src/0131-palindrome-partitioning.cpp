@@ -8,24 +8,20 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   unordered_map<int, vector<vector<string>>> cache;
   string _s;
 
   bool is_palindrome(const string& s) {
     int N = s.size();
     for (int i = 0; i < N / 2; ++i) {
-      if (s[i] != s[N - i - 1]) {
-        return false;
-      }
+      if (s[i] != s[N - i - 1]) { return false; }
     }
     return true;
   }
 
   vector<vector<string>> go(int idx) {
-    if (idx >= (int)_s.size()) {
-      return {};
-    }
+    if (idx >= (int)_s.size()) { return {}; }
     if (cache.count(idx) == 0) {
       vector<vector<string>> ans;
       for (size_t j = idx; j < _s.size(); ++j) {
@@ -37,9 +33,7 @@ private:
             vector<vector<string>> next = go(j + 1);
             for (vector<string> opt : next) {
               vector<string> curr = {target};
-              for (string s : opt) {
-                curr.push_back(s);
-              }
+              for (string s : opt) { curr.push_back(s); }
               ans.push_back(curr);
             }
           }
@@ -50,7 +44,7 @@ private:
     return cache[idx];
   }
 
-public:
+ public:
   vector<vector<string>> partition(string s) {
     cache.clear();
     _s = s;

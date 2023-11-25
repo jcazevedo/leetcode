@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int maxFrequency(vector<int>& nums, int k) {
     sort(nums.begin(), nums.end());
     int N = nums.size();

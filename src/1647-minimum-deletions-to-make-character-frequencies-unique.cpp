@@ -10,12 +10,11 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int minDeletions(string s) {
     int N = s.size();
     unordered_map<char, int> cnts;
-    for (int i = 0; i < N; ++i)
-      cnts[s[i]]++;
+    for (int i = 0; i < N; ++i) cnts[s[i]]++;
     map<int, set<char>> reverseCnts;
     for (auto it = cnts.begin(); it != cnts.end(); ++it)
       reverseCnts[it->second].insert(it->first);
@@ -28,8 +27,7 @@ public:
               reverseCnts.find(targetCnt) == reverseCnts.end()) {
             ans += (it->first - targetCnt);
             reverseCnts[it->first].erase(ch);
-            if (targetCnt != 0)
-              reverseCnts[targetCnt].insert(ch);
+            if (targetCnt != 0) reverseCnts[targetCnt].insert(ch);
             break;
           }
         }

@@ -17,7 +17,7 @@ class Solution {
     return max_so_far;
   }
 
-public:
+ public:
   int maxSubarraySumCircular(vector<int>& A) {
     bool all_negative = true;
     int max_value = INT_MIN;
@@ -29,8 +29,7 @@ public:
       }
       max_value = max(max_value, A[i]);
     }
-    if (all_negative)
-      return max_value;
+    if (all_negative) return max_value;
     int max_kadane = kadane(A);
     int max_wrap = 0;
     for (int i = 0; i < N; ++i) {

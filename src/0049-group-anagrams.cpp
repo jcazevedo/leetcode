@@ -9,7 +9,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<vector<string>> groupAnagrams(vector<string>& strs) {
     map<string, vector<string>> m;
     int N = strs.size();

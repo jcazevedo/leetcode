@@ -8,11 +8,11 @@
 using namespace std;
 
 class UndergroundSystem {
-private:
+ private:
   map<tuple<string, string>, tuple<long long, int>> trips;
   map<int, tuple<string, int>> passenger;
 
-public:
+ public:
   UndergroundSystem() {}
 
   void checkIn(int id, string stationName, int t) {

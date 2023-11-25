@@ -8,10 +8,9 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int t) {
-    if (nums.empty() || k == 0)
-      return false;
+    if (nums.empty() || k == 0) return false;
     multiset<int> current;
     current.insert(nums[0]);
     int N = nums.size();
@@ -24,8 +23,7 @@ public:
           abs(((long long)*(--l_itr)) - ((long long)nums[i])) <= t)
         return true;
       current.insert(nums[i]);
-      if ((int)current.size() > k)
-        current.erase(current.find(nums[i - k]));
+      if ((int)current.size() > k) current.erase(current.find(nums[i - k]));
     }
     return false;
   }

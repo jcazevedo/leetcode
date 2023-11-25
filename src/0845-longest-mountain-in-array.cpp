@@ -7,10 +7,9 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int longestMountain(vector<int>& A) {
-    if (A.size() < 3)
-      return 0;
+    if (A.size() < 3) return 0;
     int N = A.size();
     int best = 0;
     int curr = 1;
@@ -24,8 +23,7 @@ public:
       } else if (!increasing && A[i] < A[i - 1]) {
         curr++;
       } else {
-        if (!increasing)
-          best = max(curr, best);
+        if (!increasing) best = max(curr, best);
         if (A[i] > A[i - 1])
           curr = 2;
         else
@@ -33,8 +31,7 @@ public:
         increasing = true;
       }
     }
-    if (!increasing)
-      best = max(curr, best);
+    if (!increasing) best = max(curr, best);
     return best;
   }
 };

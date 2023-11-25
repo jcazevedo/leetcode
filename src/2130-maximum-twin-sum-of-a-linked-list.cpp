@@ -16,7 +16,7 @@ struct ListNode {
 };
 
 class Solution {
-public:
+ public:
   int pairSum(ListNode* head) {
     int sums[MAXN];
     ListNode* slow = head;

@@ -19,10 +19,9 @@ struct TreeNode {
 };
 
 class Solution {
-public:
+ public:
   int widthOfBinaryTree(TreeNode* root) {
-    if (root == nullptr)
-      return 0;
+    if (root == nullptr) return 0;
     long long res = 0;
     queue<pair<TreeNode*, long long>> q;
     q.push(make_pair(root, 1L));
@@ -34,8 +33,7 @@ public:
         pair<TreeNode*, long long> curr = q.front();
         q.pop();
         long long id = curr.second - min_id + 1;
-        if (curr.first->left != nullptr)
-          q.emplace(curr.first->left, 2L * id);
+        if (curr.first->left != nullptr) q.emplace(curr.first->left, 2L * id);
         if (curr.first->right != nullptr)
           q.emplace(curr.first->right, 2L * id + 1L);
       }

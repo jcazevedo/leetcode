@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int maxProfit(vector<int>& prices) {
     int N = prices.size();
     int end_with_sell = 0;

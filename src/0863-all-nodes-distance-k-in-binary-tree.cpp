@@ -14,8 +14,9 @@ struct TreeNode {
 };
 
 class Solution {
-private:
-  void setParents(TreeNode* root, unordered_map<TreeNode*, TreeNode*>& parent,
+ private:
+  void setParents(TreeNode* root,
+                  unordered_map<TreeNode*, TreeNode*>& parent,
                   TreeNode* prev = nullptr) {
     if (root != nullptr) {
       parent[root] = prev;
@@ -24,23 +25,23 @@ private:
     }
   }
 
-  void visit(TreeNode* curr, unordered_map<TreeNode*, TreeNode*>& parent, int k,
-             vector<int>& ans, TreeNode* prev = nullptr) {
+  void visit(TreeNode* curr,
+             unordered_map<TreeNode*, TreeNode*>& parent,
+             int k,
+             vector<int>& ans,
+             TreeNode* prev = nullptr) {
     if (curr != nullptr) {
       if (k == 0)
         ans.push_back(curr->val);
       else {
-        if (curr->left != prev)
-          visit(curr->left, parent, k - 1, ans, curr);
-        if (curr->right != prev)
-          visit(curr->right, parent, k - 1, ans, curr);
-        if (parent[curr] != prev)
-          visit(parent[curr], parent, k - 1, ans, curr);
+        if (curr->left != prev) visit(curr->left, parent, k - 1, ans, curr);
+        if (curr->right != prev) visit(curr->right, parent, k - 1, ans, curr);
+        if (parent[curr] != prev) visit(parent[curr], parent, k - 1, ans, curr);
       }
     }
   }
 
-public:
+ public:
   vector<int> distanceK(TreeNode* root, TreeNode* target, int k) {
     unordered_map<TreeNode*, TreeNode*> parent;
     setParents(root, parent);

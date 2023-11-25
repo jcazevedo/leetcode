@@ -9,28 +9,26 @@ using namespace std;
 #define MAXN 2010
 
 class Solution {
-private:
+ private:
   int N;
   string str;
   bool is_palindrome[MAXN][MAXN];
   int dp[MAXN];
 
   int go(int i) {
-    if (i >= N)
-      return 0;
+    if (i >= N) return 0;
     if (dp[i] == -1) {
       for (int j = i; j < N; ++j) {
         if (is_palindrome[i][j]) {
           int next = go(j + 1) + 1;
-          if (dp[i] == -1 || next < dp[i])
-            dp[i] = next;
+          if (dp[i] == -1 || next < dp[i]) dp[i] = next;
         }
       }
     }
     return dp[i];
   }
 
-public:
+ public:
   int minCut(string s) {
     str = s;
     N = str.size();

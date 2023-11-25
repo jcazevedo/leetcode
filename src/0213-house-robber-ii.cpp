@@ -6,13 +6,11 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int rob(vector<int>& nums) {
     int N = nums.size();
-    if (N == 0)
-      return 0;
-    if (N == 1)
-      return nums[0];
+    if (N == 0) return 0;
+    if (N == 1) return nums[0];
     vector<int> dp(N + 1);
     dp[N] = 0;
     for (int i = N - 1; i >= 0; --i) {

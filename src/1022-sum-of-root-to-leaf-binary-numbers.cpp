@@ -15,21 +15,17 @@ struct TreeNode {
 };
 
 class Solution {
-private:
+ private:
   void dfs(TreeNode* curr, int curr_value, int& curr_sum) {
-    if (curr == nullptr)
-      return;
+    if (curr == nullptr) return;
     bool is_leaf = curr->left == nullptr && curr->right == nullptr;
     curr_value = curr_value * 2 + curr->val;
-    if (is_leaf)
-      curr_sum += curr_value;
-    if (curr->left != nullptr)
-      dfs(curr->left, curr_value, curr_sum);
-    if (curr->right != nullptr)
-      dfs(curr->right, curr_value, curr_sum);
+    if (is_leaf) curr_sum += curr_value;
+    if (curr->left != nullptr) dfs(curr->left, curr_value, curr_sum);
+    if (curr->right != nullptr) dfs(curr->right, curr_value, curr_sum);
   }
 
-public:
+ public:
   int sumRootToLeaf(TreeNode* root) {
     int ans = 0;
     dfs(root, 0, ans);

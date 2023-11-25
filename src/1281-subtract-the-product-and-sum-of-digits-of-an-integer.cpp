@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/
 
 class Solution {
-private:
+ private:
   int product(int n) {
     int ans = 1;
 
@@ -25,6 +25,6 @@ private:
     return ans;
   }
 
-public:
+ public:
   int subtractProductAndSum(int n) { return product(n) - sum(n); }
 };

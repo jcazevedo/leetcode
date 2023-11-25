@@ -8,10 +8,10 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   vector<int> values;
 
-public:
+ public:
   Solution(vector<int>& w) {
     srand(time(NULL));
     int N = w.size();

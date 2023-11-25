@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int coinChange(vector<int>& coins, int amount) {
     int C = coins.size();
     vector<int> ways;

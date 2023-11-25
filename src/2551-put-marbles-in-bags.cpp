@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   long long putMarbles(vector<int>& weights, int k) {
     int N = weights.size();
     vector<long long> splits;

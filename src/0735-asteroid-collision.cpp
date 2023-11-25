@@ -9,7 +9,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<int> asteroidCollision(vector<int>& asteroids) {
     stack<int> s;
     for (int a : asteroids) {
@@ -24,9 +24,7 @@ public:
         survived = false;
         break;
       }
-      if (survived) {
-        s.push(a);
-      }
+      if (survived) { s.push(a); }
     }
     vector<int> ans;
     while (!s.empty()) {

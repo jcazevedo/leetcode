@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   vector<int> findClosestElements(vector<int>& arr, int k, int x) {
     int N = arr.size();
     int lo = 0, hi = N;
@@ -19,8 +19,7 @@ public:
         lo = mid + 1;
       }
     }
-    if (lo >= N)
-      --lo;
+    if (lo >= N) --lo;
     if (arr[lo] != x && lo > 0 && abs(x - arr[lo - 1]) <= abs(x - arr[lo]))
       --lo;
     vector<int> ans = {arr[lo]};

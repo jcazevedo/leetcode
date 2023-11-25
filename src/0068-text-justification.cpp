@@ -7,13 +7,12 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   string build_line(const vector<string>& words, int maxWidth) {
     if (words.size() == 1)
       return words[0] + string(maxWidth - words[0].size(), ' ');
     int len = 0;
-    for (string word : words)
-      len += word.size();
+    for (string word : words) len += word.size();
     int spaces = words.size() - 1;
     int rem = maxWidth - (len + spaces);
     int to_fill = spaces + rem;
@@ -33,7 +32,7 @@ private:
     return res;
   }
 
-public:
+ public:
   vector<string> fullJustify(vector<string>& words, int maxWidth) {
     vector<string> result;
     int n_words = words.size();
@@ -53,13 +52,11 @@ public:
     if (line.size() != 0) {
       string res = "";
       for (string word : line) {
-        if (res != "")
-          res += " ";
+        if (res != "") res += " ";
         res += word;
       }
       int rem = maxWidth - res.size();
-      if (rem > 0)
-        res += string(rem, ' ');
+      if (rem > 0) res += string(rem, ' ');
       result.push_back(res);
     }
     return result;

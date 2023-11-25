@@ -16,12 +16,10 @@ struct TreeNode {
 };
 
 class Solution {
-public:
+ public:
   vector<vector<int>> pathSum(TreeNode* root, int targetSum) {
     vector<vector<int>> ans;
-    if (root == nullptr) {
-      return ans;
-    }
+    if (root == nullptr) { return ans; }
     if (targetSum == root->val && root->left == nullptr &&
         root->right == nullptr) {
       ans.push_back({root->val});

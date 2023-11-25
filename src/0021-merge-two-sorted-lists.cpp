@@ -13,7 +13,7 @@ struct ListNode {
 };
 
 class Solution {
-public:
+ public:
   ListNode* mergeTwoLists(ListNode* l1, ListNode* l2) {
     ListNode* head = new ListNode();
     ListNode* curr = head;

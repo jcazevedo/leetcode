@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   char nextGreatestLetter(vector<char>& letters, char target) {
     int N = letters.size();
     int lo = 0, hi = N;
@@ -17,8 +17,7 @@ public:
       else
         hi = mid;
     }
-    if (lo >= N)
-      return letters[0];
+    if (lo >= N) return letters[0];
     return letters[lo];
   }
 };

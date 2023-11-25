@@ -7,19 +7,17 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int countPalindromicSubsequence(string s) {
     int N = s.size();
 
     int ans = 0;
     for (char edge = 'a'; edge <= 'z'; ++edge) {
       int l = 0;
-      while (l < N && s[l] != edge)
-        l++;
+      while (l < N && s[l] != edge) l++;
 
       int r = N - 1;
-      while (r >= 0 && s[r] != edge)
-        r--;
+      while (r >= 0 && s[r] != edge) r--;
 
       if (l < r) {
         unordered_set<char> visited;

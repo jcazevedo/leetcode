@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   static unordered_map<string, int> char_1_strs;
   static unordered_map<string, int> char_2_strs;
 
@@ -27,8 +27,7 @@ public:
         }
       }
 
-      if (done)
-        continue;
+      if (done) continue;
 
       for (const auto& [key, value] : char_1_strs) {
         if (s.substr(i, 1) == key) {

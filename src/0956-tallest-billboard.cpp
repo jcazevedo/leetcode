@@ -12,7 +12,7 @@ using namespace std;
 #define MAXSUM 5000
 
 class Solution {
-private:
+ private:
   map<int, int> getDiffs(vector<int>& rods, int from, int to) {
     set<pair<int, int>> states;
     states.insert(make_pair(0, 0));
@@ -23,8 +23,7 @@ private:
         next.insert(make_pair(state.first + rod, state.second));
         next.insert(make_pair(state.first, state.second + rod));
       }
-      for (const pair<int, int>& nextState : next)
-        states.insert(nextState);
+      for (const pair<int, int>& nextState : next) states.insert(nextState);
     }
     map<int, int> ans;
     for (const pair<int, int>& state : states) {
@@ -34,7 +33,7 @@ private:
     return ans;
   }
 
-public:
+ public:
   int tallestBillboard(vector<int>& rods) {
     int N = rods.size();
     map<int, int> diffsLeft = getDiffs(rods, 0, N / 2);
@@ -43,8 +42,7 @@ public:
     for (auto itr = diffsLeft.begin(); itr != diffsLeft.end(); ++itr) {
       int diff = itr->first;
       int height = itr->second;
-      if (diffsRight.count(-diff))
-        ans = max(ans, height + diffsRight[-diff]);
+      if (diffsRight.count(-diff)) ans = max(ans, height + diffsRight[-diff]);
     }
     return ans;
   }

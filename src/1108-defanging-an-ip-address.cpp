@@ -6,7 +6,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   string defangIPaddr(string address) {
     string res = "";
     for (char ch : address) {

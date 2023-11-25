@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int minSubArrayLen(int target, vector<int>& nums) {
     int ans = 0, l = 0, sum = 0;
     for (int r = 0; r < (int)nums.size(); ++r) {
@@ -16,8 +16,7 @@ public:
         sum -= nums[l];
         ++l;
       }
-      if (sum >= target)
-        ans = ans == 0 ? (r - l) + 1 : min(ans, (r - l) + 1);
+      if (sum >= target) ans = ans == 0 ? (r - l) + 1 : min(ans, (r - l) + 1);
     }
     return ans;
   }

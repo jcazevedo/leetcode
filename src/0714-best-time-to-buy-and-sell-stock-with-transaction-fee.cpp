@@ -7,11 +7,13 @@
 using namespace std;
 
 class Solution {
-private:
-  int best_from(int i, bool sell, vector<int>& prices,
-                vector<vector<int>>& cache, int fee) {
-    if (i >= (int)prices.size())
-      return 0;
+ private:
+  int best_from(int i,
+                bool sell,
+                vector<int>& prices,
+                vector<vector<int>>& cache,
+                int fee) {
+    if (i >= (int)prices.size()) return 0;
 
     if (cache[i][sell] == -1) {
       cache[i][sell] = best_from(i + 1, sell, prices, cache, fee);
@@ -28,7 +30,7 @@ private:
     return cache[i][sell];
   }
 
-public:
+ public:
   int maxProfit(vector<int>& prices, int fee) {
     vector<vector<int>> cache =
         vector<vector<int>>(prices.size(), vector<int>(2, -1));

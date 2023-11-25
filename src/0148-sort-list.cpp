@@ -13,7 +13,7 @@ struct ListNode {
 };
 
 class Solution {
-private:
+ private:
   ListNode* merge_sorted(ListNode* left, ListNode* right) {
     ListNode fake = ListNode();
     ListNode* curr = &fake;
@@ -32,10 +32,8 @@ private:
   }
 
   ListNode* merge_sort(ListNode* head) {
-    if (head == nullptr)
-      return head;
-    if (head->next == nullptr)
-      return head;
+    if (head == nullptr) return head;
+    if (head->next == nullptr) return head;
     ListNode* slow = head;
     ListNode* fast = head;
     while (fast->next != nullptr && fast->next->next != nullptr) {
@@ -50,6 +48,6 @@ private:
     return merge_sorted(left_sorted, right_sorted);
   }
 
-public:
+ public:
   ListNode* sortList(ListNode* head) { return merge_sort(head); }
 };

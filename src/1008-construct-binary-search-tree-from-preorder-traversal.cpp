@@ -14,10 +14,9 @@ struct TreeNode {
 };
 
 class Solution {
-public:
+ public:
   TreeNode* bstFromPreorder(vector<int>& preorder) {
-    if (preorder.empty())
-      return nullptr;
+    if (preorder.empty()) return nullptr;
     int root = preorder[0];
     TreeNode* node = new TreeNode(root);
     vector<int> left, right;

@@ -9,7 +9,7 @@ using namespace std;
 typedef long long ll;
 
 class Solution {
-private:
+ private:
   ll minPath(int i, int j, vector<vector<int>>& grid, vector<vector<ll>>& dp) {
     if (dp[i][j] == numeric_limits<ll>::max()) {
       if (i - 1 >= 0)
@@ -20,7 +20,7 @@ private:
     return dp[i][j];
   }
 
-public:
+ public:
   int minPathSum(vector<vector<int>>& grid) {
     int H = grid.size(), W = grid[0].size();
     vector<vector<ll>> dp =

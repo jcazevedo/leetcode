@@ -10,11 +10,12 @@
 using namespace std;
 
 class Solution {
-private:
-  int getAliceScoreAux(int player, int startAt, const vector<int>& stoneValue,
+ private:
+  int getAliceScoreAux(int player,
+                       int startAt,
+                       const vector<int>& stoneValue,
                        vector<vector<int>>& cache) {
-    if (startAt >= (int)stoneValue.size())
-      return 0;
+    if (startAt >= (int)stoneValue.size()) return 0;
     if (cache[player][startAt] == -1) {
       int ans =
           player == 0 ? numeric_limits<int>::min() : numeric_limits<int>::max();
@@ -39,14 +40,12 @@ private:
     return getAliceScoreAux(0, 0, stoneValue, cache);
   }
 
-public:
+ public:
   string stoneGameIII(vector<int>& stoneValue) {
     int totalScore = accumulate(stoneValue.begin(), stoneValue.end(), 0);
     int aliceScore = getAliceScore(stoneValue);
-    if (totalScore - aliceScore == aliceScore)
-      return "Tie";
-    if (totalScore - aliceScore > aliceScore)
-      return "Bob";
+    if (totalScore - aliceScore == aliceScore) return "Tie";
+    if (totalScore - aliceScore > aliceScore) return "Bob";
     return "Alice";
   }
 };

@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int findLongestChain(vector<vector<int>>& pairs) {
     int N = pairs.size();
     sort(pairs.begin(), pairs.end(),
@@ -18,11 +18,9 @@ public:
     vector<int> dp(N, 1);
     for (int i = 1; i < N; ++i)
       for (int j = 0; j < i; ++j)
-        if (pairs[j][1] < pairs[i][0])
-          dp[i] = max(dp[i], dp[j] + 1);
+        if (pairs[j][1] < pairs[i][0]) dp[i] = max(dp[i], dp[j] + 1);
     int ans = 0;
-    for (int i = 0; i < N; ++i)
-      ans = max(ans, dp[i]);
+    for (int i = 0; i < N; ++i) ans = max(ans, dp[i]);
     return ans;
   }
 };

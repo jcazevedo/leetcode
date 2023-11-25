@@ -8,7 +8,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   long long totalCost(vector<int>& costs, int k, int candidates) {
     set<pair<int, int>> totCandidates;
     for (int i = 0; i < candidates; ++i)

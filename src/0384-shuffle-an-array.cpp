@@ -8,10 +8,10 @@
 using namespace std;
 
 class Solution {
-private:
+ private:
   vector<int> _nums;
 
-public:
+ public:
   Solution(vector<int>& nums) : _nums(nums) {}
 
   vector<int> reset() { return _nums; }

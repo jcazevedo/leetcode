@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   bool isRobotBounded(string instructions) {
     vector<pair<int, int>> dirs = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
     int dir = 0;

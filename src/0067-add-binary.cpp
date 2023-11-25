@@ -7,7 +7,7 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   string addBinary(string a, string b) {
     reverse(a.begin(), a.end());
     reverse(b.begin(), b.end());

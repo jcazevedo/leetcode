@@ -9,13 +9,12 @@
 using namespace std;
 
 class Solution {
-public:
+ public:
   int minJumps(vector<int>& arr) {
     unordered_map<int, vector<int>> idxs;
     unordered_map<int, bool> visited;
     int N = arr.size();
-    for (int i = 0; i < N; ++i)
-      idxs[arr[i]].push_back(i);
+    for (int i = 0; i < N; ++i) idxs[arr[i]].push_back(i);
     vector<int> dist(N, INT_MAX);
     dist[0] = 0;
     queue<int> q;

@@ -11,18 +11,17 @@
 using namespace std;
 
 class Solution {
-public:
-  int numBusesToDestination(vector<vector<int>>& routes, int source,
+ public:
+  int numBusesToDestination(vector<vector<int>>& routes,
+                            int source,
                             int target) {
-    if (source == target)
-      return 0;
+    if (source == target) return 0;
 
     int R = routes.size();
     unordered_map<int, vector<int>> routesInStop;
     for (int i = 0; i < R; ++i) {
       int NR = routes[i].size();
-      for (int j = 0; j < NR; ++j)
-        routesInStop[routes[i][j]].push_back(i);
+      for (int j = 0; j < NR; ++j) routesInStop[routes[i][j]].push_back(i);
     }
 
     unordered_set<int> visitedRoutes;
@@ -52,8 +51,7 @@ public:
       tie(distance, stop, route) = pq.top();
       pq.pop();
 
-      if (stop == target)
-        return distance + 1;
+      if (stop == target) return distance + 1;
 
       if (visitedRoutes.count(route) == 0) {
         visitedRoutes.insert(route);
@@ -65,8 +63,7 @@ public:
       }
 
       for (int nextRoute : routesInStop[stop]) {
-        if (visitedRoutes.count(nextRoute) == 1)
-          continue;
+        if (visitedRoutes.count(nextRoute) == 1) continue;
 
         visitedRoutes.insert(nextRoute);
         for (int next : routes[nextRoute])

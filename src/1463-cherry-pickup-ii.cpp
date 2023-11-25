@@ -9,7 +9,7 @@ using namespace std;
 #define UNSET -1
 
 class Solution {
-private:
+ private:
   vector<vector<vector<int>>> cache;
   vector<vector<int>> _grid;
   int R, C;
@@ -22,8 +22,7 @@ private:
     if (cache[row][col_0][col_1] == UNSET) {
       int curr = 0;
       curr += _grid[row][col_0];
-      if (col_1 != col_0)
-        curr += _grid[row][col_1];
+      if (col_1 != col_0) curr += _grid[row][col_1];
       if (col_0 > row || C - col_1 - 1 > row) {
         cache[row][col_0][col_1] = IMPOSSIBLE;
       } else if (row == 0) {
@@ -33,8 +32,7 @@ private:
         for (int d0 = -1; d0 <= 1; ++d0) {
           for (int d1 = -1; d1 <= 1; ++d1) {
             int next = max_pickup(row - 1, col_0 + d0, col_1 + d1);
-            if (next == IMPOSSIBLE)
-              continue;
+            if (next == IMPOSSIBLE) continue;
             best = max(best, curr + next);
           }
         }
@@ -44,7 +42,7 @@ private:
     return cache[row][col_0][col_1];
   }
 
-public:
+ public:
   int cherryPickup(vector<vector<int>>& grid) {
     _grid = grid;
     R = grid.size();
@@ -53,9 +51,7 @@ public:
         R, vector<vector<int>>(C, vector<int>(C, UNSET)));
     int ans = 0;
     for (int i = 0; i < C; ++i) {
-      for (int j = 0; j < C; ++j) {
-        ans = max(ans, max_pickup(R - 1, i, j));
-      }
+      for (int j = 0; j < C; ++j) { ans = max(ans, max_pickup(R - 1, i, j)); }
     }
     return ans;
   }

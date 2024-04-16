@@ -1,5 +1,5 @@
 // 956. Tallest Billboard
-// https://leetcode.com/problems/tallest-billboard/description/
+// https://leetcode.com/problems/tallest-billboard/
 
 #include <algorithm>
 #include <map>

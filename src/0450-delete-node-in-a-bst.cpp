@@ -1,5 +1,5 @@
 // 450. Delete Node in a BST
-// https://leetcode.com/problems/delete-node-in-a-bst/description/
+// https://leetcode.com/problems/delete-node-in-a-bst/
 
 struct TreeNode {
   int val;

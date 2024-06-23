@@ -13,12 +13,12 @@ class Solution {
     int n = nums.size();
     int maxV = nums[0];
     for (int i = 1; i < n; ++i) { maxV = max(maxV, nums[i]); }
-    priority_queue<int, vector<int>, greater<int>> minPQ;
+    queue<int> q;
     long long ans = 0L;
     for (int i = 0; i < n; ++i) {
-      if (nums[i] == maxV) { minPQ.push(i); }
-      while ((int)minPQ.size() > k) { minPQ.pop(); }
-      if ((int)minPQ.size() == k) { ans += minPQ.top() + 1; }
+      if (nums[i] == maxV) { q.push(i); }
+      while ((int)q.size() > k) { q.pop(); }
+      if ((int)q.size() == k) { ans += q.front() + 1; }
     }
     return ans;
   }

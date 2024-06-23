@@ -11,8 +11,7 @@ class Solution {
   int eliminateMaximum(vector<int>& dist, vector<int>& speed) {
     int N = dist.size();
     vector<int> turnsToReachCity(N, 0);
-    for (int i = 0; i < N; ++i)
-      turnsToReachCity[i] = (dist[i] + speed[i] - 1) / speed[i];
+    for (int i = 0; i < N; ++i) turnsToReachCity[i] = (dist[i] + speed[i] - 1) / speed[i];
     sort(turnsToReachCity.begin(), turnsToReachCity.end());
     int ans = 0;
     for (int i = 0; i < N; ++i) {

@@ -27,8 +27,7 @@ class Solution {
     set<char> used;
     int N = words.size();
     for (int i = 0; i < N; ++i) {
-      if (pat.find(words[i]) != pat.end() && pat[words[i]] != pattern[i])
-        return false;
+      if (pat.find(words[i]) != pat.end() && pat[words[i]] != pattern[i]) return false;
       pat[words[i]] = pattern[i];
       used.insert(pattern[i]);
     }

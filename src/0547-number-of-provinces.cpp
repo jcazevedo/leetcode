@@ -7,9 +7,7 @@ using namespace std;
 
 class Solution {
  private:
-  void visit(int curr,
-             const vector<vector<int>>& isConnected,
-             vector<bool>& visited) {
+  void visit(int curr, const vector<vector<int>>& isConnected, vector<bool>& visited) {
     for (int i = 0; i < (int)isConnected[curr].size(); ++i)
       if (isConnected[curr][i] && !visited[i]) {
         visited[i] = true;

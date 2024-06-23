@@ -27,8 +27,7 @@ class Trie {
   void insert(string word) {
     TrieNode* curr = root;
     for (char ch : word) {
-      if (curr->next.find(ch) == curr->next.end())
-        curr->next[ch] = new TrieNode();
+      if (curr->next.find(ch) == curr->next.end()) curr->next[ch] = new TrieNode();
       curr = curr->next[ch];
     }
     curr->hasWord = true;

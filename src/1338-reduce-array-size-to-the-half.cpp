@@ -14,9 +14,7 @@ class Solution {
     for (int v : arr) { cnt[v]++; }
     int N = arr.size();
     vector<int> tot;
-    for (auto itr = cnt.begin(); itr != cnt.end(); ++itr) {
-      tot.push_back(itr->second);
-    }
+    for (auto itr = cnt.begin(); itr != cnt.end(); ++itr) { tot.push_back(itr->second); }
     sort(tot.begin(), tot.end());
     reverse(tot.begin(), tot.end());
     int curr = tot[0];

@@ -15,9 +15,7 @@ class Solution {
     while ((int)cache.size() <= n) {
       int c = cache.size();
       int best = c;
-      for (int i = 1; i * i <= c; i++) {
-        best = min(best, cache[c - i * i] + 1);
-      }
+      for (int i = 1; i * i <= c; i++) { best = min(best, cache[c - i * i] + 1); }
       cache.push_back(best);
     }
     return cache[n];

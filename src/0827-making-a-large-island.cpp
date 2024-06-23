@@ -18,9 +18,7 @@ class Solution {
   int N;
 
   int visit(vector<vector<int>>& grid, int i, int j, int idx) {
-    if (i < 0 || i >= N || j < 0 || j >= N || grid[i][j] == 0 ||
-        visited[i][j] != 0)
-      return 0;
+    if (i < 0 || i >= N || j < 0 || j >= N || grid[i][j] == 0 || visited[i][j] != 0) return 0;
     int area = 1;
     visited[i][j] = idx;
     for (int d = 0; d < 4; ++d) {
@@ -53,8 +51,7 @@ class Solution {
           for (int d = 0; d < 4; ++d) {
             int ni = i + dirs[d][0];
             int nj = j + dirs[d][1];
-            if (ni >= 0 && ni < N && nj >= 0 && nj < N && visited[ni][nj] != 0)
-              neighbors.insert(visited[ni][nj]);
+            if (ni >= 0 && ni < N && nj >= 0 && nj < N && visited[ni][nj] != 0) neighbors.insert(visited[ni][nj]);
           }
           int tot_area = 1;
           for (int n : neighbors) tot_area += area[n];

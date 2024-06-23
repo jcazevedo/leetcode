@@ -71,8 +71,7 @@ class Solution {
     unordered_map<int, int> groupSize;
     for (int num : nums) groupSize[uf.findSet(num)]++;
     int ans = 0;
-    for (auto itr = groupSize.begin(); itr != groupSize.end(); ++itr)
-      ans = max(ans, itr->second);
+    for (auto itr = groupSize.begin(); itr != groupSize.end(); ++itr) ans = max(ans, itr->second);
     return ans;
   }
 };

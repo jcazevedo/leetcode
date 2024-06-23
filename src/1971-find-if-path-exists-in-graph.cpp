@@ -7,10 +7,7 @@ using namespace std;
 
 class Solution {
  private:
-  bool dfs(int source,
-           int destination,
-           const vector<vector<int>>& graph,
-           vector<bool>& visited) {
+  bool dfs(int source, int destination, const vector<vector<int>>& graph, vector<bool>& visited) {
     if (source == destination) return true;
     for (int v : graph[source])
       if (!visited[v]) {
@@ -21,10 +18,7 @@ class Solution {
   }
 
  public:
-  bool validPath(int n,
-                 vector<vector<int>>& edges,
-                 int source,
-                 int destination) {
+  bool validPath(int n, vector<vector<int>>& edges, int source, int destination) {
     vector<vector<int>> graph(n, vector<int>());
     for (const vector<int>& edge : edges) {
       graph[edge[0]].push_back(edge[1]);

@@ -7,8 +7,7 @@ using namespace std;
 
 class Solution {
  public:
-  vector<vector<int>> intervalIntersection(vector<vector<int>>& A,
-                                           vector<vector<int>>& B) {
+  vector<vector<int>> intervalIntersection(vector<vector<int>>& A, vector<vector<int>>& B) {
     vector<vector<int>> intersection;
     int a = 0, b = 0;
     while (a < (int)A.size() && b < (int)B.size()) {

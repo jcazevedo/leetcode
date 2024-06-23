@@ -15,8 +15,7 @@ class Solution {
     for (int l = 1; l <= N; ++l) {
       dp[l] = dp[l - 1];
       for (string word : dictionary) {
-        if ((int)word.size() <= l &&
-            s.substr(l - word.size(), word.size()) == word) {
+        if ((int)word.size() <= l && s.substr(l - word.size(), word.size()) == word) {
           dp[l] = max(dp[l], dp[l - word.size()] + (int)word.size());
         }
       }

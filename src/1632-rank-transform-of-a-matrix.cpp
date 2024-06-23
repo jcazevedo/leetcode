@@ -51,8 +51,7 @@ class Solution {
     for (auto const& entry : grouped) {
       UnionFind uf(M + N);
       vector<pair<int, int>> coords = entry.second;
-      for (auto const& coord : coords)
-        uf.unionSet(coord.first, coord.second + M);
+      for (auto const& coord : coords) uf.unionSet(coord.first, coord.second + M);
       unordered_map<int, set<int>> groups;
       for (auto const& coord : coords) {
         groups[uf.findSet(coord.first)].insert(coord.first);
@@ -65,8 +64,7 @@ class Solution {
         for (int i : entry.second) max_rank = max(max_rank, rank[i]);
         for (int i : entry.second) rank[i] = max_rank + 1;
       }
-      for (auto const& coord : coords)
-        ans[coord.first][coord.second] = rank[coord.first];
+      for (auto const& coord : coords) ans[coord.first][coord.second] = rank[coord.first];
     }
     return ans;
   }

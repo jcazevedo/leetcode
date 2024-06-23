@@ -11,8 +11,7 @@ class Solution {
  public:
   int garbageCollection(vector<string>& garbage, vector<int>& travel) {
     int N = garbage.size();
-    vector<unordered_map<char, int>> garbageCount =
-        vector<unordered_map<char, int>>(N, unordered_map<char, int>());
+    vector<unordered_map<char, int>> garbageCount = vector<unordered_map<char, int>>(N, unordered_map<char, int>());
     vector<char> garbageTypes = {'P', 'G', 'M'};
     unordered_map<char, int> finalHouse;
     for (char garbageType : garbageTypes) finalHouse[garbageType] = -1;

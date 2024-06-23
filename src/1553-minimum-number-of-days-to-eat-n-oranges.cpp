@@ -24,8 +24,7 @@ class Solution {
         visited.insert(oranges / 2);
         q.push(make_pair(oranges / 2, days + 1));
       }
-      if (oranges % 3 == 0 &&
-          visited.find(oranges - 2 * (oranges / 3)) == visited.end()) {
+      if (oranges % 3 == 0 && visited.find(oranges - 2 * (oranges / 3)) == visited.end()) {
         visited.insert(oranges - 2 * (oranges / 3));
         q.push(make_pair(oranges - 2 * (oranges / 3), days + 1));
       }

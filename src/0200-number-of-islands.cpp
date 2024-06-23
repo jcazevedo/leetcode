@@ -8,9 +8,7 @@ using namespace std;
 class Solution {
  private:
   void fill(int i, int j, vector<vector<char>>& grid) {
-    if (i < 0 || i >= (int)grid.size() || j < 0 || j >= (int)grid[0].size() ||
-        grid[i][j] == '0')
-      return;
+    if (i < 0 || i >= (int)grid.size() || j < 0 || j >= (int)grid[0].size() || grid[i][j] == '0') return;
     grid[i][j] = '0';
     fill(i + 1, j, grid);
     fill(i - 1, j, grid);

@@ -24,9 +24,7 @@ class Solution {
       ListNode* next_to_sort = to_sort->next;
       to_sort->next = nullptr;
       ListNode* prev = sorted;
-      while (prev->next != nullptr && prev->next->val < to_sort->val) {
-        prev = prev->next;
-      }
+      while (prev->next != nullptr && prev->next->val < to_sort->val) { prev = prev->next; }
       ListNode* after = prev->next;
       prev->next = to_sort;
       to_sort->next = after;

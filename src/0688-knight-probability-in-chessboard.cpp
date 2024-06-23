@@ -11,8 +11,7 @@ class Solution {
 
  public:
   double knightProbability(int n, int k, int row, int column) {
-    vector<vector<vector<double>>> probability(
-        k + 1, vector<vector<double>>(n, vector<double>(n, 0.0)));
+    vector<vector<vector<double>>> probability(k + 1, vector<vector<double>>(n, vector<double>(n, 0.0)));
     probability[0][row][column] = 1.0;
     for (int i = 1; i <= k; ++i) {
       for (int r = 0; r < n; ++r) {
@@ -21,8 +20,7 @@ class Solution {
             int nr = r + directions[d][0];
             int nc = c + directions[d][1];
             if (nr >= 0 && nr < n && nc >= 0 && nc < n) {
-              probability[i][nr][nc] +=
-                  probability[i - 1][r][c] / directions.size();
+              probability[i][nr][nc] += probability[i - 1][r][c] / directions.size();
             }
           }
         }
@@ -36,5 +34,4 @@ class Solution {
   }
 };
 
-vector<vector<int>> Solution::directions = {
-    {-1, -2}, {-2, -1}, {-2, 1}, {-1, 2}, {1, 2}, {2, 1}, {2, -1}, {1, -2}};
+vector<vector<int>> Solution::directions = {{-1, -2}, {-2, -1}, {-2, 1}, {-1, 2}, {1, 2}, {2, 1}, {2, -1}, {1, -2}};

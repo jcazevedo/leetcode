@@ -13,12 +13,10 @@ class Solution {
     int wordStart = 0;
     for (int i = 0; i < N; ++i)
       if (s[i] == ' ') {
-        for (int j = 0; j < (i - wordStart) / 2; ++j)
-          swap(s[wordStart + j], s[wordStart + i - wordStart - 1 - j]);
+        for (int j = 0; j < (i - wordStart) / 2; ++j) swap(s[wordStart + j], s[wordStart + i - wordStart - 1 - j]);
         wordStart = i + 1;
       }
-    for (int i = 0; i < (N - wordStart) / 2; ++i)
-      swap(s[wordStart + i], s[wordStart + N - wordStart - 1 - i]);
+    for (int i = 0; i < (N - wordStart) / 2; ++i) swap(s[wordStart + i], s[wordStart + N - wordStart - 1 - i]);
     return s;
   }
 };

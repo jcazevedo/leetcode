@@ -23,8 +23,7 @@ class Solution {
     for (pair<int, int> dir : dirs) {
       int ni = i + dir.first;
       int nj = j + dir.second;
-      if (ni >= 0 && ni < H && nj >= 0 && nj < W && !visited[ni][nj] &&
-          board[ni][nj] == word[idx + 1] &&
+      if (ni >= 0 && ni < H && nj >= 0 && nj < W && !visited[ni][nj] && board[ni][nj] == word[idx + 1] &&
           dfs(ni, nj, idx + 1, word, board, visited, H, W))
         return true;
     }

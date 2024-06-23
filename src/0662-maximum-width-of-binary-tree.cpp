@@ -14,8 +14,7 @@ struct TreeNode {
 
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-  TreeNode(int x, TreeNode* left, TreeNode* right)
-      : val(x), left(left), right(right) {}
+  TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
 
 class Solution {
@@ -34,8 +33,7 @@ class Solution {
         q.pop();
         long long id = curr.second - min_id + 1;
         if (curr.first->left != nullptr) q.emplace(curr.first->left, 2L * id);
-        if (curr.first->right != nullptr)
-          q.emplace(curr.first->right, 2L * id + 1L);
+        if (curr.first->right != nullptr) q.emplace(curr.first->right, 2L * id + 1L);
       }
     }
     return res;

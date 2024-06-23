@@ -15,8 +15,7 @@ struct TreeNode {
 
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-  TreeNode(int x, TreeNode* left, TreeNode* right)
-      : val(x), left(left), right(right) {}
+  TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
 
 class Solution {
@@ -35,9 +34,7 @@ class Solution {
     res.clear();
     dfs(root);
     vector<vector<int>> answer;
-    for (auto itr = res.rbegin(); itr != res.rend(); ++itr) {
-      answer.push_back(itr->second);
-    }
+    for (auto itr = res.rbegin(); itr != res.rend(); ++itr) { answer.push_back(itr->second); }
     return answer;
   }
 };

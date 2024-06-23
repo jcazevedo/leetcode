@@ -8,11 +8,7 @@ using namespace std;
 
 class Solution {
  private:
-  void dfs(int curr,
-           int start,
-           const vector<vector<int>>& graph,
-           vector<bool>& visited,
-           set<int>& minSet) {
+  void dfs(int curr, int start, const vector<vector<int>>& graph, vector<bool>& visited, set<int>& minSet) {
     if (visited[curr]) {
       minSet.erase(curr);
       minSet.insert(start);

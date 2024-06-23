@@ -16,15 +16,13 @@ class Solution {
     unordered_map<char, int> cnts;
     for (int i = 0; i < N; ++i) cnts[s[i]]++;
     map<int, set<char>> reverseCnts;
-    for (auto it = cnts.begin(); it != cnts.end(); ++it)
-      reverseCnts[it->second].insert(it->first);
+    for (auto it = cnts.begin(); it != cnts.end(); ++it) reverseCnts[it->second].insert(it->first);
     int ans = 0;
     for (auto it = reverseCnts.rbegin(); it != reverseCnts.rend(); ++it) {
       while (reverseCnts[it->first].size() > 1) {
         char ch = *reverseCnts[it->first].begin();
         for (int targetCnt = it->first - 1; targetCnt >= 0; --targetCnt) {
-          if (targetCnt == 0 ||
-              reverseCnts.find(targetCnt) == reverseCnts.end()) {
+          if (targetCnt == 0 || reverseCnts.find(targetCnt) == reverseCnts.end()) {
             ans += (it->first - targetCnt);
             reverseCnts[it->first].erase(ch);
             if (targetCnt != 0) reverseCnts[targetCnt].insert(ch);

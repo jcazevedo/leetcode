@@ -8,8 +8,7 @@ using namespace std;
 
 class Solution {
  private:
-  int go(
-      vector<int>& cookies, int k, int curr, vector<int>& sums, int bestSoFar) {
+  int go(vector<int>& cookies, int k, int curr, vector<int>& sums, int bestSoFar) {
     if (curr == (int)cookies.size()) {
       int ans = sums[0];
       for (int i = 1; i < k; ++i) ans = max(ans, sums[i]);

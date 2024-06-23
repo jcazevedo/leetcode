@@ -7,8 +7,7 @@ struct TreeNode {
   TreeNode *right;
   TreeNode() : val(0), left(nullptr), right(nullptr) {}
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-  TreeNode(int x, TreeNode *left, TreeNode *right)
-      : val(x), left(left), right(right) {}
+  TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
 class Solution {
@@ -22,12 +21,10 @@ class Solution {
 
     bool currentSubTree = false;
     if (root->val == subRoot->val)
-      currentSubTree = isSubtree(root->left, subRoot->left, true) &&
-                       isSubtree(root->right, subRoot->right, true);
+      currentSubTree = isSubtree(root->left, subRoot->left, true) && isSubtree(root->right, subRoot->right, true);
     if (currentSubTree) return true;
     if (inSubtree) return false;
 
-    return isSubtree(root->left, subRoot, false) ||
-           isSubtree(root->right, subRoot, false);
+    return isSubtree(root->left, subRoot, false) || isSubtree(root->right, subRoot, false);
   }
 };

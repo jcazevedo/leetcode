@@ -32,15 +32,13 @@ class Solution {
         int vDown = (((curr[i] - '0') + 10 - 1)) % 10;
         next[i] = (vUp + '0');
         if (next == target) { return dist + 1; }
-        if (deadendSet.find(next) == deadendSet.end() &&
-            visited.find(next) == visited.end()) {
+        if (deadendSet.find(next) == deadendSet.end() && visited.find(next) == visited.end()) {
           visited.insert(next);
           q.push({next, dist + 1});
         }
         next[i] = (vDown + '0');
         if (next == target) { return dist + 1; }
-        if (deadendSet.find(next) == deadendSet.end() &&
-            visited.find(next) == visited.end()) {
+        if (deadendSet.find(next) == deadendSet.end() && visited.find(next) == visited.end()) {
           visited.insert(next);
           q.push({next, dist + 1});
         }

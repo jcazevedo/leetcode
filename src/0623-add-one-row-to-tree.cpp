@@ -7,19 +7,13 @@ struct TreeNode {
   TreeNode *right;
   TreeNode() : val(0), left(nullptr), right(nullptr) {}
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-  TreeNode(int x, TreeNode *left, TreeNode *right)
-      : val(x), left(left), right(right) {}
+  TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
 };
 
 class Solution {
  public:
-  TreeNode *addOneRow(TreeNode *root,
-                      int val,
-                      int depth,
-                      bool fromLeft = true) {
-    if (depth == 1)
-      return new TreeNode(val, fromLeft ? root : nullptr,
-                          !fromLeft ? root : nullptr);
+  TreeNode *addOneRow(TreeNode *root, int val, int depth, bool fromLeft = true) {
+    if (depth == 1) return new TreeNode(val, fromLeft ? root : nullptr, !fromLeft ? root : nullptr);
 
     if (root == nullptr) return root;
 

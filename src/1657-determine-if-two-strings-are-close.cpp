@@ -19,10 +19,8 @@ class Solution {
     for (auto itr = cnt2.begin(); itr != cnt2.end(); ++itr)
       if (cnt1.find(itr->first) == cnt1.end()) return false;
     vector<int> tot1, tot2;
-    for (auto itr = cnt1.begin(); itr != cnt1.end(); ++itr)
-      tot1.push_back(itr->second);
-    for (auto itr = cnt2.begin(); itr != cnt2.end(); ++itr)
-      tot2.push_back(itr->second);
+    for (auto itr = cnt1.begin(); itr != cnt1.end(); ++itr) tot1.push_back(itr->second);
+    for (auto itr = cnt2.begin(); itr != cnt2.end(); ++itr) tot2.push_back(itr->second);
     sort(tot1.begin(), tot1.end());
     sort(tot2.begin(), tot2.end());
     return tot1 == tot2;

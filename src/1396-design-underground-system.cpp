@@ -15,18 +15,14 @@ class UndergroundSystem {
  public:
   UndergroundSystem() {}
 
-  void checkIn(int id, string stationName, int t) {
-    passenger[id] = {stationName, t};
-  }
+  void checkIn(int id, string stationName, int t) { passenger[id] = {stationName, t}; }
 
   void checkOut(int id, string stationName, int t) {
     string startStation;
     int startTime;
     tie(startStation, startTime) = passenger[id];
     passenger.erase(id);
-    if (trips.find({startStation, stationName}) == trips.end()) {
-      trips[{startStation, stationName}] = {0L, 0};
-    }
+    if (trips.find({startStation, stationName}) == trips.end()) { trips[{startStation, stationName}] = {0L, 0}; }
     long long length;
     int nTrips;
     tie(length, nTrips) = trips[{startStation, stationName}];

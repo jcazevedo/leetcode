@@ -12,8 +12,7 @@ class Solution {
     int ans = 0;
     for (int i = 0; i < (int)accounts.size(); ++i) {
       int wealth = 0;
-      for (int j = 0; j < (int)accounts[i].size(); ++j)
-        wealth += accounts[i][j];
+      for (int j = 0; j < (int)accounts[i].size(); ++j) wealth += accounts[i][j];
       ans = max(ans, wealth);
     }
     return ans;

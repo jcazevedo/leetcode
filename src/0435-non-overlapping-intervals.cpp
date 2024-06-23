@@ -11,8 +11,7 @@ class Solution {
  public:
   int eraseOverlapIntervals(vector<vector<int>>& intervals) {
     vector<pair<int, int>> p_intervals;
-    for (vector<int> interval : intervals)
-      p_intervals.emplace_back(interval[1], interval[0]);
+    for (vector<int> interval : intervals) p_intervals.emplace_back(interval[1], interval[0]);
     sort(p_intervals.begin(), p_intervals.end());
     int ans = 0;
     int prev_end = INT_MIN;

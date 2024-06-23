@@ -32,8 +32,7 @@ class Solution {
         for (int di = 0; di < 3; ++di) {
           for (int dj = 0; dj < 3; ++dj) {
             if (board[i + di][j + dj] == '.') continue;
-            if (visited.find(board[i + di][j + dj]) != visited.end())
-              return false;
+            if (visited.find(board[i + di][j + dj]) != visited.end()) return false;
             visited.insert(board[i + di][j + dj]);
           }
         }

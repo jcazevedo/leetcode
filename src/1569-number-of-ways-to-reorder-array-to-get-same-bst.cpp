@@ -20,8 +20,7 @@ class Solution {
         left.push_back(nums[i]);
       else
         right.push_back(nums[i]);
-    return (((pt[nums.size() - 1][left.size()] * go(left)) % MOD) * go(right)) %
-           MOD;
+    return (((pt[nums.size() - 1][left.size()] * go(left)) % MOD) * go(right)) % MOD;
   }
 
  public:

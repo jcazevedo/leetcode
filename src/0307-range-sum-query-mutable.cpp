@@ -37,7 +37,5 @@ class NumArray {
     }
   }
 
-  int sumRange(int left, int right) {
-    return sumUntil(right) - sumUntil(left - 1);
-  }
+  int sumRange(int left, int right) { return sumUntil(right) - sumUntil(left - 1); }
 };

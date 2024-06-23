@@ -10,8 +10,7 @@ class Solution {
  public:
   int longestArithSeqLength(vector<int>& nums) {
     int ans = 0, N = nums.size();
-    vector<unordered_map<int, int>> dp =
-        vector<unordered_map<int, int>>(N, unordered_map<int, int>());
+    vector<unordered_map<int, int>> dp = vector<unordered_map<int, int>>(N, unordered_map<int, int>());
     for (int j = 0; j < N; ++j) {
       for (int i = 0; i < j; ++i) {
         int diff = nums[i] - nums[j];

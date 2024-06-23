@@ -24,8 +24,7 @@ class Solution {
         if (i == 0 && k == 1)
           ans = (ans + right) % MOD;
         else
-          for (int m1 = 1; m1 < m; ++m1)
-            left = (left + ways(i, m1, k - 1, cache)) % MOD;
+          for (int m1 = 1; m1 < m; ++m1) left = (left + ways(i, m1, k - 1, cache)) % MOD;
         ans = (ans + (left * right % MOD)) % MOD;
       }
       cache[n][m][k] = ans % MOD;
@@ -35,8 +34,7 @@ class Solution {
 
  public:
   int numOfArrays(int n, int m, int k) {
-    vector<vector<vector<int>>> cache(
-        n + 1, vector<vector<int>>(m + 1, vector<int>(k + 1, -1)));
+    vector<vector<vector<int>>> cache(n + 1, vector<vector<int>>(m + 1, vector<int>(k + 1, -1)));
     long long ans = 0;
     for (int i = 1; i <= m; ++i) ans = (ans + ways(n, i, k, cache)) % MOD;
     return ans;

@@ -21,8 +21,7 @@ class Solution {
     TreeNode* node = new TreeNode(root);
     vector<int> left, right;
     int N = preorder.size();
-    for (int i = 1; i < N; ++i)
-      (preorder[i] < root ? left : right).push_back(preorder[i]);
+    for (int i = 1; i < N; ++i) (preorder[i] < root ? left : right).push_back(preorder[i]);
     node->left = bstFromPreorder(left);
     node->right = bstFromPreorder(right);
     return node;

@@ -10,8 +10,7 @@ using namespace std;
 class Solution {
  public:
   bool canMakeArithmeticProgression(vector<int>& arr) {
-    int minV = numeric_limits<int>::max(), maxV = numeric_limits<int>::min(),
-        N = arr.size();
+    int minV = numeric_limits<int>::max(), maxV = numeric_limits<int>::min(), N = arr.size();
     for (int i = 0; i < N; ++i) {
       minV = min(minV, arr[i]);
       maxV = max(maxV, arr[i]);

@@ -23,8 +23,7 @@ class Solution {
         dp_in[left][right] = dp_exactly[left][right] = 0;
         dp_in[left][right] += dp_in[left][right - 1];
         dp_in[left][right] += dp_in[left + 1][right];
-        if (left + 1 <= right - 1)
-          dp_in[left][right] -= dp_in[left + 1][right - 1];
+        if (left + 1 <= right - 1) dp_in[left][right] -= dp_in[left + 1][right - 1];
         if (s[left] == s[right]) {
           if (left + 1 <= right - 1) {
             dp_in[left][right] += dp_exactly[left + 1][right - 1];

@@ -16,9 +16,7 @@ class Solution {
       } else {
         cnt = 1;
       }
-      if (cnt == 3 && (largest == ' ' || num[i] > largest)) {
-        largest = num[i];
-      }
+      if (cnt == 3 && (largest == ' ' || num[i] > largest)) { largest = num[i]; }
     }
     if (largest == ' ') { return ""; }
     return string(3, largest);

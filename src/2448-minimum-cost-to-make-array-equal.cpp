@@ -18,8 +18,7 @@ class Solution {
     costs[0] = ncs[0].second;
     for (int i = 1; i < N; ++i) costs[i] = ncs[i].second + costs[i - 1];
     long long curr = 0L;
-    for (int i = 1; i < N; ++i)
-      curr += ncs[i].second * (ncs[i].first - ncs[0].first);
+    for (int i = 1; i < N; ++i) curr += ncs[i].second * (ncs[i].first - ncs[0].first);
     long long ans = curr;
     for (int i = 1; i < N; ++i) {
       int diff = ncs[i].first - ncs[i - 1].first;

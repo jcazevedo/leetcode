@@ -16,8 +16,7 @@ struct TreeNode {
 
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-  TreeNode(int x, TreeNode* left, TreeNode* right)
-      : val(x), left(left), right(right) {}
+  TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
 
 class Solution {
@@ -45,9 +44,7 @@ class Solution {
     vector<vector<int>> ans = vector<vector<int>>(vis.size(), vector<int>());
     int idx = 0;
     for (auto itr = vis.begin(); itr != vis.end(); ++itr, ++idx) {
-      for (auto itr2 = itr->second.begin(); itr2 != itr->second.end(); ++itr2) {
-        ans[idx].push_back(itr2->second);
-      }
+      for (auto itr2 = itr->second.begin(); itr2 != itr->second.end(); ++itr2) { ans[idx].push_back(itr2->second); }
     }
     return ans;
   }

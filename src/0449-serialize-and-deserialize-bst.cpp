@@ -64,7 +64,5 @@ class Codec {
   string serialize(TreeNode* root) { return vec_to_string(tree_to_vec(root)); }
 
   // Decodes your encoded data to tree.
-  TreeNode* deserialize(string data) {
-    return vec_to_tree(string_to_vec(data));
-  }
+  TreeNode* deserialize(string data) { return vec_to_tree(string_to_vec(data)); }
 };

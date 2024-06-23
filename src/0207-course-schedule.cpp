@@ -26,9 +26,7 @@ class Solution {
  public:
   bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
     graph.assign(numCourses, vector<int>());
-    for (vector<int> edge : prerequisites) {
-      graph[edge[1]].push_back(edge[0]);
-    }
+    for (vector<int> edge : prerequisites) { graph[edge[1]].push_back(edge[0]); }
     visited.assign(numCourses, false);
     stack.assign(numCourses, false);
     for (int i = 0; i < numCourses; ++i) {

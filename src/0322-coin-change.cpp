@@ -15,8 +15,7 @@ class Solution {
     for (int i = 1; i <= amount; i++) {
       for (int j = 0; j < C; j++) {
         if (i - coins[j] >= 0 && ways[i - coins[j]] != -1) {
-          if (ways[i] == -1 || ways[i - coins[j]] + 1 < ways[i])
-            ways[i] = ways[i - coins[j]] + 1;
+          if (ways[i] == -1 || ways[i - coins[j]] + 1 < ways[i]) ways[i] = ways[i - coins[j]] + 1;
         }
       }
     }

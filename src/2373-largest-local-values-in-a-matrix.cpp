@@ -13,8 +13,7 @@ class Solution {
     for (int i = 1; i <= N - 2; ++i)
       for (int j = 1; j <= N - 2; ++j)
         for (int di = -1; di <= 1; ++di)
-          for (int dj = -1; dj <= 1; ++dj)
-            ans[i - 1][j - 1] = max(ans[i - 1][j - 1], grid[i + di][j + dj]);
+          for (int dj = -1; dj <= 1; ++dj) ans[i - 1][j - 1] = max(ans[i - 1][j - 1], grid[i + di][j + dj]);
     return ans;
   }
 };

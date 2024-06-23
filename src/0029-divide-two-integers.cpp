@@ -9,9 +9,7 @@ using namespace std;
 class Solution {
  public:
   int divide(int dividend, int divisor) {
-    if (divisor == 0 ||
-        (dividend == numeric_limits<int>::min() && divisor == -1))
-      return numeric_limits<int>::max();
+    if (divisor == 0 || (dividend == numeric_limits<int>::min() && divisor == -1)) return numeric_limits<int>::max();
     long long absDividend = abs((long long)dividend);
     long long absDivisor = abs((long long)divisor);
     long long ans = 0;
@@ -21,8 +19,7 @@ class Solution {
       ans += 1 << (p - 1);
       absDividend -= absDivisor << (p - 1);
     }
-    if ((dividend > 0 && divisor < 0) || (dividend < 0 && divisor > 0))
-      ans = -ans;
+    if ((dividend > 0 && divisor < 0) || (dividend < 0 && divisor > 0)) ans = -ans;
     return ans;
   }
 };

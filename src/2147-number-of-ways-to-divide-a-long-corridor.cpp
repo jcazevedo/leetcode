@@ -16,9 +16,7 @@ class Solution {
     vector<int> dividers;
     for (int i = 0; i < N; ++i) {
       if (corridor[i] == 'S') {
-        if (seatCount > 0 && seatCount % 2 == 0) {
-          dividers.push_back(dividerCount);
-        }
+        if (seatCount > 0 && seatCount % 2 == 0) { dividers.push_back(dividerCount); }
         seatCount++;
         dividerCount = 0;
       } else {

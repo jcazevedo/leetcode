@@ -68,8 +68,7 @@ class Solution {
 
           if (isupper(grid[nextI][nextJ])) {
             int keyNeeded = keyToIdx[tolower(grid[nextI][nextJ])];
-            if (((1 << keyNeeded) & currKeys) &&
-                visited.find({nextI, nextJ, currKeys}) == visited.end()) {
+            if (((1 << keyNeeded) & currKeys) && visited.find({nextI, nextJ, currKeys}) == visited.end()) {
               q.push({nextI, nextJ, currKeys, currDist + 1});
               visited.insert({nextI, nextJ, currKeys});
             }

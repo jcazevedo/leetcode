@@ -11,23 +11,17 @@ using namespace std;
 
 class Solution {
  private:
-  int getAliceScoreAux(int player,
-                       int startAt,
-                       const vector<int>& stoneValue,
-                       vector<vector<int>>& cache) {
+  int getAliceScoreAux(int player, int startAt, const vector<int>& stoneValue, vector<vector<int>>& cache) {
     if (startAt >= (int)stoneValue.size()) return 0;
     if (cache[player][startAt] == -1) {
-      int ans =
-          player == 0 ? numeric_limits<int>::min() : numeric_limits<int>::max();
+      int ans = player == 0 ? numeric_limits<int>::min() : numeric_limits<int>::max();
       int sumSoFar = 0;
       for (int i = startAt; i < min(startAt + 3, (int)stoneValue.size()); ++i) {
         sumSoFar += stoneValue[i];
         if (player == 0)
-          ans = max(ans, sumSoFar + getAliceScoreAux(player ^ 1, i + 1,
-                                                     stoneValue, cache));
+          ans = max(ans, sumSoFar + getAliceScoreAux(player ^ 1, i + 1, stoneValue, cache));
         else
-          ans =
-              min(ans, getAliceScoreAux(player ^ 1, i + 1, stoneValue, cache));
+          ans = min(ans, getAliceScoreAux(player ^ 1, i + 1, stoneValue, cache));
       }
       cache[player][startAt] = ans;
     }
@@ -35,8 +29,7 @@ class Solution {
   }
 
   int getAliceScore(const vector<int>& stoneValue) {
-    vector<vector<int>> cache =
-        vector<vector<int>>(2, vector<int>(stoneValue.size(), -1));
+    vector<vector<int>> cache = vector<vector<int>>(2, vector<int>(stoneValue.size(), -1));
     return getAliceScoreAux(0, 0, stoneValue, cache);
   }
 

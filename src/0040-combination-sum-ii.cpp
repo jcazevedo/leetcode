@@ -35,9 +35,7 @@ class Solution {
     map<int, int> count;
     vector<int> uniqueCandidates;
     for (int v : candidates) { count[v]++; }
-    for (auto itr = count.begin(); itr != count.end(); ++itr) {
-      uniqueCandidates.push_back(itr->first);
-    }
+    for (auto itr = count.begin(); itr != count.end(); ++itr) { uniqueCandidates.push_back(itr->first); }
     vector<vector<int>> ans;
     vector<int> curr;
     solve(0, uniqueCandidates, count, 0, target, curr, ans);

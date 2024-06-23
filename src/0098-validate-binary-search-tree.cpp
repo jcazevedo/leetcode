@@ -16,12 +16,9 @@ class Solution {
   bool isValidBST(TreeNode* root, long long left, long long right) {
     if (root == nullptr) return true;
     if (root->val <= left || root->val >= right) return false;
-    return isValidBST(root->left, left, root->val) &&
-           isValidBST(root->right, root->val, right);
+    return isValidBST(root->left, left, root->val) && isValidBST(root->right, root->val, right);
   }
 
  public:
-  bool isValidBST(TreeNode* root) {
-    return isValidBST(root, LLONG_MIN, LLONG_MAX);
-  }
+  bool isValidBST(TreeNode* root) { return isValidBST(root, LLONG_MIN, LLONG_MAX); }
 };

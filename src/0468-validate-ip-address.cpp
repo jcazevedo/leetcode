@@ -45,9 +45,7 @@ class Solution {
   bool is_valid_ipv8_group(string group) {
     if (group.size() > 4 || group.size() < 1) return false;
     for (char ch : group) {
-      if (!(isdigit(ch) || (ch >= 'a' && ch <= 'f') ||
-            (ch >= 'A' && ch <= 'F')))
-        return false;
+      if (!(isdigit(ch) || (ch >= 'a' && ch <= 'f') || (ch >= 'A' && ch <= 'F'))) return false;
     }
     return true;
   }

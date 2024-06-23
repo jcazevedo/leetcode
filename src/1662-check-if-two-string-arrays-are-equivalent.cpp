@@ -19,8 +19,7 @@ class Solution {
         w2++;
         i2 = 0;
       }
-      if (w1 < (int)word1.size() && w2 < (int)word2.size() &&
-          word1[w1][i1] != word2[w2][i2]) {
+      if (w1 < (int)word1.size() && w2 < (int)word2.size() && word1[w1][i1] != word2[w2][i2]) {
         return false;
       } else {
         i1++;

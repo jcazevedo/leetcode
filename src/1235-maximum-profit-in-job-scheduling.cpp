@@ -24,13 +24,10 @@ class Solution {
   }
 
  public:
-  int jobScheduling(vector<int>& startTime,
-                    vector<int>& endTime,
-                    vector<int>& profit) {
+  int jobScheduling(vector<int>& startTime, vector<int>& endTime, vector<int>& profit) {
     int N = startTime.size();
     vector<vector<int>> jobs;
-    for (int i = 0; i < N; ++i)
-      jobs.push_back({startTime[i], endTime[i], profit[i]});
+    for (int i = 0; i < N; ++i) jobs.push_back({startTime[i], endTime[i], profit[i]});
     sort(jobs.begin(), jobs.end());
 
     vector<int> cache(N, -1);

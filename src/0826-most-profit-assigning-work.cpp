@@ -9,9 +9,7 @@ using namespace std;
 
 class Solution {
  public:
-  int maxProfitAssignment(vector<int>& difficulty,
-                          vector<int>& profit,
-                          vector<int>& worker) {
+  int maxProfitAssignment(vector<int>& difficulty, vector<int>& profit, vector<int>& worker) {
     int ans = 0;
     sort(worker.begin(), worker.end());
     int N = difficulty.size();

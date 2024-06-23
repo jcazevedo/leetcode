@@ -7,10 +7,7 @@ using namespace std;
 
 class Solution {
  private:
-  int minCost(int dayIdx,
-              const vector<int>& days,
-              const vector<int>& costs,
-              vector<int>& cache) {
+  int minCost(int dayIdx, const vector<int>& days, const vector<int>& costs, vector<int>& cache) {
     if (dayIdx >= (int)days.size()) return 0;
     if (cache[dayIdx] == -1) {
       int day1 = costs[0] + minCost(dayIdx + 1, days, costs, cache);

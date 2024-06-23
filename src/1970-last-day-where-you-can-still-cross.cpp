@@ -16,8 +16,7 @@ class Solution {
     for (int d = 0; d < (int)directions.size(); ++d) {
       int ni = i + directions[d][0];
       int nj = j + directions[d][1];
-      if (ni >= 0 && ni < row && nj >= 0 && nj < col &&
-          visited.find(make_pair(ni, nj)) == visited.end()) {
+      if (ni >= 0 && ni < row && nj >= 0 && nj < col && visited.find(make_pair(ni, nj)) == visited.end()) {
         visited.insert(make_pair(ni, nj));
         if (floodFill(ni, nj, row, col, visited)) return true;
       }
@@ -27,8 +26,7 @@ class Solution {
 
   bool canCross(int row, int col, const vector<vector<int>>& cells, int day) {
     set<pair<int, int>> visited;
-    for (int i = 0; i < day; ++i)
-      visited.insert(make_pair(cells[i][0] - 1, cells[i][1] - 1));
+    for (int i = 0; i < day; ++i) visited.insert(make_pair(cells[i][0] - 1, cells[i][1] - 1));
     for (int i = 0; i < col; ++i) {
       if (visited.find(make_pair(0, i)) == visited.end()) {
         visited.insert(make_pair(0, i));

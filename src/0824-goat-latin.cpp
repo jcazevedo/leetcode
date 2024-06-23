@@ -25,8 +25,7 @@ class Solution {
 
   string transform(string word, int index) {
     char firstChar = tolower(word[0]);
-    if (firstChar == 'a' || firstChar == 'e' || firstChar == 'i' ||
-        firstChar == 'o' || firstChar == 'u')
+    if (firstChar == 'a' || firstChar == 'e' || firstChar == 'i' || firstChar == 'o' || firstChar == 'u')
       word += "ma";
     else
       word = word.substr(1) + word[0] + "ma";

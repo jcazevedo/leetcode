@@ -10,13 +10,8 @@ using namespace std;
 
 class Solution {
  public:
-  double maxProbability(int n,
-                        vector<vector<int>>& edges,
-                        vector<double>& succProb,
-                        int start,
-                        int end) {
-    vector<vector<tuple<int, double>>> graph =
-        vector<vector<tuple<int, double>>>(n, vector<tuple<int, double>>());
+  double maxProbability(int n, vector<vector<int>>& edges, vector<double>& succProb, int start, int end) {
+    vector<vector<tuple<int, double>>> graph = vector<vector<tuple<int, double>>>(n, vector<tuple<int, double>>());
     int E = edges.size();
     for (int i = 0; i < E; ++i) {
       int u = edges[i][0];

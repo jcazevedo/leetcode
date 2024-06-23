@@ -14,8 +14,7 @@ class Solution {
     int j = -1;
     for (int i = l; i < r; ++i) {
       if (s[i] != s[r] && j == -1) j = i;
-      if (j != -1)
-        dp[l][r] = min(dp[l][r], 1 + go(j, i, s, dp) + go(i + 1, r, s, dp));
+      if (j != -1) dp[l][r] = min(dp[l][r], 1 + go(j, i, s, dp) + go(i + 1, r, s, dp));
     }
     if (j == -1) dp[l][r] = 0;
     return dp[l][r];

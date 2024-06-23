@@ -26,9 +26,7 @@ class Trie {
   void insert(string word) {
     TrieNode* curr = root;
     for (char ch : word) {
-      if (curr->next[ch - 'a'] == nullptr) {
-        curr->next[ch - 'a'] = new TrieNode();
-      }
+      if (curr->next[ch - 'a'] == nullptr) { curr->next[ch - 'a'] = new TrieNode(); }
       curr = curr->next[ch - 'a'];
     }
     curr->is_end = true;

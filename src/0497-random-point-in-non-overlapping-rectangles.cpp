@@ -21,10 +21,8 @@ class Solution {
       totArea += area;
       if (rand() % totArea < area) selectedRectangle = rect;
     }
-    int x = rand() % (selectedRectangle[2] - selectedRectangle[0] + 1) +
-            selectedRectangle[0];
-    int y = rand() % (selectedRectangle[3] - selectedRectangle[1] + 1) +
-            selectedRectangle[1];
+    int x = rand() % (selectedRectangle[2] - selectedRectangle[0] + 1) + selectedRectangle[0];
+    int y = rand() % (selectedRectangle[3] - selectedRectangle[1] + 1) + selectedRectangle[1];
     return {x, y};
   }
 };

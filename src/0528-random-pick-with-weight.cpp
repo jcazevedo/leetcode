@@ -23,8 +23,5 @@ class Solution {
     }
   }
 
-  int pickIndex() {
-    return upper_bound(values.begin(), values.end(), rand() % values.back()) -
-           values.begin();
-  }
+  int pickIndex() { return upper_bound(values.begin(), values.end(), rand() % values.back()) - values.begin(); }
 };

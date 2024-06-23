@@ -16,15 +16,12 @@ class Solution {
       if (height[i] > 0) {
         int minHeight = 0;
         while (!prev.empty() && get<0>(prev.top()) <= height[i]) {
-          int areaToAdd =
-              (i - get<1>(prev.top()) - 1) * (get<0>(prev.top()) - minHeight);
+          int areaToAdd = (i - get<1>(prev.top()) - 1) * (get<0>(prev.top()) - minHeight);
           ans += areaToAdd;
           minHeight = get<0>(prev.top());
           prev.pop();
         }
-        if (!prev.empty()) {
-          ans += (i - get<1>(prev.top()) - 1) * (height[i] - minHeight);
-        }
+        if (!prev.empty()) { ans += (i - get<1>(prev.top()) - 1) * (height[i] - minHeight); }
         prev.push({height[i], i});
       }
     }

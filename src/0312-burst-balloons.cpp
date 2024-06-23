@@ -15,8 +15,7 @@ class Solution {
       cache[i][j] = 0;
       if (j - i > 1) {
         for (int k = i + 1; k < j; ++k) {
-          cache[i][j] = max(cache[i][j], nums[i] * nums[k] * nums[j] +
-                                             go(i, k, nums) + go(k, j, nums));
+          cache[i][j] = max(cache[i][j], nums[i] * nums[k] * nums[j] + go(i, k, nums) + go(k, j, nums));
         }
       }
     }

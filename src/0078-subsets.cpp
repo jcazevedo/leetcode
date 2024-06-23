@@ -7,10 +7,7 @@ using namespace std;
 
 class Solution {
  private:
-  void aux(vector<int>& nums,
-           vector<bool>& include,
-           int N,
-           vector<vector<int>>& res) {
+  void aux(vector<int>& nums, vector<bool>& include, int N, vector<vector<int>>& res) {
     if (N == (int)nums.size()) {
       vector<int> n;
       for (int i = 0; i < N; i++) {

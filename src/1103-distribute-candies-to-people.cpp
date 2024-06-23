@@ -17,11 +17,8 @@ class Solution {
   vector<int> distributeCandies(int candies, int num_people) {
     vector<int> ans(num_people, 0);
     int round = 0;
-    while ((round * num_people) * num_people +
-               (num_people * (num_people + 1)) / 2 <
-           candies) {
-      candies -= ((round * num_people) * num_people +
-                  (num_people * (num_people + 1)) / 2);
+    while ((round * num_people) * num_people + (num_people * (num_people + 1)) / 2 < candies) {
+      candies -= ((round * num_people) * num_people + (num_people * (num_people + 1)) / 2);
       round++;
     }
     for (int i = 0; i < num_people; ++i) {

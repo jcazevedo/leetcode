@@ -28,11 +28,9 @@ class Solution {
   }
 
  public:
-  int findCheapestPrice(
-      int n, vector<vector<int>>& flights, int src, int dst, int K) {
+  int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int K) {
     graph.assign(n, vector<pair<int, int>>());
-    for (vector<int> edge : flights)
-      graph[edge[0]].emplace_back(edge[1], edge[2]);
+    for (vector<int> edge : flights) graph[edge[0]].emplace_back(edge[1], edge[2]);
     visited.assign(n, false);
     visited[src] = true;
     target = dst;

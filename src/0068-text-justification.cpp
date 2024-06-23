@@ -9,8 +9,7 @@ using namespace std;
 class Solution {
  private:
   string build_line(const vector<string>& words, int maxWidth) {
-    if (words.size() == 1)
-      return words[0] + string(maxWidth - words[0].size(), ' ');
+    if (words.size() == 1) return words[0] + string(maxWidth - words[0].size(), ' ');
     int len = 0;
     for (string word : words) len += word.size();
     int spaces = words.size() - 1;

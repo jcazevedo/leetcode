@@ -11,8 +11,7 @@ class Solution {
  public:
   long long totalCost(vector<int>& costs, int k, int candidates) {
     set<pair<int, int>> totCandidates;
-    for (int i = 0; i < candidates; ++i)
-      totCandidates.insert(make_pair(costs[i], i));
+    for (int i = 0; i < candidates; ++i) totCandidates.insert(make_pair(costs[i], i));
     for (int i = costs.size() - 1; i >= (int)costs.size() - candidates; --i)
       totCandidates.insert(make_pair(costs[i], i));
     int il = candidates, ir = costs.size() - candidates - 1;

@@ -11,10 +11,7 @@ class Solution {
  public:
   int findLongestChain(vector<vector<int>>& pairs) {
     int N = pairs.size();
-    sort(pairs.begin(), pairs.end(),
-         [](const vector<int>& v1, const vector<int>& v2) {
-           return v1[1] < v2[1];
-         });
+    sort(pairs.begin(), pairs.end(), [](const vector<int>& v1, const vector<int>& v2) { return v1[1] < v2[1]; });
     vector<int> dp(N, 1);
     for (int i = 1; i < N; ++i)
       for (int j = 0; j < i; ++j)

@@ -35,8 +35,7 @@ class Solution {
     cache.clear();
     go(target, candidates.size() - 1, candidates);
     vector<vector<int>> res;
-    for (vector<int> v : cache[{target, candidates.size() - 1}])
-      res.push_back(v);
+    for (vector<int> v : cache[{target, candidates.size() - 1}]) res.push_back(v);
     return res;
   }
 };

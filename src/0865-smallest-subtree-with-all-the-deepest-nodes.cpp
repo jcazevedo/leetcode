@@ -15,8 +15,7 @@ struct TreeNode {
 
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-  TreeNode(int x, TreeNode* left, TreeNode* right)
-      : val(x), left(left), right(right) {}
+  TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
 
 class Solution {
@@ -25,9 +24,7 @@ class Solution {
 
   int depth(TreeNode* root) {
     if (root == nullptr) { return 0; }
-    if (depth_cache.count(root) == 0) {
-      depth_cache[root] = max(depth(root->left), depth(root->right)) + 1;
-    }
+    if (depth_cache.count(root) == 0) { depth_cache[root] = max(depth(root->left), depth(root->right)) + 1; }
     return depth_cache[root];
   }
 

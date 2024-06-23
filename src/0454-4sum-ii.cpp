@@ -8,10 +8,7 @@ using namespace std;
 
 class Solution {
  public:
-  int fourSumCount(vector<int>& A,
-                   vector<int>& B,
-                   vector<int>& C,
-                   vector<int>& D) {
+  int fourSumCount(vector<int>& A, vector<int>& B, vector<int>& C, vector<int>& D) {
     unordered_map<int, int> ab_sum, cd_sum;
     int N = A.size();
     for (int i = 0; i < N; ++i) {
@@ -21,9 +18,7 @@ class Solution {
       }
     }
     int ans = 0;
-    for (auto itr = ab_sum.begin(); itr != ab_sum.end(); ++itr) {
-      ans += itr->second * cd_sum[-itr->first];
-    }
+    for (auto itr = ab_sum.begin(); itr != ab_sum.end(); ++itr) { ans += itr->second * cd_sum[-itr->first]; }
     return ans;
   }
 };

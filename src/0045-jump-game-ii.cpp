@@ -16,8 +16,7 @@ class Solution {
         cache[i] = 0;
       else {
         int ans = nums.size() + 1;
-        for (int j = 1; j <= nums[i]; ++j)
-          ans = min(ans, 1 + go(nums, cache, i + j));
+        for (int j = 1; j <= nums[i]; ++j) ans = min(ans, 1 + go(nums, cache, i + j));
         cache[i] = ans;
       }
     }

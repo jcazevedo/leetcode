@@ -24,9 +24,7 @@ class Solution {
   void insert(TrieNode* node, string word) {
     TrieNode* curr = node;
     for (char ch : word) {
-      if (curr->next[ch - 'a'] == nullptr) {
-        curr->next[ch - 'a'] = new TrieNode();
-      }
+      if (curr->next[ch - 'a'] == nullptr) { curr->next[ch - 'a'] = new TrieNode(); }
       curr = curr->next[ch - 'a'];
     }
     curr->is_end = true;
@@ -34,12 +32,7 @@ class Solution {
 
   set<string> found;
 
-  void dfs(vector<vector<char>>& board,
-           TrieNode* trie,
-           vector<vector<bool>>& visited,
-           int i,
-           int j,
-           string word) {
+  void dfs(vector<vector<char>>& board, TrieNode* trie, vector<vector<bool>>& visited, int i, int j, string word) {
     if (trie->next[board[i][j] - 'a'] != nullptr) {
       TrieNode* next = trie->next[board[i][j] - 'a'];
       word += board[i][j];
@@ -48,8 +41,7 @@ class Solution {
       for (pair<int, int> dir : dirs) {
         int ni = i + dir.first;
         int nj = j + dir.second;
-        if (ni >= 0 && ni < (int)board.size() && nj >= 0 &&
-            nj < (int)board[ni].size() && !visited[ni][nj]) {
+        if (ni >= 0 && ni < (int)board.size() && nj >= 0 && nj < (int)board[ni].size() && !visited[ni][nj]) {
           dfs(board, next, visited, ni, nj, word);
         }
       }

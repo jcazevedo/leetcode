@@ -28,8 +28,7 @@ class Solution {
   }
 
  public:
-  long long maximumScoreAfterOperations(vector<vector<int>>& edges,
-                                        vector<int>& values) {
+  long long maximumScoreAfterOperations(vector<vector<int>>& edges, vector<int>& values) {
     int N = values.size();
 
     long long totalScore = 0L;
@@ -43,8 +42,7 @@ class Solution {
 
     vector<bool> inPath(N, false);
     inPath[0] = true;
-    long long minimumRemaining =
-        getMinimumToKeep(0, connections, values, inPath);
+    long long minimumRemaining = getMinimumToKeep(0, connections, values, inPath);
 
     return totalScore - minimumRemaining;
   }

@@ -25,8 +25,7 @@ class Solution {
     for (int d = 0; d < 4; ++d) {
       int ni = i + dirs[d][0];
       int nj = j + dirs[d][1];
-      if (ni >= 0 && ni < H && nj >= 0 && nj < W && grid[ni][nj] != -1 &&
-          !visited[ni][nj]) {
+      if (ni >= 0 && ni < H && nj >= 0 && nj < W && grid[ni][nj] != -1 && !visited[ni][nj]) {
         visited[ni][nj] = true;
         ans += dfs(ni, nj, grid, H, W, visited, expected, n_visited + 1);
         visited[ni][nj] = false;
@@ -50,8 +49,7 @@ class Solution {
         }
       }
     }
-    vector<vector<bool>> visited =
-        vector<vector<bool>>(H, vector<bool>(W, false));
+    vector<vector<bool>> visited = vector<vector<bool>>(H, vector<bool>(W, false));
     visited[si][sj] = true;
     return dfs(si, sj, grid, H, W, visited, expected, 1);
   }

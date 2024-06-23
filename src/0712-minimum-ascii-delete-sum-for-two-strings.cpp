@@ -18,8 +18,7 @@ class Solution {
           dp[i1][i2] = dp[i1 - 1][i2 - 1] + 1;
           sum[i1][i2] = sum[i1 - 1][i2 - 1] + s1[i1 - 1];
         } else if (dp[i1 - 1][i2] > dp[i1][i2 - 1] ||
-                   (dp[i1 - 1][i2] == dp[i1][i2 - 1] &&
-                    sum[i1 - 1][i2] > sum[i1][i2 - 1])) {
+                   (dp[i1 - 1][i2] == dp[i1][i2 - 1] && sum[i1 - 1][i2] > sum[i1][i2 - 1])) {
           dp[i1][i2] = dp[i1 - 1][i2];
           sum[i1][i2] = sum[i1 - 1][i2];
         } else {

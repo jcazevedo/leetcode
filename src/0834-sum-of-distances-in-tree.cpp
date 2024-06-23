@@ -7,12 +7,8 @@ using namespace std;
 
 class Solution {
  private:
-  void dfs1(int node,
-            int parent,
-            int currDepth,
-            const vector<vector<int>>& tree,
-            vector<int>& nodes,
-            vector<int>& depths) {
+  void dfs1(
+      int node, int parent, int currDepth, const vector<vector<int>>& tree, vector<int>& nodes, vector<int>& depths) {
     int n = 1;
     for (const int& neighbor : tree[node]) {
       if (neighbor == parent) continue;
@@ -32,9 +28,7 @@ class Solution {
     ans[node] = currDistance;
     for (const int& neighbor : tree[node]) {
       if (neighbor == parent) continue;
-      dfs2(neighbor, node,
-           currDistance - nodes[neighbor] + (tree.size() - nodes[neighbor]),
-           tree, nodes, ans);
+      dfs2(neighbor, node, currDistance - nodes[neighbor] + (tree.size() - nodes[neighbor]), tree, nodes, ans);
     }
   }
 

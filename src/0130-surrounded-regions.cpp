@@ -32,8 +32,7 @@ class Solution {
     for (int d = 0; d < 4; ++d) {
       int ni = i + dirs[d].first;
       int nj = j + dirs[d].second;
-      if (ni < 0 || ni >= H || nj < 0 || nj >= W || board[ni][nj] == 'X')
-        continue;
+      if (ni < 0 || ni >= H || nj < 0 || nj >= W || board[ni][nj] == 'X') continue;
       flip(ni, nj, board);
     }
   }

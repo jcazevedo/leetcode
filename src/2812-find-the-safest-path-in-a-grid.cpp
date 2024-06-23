@@ -14,8 +14,7 @@ class Solution {
     for (const vector<int>& dir : dirs) {
       int di = i + dir[0];
       int dj = j + dir[1];
-      if (di >= 0 && di < N && dj >= 0 && dj < N &&
-          minDistToThief[di][dj] > minDistToThief[i][j] + 1) {
+      if (di >= 0 && di < N && dj >= 0 && dj < N && minDistToThief[di][dj] > minDistToThief[i][j] + 1) {
         minDistToThief[di][dj] = minDistToThief[i][j] + 1;
         floodFill(di, dj, N, minDistToThief);
       }
@@ -44,8 +43,7 @@ class Solution {
         for (const vector<int>& dir : dirs) {
           int di = i + dir[0];
           int dj = j + dir[1];
-          if (di >= 0 && di < N && dj >= 0 && dj < N &&
-              minDistToThief[di][dj] == -1) {
+          if (di >= 0 && di < N && dj >= 0 && dj < N && minDistToThief[di][dj] == -1) {
             minDistToThief[di][dj] = minDistToThief[i][j] + 1;
             q.push({di, dj});
           }

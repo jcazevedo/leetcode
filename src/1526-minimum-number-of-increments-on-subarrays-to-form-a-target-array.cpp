@@ -21,11 +21,9 @@ class Solution {
           int height = heights.top();
           heights.pop();
           int nextHeight = target[i];
-          if (!heights.empty() && heights.top() > target[i])
-            nextHeight = heights.top();
+          if (!heights.empty() && heights.top() > target[i]) nextHeight = heights.top();
           ans += height - nextHeight;
-          if (!heights.empty() && target[i] > heights.top())
-            heights.push(target[i]);
+          if (!heights.empty() && target[i] > heights.top()) heights.push(target[i]);
         }
       }
     }

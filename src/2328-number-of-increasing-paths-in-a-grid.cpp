@@ -11,12 +11,7 @@ class Solution {
  private:
   static vector<vector<int>> directions;
 
-  int pathsEnding(int i,
-                  int j,
-                  int M,
-                  int N,
-                  const vector<vector<int>>& grid,
-                  vector<vector<int>>& cache) {
+  int pathsEnding(int i, int j, int M, int N, const vector<vector<int>>& grid, vector<vector<int>>& cache) {
     if (cache[i][j] == -1) {
       long long ans = 1;
       for (int d = 0; d < (int)directions.size(); ++d) {
@@ -37,8 +32,7 @@ class Solution {
     vector<vector<int>> cache = vector<vector<int>>(M, vector<int>(N, -1));
     long long ans = 0;
     for (int i = 0; i < M; ++i)
-      for (int j = 0; j < N; ++j)
-        ans = (ans + pathsEnding(i, j, M, N, grid, cache)) % MOD;
+      for (int j = 0; j < N; ++j) ans = (ans + pathsEnding(i, j, M, N, grid, cache)) % MOD;
     return ans;
   }
 };

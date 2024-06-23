@@ -15,8 +15,7 @@ struct TreeNode {
 
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
 
-  TreeNode(int x, TreeNode* left, TreeNode* right)
-      : val(x), left(left), right(right) {}
+  TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
 
 class Solution {
@@ -27,8 +26,7 @@ class Solution {
     pair<long long, long long> left = go(root->left);
     pair<long long, long long> right = go(root->right);
     long long best_ending = curr;
-    best_ending =
-        max(best_ending, max(curr + left.second, curr + right.second));
+    best_ending = max(best_ending, max(curr + left.second, curr + right.second));
     long long best_through = best_ending;
     best_through = max(best_through, curr + left.second + right.second);
     return {max(left.first, max(right.first, best_through)), best_ending};

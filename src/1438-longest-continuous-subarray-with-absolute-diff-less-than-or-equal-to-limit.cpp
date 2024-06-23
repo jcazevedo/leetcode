@@ -1,5 +1,4 @@
-// 1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to
-// Limit
+// 1438. Longest Continuous Subarray With Absolute Diff Less Than or Equal to Limit
 // https://leetcode.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/
 
 #include <algorithm>
@@ -12,9 +11,7 @@ class Solution {
  public:
   int longestSubarray(vector<int>& nums, int limit) {
     priority_queue<pair<int, int>> maxPQ;
-    priority_queue<pair<int, int>, vector<pair<int, int>>,
-                   greater<pair<int, int>>>
-        minPQ;
+    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> minPQ;
     int left = 0;
     int best = 0;
     int n = nums.size();

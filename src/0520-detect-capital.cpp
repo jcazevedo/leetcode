@@ -29,7 +29,6 @@ class Solution {
 
  public:
   bool detectCapitalUse(string word) {
-    return all_capitals(word) || all_not_capitals(word) ||
-           only_first_capital(word);
+    return all_capitals(word) || all_not_capitals(word) || only_first_capital(word);
   }
 };

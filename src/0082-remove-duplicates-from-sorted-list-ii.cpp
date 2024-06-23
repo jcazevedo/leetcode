@@ -18,8 +18,7 @@ class Solution {
     ListNode* pre = parent;
     ListNode* curr = head;
     while (curr != nullptr) {
-      while (curr->next != nullptr && curr->val == curr->next->val)
-        curr = curr->next;
+      while (curr->next != nullptr && curr->val == curr->next->val) curr = curr->next;
       if (pre->next == curr)
         pre = pre->next;
       else

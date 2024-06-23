@@ -20,8 +20,7 @@ class Solution {
 
   int get_tot_importance(int id) {
     int res = importance[id];
-    for (int subordinate : subordinates[id])
-      res += get_tot_importance(subordinate);
+    for (int subordinate : subordinates[id]) res += get_tot_importance(subordinate);
     return res;
   }
 

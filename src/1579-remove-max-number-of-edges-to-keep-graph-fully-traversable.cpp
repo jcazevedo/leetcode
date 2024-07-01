@@ -36,35 +36,8 @@ class UnionFind {
 };
 
 class Solution {
- private:
-  void dfs(int u, int t, vector<bool>& visited, const vector<vector<vector<int>>>& graph) {
-    for (const vector<int>& next : graph[u]) {
-      if ((next[0] == t || next[0] == 3) && !visited[next[1]]) {
-        visited[next[1]] = true;
-        dfs(next[1], t, visited, graph);
-      }
-    }
-  }
-
  public:
   int maxNumEdgesToRemove(int n, vector<vector<int>>& edges) {
-    vector<vector<vector<int>>> graph(n + 1, vector<vector<int>>());
-    for (const vector<int>& edge : edges) {
-      graph[edge[1]].push_back({edge[0], edge[2]});
-      graph[edge[2]].push_back({edge[0], edge[1]});
-    }
-    vector<bool> visited(n + 1, false);
-    visited[1] = true;
-    dfs(1, 1, visited, graph);
-    for (int i = 1; i <= n; ++i) {
-      if (!visited[i]) { return -1; }
-      visited[i] = false;
-    }
-    visited[1] = true;
-    dfs(1, 2, visited, graph);
-    for (int i = 1; i <= n; ++i) {
-      if (!visited[i]) { return -1; }
-    }
     UnionFind alice(n + 1);
     UnionFind bob(n + 1);
     int used = 0;
@@ -89,6 +62,10 @@ class Solution {
           alice.unionSet(edges[i][1], edges[i][2]);
         }
       }
+    }
+    for (int i = 1; i <= n; ++i) {
+      if (alice.findSet(i) != alice.findSet(1)) { return -1; }
+      if (bob.findSet(i) != bob.findSet(1)) { return -1; }
     }
     return E - used;
   }

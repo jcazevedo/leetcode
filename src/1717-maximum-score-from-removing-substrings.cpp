@@ -11,14 +11,16 @@ class Solution {
  public:
   int maximumGain(string s, int x, int y) {
     int ans = 0, s1 = max(x, y), s2 = min(x, y);
-    if (y > x) reverse(s.begin(), s.end());
+    if (y > x) { reverse(s.begin(), s.end()); }
     stack<char> st;
-    for (char ch : s)
+    for (char ch : s) {
       if (!st.empty() && st.top() == 'a' && ch == 'b') {
         st.pop();
         ans += s1;
-      } else
+      } else {
         st.push(ch);
+      }
+    }
     s = "";
     while (!st.empty()) {
       s += st.top();
@@ -28,8 +30,9 @@ class Solution {
       if (!st.empty() && st.top() == 'a' && ch == 'b') {
         st.pop();
         ans += s2;
-      } else
+      } else {
         st.push(ch);
+      }
     }
     return ans;
   }

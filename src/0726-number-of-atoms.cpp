@@ -16,7 +16,7 @@ class Solution {
     counts.push(map<string, int>());
     int N = formula.size();
     int i = 0;
-    while (i < N) {
+    while (i < N)
       if (formula[i] == '(') {
         counts.push(map<string, int>());
         ++i;
@@ -27,7 +27,7 @@ class Solution {
         int mult = 0;
         while (i < N && isdigit(formula[i])) mult = mult * 10 + (formula[i++] - '0');
         if (mult == 0) mult = 1;
-        for (auto itr = top.begin(); itr != top.end(); ++itr) { counts.top()[itr->first] += itr->second * mult; }
+        for (auto itr = top.begin(); itr != top.end(); ++itr) counts.top()[itr->first] += itr->second * mult;
       } else {
         string curr = "";
         curr += formula[i];
@@ -38,7 +38,6 @@ class Solution {
         if (count == 0) count = 1;
         counts.top()[curr] += count;
       }
-    }
     ostringstream ss;
     for (auto itr = counts.top().begin(); itr != counts.top().end(); ++itr) {
       ss << itr->first;

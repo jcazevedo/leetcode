@@ -9,7 +9,7 @@ using namespace std;
 class Solution {
  private:
   int mappedValue(int num, const vector<int>& mapping) {
-    if (num == 0) return mapping[0];
+    if (num == 0) { return mapping[0]; }
     int ans = 0;
     int p = 1;
     while (num) {

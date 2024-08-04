@@ -12,14 +12,14 @@ class Solution {
  public:
   int rangeSum(vector<int>& nums, int n, int left, int right) {
     priority_queue<int, vector<int>, greater<int>> pq;
-    vector<int> sums;
+    vector<int> sums(n, 0);
     for (int i = 0; i < n; ++i) {
-      for (int j = 0; j < (int)sums.size(); ++j) {
+      for (int j = 0; j < i; ++j) {
         sums[j] += nums[i];
         pq.push(sums[j]);
       }
-      sums.push_back(nums[i]);
-      pq.push(nums[i]);
+      sums[i] = nums[i];
+      pq.push(sums[i]);
     }
     long long ans = 0;
     int idx = 1;

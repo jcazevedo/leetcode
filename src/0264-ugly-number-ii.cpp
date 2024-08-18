@@ -7,21 +7,19 @@
 
 using namespace std;
 
-typedef long long ll;
-
 class Solution {
  public:
   int nthUglyNumber(int n) {
-    priority_queue<ll, vector<ll>, greater<ll>> pq;
-    unordered_set<ll> visited;
+    priority_queue<long long, vector<long long>, greater<long long>> pq;
+    unordered_set<long long> visited;
     pq.push(1);
     visited.insert(1);
     while (n > 1) {
-      ll curr = pq.top();
+      long long curr = pq.top();
       pq.pop();
-      ll n2 = curr * 2;
-      ll n3 = curr * 3;
-      ll n5 = curr * 5;
+      long long n2 = curr * 2;
+      long long n3 = curr * 3;
+      long long n5 = curr * 5;
       if (visited.find(n2) == visited.end()) {
         pq.push(n2);
         visited.insert(n2);

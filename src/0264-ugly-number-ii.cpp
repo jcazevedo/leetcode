@@ -1,8 +1,7 @@
 // 264. Ugly Number II
 // https://leetcode.com/problems/ugly-number-ii/
 
-#include <queue>
-#include <unordered_set>
+#include <algorithm>
 #include <vector>
 
 using namespace std;
@@ -10,30 +9,25 @@ using namespace std;
 class Solution {
  public:
   int nthUglyNumber(int n) {
-    priority_queue<long long, vector<long long>, greater<long long>> pq;
-    unordered_set<long long> visited;
-    pq.push(1);
-    visited.insert(1);
-    while (n > 1) {
-      long long curr = pq.top();
-      pq.pop();
-      long long n2 = curr * 2;
-      long long n3 = curr * 3;
-      long long n5 = curr * 5;
-      if (visited.find(n2) == visited.end()) {
-        pq.push(n2);
-        visited.insert(n2);
+    vector<int> nums(n);
+    nums[0] = 1;
+    int idx2 = 0, idx3 = 0, idx5 = 0, next2 = 2, next3 = 3, next5 = 5;
+    for (int i = 1; i < n; ++i) {
+      int next = min(next2, min(next3, next5));
+      nums[i] = next;
+      if (next == next2) {
+        idx2++;
+        next2 = nums[idx2] * 2;
       }
-      if (visited.find(n3) == visited.end()) {
-        pq.push(n3);
-        visited.insert(n3);
+      if (next == next3) {
+        idx3++;
+        next3 = nums[idx3] * 3;
       }
-      if (visited.find(n5) == visited.end()) {
-        pq.push(n5);
-        visited.insert(n5);
+      if (next == next5) {
+        idx5++;
+        next5 = nums[idx5] * 5;
       }
-      n--;
     }
-    return pq.top();
+    return nums[n - 1];
   }
 };

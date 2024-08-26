@@ -7,7 +7,7 @@ all: $(BIN_FILES)
 
 %: src/%.cpp
 	clang-format -i $<
-	$(CC) $(CC_FLAGS) -o $@ -c $<
+	$(CC) $(CC_FLAGS) -DLOCAL -o $@ -c $<
 
 format:
 	clang-format -i src/*.cpp

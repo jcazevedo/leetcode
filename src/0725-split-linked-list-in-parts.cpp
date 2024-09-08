@@ -5,6 +5,7 @@
 
 using namespace std;
 
+#ifdef LOCAL
 struct ListNode {
   int val;
   ListNode* next;
@@ -12,6 +13,7 @@ struct ListNode {
   ListNode(int x) : val(x), next(nullptr) {}
   ListNode(int x, ListNode* next) : val(x), next(next) {}
 };
+#endif
 
 class Solution {
  public:
@@ -23,10 +25,8 @@ class Solution {
       curr = curr->next;
     }
     int size = len / k, rem = len % k;
-
     vector<ListNode*> ans;
     int currLen = 0;
-
     while (head != nullptr) {
       ListNode* prev = head;
       head = head->next;
@@ -35,13 +35,11 @@ class Solution {
       currLen++;
       if ((rem > 0 && currLen == size + 1) || (rem == 0 && currLen == size)) {
         prev->next = nullptr;
-        if (rem > 0) --rem;
+        if (rem > 0) { --rem; }
         currLen = 0;
       }
     }
-
-    while ((int)ans.size() < k) ans.push_back(nullptr);
-
+    while ((int)ans.size() < k) { ans.push_back(nullptr); }
     return ans;
   }
 };

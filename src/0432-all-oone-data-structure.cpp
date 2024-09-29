@@ -18,7 +18,7 @@ class AllOne {
 
   void inc(string key) {
     int current = counts[key];
-    if (current != 0) countPairs.erase(countPairs.find({current, key}));
+    if (current != 0) { countPairs.erase(countPairs.find({current, key})); }
     counts[key]++;
     countPairs.insert({current + 1, key});
   }
@@ -27,19 +27,20 @@ class AllOne {
     int current = counts[key];
     counts[key]--;
     countPairs.erase(countPairs.find({current, key}));
-    if (current == 1)
+    if (current == 1) {
       counts.erase(key);
-    else
+    } else {
       countPairs.insert({current - 1, key});
+    }
   }
 
   string getMaxKey() {
-    if (countPairs.empty()) return "";
+    if (countPairs.empty()) { return ""; }
     return get<1>(*countPairs.rbegin());
   }
 
   string getMinKey() {
-    if (countPairs.empty()) return "";
+    if (countPairs.empty()) { return ""; }
     return get<1>(*countPairs.begin());
   }
 };

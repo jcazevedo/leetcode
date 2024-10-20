@@ -1,5 +1,5 @@
 // 670. Maximum Swap
-// https://leetcode.com/problems/maximum-swap/description/
+// https://leetcode.com/problems/maximum-swap/
 
 #include <algorithm>
 #include <queue>

@@ -1,27 +1,44 @@
 // 143. Reorder List
 // https://leetcode.com/problems/reorder-list/
 
+#include <stack>
+
+using namespace std;
+
+#ifdef LOCAL
 struct ListNode {
   int val;
   ListNode* next;
-
   ListNode() : val(0), next(nullptr) {}
-
   ListNode(int x) : val(x), next(nullptr) {}
-
   ListNode(int x, ListNode* next) : val(x), next(next) {}
 };
+#endif
 
 class Solution {
  public:
   void reorderList(ListNode* head) {
-    ListNode* prev = new ListNode();
-    prev->next = head;
-    ListNode* next = head;
-    while (next != nullptr) {
-      next = next->next;
-      prev = prev->next;
+    stack<ListNode*> s;
+    ListNode* curr = head;
+    while (curr) {
+      s.push(curr);
+      curr = curr->next;
     }
-    head->next = prev;
+    curr = head;
+    while (curr) {
+      ListNode* prevCurr = curr->next;
+      if (curr == s.top()) {
+        curr->next = nullptr;
+        break;
+      }
+      curr->next = s.top();
+      s.pop();
+      if (prevCurr == curr->next) {
+        curr->next->next = nullptr;
+        break;
+      }
+      curr->next->next = prevCurr;
+      curr = prevCurr;
+    }
   }
 };

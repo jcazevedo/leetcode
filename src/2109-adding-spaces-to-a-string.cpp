@@ -10,13 +10,13 @@ class Solution {
  public:
   string addSpaces(string s, vector<int>& spaces) {
     string ans = "";
-    int i = 0, j = 0, S = spaces.size(), N = s.size();
-    while (i < N) {
+    int j = 0, S = spaces.size(), N = s.size();
+    for (int i = 0; i < N; ++i) {
       if (j < S && spaces[j] == i) {
         ans += ' ';
         ++j;
       }
-      ans += s[i++];
+      ans += s[i];
     }
     return ans;
   }

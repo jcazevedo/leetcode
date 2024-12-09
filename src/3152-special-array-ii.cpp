@@ -16,13 +16,7 @@ class Solution {
     }
     int Q = queries.size();
     vector<bool> ans(Q);
-    for (int i = 0; i < Q; ++i) {
-      if (queries[i][1] - queries[i][0] == 0) {
-        ans[i] = true;
-      } else {
-        ans[i] = cnt[queries[i][1]] - cnt[queries[i][0]] == 0;
-      }
-    }
+    for (int i = 0; i < Q; ++i) { ans[i] = cnt[queries[i][1]] - cnt[queries[i][0]] == 0; }
     return ans;
   }
 };

@@ -11,18 +11,18 @@ class Solution {
  public:
   long long pickGifts(vector<int>& gifts, int k) {
     priority_queue<int> pq;
-    long long tot = 0L, inPile = 0L;
+    long long ans = 0L;
     for (int gift : gifts) {
-      tot += gift;
+      ans += gift;
       pq.push(gift);
     }
     while (k--) {
       int top = pq.top();
       pq.pop();
       int rem = (int)sqrt(top);
-      inPile += top - rem;
+      ans -= top - rem;
       if (rem > 0) { pq.push(rem); }
     }
-    return tot - inPile;
+    return ans;
   }
 };

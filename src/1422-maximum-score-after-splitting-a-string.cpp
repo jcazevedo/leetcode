@@ -15,7 +15,7 @@ class Solution {
     one_count[0] = s[0] == '1';
     for (int i = 1; i < N; ++i) {
       one_count[i] = one_count[i - 1];
-      if (s[i] == '1') one_count[i]++;
+      if (s[i] == '1') { ++one_count[i]; }
     }
     int best = INT_MIN;
     for (int i = 0; i < N - 1; ++i) {

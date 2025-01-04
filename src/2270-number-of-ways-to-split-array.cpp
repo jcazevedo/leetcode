@@ -9,13 +9,12 @@ class Solution {
  public:
   int waysToSplitArray(vector<int>& nums) {
     int N = nums.size(), ans = 0;
-    vector<long long> p(N);
-    for (int i = 0; i < N; ++i) {
-      if (i > 0) { p[i] = p[i - 1]; }
-      p[i] += nums[i];
-    }
+    long long r = 0L, l = 0L;
+    for (int i = 0; i < N; ++i) { r += nums[i]; }
     for (int i = 0; i < N - 1; ++i) {
-      if (p[i] >= (p[N - 1] - p[i])) { ++ans; }
+      r -= nums[i];
+      l += nums[i];
+      if (l >= r) { ++ans; }
     }
     return ans;
   }

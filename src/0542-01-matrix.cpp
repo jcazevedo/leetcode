@@ -15,12 +15,14 @@ class Solution {
   vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
     vector<vector<int>> dist = vector<vector<int>>(mat.size(), vector<int>(mat[0].size(), -1));
     queue<tuple<int, int>> q;
-    for (int i = 0; i < (int)mat.size(); ++i)
-      for (int j = 0; j < (int)mat[i].size(); ++j)
+    for (int i = 0; i < (int)mat.size(); ++i) {
+      for (int j = 0; j < (int)mat[i].size(); ++j) {
         if (mat[i][j] == 0) {
           dist[i][j] = 0;
           q.push({i, j});
         }
+      }
+    }
     int i, j;
     while (!q.empty()) {
       tie(i, j) = q.front();

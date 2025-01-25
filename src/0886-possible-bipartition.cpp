@@ -8,10 +8,7 @@ using namespace std;
 
 class Solution {
  private:
-  vector<int> colors;
-  vector<vector<int>> graph;
-
-  bool bfs(int i) {
+  bool bfs(int i, vector<int>& colors, vector<vector<int>>& graph) {
     colors[i] = 1;
     queue<int> q;
     q.push(i);
@@ -23,8 +20,9 @@ class Solution {
         if (colors[next] == -1) {
           colors[next] = nextColor;
           q.push(next);
-        } else if (colors[next] != nextColor)
+        } else if (colors[next] != nextColor) {
           return false;
+        }
       }
     }
     return true;
@@ -32,15 +30,15 @@ class Solution {
 
  public:
   bool possibleBipartition(int N, vector<vector<int>>& dislikes) {
-    colors.assign(N + 1, -1);
-    graph.assign(N + 1, vector<int>());
+    vector<int> colors(N + 1, -1);
+    vector<vector<int>> graph(N + 1, vector<int>());
     for (vector<int> edge : dislikes) {
       graph[edge[0]].push_back(edge[1]);
       graph[edge[1]].push_back(edge[0]);
     }
     for (int i = 1; i <= N; ++i) {
-      if (colors[i] != -1) continue;
-      if (!bfs(i)) return false;
+      if (colors[i] != -1) { continue; }
+      if (!bfs(i, colors, graph)) { return false; }
     }
     return true;
   }

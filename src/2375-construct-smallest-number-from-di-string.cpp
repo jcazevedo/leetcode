@@ -10,35 +10,25 @@ class Solution {
  private:
   bool go(string& ans, int i, int n, string& pattern, vector<bool>& used) {
     if (i >= n) { return true; }
+    int s, e;
     if (i == 0) {
-      for (int d = 1; d <= 9; ++d) {
-        ans[i] = d + '0';
-        used[d] = true;
-        if (go(ans, i + 1, n, pattern, used)) { return true; }
-        used[d] = false;
-      }
-      return false;
+      s = 1;
+      e = 9;
+    } else if (pattern[i - 1] == 'I') {
+      s = ans[i - 1] - '0' + 1;
+      e = 9;
     } else {
-      if (pattern[i - 1] == 'I') {
-        for (int d = ans[i - 1] - '0' + 1; d <= 9; ++d) {
-          if (used[d]) { continue; }
-          ans[i] = d + '0';
-          used[d] = true;
-          if (go(ans, i + 1, n, pattern, used)) { return true; }
-          used[d] = false;
-        }
-        return false;
-      } else {
-        for (int d = 1; d < ans[i - 1] - '0'; ++d) {
-          if (used[d]) { continue; }
-          ans[i] = d + '0';
-          used[d] = true;
-          if (go(ans, i + 1, n, pattern, used)) { return true; }
-          used[d] = false;
-        }
-        return false;
-      }
+      s = 1;
+      e = ans[i - 1] - '0' - 1;
     }
+    for (int d = s; d <= e; ++d) {
+      if (used[d]) { continue; }
+      ans[i] = d + '0';
+      used[d] = true;
+      if (go(ans, i + 1, n, pattern, used)) { return true; }
+      used[d] = false;
+    }
+    return false;
   }
 
  public:

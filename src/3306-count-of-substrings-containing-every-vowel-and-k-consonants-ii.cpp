@@ -21,21 +21,19 @@ class Solution {
       if (!isVowel(word[i])) { nci = i; }
     }
     long long ans = 0;
-    int c = 0, vs = 0, s = 0, e = 0;
+    int c = 0, vs = 0, s = 0;
     unordered_map<char, int> v;
-    while (e < n) {
-      char newCh = word[e];
-      if (isVowel(newCh)) {
-        if (v[newCh] == 0) { ++vs; }
-        ++v[newCh];
+    for (int e = 0; e < n; ++e) {
+      if (isVowel(word[e])) {
+        if (v[word[e]] == 0) { ++vs; }
+        ++v[word[e]];
       } else {
         ++c;
       }
       while (c > k) {
-        char startCh = word[s];
-        if (isVowel(startCh)) {
-          --v[startCh];
-          if (v[startCh] == 0) { --vs; }
+        if (isVowel(word[s])) {
+          --v[word[s]];
+          if (v[word[s]] == 0) { --vs; }
         } else {
           --c;
         }
@@ -43,16 +41,14 @@ class Solution {
       }
       while (s < n && vs == 5 && c == k) {
         ans += nc[e] - e;
-        char startCh = word[s];
-        if (isVowel(startCh)) {
-          --v[startCh];
-          if (v[startCh] == 0) { --vs; }
+        if (isVowel(word[s])) {
+          --v[word[s]];
+          if (v[word[s]] == 0) { --vs; }
         } else {
           --c;
         }
         ++s;
       }
-      ++e;
     }
     return ans;
   }

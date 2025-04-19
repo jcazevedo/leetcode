@@ -33,8 +33,8 @@ class Solution {
     if (root == nullptr) { return root; }
     int depth_left = depth(root->left);
     int depth_right = depth(root->right);
-    if (depth_left == depth_right) return root;
-    if (depth_left > depth_right) return lcaDeepestLeaves(root->left);
+    if (depth_left == depth_right) { return root; }
+    if (depth_left > depth_right) { return lcaDeepestLeaves(root->left); }
     return lcaDeepestLeaves(root->right);
   }
 };

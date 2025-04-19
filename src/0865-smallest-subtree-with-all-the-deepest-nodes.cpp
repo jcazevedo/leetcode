@@ -6,17 +6,16 @@
 
 using namespace std;
 
+#ifdef LOCAL
 struct TreeNode {
   int val;
   TreeNode* left;
   TreeNode* right;
-
   TreeNode() : val(0), left(nullptr), right(nullptr) {}
-
   TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-
   TreeNode(int x, TreeNode* left, TreeNode* right) : val(x), left(left), right(right) {}
 };
+#endif
 
 class Solution {
  private:
@@ -33,8 +32,8 @@ class Solution {
     if (root == nullptr) { return root; }
     int depth_left = depth(root->left);
     int depth_right = depth(root->right);
-    if (depth_left == depth_right) return root;
-    if (depth_left > depth_right) return subtreeWithAllDeepest(root->left);
+    if (depth_left == depth_right) { return root; }
+    if (depth_left > depth_right) { return subtreeWithAllDeepest(root->left); }
     return subtreeWithAllDeepest(root->right);
   }
 };

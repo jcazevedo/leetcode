@@ -1,0 +1,8 @@
+# 2 space indentation for cpp files.
+[*.cpp]
+indent_style = space
+indent_size = 2
+
+# Tab indentation for Makefile (no size specified).
+[Makefile]
+indent_style = tab

@@ -27,10 +27,11 @@ class Solution {
     int l = 0, r = nums[N - 1] - nums[0];
     while (l < r) {
       int m = l + (r - l) / 2;
-      if (good(m, p, nums))
+      if (good(m, p, nums)) {
         r = m;
-      else
+      } else {
         l = m + 1;
+      }
     }
     return l;
   }

@@ -35,8 +35,8 @@ class Solution {
     while (i < N1 || i < N2) {
       int p1 = i < N1 ? v1[i] : 0;
       int p2 = i < N2 ? v2[i] : 0;
-      if (p1 < p2) return -1;
-      if (p1 > p2) return 1;
+      if (p1 < p2) { return -1; }
+      if (p1 > p2) { return 1; }
       i++;
     }
     return 0;

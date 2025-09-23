@@ -1,5 +1,5 @@
 // 410. Split Array Largest Sum
-// https://leetcode.com/problems/split-array-largest-sum/description/
+// https://leetcode.com/problems/split-array-largest-sum/
 
 #include <vector>
 

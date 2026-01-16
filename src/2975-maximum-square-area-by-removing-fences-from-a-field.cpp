@@ -16,10 +16,6 @@ class Solution {
     sort(vFences.begin(), vFences.end());
     vFences.insert(vFences.begin(), 1);
     vFences.push_back(n);
-    unordered_set<int> hasHFence;
-    for (int hFence : hFences) { hasHFence.insert(hFence); }
-    unordered_set<int> hasVFence;
-    for (int vFence : vFences) { hasVFence.insert(vFence); }
     int H = hFences.size();
     int V = vFences.size();
     long long ans = -1L;

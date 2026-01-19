@@ -21,15 +21,25 @@ class Solution {
       }
     }
     int ans = 0;
-    for (int i = 0; i < m; ++i) {
-      for (int j = 0; j < n; ++j) {
-        for (int l = ans + 1; l <= min(m - i, n - j); ++l) {
+    int lo = 1;
+    int hi = min(m, n);
+    while (lo <= hi) {
+      int l = lo + (hi - lo) / 2;
+      bool good = false;
+      for (int i = 0; i + l <= m; ++i) {
+        for (int j = 0; j + l <= n; ++j) {
           int sum = ps[i + l - 1][j + l - 1];
           if (i > 0) { sum -= ps[i - 1][j + l - 1]; }
           if (j > 0) { sum -= ps[i + l - 1][j - 1]; }
           if (i > 0 && j > 0) { sum += ps[i - 1][j - 1]; }
-          if (sum <= threshold) { ans = max(ans, l); }
+          if (sum <= threshold) { good = true; }
         }
+      }
+      if (good) {
+        ans = l;
+        lo = l + 1;
+      } else {
+        hi = l - 1;
       }
     }
     return ans;

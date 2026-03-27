@@ -9,14 +9,10 @@ class Solution {
  public:
   bool areSimilar(vector<vector<int>>& mat, int k) {
     int m = mat.size(), n = mat[0].size();
+    k %= n;
     for (int i = 0; i < m; ++i) {
       for (int j = 0; j < n; ++j) {
-        int tj;
-        if (i % 2 == 0) {
-          tj = (j + k) % n;
-        } else {
-          tj = (n + j - k % n) % n;
-        }
+        int tj = i % 2 == 0 ? (j + k) % n : (n + j - k) % n;
         if (mat[i][j] != mat[i][tj]) { return false; }
       }
     }

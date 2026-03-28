@@ -10,7 +10,7 @@ class Solution {
  public:
   int longestPalindrome(string s) {
     unordered_map<char, int> cnt;
-    for (char ch : s) cnt[ch]++;
+    for (char ch : s) { cnt[ch]++; }
     int ans = 0;
     bool used_one = false;
     for (unordered_map<char, int>::iterator itr = cnt.begin(); itr != cnt.end(); ++itr) {

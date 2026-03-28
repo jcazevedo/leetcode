@@ -13,7 +13,7 @@ class Solution {
     unordered_map<int, int> cnt;
     for (int i = 0; i < N; ++i) { ++cnt[arr[i]]; }
     for (int i = 0; i < N; ++i) { --cnt[target[i]]; }
-    for (auto itr = cnt.begin(); itr != cnt.end(); ++itr) {
+    for (unordered_map<int, int>::iterator itr = cnt.begin(); itr != cnt.end(); ++itr) {
       if (itr->second != 0) { return false; }
     }
     return true;

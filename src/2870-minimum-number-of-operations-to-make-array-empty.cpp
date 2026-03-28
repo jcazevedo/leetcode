@@ -30,7 +30,7 @@ class Solution {
     for (int v : nums) cnts[v]++;
 
     int ans = 0;
-    for (auto itr = cnts.begin(); itr != cnts.end(); ++itr) {
+    for (unordered_map<int, int>::iterator itr = cnts.begin(); itr != cnts.end(); ++itr) {
       int v = ops[itr->second];
       if (v == numeric_limits<int>::max()) return -1;
       ans += v;

@@ -27,7 +27,8 @@ class Solution {
         int mult = 0;
         while (i < N && isdigit(formula[i])) mult = mult * 10 + (formula[i++] - '0');
         if (mult == 0) mult = 1;
-        for (auto itr = top.begin(); itr != top.end(); ++itr) counts.top()[itr->first] += itr->second * mult;
+        for (map<string, int>::iterator itr = top.begin(); itr != top.end(); ++itr)
+          counts.top()[itr->first] += itr->second * mult;
       } else {
         string curr = "";
         curr += formula[i];
@@ -39,7 +40,7 @@ class Solution {
         counts.top()[curr] += count;
       }
     ostringstream ss;
-    for (auto itr = counts.top().begin(); itr != counts.top().end(); ++itr) {
+    for (map<string, int>::iterator itr = counts.top().begin(); itr != counts.top().end(); ++itr) {
       ss << itr->first;
       if (itr->second > 1) ss << itr->second;
     }

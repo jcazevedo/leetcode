@@ -15,7 +15,7 @@ class Solution {
       diffs[trip[2]] -= trip[0];
     }
     int curr = 0;
-    for (auto itr = diffs.begin(); itr != diffs.end(); ++itr) {
+    for (map<int, int>::iterator itr = diffs.begin(); itr != diffs.end(); ++itr) {
       curr += itr->second;
       if (curr > capacity) return false;
     }

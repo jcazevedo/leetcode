@@ -1,6 +1,7 @@
 // 2256. Minimum Average Difference
 // https://leetcode.com/problems/minimum-average-difference/
 
+#include <cmath>
 #include <limits>
 #include <vector>
 

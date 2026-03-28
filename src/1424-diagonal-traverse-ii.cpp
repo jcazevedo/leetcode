@@ -20,7 +20,7 @@ class Solution {
       }
     }
     vector<int> res;
-    for (auto itr = diags.begin(); itr != diags.end(); ++itr) {
+    for (map<int, priority_queue<pair<int, int>>>::iterator itr = diags.begin(); itr != diags.end(); ++itr) {
       priority_queue<pair<int, int>> pq = itr->second;
       while (!pq.empty()) {
         pair<int, int> curr = pq.top();

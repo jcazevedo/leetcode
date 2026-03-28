@@ -31,7 +31,7 @@ class Solution {
     }
 
     vector<vector<int>> ans;
-    for (auto itr = farmlands.begin(); itr != farmlands.end(); ++itr) {
+    for (map<vector<int>, vector<int>>::iterator itr = farmlands.begin(); itr != farmlands.end(); ++itr) {
       ans.push_back({itr->first[0], itr->first[1], itr->second[0], itr->second[1]});
     }
 

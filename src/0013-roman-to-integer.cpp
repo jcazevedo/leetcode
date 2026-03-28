@@ -18,9 +18,9 @@ class Solution {
     for (int i = 0; i < N; ++i) {
       bool done = false;
 
-      for (const auto& [key, value] : char_2_strs) {
-        if (s.substr(i, 2) == key) {
-          ans += value;
+      for (unordered_map<string, int>::iterator it = char_2_strs.begin(); it != char_2_strs.end(); ++it) {
+        if (s.substr(i, 2) == it->first) {
+          ans += it->second;
           ++i;
           done = true;
           break;
@@ -29,9 +29,9 @@ class Solution {
 
       if (done) continue;
 
-      for (const auto& [key, value] : char_1_strs) {
-        if (s.substr(i, 1) == key) {
-          ans += value;
+      for (unordered_map<string, int>::iterator it = char_1_strs.begin(); it != char_1_strs.end(); ++it) {
+        if (s.substr(i, 1) == it->first) {
+          ans += it->second;
           done = true;
           break;
         }

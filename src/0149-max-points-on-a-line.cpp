@@ -34,8 +34,12 @@ class Solution {
       }
     }
     int ans = 0;
-    for (auto &[_, s] : v) { ans = max(ans, (int)s.size()); }
-    for (auto &[_, s] : l) { ans = max(ans, (int)s.size()); }
+    for (map<int, unordered_set<int>>::iterator it = v.begin(); it != v.end(); ++it) {
+      ans = max(ans, (int)it->second.size());
+    }
+    for (map<pair<double, double>, unordered_set<int>>::iterator it = l.begin(); it != l.end(); ++it) {
+      ans = max(ans, (int)it->second.size());
+    }
     return ans;
   }
 };

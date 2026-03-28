@@ -10,7 +10,7 @@ using namespace std;
 class Solution {
  private:
   bool is_anagram(map<char, int>& current, map<char, int>& expected) {
-    for (auto itr = expected.begin(); itr != expected.end(); ++itr) {
+    for (map<char, int>::iterator itr = expected.begin(); itr != expected.end(); ++itr) {
       if (current[itr->first] != itr->second) { return false; }
     }
     return true;

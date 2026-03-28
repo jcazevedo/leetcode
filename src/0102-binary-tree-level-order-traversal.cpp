@@ -34,7 +34,7 @@ class Solution {
     res.clear();
     dfs(root);
     vector<vector<int>> answer;
-    for (auto itr = res.begin(); itr != res.end(); ++itr) { answer.push_back(itr->second); }
+    for (map<int, vector<int>>::iterator itr = res.begin(); itr != res.end(); ++itr) { answer.push_back(itr->second); }
     return answer;
   }
 };

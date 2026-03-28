@@ -63,7 +63,7 @@ class Solution {
         byFactor[fact].push_back(num);
       }
     }
-    for (auto itr = byFactor.begin(); itr != byFactor.end(); ++itr) {
+    for (unordered_map<int, vector<int>>::iterator itr = byFactor.begin(); itr != byFactor.end(); ++itr) {
       vector<int> nums = itr->second;
       int u = nums[0];
       for (int i = 1; i < (int)nums.size(); ++i) uf.unionSet(u, nums[i]);
@@ -71,7 +71,8 @@ class Solution {
     unordered_map<int, int> groupSize;
     for (int num : nums) groupSize[uf.findSet(num)]++;
     int ans = 0;
-    for (auto itr = groupSize.begin(); itr != groupSize.end(); ++itr) ans = max(ans, itr->second);
+    for (unordered_map<int, int>::iterator itr = groupSize.begin(); itr != groupSize.end(); ++itr)
+      ans = max(ans, itr->second);
     return ans;
   }
 };

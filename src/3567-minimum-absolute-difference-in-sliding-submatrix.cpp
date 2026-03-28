@@ -23,8 +23,8 @@ class Solution {
           ans[i][j] = 0;
         } else {
           ans[i][j] = numeric_limits<int>::max();
-          for (auto itr = values.begin(); itr != values.end(); ++itr) {
-            auto itr1 = itr;
+          for (set<int>::iterator itr = values.begin(); itr != values.end(); ++itr) {
+            set<int>::iterator itr1 = itr;
             ++itr1;
             if (itr1 != values.end()) { ans[i][j] = min(ans[i][j], *itr1 - *itr); }
           }

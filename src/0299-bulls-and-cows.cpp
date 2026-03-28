@@ -21,7 +21,7 @@ class Solution {
         in_guess[guess[i]]++;
       }
     }
-    for (auto itr = in_guess.begin(); itr != in_guess.end(); ++itr) {
+    for (map<char, int>::iterator itr = in_guess.begin(); itr != in_guess.end(); ++itr) {
       char ch = itr->first;
       int cnt = itr->second;
       cows += min(cnt, in_secret[ch]);

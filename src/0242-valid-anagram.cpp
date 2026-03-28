@@ -14,7 +14,7 @@ class Solution {
     unordered_map<char, int> counts;
     for (int i = 0; i < N; ++i) counts[s[i]]++;
     for (int i = 0; i < N; ++i) counts[t[i]]--;
-    for (auto itr = counts.begin(); itr != counts.end(); ++itr)
+    for (unordered_map<char, int>::iterator itr = counts.begin(); itr != counts.end(); ++itr)
       if (itr->second != 0) return false;
     return true;
   }

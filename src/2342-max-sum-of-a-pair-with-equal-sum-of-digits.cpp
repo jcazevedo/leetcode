@@ -28,7 +28,8 @@ class Solution {
       sums[s].push(nums[i]);
     }
     int ans = -1;
-    for (auto& [_, pq] : sums) {
+    for (unordered_map<int, priority_queue<int>>::iterator it = sums.begin(); it != sums.end(); ++it) {
+      priority_queue<int>& pq = it->second;
       if (pq.size() >= 2) {
         int n1 = pq.top();
         pq.pop();

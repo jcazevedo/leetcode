@@ -23,8 +23,8 @@ class Solution {
       pq.pop();
       int i = current.second.first;
       int j = current.second.second;
-      auto b = make_pair(i + 1, j);
-      auto r = make_pair(i, j + 1);
+      pair<int, int> b = make_pair(i + 1, j);
+      pair<int, int> r = make_pair(i, j + 1);
       if (b.first < H && b.second < W && included.find(b) == included.end()) {
         included.insert(b);
         pq.push(make_pair(matrix[b.first][b.second], b));

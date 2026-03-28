@@ -1,6 +1,7 @@
 // 1878. Get Biggest Three Rhombus Sums in a Grid
 // https://leetcode.com/problems/get-biggest-three-rhombus-sums-in-a-grid/
 
+#include <functional>
 #include <set>
 #include <vector>
 
@@ -17,10 +18,10 @@ class Solution {
         d2[r][c] = grid[r][c] + (r > 0 && c < n - 1 ? d2[r - 1][c + 1] : 0);
       }
     }
-    auto sumD1 = [&](int r1, int c1, int r2, int c2) {
+    function<int(int, int, int, int)> sumD1 = [&](int r1, int c1, int r2, int c2) {
       return d1[r2][c2] - (r1 > 0 && c1 > 0 ? d1[r1 - 1][c1 - 1] : 0);
     };
-    auto sumD2 = [&](int r1, int c1, int r2, int c2) {
+    function<int(int, int, int, int)> sumD2 = [&](int r1, int c1, int r2, int c2) {
       return d2[r2][c2] - (r1 > 0 && c1 < n - 1 ? d2[r1 - 1][c1 + 1] : 0);
     };
     set<int> top3;

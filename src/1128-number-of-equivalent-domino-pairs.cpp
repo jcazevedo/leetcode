@@ -13,7 +13,7 @@ class Solution {
     map<vector<int>, int> cnt;
     for (const vector<int>& domino : dominoes) { ++cnt[{min(domino[0], domino[1]), max(domino[0], domino[1])}]; }
     int ans = 0;
-    for (auto itr = cnt.begin(); itr != cnt.end(); ++itr) {
+    for (map<vector<int>, int>::iterator itr = cnt.begin(); itr != cnt.end(); ++itr) {
       int c = itr->second;
       ans += (c * (c - 1)) / 2;
     }

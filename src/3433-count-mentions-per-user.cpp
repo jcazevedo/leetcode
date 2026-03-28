@@ -31,7 +31,10 @@ class Solution {
       pq.push({toInt(event[1]), event[0] == "MESSAGE" ? MESSAGE : OFFLINE, event[2]});
     }
     while (!pq.empty()) {
-      auto [ts, eventType, eventDescription] = pq.top();
+      tuple<int, int, string> top = pq.top();
+      int ts = get<0>(top);
+      int eventType = get<1>(top);
+      string eventDescription = get<2>(top);
       pq.pop();
       switch (eventType) {
         case ONLINE:

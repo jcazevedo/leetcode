@@ -17,7 +17,7 @@ class Solution {
     }
 
     int start = -1;
-    for (auto itr = adjacent.begin(); itr != adjacent.end(); ++itr)
+    for (map<int, vector<int>>::iterator itr = adjacent.begin(); itr != adjacent.end(); ++itr)
       if (itr->second.size() == 1) {
         start = itr->first;
         break;

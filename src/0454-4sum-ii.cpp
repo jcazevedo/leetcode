@@ -18,7 +18,9 @@ class Solution {
       }
     }
     int ans = 0;
-    for (auto itr = ab_sum.begin(); itr != ab_sum.end(); ++itr) { ans += itr->second * cd_sum[-itr->first]; }
+    for (unordered_map<int, int>::iterator itr = ab_sum.begin(); itr != ab_sum.end(); ++itr) {
+      ans += itr->second * cd_sum[-itr->first];
+    }
     return ans;
   }
 };

@@ -39,7 +39,7 @@ class Solution {
     map<int, int> diffsLeft = getDiffs(rods, 0, N / 2);
     map<int, int> diffsRight = getDiffs(rods, N / 2, N);
     int ans = 0;
-    for (auto itr = diffsLeft.begin(); itr != diffsLeft.end(); ++itr) {
+    for (map<int, int>::iterator itr = diffsLeft.begin(); itr != diffsLeft.end(); ++itr) {
       int diff = itr->first;
       int height = itr->second;
       if (diffsRight.count(-diff)) ans = max(ans, height + diffsRight[-diff]);

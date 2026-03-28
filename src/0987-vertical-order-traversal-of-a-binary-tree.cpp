@@ -43,8 +43,10 @@ class Solution {
     dfs(root, 0, 0);
     vector<vector<int>> ans = vector<vector<int>>(vis.size(), vector<int>());
     int idx = 0;
-    for (auto itr = vis.begin(); itr != vis.end(); ++itr, ++idx) {
-      for (auto itr2 = itr->second.begin(); itr2 != itr->second.end(); ++itr2) { ans[idx].push_back(itr2->second); }
+    for (map<int, set<pair<int, int>, pair_compare>>::iterator itr = vis.begin(); itr != vis.end(); ++itr, ++idx) {
+      for (set<pair<int, int>, pair_compare>::iterator itr2 = itr->second.begin(); itr2 != itr->second.end(); ++itr2) {
+        ans[idx].push_back(itr2->second);
+      }
     }
     return ans;
   }

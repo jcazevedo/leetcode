@@ -18,10 +18,14 @@ class Solution {
     dist[source] = 0;
     pq.emplace(0, source);
     while (!pq.empty()) {
-      auto [currDist, currNode] = pq.top();
+      pair<int, int> curr = pq.top();
+      int currDist = curr.first;
+      int currNode = curr.second;
       pq.pop();
       if (currDist > dist[currNode]) { continue; }
-      for (const auto& [next, weight] : graph[currNode]) {
+      for (vector<pair<int, int>>::const_iterator it = graph[currNode].begin(); it != graph[currNode].end(); ++it) {
+        int next = it->first;
+        int weight = it->second;
         if (currDist + weight < dist[next]) {
           dist[next] = currDist + weight;
           pq.emplace(dist[next], next);

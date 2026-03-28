@@ -11,11 +11,9 @@ class Solution {
  public:
   vector<int> topKFrequent(vector<int>& nums, int k) {
     unordered_map<int, int> f;
-    for (auto e : nums) f[e]++;
-
+    for (auto e : nums) { f[e]++; }
     priority_queue<pair<int, int>> pq;
     for (auto e : f) { pq.push(make_pair(e.second, e.first)); }
-
     vector<int> res;
     while ((int)res.size() != k) {
       auto curr = pq.top();

@@ -16,7 +16,7 @@ class Solution {
       if (first_index.find(s[i]) == first_index.end()) first_index[s[i]] = i;
       cnt[first_index[s[i]]]++;
     }
-    for (auto itr = cnt.begin(); itr != cnt.end(); ++itr) {
+    for (map<int, int>::iterator itr = cnt.begin(); itr != cnt.end(); ++itr) {
       if (itr->second == 1) return itr->first;
     }
     return -1;

@@ -21,7 +21,7 @@ class Solution {
     vector<int> il, ir, pl, pr;
     bool l = true;
     int j = 1;
-    for (auto i = 0; i < (int)inorder.size(); i++) {
+    for (int i = 0; i < (int)inorder.size(); i++) {
       if (inorder[i] == root->val) {
         l = false;
       } else if (l) {

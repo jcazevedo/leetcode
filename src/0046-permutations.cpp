@@ -20,7 +20,7 @@ class Solution {
       used[i] = true;
       vector<vector<int>> other = aux(nums, used, T + 1);
       used[i] = false;
-      for (auto itr = other.begin(); itr != other.end(); itr++) {
+      for (vector<vector<int>>::iterator itr = other.begin(); itr != other.end(); itr++) {
         itr->push_back(nums[i]);
         res.push_back(*itr);
       }

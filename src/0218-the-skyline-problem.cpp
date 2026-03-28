@@ -20,7 +20,7 @@ class Solution {
     int curr_height = 0;
     vector<vector<int>> ans;
     multiset<int> heights;
-    for (auto itr = events.begin(); itr != events.end(); ++itr) {
+    for (map<int, vector<pair<bool, int>>>::iterator itr = events.begin(); itr != events.end(); ++itr) {
       int x = itr->first;
       const vector<pair<bool, int>>& x_events = itr->second;
       for (const pair<bool, int>& event : x_events) {

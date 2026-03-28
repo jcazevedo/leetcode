@@ -48,23 +48,25 @@ class Solution {
     for (int i = 0; i < M; ++i)
       for (int j = 0; j < N; ++j) grouped[matrix[i][j]].push_back({i, j});
     vector<int> rank(M + N, 0);
-    for (auto const& entry : grouped) {
+    for (map<int, vector<pair<int, int>>>::const_iterator entry = grouped.begin(); entry != grouped.end(); ++entry) {
       UnionFind uf(M + N);
-      vector<pair<int, int>> coords = entry.second;
-      for (auto const& coord : coords) uf.unionSet(coord.first, coord.second + M);
+      vector<pair<int, int>> coords = entry->second;
+      for (vector<pair<int, int>>::const_iterator coord = coords.begin(); coord != coords.end(); ++coord)
+        uf.unionSet(coord->first, coord->second + M);
       unordered_map<int, set<int>> groups;
-      for (auto const& coord : coords) {
-        groups[uf.findSet(coord.first)].insert(coord.first);
-        groups[uf.findSet(coord.first)].insert(coord.second + M);
-        groups[uf.findSet(coord.second + M)].insert(coord.first);
-        groups[uf.findSet(coord.second + M)].insert(coord.second + M);
+      for (vector<pair<int, int>>::const_iterator coord = coords.begin(); coord != coords.end(); ++coord) {
+        groups[uf.findSet(coord->first)].insert(coord->first);
+        groups[uf.findSet(coord->first)].insert(coord->second + M);
+        groups[uf.findSet(coord->second + M)].insert(coord->first);
+        groups[uf.findSet(coord->second + M)].insert(coord->second + M);
       }
-      for (auto const& entry : groups) {
+      for (unordered_map<int, set<int>>::const_iterator grp = groups.begin(); grp != groups.end(); ++grp) {
         int max_rank = 0;
-        for (int i : entry.second) max_rank = max(max_rank, rank[i]);
-        for (int i : entry.second) rank[i] = max_rank + 1;
+        for (int i : grp->second) max_rank = max(max_rank, rank[i]);
+        for (int i : grp->second) rank[i] = max_rank + 1;
       }
-      for (auto const& coord : coords) ans[coord.first][coord.second] = rank[coord.first];
+      for (vector<pair<int, int>>::const_iterator coord = coords.begin(); coord != coords.end(); ++coord)
+        ans[coord->first][coord->second] = rank[coord->first];
     }
     return ans;
   }

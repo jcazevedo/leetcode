@@ -12,7 +12,7 @@ class Solution {
     unordered_map<char, int> cnt;
     for (char c : t) cnt[c]++;
     for (char c : s) cnt[c]--;
-    for (auto itr = cnt.begin(); itr != cnt.end(); ++itr) {
+    for (unordered_map<char, int>::iterator itr = cnt.begin(); itr != cnt.end(); ++itr) {
       if (itr->second != 0) return itr->first;
     }
     return -1;

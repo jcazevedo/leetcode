@@ -19,7 +19,7 @@ class Solution {
       m[s].push_back(strs[i]);
     }
     vector<vector<string>> res;
-    for (auto itr = m.begin(); itr != m.end(); itr++) res.push_back(itr->second);
+    for (map<string, vector<string>>::iterator itr = m.begin(); itr != m.end(); itr++) res.push_back(itr->second);
     return res;
   }
 };

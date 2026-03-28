@@ -12,7 +12,11 @@ class Solution {
     unordered_map<int, int> cnt;
     for (int answer : answers) { ++cnt[answer]; }
     int ans = 0;
-    for (const auto& [k, v] : cnt) { ans += ((v + k) / (k + 1)) * (k + 1); }
+    for (unordered_map<int, int>::iterator it = cnt.begin(); it != cnt.end(); ++it) {
+      int k = it->first;
+      int v = it->second;
+      ans += ((v + k) / (k + 1)) * (k + 1);
+    }
     return ans;
   }
 };

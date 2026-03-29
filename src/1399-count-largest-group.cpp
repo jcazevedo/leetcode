@@ -1,14 +1,16 @@
 // 1399. Count Largest Group
 // https://leetcode.com/problems/count-largest-group/
 
-#include <unordered_map>
+#include <algorithm>
+#include <vector>
 
 using namespace std;
 
 class Solution {
  public:
   int countLargestGroup(int n) {
-    unordered_map<int, int> freq;
+    int maxSum = 9 * 4 + 1;
+    vector<int> freq(maxSum, 0);
     for (int i = 1; i <= n; ++i) {
       int sum = 0, num = i;
       while (num) {
@@ -17,14 +19,10 @@ class Solution {
       }
       ++freq[sum];
     }
-    int best = 0, ans = 0;
-    for (unordered_map<int, int>::iterator itr = freq.begin(); itr != freq.end(); ++itr) {
-      if (itr->second > best) {
-        best = itr->second;
-        ans = 1;
-      } else if (itr->second == best) {
-        ++ans;
-      }
+    int best = *max_element(freq.begin(), freq.end());
+    int ans = 0;
+    for (int f : freq) {
+      if (f == best) { ++ans; }
     }
     return ans;
   }

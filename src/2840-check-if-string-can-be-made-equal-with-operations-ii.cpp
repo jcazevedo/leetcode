@@ -2,6 +2,7 @@
 // https://leetcode.com/problems/check-if-strings-can-be-made-equal-with-operations-ii/
 
 #include <string>
+#include <vector>
 
 using namespace std;
 
@@ -9,20 +10,19 @@ class Solution {
  public:
   bool checkStrings(string s1, string s2) {
     int n = s1.size();
-    string s1_even = "", s1_odd = "", s2_even = "", s2_odd = "";
+    vector<int> even(26, 0), odd(26, 0);
     for (int i = 0; i < n; ++i) {
       if (i % 2 == 0) {
-        s1_even += s1[i];
-        s2_even += s2[i];
+        even[s1[i] - 'a']++;
+        even[s2[i] - 'a']--;
       } else {
-        s1_odd += s1[i];
-        s2_odd += s2[i];
+        odd[s1[i] - 'a']++;
+        odd[s2[i] - 'a']--;
       }
     }
-    sort(s1_even.begin(), s1_even.end());
-    sort(s2_even.begin(), s2_even.end());
-    sort(s1_odd.begin(), s1_odd.end());
-    sort(s2_odd.begin(), s2_odd.end());
-    return s1_even == s2_even && s1_odd == s2_odd;
+    for (int i = 0; i < 26; ++i) {
+      if (even[i] != 0 || odd[i] != 0) { return false; }
+    }
+    return true;
   }
 };

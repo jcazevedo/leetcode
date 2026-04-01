@@ -2,7 +2,7 @@
 // https://leetcode.com/problems/robot-collisions/
 
 #include <algorithm>
-#include <stack>
+#include <numeric>
 #include <string>
 #include <vector>
 
@@ -12,25 +12,25 @@ class Solution {
  public:
   vector<int> survivedRobotsHealths(vector<int>& positions, vector<int>& healths, string directions) {
     int N = positions.size();
-    vector<vector<int>> inPosOrder;
-    for (int i = 0; i < N; ++i) { inPosOrder.push_back({positions[i], i}); }
-    sort(inPosOrder.begin(), inPosOrder.end());
-    stack<int> movingRight;
+    vector<int> order(N);
+    iota(order.begin(), order.end(), 0);
+    sort(order.begin(), order.end(), [&](int a, int b) { return positions[a] < positions[b]; });
+    vector<int> movingRight;
     for (int i = 0; i < N; ++i) {
-      int idx = inPosOrder[i][1];
+      int idx = order[i];
       if (directions[idx] == 'R') {
-        movingRight.push(idx);
+        movingRight.push_back(idx);
       } else {
         while (!movingRight.empty() && healths[idx] > 0) {
-          int curr = movingRight.top();
-          movingRight.pop();
+          int curr = movingRight.back();
+          movingRight.pop_back();
           if (healths[curr] == healths[idx]) {
             healths[curr] = 0;
             healths[idx] = 0;
           } else if (healths[curr] > healths[idx]) {
             healths[idx] = 0;
             --healths[curr];
-            if (healths[curr] != 0) { movingRight.push(curr); }
+            movingRight.push_back(curr);
           } else {
             healths[curr] = 0;
             --healths[idx];

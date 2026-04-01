@@ -10,19 +10,16 @@ class Solution {
  public:
   string generateString(string str1, string str2) {
     int n = str1.size(), m = str2.size();
-    string ans(n + m - 1, '_');
+    string ans(n + m - 1, 'a');
     vector<bool> forced(n + m - 1, false);
     for (int i = 0; i < n; ++i) {
       if (str1[i] == 'T') {
         for (int j = i; j < i + m; ++j) {
-          if (ans[j] != '_' && ans[j] != str2[j - i]) { return ""; }
+          if (forced[j] && ans[j] != str2[j - i]) { return ""; }
           ans[j] = str2[j - i];
           forced[j] = true;
         }
       }
-    }
-    for (int i = 0; i < n + m - 1; ++i) {
-      if (ans[i] == '_') { ans[i] = 'a'; }
     }
     for (int i = 0; i < n; ++i) {
       if (str1[i] == 'F') {

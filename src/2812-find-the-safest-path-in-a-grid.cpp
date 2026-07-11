@@ -24,15 +24,16 @@ class Solution {
  public:
   int maximumSafenessFactor(vector<vector<int>>& grid) {
     int N = grid.size();
-
     vector<vector<int>> minDistToThief(N, vector<int>(N, -1));
     queue<vector<int>> q;
-    for (int i = 0; i < N; ++i)
-      for (int j = 0; j < N; ++j)
+    for (int i = 0; i < N; ++i) {
+      for (int j = 0; j < N; ++j) {
         if (grid[i][j] == 1) {
           q.push({i, j});
           minDistToThief[i][j] = 0;
         }
+      }
+    }
     while (!q.empty()) {
       int len = q.size();
       while (len-- > 0) {
@@ -50,7 +51,6 @@ class Solution {
         }
       }
     }
-
     vector<vector<bool>> visited(N, vector<bool>(N, false));
     priority_queue<vector<int>> pq;
     pq.push({minDistToThief[0][0], 0, 0});
@@ -60,7 +60,7 @@ class Solution {
       int maxDist = curr[0];
       int i = curr[1];
       int j = curr[2];
-      if (i == N - 1 && j == N - 1) return maxDist;
+      if (i == N - 1 && j == N - 1) { return maxDist; }
       for (const vector<int>& dir : dirs) {
         int di = i + dir[0];
         int dj = j + dir[1];

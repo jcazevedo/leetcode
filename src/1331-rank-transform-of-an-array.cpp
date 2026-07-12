@@ -11,16 +11,16 @@ class Solution {
  public:
   vector<int> arrayRankTransform(vector<int>& arr) {
     int N = arr.size();
-    vector<int> toSort(N);
-    for (int i = 0; i < N; ++i) { toSort[i] = arr[i]; }
+    vector<int> toSort = arr;
     sort(begin(toSort), end(toSort));
     unordered_map<int, int> rank;
+    rank.reserve(N);
     int curr = 1;
     for (int i = 0; i < N; ++i) {
-      if (rank.find(toSort[i]) == rank.end()) { rank[toSort[i]] = curr++; }
+      if (i == 0 || toSort[i] != toSort[i - 1]) { rank.emplace(toSort[i], curr++); }
     }
     vector<int> ans(N);
-    for (int i = 0; i < N; ++i) { ans[i] = rank[arr[i]]; }
+    for (int i = 0; i < N; ++i) { ans[i] = rank.find(arr[i])->second; }
     return ans;
   }
 };

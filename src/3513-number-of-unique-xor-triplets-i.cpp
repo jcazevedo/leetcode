@@ -10,8 +10,8 @@ class Solution {
   int uniqueXorTriplets(vector<int>& nums) {
     int n = nums.size();
     if (n <= 2) { return n; }
-    int answer = 1;
-    while (answer <= n) { answer <<= 1; }
-    return answer;
+    int ans = 1;
+    while (ans <= n) { ans <<= 1; }
+    return ans;
   }
 };

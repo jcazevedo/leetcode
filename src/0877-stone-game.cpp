@@ -2,7 +2,6 @@
 // https://leetcode.com/problems/stone-game/
 
 #include <algorithm>
-#include <cstring>
 #include <vector>
 
 using namespace std;
@@ -10,18 +9,13 @@ using namespace std;
 #define MAXN 510
 
 class Solution {
- private:
-  // dp[i][j][p] refers to the score of the first player in case there are piles
-  // between i and j available and it's player p turn to play.
-  int dp[MAXN][MAXN][2];
-
  public:
   bool stoneGame(vector<int>& piles) {
-    memset(dp, -1, sizeof(dp));
+    vector<vector<vector<int>>> dp(MAXN, vector<vector<int>>(MAXN, vector<int>(2, -1)));
     int N = piles.size();
     int sum = 0;
-    for (int i = 0; i < N; ++i) sum += piles[i];
-    for (int i = 0; i <= N; ++i) dp[i][i][0] = dp[i][i][1] = 0;
+    for (int i = 0; i < N; ++i) { sum += piles[i]; }
+    for (int i = 0; i <= N; ++i) { dp[i][i][0] = dp[i][i][1] = 0; }
     for (int l = 1; l <= N; ++l) {
       for (int i = 0; i < N && i + l <= N; ++i) {
         int j = i + l;

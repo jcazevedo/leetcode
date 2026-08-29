@@ -66,12 +66,6 @@ class Solution {
     reverse(right.begin(), right.end());
     ans = left + middle + right;
     if (ans > target) { return ans; }
-    if (next_permutation(left.begin(), left.end())) {
-      right = left;
-      reverse(right.begin(), right.end());
-      ans = left + middle + right;
-      if (ans > target) { return ans; }
-    }
     return "";
   }
 };

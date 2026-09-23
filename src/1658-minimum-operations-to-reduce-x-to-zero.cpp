@@ -1,7 +1,7 @@
 // 1658. Minimum Operations to Reduce X to Zero
 // https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/
 
-#include <unordered_map>
+#include <algorithm>
 #include <vector>
 
 using namespace std;
@@ -10,23 +10,19 @@ class Solution {
  public:
   int minOperations(vector<int>& nums, int x) {
     int n = nums.size();
-    unordered_map<int, int> countR;
-    int curr = 0;
-    for (int i = n - 1; i >= 0; --i) {
-      curr += nums[i];
-      countR[curr] = n - i;
+    int total = 0;
+    for (int i = 0; i < n; ++i) { total += nums[i]; }
+    int target = total - x;
+    if (target < 0) { return -1; }
+    if (target == 0) { return n; }
+    int left = 0;
+    int longest = -1;
+    int window = 0;
+    for (int right = 0; right < n; ++right) {
+      window += nums[right];
+      while (window > target) { window -= nums[left++]; }
+      if (window == target) { longest = max(longest, right - left + 1); }
     }
-    int best = -1;
-    if (countR[x]) { best = countR[x]; }
-    curr = 0;
-    for (int i = 0; i < n; ++i) {
-      curr += nums[i];
-      if (curr == x && (best == -1 || i + 1 < best)) { best = i + 1; }
-      if (countR[x - curr] && countR[x - curr] < n - i) {
-        int next = i + 1 + countR[x - curr];
-        if (best == -1 || next < best) { best = next; }
-      }
-    }
-    return best;
+    return longest == -1 ? -1 : n - longest;
   }
 };

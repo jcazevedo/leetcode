@@ -12,10 +12,10 @@ class Solution {
   string reverseParentheses(string s) {
     string ans = "";
     stack<int> starts;
-    for (char ch : s)
-      if (ch == '(')
+    for (char ch : s) {
+      if (ch == '(') {
         starts.push(ans.size());
-      else if (ch == ')') {
+      } else if (ch == ')') {
         int start = starts.top();
         starts.pop();
         if (start < (int)ans.size()) {
@@ -23,8 +23,10 @@ class Solution {
           reverse(toReverse.begin(), toReverse.end());
           ans = ans.substr(0, start) + toReverse;
         }
-      } else
+      } else {
         ans += ch;
+      }
+    }
     return ans;
   }
 };

@@ -12,9 +12,9 @@ class Solution {
     int N = seq.size(), curr = 0;
     vector<int> ans(N);
     for (int i = 0; i < N; ++i) {
-      if (seq[i] == '(') ++curr;
+      if (seq[i] == '(') { ++curr; }
       ans[i] = curr % 2;
-      if (seq[i] == ')') --curr;
+      if (seq[i] == ')') { --curr; }
     }
     return ans;
   }

@@ -1,11 +1,11 @@
+# Always merge short blocks into a single line.
+AllowShortBlocksOnASingleLine: Always
+
 # Use Google's style.
 BasedOnStyle: Google
 
 # Don't attempt to binpack parameters.
 BinPackParameters: false
-
-# Always merge short blocks into a single line.
-AllowShortBlocksOnASingleLine: Always
 
 # Limit to 120 columns.
 ColumnLimit: 120
@@ -19,8 +19,8 @@ IncludeCategories:
 # Indent using 2 chars.
 IndentWidth: 2
 
-# Align pointers to the left.
-PointerAlignment: Left
-
 # Always insert braces.
 InsertBraces: true
+
+# Align pointers to the left.
+PointerAlignment: Left

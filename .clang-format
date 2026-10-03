@@ -21,3 +21,6 @@ IndentWidth: 2
 
 # Align pointers to the left.
 PointerAlignment: Left
+
+# Always insert braces.
+InsertBraces: true

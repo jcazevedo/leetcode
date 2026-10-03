@@ -10,17 +10,18 @@ class Solution {
  public:
   vector<int> findRightInterval(vector<vector<int>>& intervals) {
     int N = intervals.size();
-    for (int i = 0; i < N; ++i) intervals[i].push_back(i);
+    for (int i = 0; i < N; ++i) { intervals[i].push_back(i); }
     sort(intervals.begin(), intervals.end());
     vector<int> ans = vector<int>(N, -1);
     for (int i = 0; i < N; ++i) {
       int lo = i, hi = N;
       while (lo < hi) {
         int mid = lo + (hi - lo) / 2;
-        if (intervals[mid][0] < intervals[i][1])
+        if (intervals[mid][0] < intervals[i][1]) {
           lo = mid + 1;
-        else
+        } else {
           hi = mid;
+        }
       }
       ans[intervals[i][2]] = lo == N ? -1 : intervals[lo][2];
     }

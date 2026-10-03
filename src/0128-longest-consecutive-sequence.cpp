@@ -13,8 +13,8 @@ class Solution {
   unordered_map<int, int> cnt;
 
   int build_len(int num) {
-    if (cnt.count(num) > 0) return cnt[num];
-    if (elems.count(num) == 0) return 0;
+    if (cnt.count(num) > 0) { return cnt[num]; }
+    if (elems.count(num) == 0) { return 0; }
     elems.erase(num);
     cnt[num] = 1 + build_len(num + 1);
     return cnt[num];
@@ -24,12 +24,12 @@ class Solution {
   int longestConsecutive(vector<int>& nums) {
     elems.clear();
     cnt.clear();
-    for (int num : nums) elems.insert(num);
+    for (int num : nums) { elems.insert(num); }
     int best = 0;
     while (elems.size()) {
       int start = *elems.begin();
       int next = build_len(start);
-      if (next > best) best = next;
+      if (next > best) { best = next; }
     }
     return best;
   }

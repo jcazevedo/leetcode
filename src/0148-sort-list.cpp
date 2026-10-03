@@ -32,8 +32,8 @@ class Solution {
   }
 
   ListNode* merge_sort(ListNode* head) {
-    if (head == nullptr) return head;
-    if (head->next == nullptr) return head;
+    if (head == nullptr) { return head; }
+    if (head->next == nullptr) { return head; }
     ListNode* slow = head;
     ListNode* fast = head;
     while (fast->next != nullptr && fast->next->next != nullptr) {

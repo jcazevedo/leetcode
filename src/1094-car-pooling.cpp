@@ -17,7 +17,7 @@ class Solution {
     int curr = 0;
     for (map<int, int>::iterator itr = diffs.begin(); itr != diffs.end(); ++itr) {
       curr += itr->second;
-      if (curr > capacity) return false;
+      if (curr > capacity) { return false; }
     }
     return true;
   }

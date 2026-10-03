@@ -16,7 +16,7 @@ class Solution {
     for (int i = 1; i < N; ++i) {
       curr = max(curr, arr[i]);
       wins[curr]++;
-      if (wins[curr] == k) return curr;
+      if (wins[curr] == k) { return curr; }
     }
     return curr;
   }

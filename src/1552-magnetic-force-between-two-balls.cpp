@@ -17,15 +17,17 @@ class Solution {
       int mid = lo + (hi - lo + 1) / 2;
       int curr = 1;
       int prev = position[0];
-      for (int i = 1; i < n && curr < m; ++i)
+      for (int i = 1; i < n && curr < m; ++i) {
         if (position[i] - prev >= mid) {
           ++curr;
           prev = position[i];
         }
-      if (curr < m)
+      }
+      if (curr < m) {
         hi = mid - 1;
-      else
+      } else {
         lo = mid;
+      }
     }
     return lo;
   }

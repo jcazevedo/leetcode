@@ -11,8 +11,8 @@ class Solution {
     int ans = 0;
     for (int d = 0; d < 20; ++d) {
       int res = 0;
-      for (int num : nums) res ^= (num & (1 << d));
-      if (res != (k & (1 << d))) ++ans;
+      for (int num : nums) { res ^= (num & (1 << d)); }
+      if (res != (k & (1 << d))) { ++ans; }
     }
     return ans;
   }

@@ -10,12 +10,12 @@ class Solution {
   vector<vector<int>> dp;
 
   int go(int i, int j, vector<vector<int>>& grid) {
-    if (dp[i][j] != -1) return dp[i][j];
-    if (grid[i][j] == 1) return dp[i][j] = 0;
-    if (i == 0 && j == 0) return dp[i][j] = 1;
+    if (dp[i][j] != -1) { return dp[i][j]; }
+    if (grid[i][j] == 1) { return dp[i][j] = 0; }
+    if (i == 0 && j == 0) { return dp[i][j] = 1; }
     dp[i][j] = 0;
-    if (i - 1 >= 0) dp[i][j] += go(i - 1, j, grid);
-    if (j - 1 >= 0) dp[i][j] += go(i, j - 1, grid);
+    if (i - 1 >= 0) { dp[i][j] += go(i - 1, j, grid); }
+    if (j - 1 >= 0) { dp[i][j] += go(i, j - 1, grid); }
     return dp[i][j];
   }
 

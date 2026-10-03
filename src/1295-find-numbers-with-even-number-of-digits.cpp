@@ -20,7 +20,7 @@ class Solution {
   int findNumbers(vector<int>& nums) {
     int cnt = 0;
     for (int v : nums) {
-      if (n_digits(v) % 2 == 0) cnt++;
+      if (n_digits(v) % 2 == 0) { cnt++; }
     }
     return cnt;
   }

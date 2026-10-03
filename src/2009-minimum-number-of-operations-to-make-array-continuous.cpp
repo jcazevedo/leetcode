@@ -13,7 +13,7 @@ class Solution {
     int N = nums.size();
     set<int> uniques(nums.begin(), nums.end());
     vector<int> arr;
-    for (int n : uniques) arr.push_back(n);
+    for (int n : uniques) { arr.push_back(n); }
     int ans = N;
     for (int i = 0; i < (int)arr.size(); ++i) {
       int right = arr[i] + N - 1;

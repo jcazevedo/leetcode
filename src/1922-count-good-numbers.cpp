@@ -9,7 +9,7 @@ class Solution {
     long long result = 1;
     base %= MOD;
     while (exp > 0) {
-      if (exp % 2 == 1) result = (result * base) % MOD;
+      if (exp % 2 == 1) { result = (result * base) % MOD; }
       base = (base * base) % MOD;
       exp /= 2;
     }

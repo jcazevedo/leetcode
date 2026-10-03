@@ -12,24 +12,25 @@ class Solution {
     vector<string> ans;
     string currentWord = "";
     for (const char& ch : sentence) {
-      if (ch != ' ')
+      if (ch != ' ') {
         currentWord += ch;
-      else {
+      } else {
         ans.push_back(currentWord);
         currentWord = "";
       }
     }
-    if (!currentWord.empty()) ans.push_back(currentWord);
+    if (!currentWord.empty()) { ans.push_back(currentWord); }
     return ans;
   }
 
   string transform(string word, int index) {
     char firstChar = tolower(word[0]);
-    if (firstChar == 'a' || firstChar == 'e' || firstChar == 'i' || firstChar == 'o' || firstChar == 'u')
+    if (firstChar == 'a' || firstChar == 'e' || firstChar == 'i' || firstChar == 'o' || firstChar == 'u') {
       word += "ma";
-    else
+    } else {
       word = word.substr(1) + word[0] + "ma";
-    for (int i = 0; i < index; ++i) word += 'a';
+    }
+    for (int i = 0; i < index; ++i) { word += 'a'; }
     return word;
   }
 
@@ -39,7 +40,7 @@ class Solution {
     string ans = "";
     for (int i = 0; i < (int)words.size(); ++i) {
       ans += transform(words[i], i + 1);
-      if (i + 1 < (int)words.size()) ans += ' ';
+      if (i + 1 < (int)words.size()) { ans += ' '; }
     }
     return ans;
   }

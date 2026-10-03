@@ -12,14 +12,14 @@ struct ListNode {
 class Solution {
  public:
   ListNode* reverseKGroup(ListNode* head, int k) {
-    if (head == nullptr) return head;
+    if (head == nullptr) { return head; }
     ListNode *curr = head, *next = nullptr, *prev = nullptr;
     int count = 0;
     while (curr != nullptr && count < k) {
       curr = curr->next;
       ++count;
     }
-    if (count != k) return head;
+    if (count != k) { return head; }
     count = 0;
     curr = head;
     while (curr != nullptr && count < k) {
@@ -29,7 +29,7 @@ class Solution {
       curr = next;
       ++count;
     }
-    if (next != nullptr) head->next = reverseKGroup(next, k);
+    if (next != nullptr) { head->next = reverseKGroup(next, k); }
     return prev;
   }
 };

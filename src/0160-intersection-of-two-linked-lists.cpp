@@ -11,7 +11,7 @@ struct ListNode {
 class Solution {
  public:
   ListNode* getIntersectionNode(ListNode* headA, ListNode* headB) {
-    if (headA == nullptr || headB == nullptr) return nullptr;
+    if (headA == nullptr || headB == nullptr) { return nullptr; }
     ListNode* a = headA;
     ListNode* b = headB;
     while (a != b) {

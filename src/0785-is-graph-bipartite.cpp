@@ -20,8 +20,9 @@ class Solution {
         if (colors[next] == -1) {
           colors[next] = nextColor;
           q.push(next);
-        } else if (colors[next] != nextColor)
+        } else if (colors[next] != nextColor) {
           return false;
+        }
       }
     }
     return true;
@@ -32,8 +33,8 @@ class Solution {
     int N = graph.size();
     vector<int> colors(N, -1);
     for (int i = 0; i < N; ++i) {
-      if (colors[i] != -1) continue;
-      if (!bfs(i, colors, graph)) return false;
+      if (colors[i] != -1) { continue; }
+      if (!bfs(i, colors, graph)) { return false; }
     }
     return true;
   }

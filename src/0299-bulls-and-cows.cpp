@@ -14,9 +14,9 @@ class Solution {
     int bulls = 0, cows = 0;
     map<char, int> in_secret, in_guess;
     for (int i = 0; i < N; ++i) {
-      if (secret[i] == guess[i])
+      if (secret[i] == guess[i]) {
         bulls++;
-      else {
+      } else {
         in_secret[secret[i]]++;
         in_guess[guess[i]]++;
       }

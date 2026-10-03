@@ -27,7 +27,7 @@ class Trie {
   void insert(string word) {
     TrieNode* curr = root;
     for (char ch : word) {
-      if (curr->next.find(ch) == curr->next.end()) curr->next[ch] = new TrieNode();
+      if (curr->next.find(ch) == curr->next.end()) { curr->next[ch] = new TrieNode(); }
       curr = curr->next[ch];
     }
     curr->hasWord = true;
@@ -35,11 +35,11 @@ class Trie {
 
   bool hasPrefix(string word) {
     TrieNode* curr = root;
-    if (curr->hasWord) return true;
+    if (curr->hasWord) { return true; }
     for (char ch : word) {
-      if (curr->next.find(ch) == curr->next.end()) return false;
+      if (curr->next.find(ch) == curr->next.end()) { return false; }
       curr = curr->next[ch];
-      if (curr->hasWord) return true;
+      if (curr->hasWord) { return true; }
     }
     return false;
   }
@@ -61,7 +61,7 @@ class StreamChecker {
 
   bool query(char letter) {
     current = letter + current;
-    if (current.size() > MAXL) current = current.substr(0, MAXL);
+    if (current.size() > MAXL) { current = current.substr(0, MAXL); }
     return trie->hasPrefix(current);
   }
 };

@@ -23,17 +23,19 @@ class Solution {
         maxV = max(maxV, nums[i]);
         values.insert(nums[i]);
       }
-      if ((maxV - minV) % (len - 1) != 0)
+      if ((maxV - minV) % (len - 1) != 0) {
         ans[m] = false;
-      else {
+      } else {
         ans[m] = true;
         int diff = (maxV - minV) / (len - 1);
-        if (diff != 0)
-          for (int v = minV; v <= maxV; v += diff)
+        if (diff != 0) {
+          for (int v = minV; v <= maxV; v += diff) {
             if (values.find(v) == values.end()) {
               ans[m] = false;
               break;
             }
+          }
+        }
       }
     }
     return ans;

@@ -20,10 +20,10 @@ struct TreeNode {
 class Solution {
  private:
   pair<int, int> depth_and_parent(TreeNode* root, int x, int depth = 0, int parent = -1) {
-    if (root == nullptr) return {-1, -1};
-    if (root->val == x) return {depth, parent};
+    if (root == nullptr) { return {-1, -1}; }
+    if (root->val == x) { return {depth, parent}; }
     pair<int, int> left = depth_and_parent(root->left, x, depth + 1, root->val);
-    if (left.first != -1) return left;
+    if (left.first != -1) { return left; }
     return depth_and_parent(root->right, x, depth + 1, root->val);
   }
 

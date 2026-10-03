@@ -16,7 +16,7 @@ class Solution {
     for (int i = 0; i < N; ++i) {
       curr ^= (1 << (word[i] - 'a'));
       ans += prev[curr];
-      for (int d = 0; d < len; ++d) ans += prev[curr ^ (1 << d)];
+      for (int d = 0; d < len; ++d) { ans += prev[curr ^ (1 << d)]; }
       ++prev[curr];
     }
     return ans;

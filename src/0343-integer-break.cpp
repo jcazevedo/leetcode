@@ -9,10 +9,10 @@ using namespace std;
 class Solution {
  private:
   int maxProd(int n, bool first, vector<vector<int>>& cache) {
-    if (n == 1) return 1;
+    if (n == 1) { return 1; }
     if (cache[first][n] == -1) {
-      if (!first) cache[first][n] = n;
-      for (int i = 1; i < n; ++i) cache[first][n] = max(cache[first][n], maxProd(i, false, cache) * (n - i));
+      if (!first) { cache[first][n] = n; }
+      for (int i = 1; i < n; ++i) { cache[first][n] = max(cache[first][n], maxProd(i, false, cache) * (n - i)); }
     }
     return cache[first][n];
   }

@@ -12,7 +12,7 @@ class Solution {
     sort(citations.begin(), citations.end());
     int ans = citations.size();
     for (int cit : citations) {
-      if (cit >= ans) return ans;
+      if (cit >= ans) { return ans; }
       ans--;
     }
     return ans;

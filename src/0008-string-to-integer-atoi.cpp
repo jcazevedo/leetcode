@@ -22,10 +22,11 @@ class Solution {
           inNumber = true;
         } else if (isdigit(str[i])) {
           res = res * 10 + (str[i] - '0');
-          if (neg && -res < INT32_MIN)
+          if (neg && -res < INT32_MIN) {
             return INT32_MIN;
-          else if (!neg && res > INT32_MAX)
+          } else if (!neg && res > INT32_MAX) {
             return INT32_MAX;
+          }
           inNumber = true;
         } else {
           break;

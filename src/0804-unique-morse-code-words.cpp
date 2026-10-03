@@ -13,14 +13,14 @@ class Solution {
 
   string translate(const string& word) {
     string ans = "";
-    for (const char& ch : word) ans += translation[ch - 'a'];
+    for (const char& ch : word) { ans += translation[ch - 'a']; }
     return ans;
   }
 
  public:
   int uniqueMorseRepresentations(vector<string>& words) {
     set<string> translations;
-    for (const string& word : words) translations.insert(translate(word));
+    for (const string& word : words) { translations.insert(translate(word)); }
     return translations.size();
   }
 };

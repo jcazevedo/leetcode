@@ -29,12 +29,13 @@ class Solution {
         nodes[parent] = new TreeNode(parent);
         possibleRoots.insert(parent);
       }
-      if (nodes.find(child) == nodes.end()) nodes[child] = new TreeNode(child);
+      if (nodes.find(child) == nodes.end()) { nodes[child] = new TreeNode(child); }
       possibleRoots.erase(child);
-      if (isLeft)
+      if (isLeft) {
         nodes[parent]->left = nodes[child];
-      else
+      } else {
         nodes[parent]->right = nodes[child];
+      }
     }
     return nodes[*possibleRoots.begin()];
   }

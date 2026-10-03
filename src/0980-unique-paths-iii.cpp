@@ -18,7 +18,7 @@ class Solution {
           int expected,
           int n_visited) {
     if (grid[i][j] == 2) {
-      if (n_visited == expected) return 1;
+      if (n_visited == expected) { return 1; }
       return 0;
     }
     int ans = 0;
@@ -42,7 +42,7 @@ class Solution {
     int si, sj;
     for (int i = 0; i < H; ++i) {
       for (int j = 0; j < W; ++j) {
-        if (grid[i][j] != -1) expected++;
+        if (grid[i][j] != -1) { expected++; }
         if (grid[i][j] == 1) {
           si = i;
           sj = j;

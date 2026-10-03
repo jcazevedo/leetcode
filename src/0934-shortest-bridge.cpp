@@ -17,8 +17,9 @@ class Solution {
     for (const vector<int>& dir : directions) {
       int ni = i + dir[0];
       int nj = j + dir[1];
-      if (ni >= 0 && ni < H && nj >= 0 && nj < W && grid[ni][nj] == 1 && island[ni][nj] == -1)
+      if (ni >= 0 && ni < H && nj >= 0 && nj < W && grid[ni][nj] == 1 && island[ni][nj] == -1) {
         floodFill(ni, nj, grid, H, W, island, currIsland);
+      }
     }
   }
 
@@ -30,14 +31,16 @@ class Solution {
     int nIslands = 0;
     for (int i = 0; i < H; ++i) {
       for (int j = 0; j < W; ++j) {
-        if (grid[i][j] == 1 && island[i][j] == -1) floodFill(i, j, grid, H, W, island, nIslands++);
+        if (grid[i][j] == 1 && island[i][j] == -1) { floodFill(i, j, grid, H, W, island, nIslands++); }
       }
     }
     queue<tuple<int, int, int>> q;
     vector<vector<bool>> visited = vector<vector<bool>>(H, vector<bool>(W, false));
-    for (int i = 0; i < H; ++i)
-      for (int j = 0; j < W; ++j)
-        if (island[i][j] == 0) q.push({0, i, j});
+    for (int i = 0; i < H; ++i) {
+      for (int j = 0; j < W; ++j) {
+        if (island[i][j] == 0) { q.push({0, i, j}); }
+      }
+    }
     while (!q.empty()) {
       int dist, i, j;
       tie(dist, i, j) = q.front();
@@ -50,7 +53,7 @@ class Solution {
             visited[ni][nj] = true;
             q.push({dist + 1, ni, nj});
           }
-          if (grid[ni][nj] == 1 && island[ni][nj] == 1) return dist;
+          if (grid[ni][nj] == 1 && island[ni][nj] == 1) { return dist; }
         }
       }
     }

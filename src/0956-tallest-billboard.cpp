@@ -23,7 +23,7 @@ class Solution {
         next.insert(make_pair(state.first + rod, state.second));
         next.insert(make_pair(state.first, state.second + rod));
       }
-      for (const pair<int, int>& nextState : next) states.insert(nextState);
+      for (const pair<int, int>& nextState : next) { states.insert(nextState); }
     }
     map<int, int> ans;
     for (const pair<int, int>& state : states) {
@@ -42,7 +42,7 @@ class Solution {
     for (map<int, int>::iterator itr = diffsLeft.begin(); itr != diffsLeft.end(); ++itr) {
       int diff = itr->first;
       int height = itr->second;
-      if (diffsRight.count(-diff)) ans = max(ans, height + diffsRight[-diff]);
+      if (diffsRight.count(-diff)) { ans = max(ans, height + diffsRight[-diff]); }
     }
     return ans;
   }

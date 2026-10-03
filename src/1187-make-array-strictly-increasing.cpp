@@ -13,10 +13,11 @@ class Solution {
     int lo = 0, hi = arr.size();
     while (lo < hi) {
       int mid = lo + (hi - lo) / 2;
-      if (arr[mid] <= value)
+      if (arr[mid] <= value) {
         lo = mid + 1;
-      else
+      } else {
         hi = mid;
+      }
     }
     return lo;
   }
@@ -24,15 +25,17 @@ class Solution {
   map<pair<int, int>, int> cache;
 
   int minOps(int i, int prev, const vector<int>& arr1, const vector<int>& arr2) {
-    if (i == (int)arr1.size()) return 0;
+    if (i == (int)arr1.size()) { return 0; }
     pair<int, int> key = make_pair(i, prev);
     if (cache.find(key) == cache.end()) {
       cache[key] = -1;
-      if (arr1[i] > prev) cache[key] = minOps(i + 1, arr1[i], arr1, arr2);
+      if (arr1[i] > prev) { cache[key] = minOps(i + 1, arr1[i], arr1, arr2); }
       int toSwap = getNext(arr2, prev);
       if (toSwap < (int)arr2.size()) {
         int nextSwapCost = minOps(i + 1, arr2[toSwap], arr1, arr2);
-        if (nextSwapCost != -1 && (cache[key] == -1 || (nextSwapCost + 1) < cache[key])) cache[key] = 1 + nextSwapCost;
+        if (nextSwapCost != -1 && (cache[key] == -1 || (nextSwapCost + 1) < cache[key])) {
+          cache[key] = 1 + nextSwapCost;
+        }
       }
     }
     return cache[key];

@@ -13,10 +13,11 @@ class Solution {
     int best_area = 0;
     while (left < right) {
       best_area = max(best_area, min(height[left], height[right]) * (right - left));
-      if (height[left] < height[right])
+      if (height[left] < height[right]) {
         left++;
-      else
+      } else {
         right--;
+      }
     }
     return best_area;
   }

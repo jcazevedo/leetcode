@@ -14,9 +14,9 @@ class Solution {
     int N = s.size();
     int ans = 1;
     for (int i = 1; i < N; ++i) {
-      if (s[i] == prev)
+      if (s[i] == prev) {
         curr++;
-      else {
+      } else {
         prev = s[i];
         curr = 1;
       }

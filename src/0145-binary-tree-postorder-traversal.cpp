@@ -17,7 +17,7 @@ struct TreeNode {
 class Solution {
  private:
   void traversal(TreeNode* root, vector<int>& ans) {
-    if (root == nullptr) return;
+    if (root == nullptr) { return; }
     traversal(root->left, ans);
     traversal(root->right, ans);
     ans.push_back(root->val);

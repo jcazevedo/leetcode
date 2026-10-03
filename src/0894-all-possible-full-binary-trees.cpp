@@ -17,8 +17,8 @@ struct TreeNode {
 class Solution {
  public:
   vector<TreeNode*> allPossibleFBT(int n) {
-    if (n % 2 == 0) return {};
-    if (n == 1) return {new TreeNode(0)};
+    if (n % 2 == 0) { return {}; }
+    if (n == 1) { return {new TreeNode(0)}; }
 
     vector<TreeNode*> ans;
     for (int i = 1; i <= n - 1; ++i) {

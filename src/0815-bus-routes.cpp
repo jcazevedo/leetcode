@@ -13,13 +13,13 @@ using namespace std;
 class Solution {
  public:
   int numBusesToDestination(vector<vector<int>>& routes, int source, int target) {
-    if (source == target) return 0;
+    if (source == target) { return 0; }
 
     int R = routes.size();
     unordered_map<int, vector<int>> routesInStop;
     for (int i = 0; i < R; ++i) {
       int NR = routes[i].size();
-      for (int j = 0; j < NR; ++j) routesInStop[routes[i][j]].push_back(i);
+      for (int j = 0; j < NR; ++j) { routesInStop[routes[i][j]].push_back(i); }
     }
 
     unordered_set<int> visitedRoutes;
@@ -27,11 +27,12 @@ class Solution {
     priority_queue<tuple<int, int, int>, vector<tuple<int, int, int>>, greater<tuple<int, int, int>>> pq;
     for (int i = 0; i < R; ++i) {
       bool inStop = false;
-      for (int route : routesInStop[source])
+      for (int route : routesInStop[source]) {
         if (route == i) {
           inStop = true;
           break;
         }
+      }
 
       if (inStop) {
         visitedRoutes.insert(i);
@@ -47,26 +48,28 @@ class Solution {
       tie(distance, stop, route) = pq.top();
       pq.pop();
 
-      if (stop == target) return distance + 1;
+      if (stop == target) { return distance + 1; }
 
       if (visitedRoutes.count(route) == 0) {
         visitedRoutes.insert(route);
-        for (int next : routes[route])
+        for (int next : routes[route]) {
           if (distances.count(next) == 0 || distance < distances[next]) {
             distances[next] = distance;
             pq.push({distance, next, route});
           }
+        }
       }
 
       for (int nextRoute : routesInStop[stop]) {
-        if (visitedRoutes.count(nextRoute) == 1) continue;
+        if (visitedRoutes.count(nextRoute) == 1) { continue; }
 
         visitedRoutes.insert(nextRoute);
-        for (int next : routes[nextRoute])
+        for (int next : routes[nextRoute]) {
           if (distances.count(next) == 0 || distance + 1 < distances[next]) {
             distances[next] = distance + 1;
             pq.push({distance + 1, next, nextRoute});
           }
+        }
       }
     }
 

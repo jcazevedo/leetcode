@@ -15,8 +15,8 @@ class Solution {
              vector<bool>& d2,
              vector<string>& board,
              vector<vector<string>>& ans) {
-    if (r == n) ans.push_back(board);
-    for (int i = 0; i < n; ++i)
+    if (r == n) { ans.push_back(board); }
+    for (int i = 0; i < n; ++i) {
       if (!c[i] && !d1[i - r + n - 1] && !d2[i + r]) {
         c[i] = d1[i - r + n - 1] = d2[i + r] = true;
         board[r][i] = 'Q';
@@ -24,6 +24,7 @@ class Solution {
         c[i] = d1[i - r + n - 1] = d2[i + r] = false;
         board[r][i] = '.';
       }
+    }
   }
 
  public:

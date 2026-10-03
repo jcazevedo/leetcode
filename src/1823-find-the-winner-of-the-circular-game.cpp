@@ -9,7 +9,7 @@ class Solution {
  public:
   int findTheWinner(int n, int k) {
     vector<int> friends(n, 0);
-    for (int i = 0; i < n; ++i) friends[i] = i;
+    for (int i = 0; i < n; ++i) { friends[i] = i; }
     int f = 0;
     while (friends.size() > 1) {
       int next = (f + (k - 1)) % friends.size();

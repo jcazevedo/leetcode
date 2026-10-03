@@ -22,11 +22,12 @@ class Solution {
   vector<int> rightmost;
 
   void dfs(TreeNode* root, int level = 0) {
-    if (root == nullptr) return;
-    if (level >= (int)rightmost.size())
+    if (root == nullptr) { return; }
+    if (level >= (int)rightmost.size()) {
       rightmost.push_back(root->val);
-    else
+    } else {
       rightmost[level] = root->val;
+    }
     dfs(root->left, level + 1);
     dfs(root->right, level + 1);
   }

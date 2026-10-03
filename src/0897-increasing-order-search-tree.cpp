@@ -20,7 +20,7 @@ struct TreeNode {
 class Solution {
  private:
   pair<TreeNode*, TreeNode*> in_order_traversal(TreeNode* root) {
-    if (root == nullptr) return make_pair(nullptr, nullptr);
+    if (root == nullptr) { return make_pair(nullptr, nullptr); }
     TreeNode* start;
     TreeNode* end;
     pair<TreeNode*, TreeNode*> left = in_order_traversal(root->left);
@@ -43,7 +43,7 @@ class Solution {
 
  public:
   TreeNode* increasingBST(TreeNode* root) {
-    if (root == nullptr) return root;
+    if (root == nullptr) { return root; }
     return in_order_traversal(root).first;
   }
 };

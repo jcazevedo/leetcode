@@ -12,11 +12,12 @@ class Solution {
     int lo = 0, hi = N;
     while (lo < hi) {
       int mid = lo + (hi - lo) / 2;
-      if (nums[mid] == target) return mid;
-      if (nums[mid] < target)
+      if (nums[mid] == target) { return mid; }
+      if (nums[mid] < target) {
         lo = mid + 1;
-      else
+      } else {
         hi = mid;
+      }
     }
     return -1;
   }

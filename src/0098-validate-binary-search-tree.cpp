@@ -14,8 +14,8 @@ struct TreeNode {
 class Solution {
  private:
   bool isValidBST(TreeNode* root, long long left, long long right) {
-    if (root == nullptr) return true;
-    if (root->val <= left || root->val >= right) return false;
+    if (root == nullptr) { return true; }
+    if (root->val <= left || root->val >= right) { return false; }
     return isValidBST(root->left, left, root->val) && isValidBST(root->right, root->val, right);
   }
 

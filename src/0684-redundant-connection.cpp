@@ -28,7 +28,7 @@ class UnionFind {
         p[y] = x;
       } else {
         p[x] = y;
-        if (rank[x] == rank[y]) rank[y]++;
+        if (rank[x] == rank[y]) { rank[y]++; }
       }
     }
   }

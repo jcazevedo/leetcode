@@ -13,8 +13,8 @@ struct TreeNode {
 class Solution {
  private:
   int sumOfLeftLeavesAux(TreeNode* root, bool isLeft) {
-    if (root == nullptr) return 0;
-    if (root->left == nullptr && root->right == nullptr) return isLeft ? root->val : 0;
+    if (root == nullptr) { return 0; }
+    if (root->left == nullptr && root->right == nullptr) { return isLeft ? root->val : 0; }
     return sumOfLeftLeavesAux(root->left, true) + sumOfLeftLeavesAux(root->right, false);
   }
 

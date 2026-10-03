@@ -18,10 +18,11 @@ class Solution {
     int ans = 0;
     int currentLength = 0;
     for (int i = 0; i < N; ++i) {
-      if (i == 0 || s[i] == s[i - 1])
+      if (i == 0 || s[i] == s[i - 1]) {
         currentLength++;
-      else
+      } else {
         currentLength = 1;
+      }
 
       ans = modAdd(ans, currentLength);
     }

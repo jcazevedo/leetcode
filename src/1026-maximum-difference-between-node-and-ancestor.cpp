@@ -22,7 +22,7 @@ struct TreeNode {
 class Solution {
  private:
   int dfs(TreeNode* root, int max_value, int min_value) {
-    if (root == nullptr) return abs(max_value - min_value);
+    if (root == nullptr) { return abs(max_value - min_value); }
     int next_max = max(max_value, root->val);
     int next_min = min(min_value, root->val);
     return max(dfs(root->left, next_max, next_min), dfs(root->right, next_max, next_min));

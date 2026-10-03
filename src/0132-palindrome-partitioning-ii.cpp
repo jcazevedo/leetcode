@@ -16,12 +16,12 @@ class Solution {
   int dp[MAXN];
 
   int go(int i) {
-    if (i >= N) return 0;
+    if (i >= N) { return 0; }
     if (dp[i] == -1) {
       for (int j = i; j < N; ++j) {
         if (is_palindrome[i][j]) {
           int next = go(j + 1) + 1;
-          if (dp[i] == -1 || next < dp[i]) dp[i] = next;
+          if (dp[i] == -1 || next < dp[i]) { dp[i] = next; }
         }
       }
     }
@@ -37,12 +37,13 @@ class Solution {
     for (int l = 1; l <= N; ++l) {
       for (int i = 0; i + l <= N; ++i) {
         int j = i + l - 1;
-        if (l == 1)
+        if (l == 1) {
           is_palindrome[i][j] = true;
-        else if (l == 2)
+        } else if (l == 2) {
           is_palindrome[i][j] = str[i] == str[j];
-        else
+        } else {
           is_palindrome[i][j] = str[i] == str[j] && is_palindrome[i + 1][j - 1];
+        }
       }
     }
     return go(0) - 1;

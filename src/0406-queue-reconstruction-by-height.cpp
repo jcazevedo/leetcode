@@ -9,7 +9,7 @@ using namespace std;
 class Solution {
  private:
   static bool compare(const vector<int>& p1, const vector<int>& p2) {
-    if (p1[0] != p2[0]) return p1[0] > p2[0];
+    if (p1[0] != p2[0]) { return p1[0] > p2[0]; }
     return p1[1] < p2[1];
   }
 

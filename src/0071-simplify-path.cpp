@@ -15,14 +15,16 @@ class Solution {
     for (int i = 0; i <= N; ++i) {
       if (i == N || path[i] == '/') {
         if (current == "..") {
-          if (!s.empty()) s.pop();
-        } else if (!current.empty() && current != ".")
+          if (!s.empty()) { s.pop(); }
+        } else if (!current.empty() && current != ".") {
           s.push(current);
+        }
         current = "";
-      } else
+      } else {
         current += path[i];
+      }
     }
-    if (s.empty()) return "/";
+    if (s.empty()) { return "/"; }
     string ans = "";
     while (!s.empty()) {
       ans = "/" + s.top() + ans;

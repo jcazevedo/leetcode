@@ -27,7 +27,7 @@ class Solution {
         }
       }
 
-      if (done) continue;
+      if (done) { continue; }
 
       for (unordered_map<string, int>::iterator it = char_1_strs.begin(); it != char_1_strs.end(); ++it) {
         if (s.substr(i, 1) == it->first) {

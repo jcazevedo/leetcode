@@ -11,13 +11,14 @@ class Solution {
   bool isValid(string s) {
     stack<char> st;
     for (char ch : s) {
-      if (ch == '}' && (st.empty() || st.top() != '{')) return false;
-      if (ch == ')' && (st.empty() || st.top() != '(')) return false;
-      if (ch == ']' && (st.empty() || st.top() != '[')) return false;
-      if (ch == '}' || ch == ')' || ch == ']')
+      if (ch == '}' && (st.empty() || st.top() != '{')) { return false; }
+      if (ch == ')' && (st.empty() || st.top() != '(')) { return false; }
+      if (ch == ']' && (st.empty() || st.top() != '[')) { return false; }
+      if (ch == '}' || ch == ')' || ch == ']') {
         st.pop();
-      else
+      } else {
         st.push(ch);
+      }
     }
     return st.empty();
   }

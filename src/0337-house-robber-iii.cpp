@@ -23,7 +23,7 @@ class Solution {
   map<pair<TreeNode*, bool>, int> cache;
 
   int aux(TreeNode* root, bool can_rob) {
-    if (root == nullptr) return 0;
+    if (root == nullptr) { return 0; }
     if (cache.find({root, can_rob}) == cache.end()) {
       int ans = 0;
       if (!can_rob) {

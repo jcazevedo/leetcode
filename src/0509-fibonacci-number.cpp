@@ -8,9 +8,9 @@ class Solution {
   int dp[31];
 
   int go(int n) {
-    if (n == 0) return 0;
-    if (n == 1) return 1;
-    if (dp[n] == -1) return go(n - 1) + go(n - 2);
+    if (n == 0) { return 0; }
+    if (n == 1) { return 1; }
+    if (dp[n] == -1) { return go(n - 1) + go(n - 2); }
     return dp[n];
   }
 

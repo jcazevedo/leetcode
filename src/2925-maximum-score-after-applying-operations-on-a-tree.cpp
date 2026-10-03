@@ -16,13 +16,13 @@ class Solution {
 
     long long removeFromChildren = 0L;
     for (int v : connections[u]) {
-      if (inPath[v]) continue;
+      if (inPath[v]) { continue; }
       inPath[v] = true;
       removeFromChildren += getMinimumToKeep(v, connections, values, inPath);
       inPath[v] = false;
     }
 
-    if (removeFromChildren == 0L) return removeRoot;
+    if (removeFromChildren == 0L) { return removeRoot; }
 
     return min(removeRoot, removeFromChildren);
   }
@@ -32,7 +32,7 @@ class Solution {
     int N = values.size();
 
     long long totalScore = 0L;
-    for (int v : values) totalScore += v;
+    for (int v : values) { totalScore += v; }
 
     vector<vector<int>> connections(N, vector<int>());
     for (const vector<int>& edge : edges) {

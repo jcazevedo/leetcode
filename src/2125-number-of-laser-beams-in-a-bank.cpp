@@ -14,10 +14,11 @@ class Solution {
     int prev = 0;
     for (const string& s : bank) {
       int cnt = 0;
-      for (const char& ch : s)
-        if (ch == '1') ++cnt;
+      for (const char& ch : s) {
+        if (ch == '1') { ++cnt; }
+      }
       ans += prev * cnt;
-      if (cnt != 0) prev = cnt;
+      if (cnt != 0) { prev = cnt; }
     }
 
     return ans;

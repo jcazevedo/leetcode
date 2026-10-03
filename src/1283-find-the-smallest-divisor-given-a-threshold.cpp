@@ -18,10 +18,11 @@ class Solution {
     int lo = 1, hi = 1000000;
     while (lo < hi) {
       int mid = lo + (hi - lo) / 2;
-      if (good(mid, threshold, nums))
+      if (good(mid, threshold, nums)) {
         hi = mid;
-      else
+      } else {
         lo = mid + 1;
+      }
     }
     return lo;
   }

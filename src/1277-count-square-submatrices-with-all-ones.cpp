@@ -15,10 +15,11 @@ class Solution {
       for (int j = 0; j < W; ++j) {
         if (matrix[i][j] == 1) {
           int prev;
-          if (i > 0 && j > 0)
+          if (i > 0 && j > 0) {
             prev = min(dp[i - 1][j - 1], min(dp[i - 1][j], dp[i][j - 1]));
-          else
+          } else {
             prev = 0;
+          }
           dp[i][j] = prev + 1;
           tot += dp[i][j];
         }

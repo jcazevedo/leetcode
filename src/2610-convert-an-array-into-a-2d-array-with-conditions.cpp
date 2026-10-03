@@ -15,7 +15,7 @@ class Solution {
     int N = nums.size(), idx = 0;
     for (int i = 0; i < N; ++i) {
       idx = (i > 0 && nums[i] == nums[i - 1]) ? idx + 1 : 0;
-      if (idx >= (int)ans.size()) ans.push_back(vector<int>());
+      if (idx >= (int)ans.size()) { ans.push_back(vector<int>()); }
       ans[idx].push_back(nums[i]);
     }
 

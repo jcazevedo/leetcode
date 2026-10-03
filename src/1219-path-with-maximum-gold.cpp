@@ -11,7 +11,7 @@ class Solution {
   static vector<vector<int>> dirs;
 
   int dfs(int i, int j, int M, int N, vector<vector<int>>& grid) {
-    if (i < 0 || j < 0 || i >= M || j >= N || grid[i][j] == 0) return 0;
+    if (i < 0 || j < 0 || i >= M || j >= N || grid[i][j] == 0) { return 0; }
 
     int ans = 0, gold = grid[i][j];
     grid[i][j] = 0;
@@ -29,8 +29,9 @@ class Solution {
   int getMaximumGold(vector<vector<int>>& grid) {
     int M = grid.size(), N = grid[0].size(), ans = 0;
 
-    for (int i = 0; i < M; ++i)
-      for (int j = 0; j < N; ++j) ans = max(ans, dfs(i, j, M, N, grid));
+    for (int i = 0; i < M; ++i) {
+      for (int j = 0; j < N; ++j) { ans = max(ans, dfs(i, j, M, N, grid)); }
+    }
 
     return ans;
   }

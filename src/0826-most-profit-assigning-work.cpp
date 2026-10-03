@@ -14,7 +14,7 @@ class Solution {
     sort(worker.begin(), worker.end());
     int N = difficulty.size();
     vector<vector<int>> dp;
-    for (int i = 0; i < N; ++i) dp.push_back({difficulty[i], profit[i]});
+    for (int i = 0; i < N; ++i) { dp.push_back({difficulty[i], profit[i]}); }
     sort(dp.begin(), dp.end());
     int j = -1;
     int W = worker.size();
@@ -24,7 +24,7 @@ class Solution {
         ++j;
         profits.push(dp[j][1]);
       }
-      if (!profits.empty()) ans += profits.top();
+      if (!profits.empty()) { ans += profits.top(); }
     }
     return ans;
   }

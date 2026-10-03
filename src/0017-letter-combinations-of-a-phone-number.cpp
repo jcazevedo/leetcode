@@ -28,7 +28,7 @@ class Solution {
 
  public:
   vector<string> letterCombinations(string digits) {
-    if (digits.empty()) return vector<string>();
+    if (digits.empty()) { return vector<string>(); }
     return aux(digits);
   }
 };

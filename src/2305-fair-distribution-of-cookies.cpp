@@ -11,14 +11,14 @@ class Solution {
   int go(vector<int>& cookies, int k, int curr, vector<int>& sums, int bestSoFar) {
     if (curr == (int)cookies.size()) {
       int ans = sums[0];
-      for (int i = 1; i < k; ++i) ans = max(ans, sums[i]);
+      for (int i = 1; i < k; ++i) { ans = max(ans, sums[i]); }
       return ans;
     }
 
     int ans = bestSoFar;
     for (int i = 0; i < k; ++i) {
       sums[i] += cookies[curr];
-      if (sums[i] < ans) ans = min(ans, go(cookies, k, curr + 1, sums, ans));
+      if (sums[i] < ans) { ans = min(ans, go(cookies, k, curr + 1, sums, ans)); }
       sums[i] -= cookies[curr];
     }
 

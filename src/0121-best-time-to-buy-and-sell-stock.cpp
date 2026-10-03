@@ -8,7 +8,7 @@ using namespace std;
 class Solution {
  public:
   int maxProfit(vector<int>& prices) {
-    if (prices.empty()) return 0;
+    if (prices.empty()) { return 0; }
     int N = prices.size();
     int min_so_far = prices[0];
     int best = 0;

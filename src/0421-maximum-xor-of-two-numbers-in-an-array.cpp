@@ -16,8 +16,8 @@ void insert(TrieNode* root, int num) {
   TrieNode* curr = root;
   for (int i = 30; i >= 0; --i) {
     int idx = 0;
-    if (num & (1 << i)) idx = 1;
-    if (curr->next[idx] == nullptr) curr->next[idx] = new TrieNode();
+    if (num & (1 << i)) { idx = 1; }
+    if (curr->next[idx] == nullptr) { curr->next[idx] = new TrieNode(); }
     curr = curr->next[idx];
   }
 }
@@ -33,7 +33,7 @@ class Solution {
       TrieNode* curr = trie;
       for (int i = 30; i >= 0; --i) {
         int idx = 0;
-        if (num & (1 << i)) idx = 1;
+        if (num & (1 << i)) { idx = 1; }
         xor_value <<= 1;
         if (curr->next[idx ^ 1] != nullptr) {
           curr = curr->next[idx ^ 1];

@@ -10,11 +10,12 @@ class Solution {
  public:
   string reversePrefix(string word, char ch) {
     int N = word.size();
-    for (int i = 0; i < N; ++i)
+    for (int i = 0; i < N; ++i) {
       if (word[i] == ch) {
-        for (int j = 0; j < (i + 1) / 2; ++j) swap(word[j], word[i - j]);
+        for (int j = 0; j < (i + 1) / 2; ++j) { swap(word[j], word[i - j]); }
         break;
       }
+    }
     return word;
   }
 };

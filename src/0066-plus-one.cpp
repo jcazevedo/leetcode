@@ -16,7 +16,7 @@ class Solution {
       res.push_back(n % 10);
       c = n / 10;
     }
-    if (c) res.push_back(c);
+    if (c) { res.push_back(c); }
     reverse(res.begin(), res.end());
     return res;
   }

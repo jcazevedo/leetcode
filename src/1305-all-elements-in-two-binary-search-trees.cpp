@@ -35,14 +35,15 @@ class Solution {
     vector<int> ans;
     int N1 = list1.size(), N2 = list2.size(), i1 = 0, i2 = 0;
     while (i1 < N1 || i2 < N2) {
-      if (i1 >= N1)
+      if (i1 >= N1) {
         ans.push_back(list2[i2++]);
-      else if (i2 >= N2)
+      } else if (i2 >= N2) {
         ans.push_back(list1[i1++]);
-      else if (list1[i1] < list2[i2])
+      } else if (list1[i1] < list2[i2]) {
         ans.push_back(list1[i1++]);
-      else
+      } else {
         ans.push_back(list2[i2++]);
+      }
     }
     return ans;
   }

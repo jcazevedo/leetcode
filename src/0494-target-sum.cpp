@@ -19,8 +19,8 @@ class Solution {
     for (int i = 1; i <= N; ++i) {
       int num = nums[i - 1];
       for (int j = 0; j <= MAXN * 2; ++j) {
-        if (j - num >= 0) dp[i][j] += dp[i - 1][j - num];
-        if (j + num <= MAXN * 2) dp[i][j] += dp[i - 1][j + num];
+        if (j - num >= 0) { dp[i][j] += dp[i - 1][j - num]; }
+        if (j + num <= MAXN * 2) { dp[i][j] += dp[i - 1][j + num]; }
       }
     }
     return dp[N][target + MAXN];

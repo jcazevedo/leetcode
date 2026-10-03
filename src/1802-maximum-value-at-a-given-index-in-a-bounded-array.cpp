@@ -7,9 +7,9 @@ class Solution {
 
   long long totSumFor(int n, int index, int value) {
     long long sumLeft = sumTo(value);
-    if (value > index + 1) sumLeft -= sumTo(value - index - 1);
+    if (value > index + 1) { sumLeft -= sumTo(value - index - 1); }
     long long sumRight = sumTo(value - 1);
-    if (value > n - index) sumRight -= sumTo(value - n + index);
+    if (value > n - index) { sumRight -= sumTo(value - n + index); }
     return sumLeft + sumRight;
   }
 
@@ -18,10 +18,11 @@ class Solution {
     int lo = 0, hi = maxSum - n;
     while (lo < hi) {
       int mid = lo + (hi - lo + 1) / 2;
-      if (totSumFor(n, index, mid) > maxSum - n)
+      if (totSumFor(n, index, mid) > maxSum - n) {
         hi = mid - 1;
-      else
+      } else {
         lo = mid;
+      }
     }
     return lo + 1;
   }

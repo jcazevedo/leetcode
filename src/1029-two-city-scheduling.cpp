@@ -17,7 +17,7 @@ class Solution {
       diffs.push_back(cost[1] - cost[0]);
     }
     sort(diffs.begin(), diffs.end());
-    for (int i = 0; i < N / 2; ++i) tot_sum += diffs[i];
+    for (int i = 0; i < N / 2; ++i) { tot_sum += diffs[i]; }
     return tot_sum;
   }
 };

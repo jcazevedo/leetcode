@@ -23,7 +23,8 @@ class Solution {
                       (((board[i][j] % 2 && neigh >= 2 && neigh <= 3) || (board[i][j] % 2 == 0 && neigh == 3)) ? 2 : 0);
       }
     }
-    for (int i = 0; i < M; ++i)
-      for (int j = 0; j < N; ++j) board[i][j] /= 2;
+    for (int i = 0; i < M; ++i) {
+      for (int j = 0; j < N; ++j) { board[i][j] /= 2; }
+    }
   }
 };

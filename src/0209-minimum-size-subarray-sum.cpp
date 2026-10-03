@@ -16,7 +16,7 @@ class Solution {
         sum -= nums[l];
         ++l;
       }
-      if (sum >= target) ans = ans == 0 ? (r - l) + 1 : min(ans, (r - l) + 1);
+      if (sum >= target) { ans = ans == 0 ? (r - l) + 1 : min(ans, (r - l) + 1); }
     }
     return ans;
   }

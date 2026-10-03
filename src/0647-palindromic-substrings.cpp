@@ -12,18 +12,18 @@ class Solution {
   vector<vector<int>> dp_exactly;
 
   void go(int left, int right, const string& s) {
-    if (left > right) return;
+    if (left > right) { return; }
     if (dp_in[left][right] == -1) {
-      if (left == right)
+      if (left == right) {
         dp_in[left][right] = dp_exactly[left][right] = 1;
-      else {
+      } else {
         go(left, right - 1, s);
         go(left + 1, right, s);
         go(left + 1, right - 1, s);
         dp_in[left][right] = dp_exactly[left][right] = 0;
         dp_in[left][right] += dp_in[left][right - 1];
         dp_in[left][right] += dp_in[left + 1][right];
-        if (left + 1 <= right - 1) dp_in[left][right] -= dp_in[left + 1][right - 1];
+        if (left + 1 <= right - 1) { dp_in[left][right] -= dp_in[left + 1][right - 1]; }
         if (s[left] == s[right]) {
           if (left + 1 <= right - 1) {
             dp_in[left][right] += dp_exactly[left + 1][right - 1];

@@ -21,8 +21,8 @@ class WordDictionary {
   TrieNode* root;
 
   bool search_aux(TrieNode* curr, const string& word, int i) {
-    if (curr == nullptr) return false;
-    if (i == (int)word.size()) return curr->word_exists;
+    if (curr == nullptr) { return false; }
+    if (i == (int)word.size()) { return curr->word_exists; }
     if (word[i] == '.') {
       bool good = false;
       for (char ch = 'a'; ch <= 'z' && !good; ++ch) {
@@ -41,7 +41,7 @@ class WordDictionary {
     TrieNode* curr = root;
     for (char ch : word) {
       int idx = ch - 'a';
-      if (curr->next[idx] == nullptr) curr->next[idx] = new TrieNode();
+      if (curr->next[idx] == nullptr) { curr->next[idx] = new TrieNode(); }
       curr = curr->next[idx];
     }
     curr->word_exists = true;

@@ -11,7 +11,7 @@ class SeatManager {
 
  public:
   SeatManager(int n) {
-    for (int i = 1; i <= n; ++i) unreserved.insert(i);
+    for (int i = 1; i <= n; ++i) { unreserved.insert(i); }
   }
 
   int reserve() {

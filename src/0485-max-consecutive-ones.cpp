@@ -10,10 +10,11 @@ class Solution {
   int findMaxConsecutiveOnes(vector<int>& nums) {
     int cnt = 0, best = 0;
     for (int v : nums) {
-      if (v == 0)
+      if (v == 0) {
         cnt = 0;
-      else
+      } else {
         cnt++;
+      }
       best = max(best, cnt);
     }
     return best;

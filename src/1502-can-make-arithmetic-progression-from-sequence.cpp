@@ -15,14 +15,14 @@ class Solution {
       minV = min(minV, arr[i]);
       maxV = max(maxV, arr[i]);
     }
-    if (maxV - minV == 0) return true;
-    if ((maxV - minV) % (N - 1) != 0) return false;
+    if (maxV - minV == 0) { return true; }
+    if ((maxV - minV) % (N - 1) != 0) { return false; }
     int diff = (maxV - minV) / (N - 1);
     unordered_set<int> visited;
     for (int i = 0; i < N; ++i) {
-      if (visited.count(arr[i])) return false;
+      if (visited.count(arr[i])) { return false; }
       visited.insert(arr[i]);
-      if ((arr[i] - minV) % diff != 0) return false;
+      if ((arr[i] - minV) % diff != 0) { return false; }
     }
     return true;
   }

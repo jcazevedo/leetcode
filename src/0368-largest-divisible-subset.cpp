@@ -10,7 +10,7 @@ class Solution {
  public:
   vector<int> largestDivisibleSubset(vector<int>& nums) {
     int N = nums.size();
-    if (N == 0) return {};
+    if (N == 0) { return {}; }
     sort(nums.begin(), nums.end());
     vector<int> cnt(N, 1);
     vector<int> prev(N, -1);
@@ -22,7 +22,7 @@ class Solution {
           prev[i] = j;
         }
       }
-      if (cnt[max_idx] < cnt[i]) max_idx = i;
+      if (cnt[max_idx] < cnt[i]) { max_idx = i; }
     }
     vector<int> res;
     while (max_idx >= 0) {

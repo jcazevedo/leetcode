@@ -24,13 +24,14 @@ class Solution {
       int x = itr->first;
       const vector<pair<bool, int>>& x_events = itr->second;
       for (const pair<bool, int>& event : x_events) {
-        if (event.first)
+        if (event.first) {
           heights.insert(event.second);
-        else
+        } else {
           heights.erase(heights.find(event.second));
+        }
       }
       int next_height = heights.empty() ? 0 : *heights.rbegin();
-      if (next_height != curr_height) ans.push_back({x, next_height});
+      if (next_height != curr_height) { ans.push_back({x, next_height}); }
       curr_height = next_height;
     }
     return ans;

@@ -33,12 +33,13 @@ class Solution {
         j++;
         i++;
       }
-      if (j == M) return true;
+      if (j == M) { return true; }
       if (W[j] != S[i]) {
-        if (j != 0)
+        if (j != 0) {
           j = T[j - 1];
-        else
+        } else {
           i = i + 1;
+        }
       }
     }
     return false;

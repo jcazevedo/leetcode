@@ -9,8 +9,8 @@ using namespace std;
 class Solution {
  private:
   int maxProfit(int idx, const vector<vector<int>>& jobs, vector<int>& cache) {
-    if (idx >= (int)jobs.size()) return 0;
-    if (cache[idx] != -1) return cache[idx];
+    if (idx >= (int)jobs.size()) { return 0; }
+    if (cache[idx] != -1) { return cache[idx]; }
 
     int with = jobs[idx][2];
     vector<int> tmp = {jobs[idx][1], 0, 0};
@@ -27,7 +27,7 @@ class Solution {
   int jobScheduling(vector<int>& startTime, vector<int>& endTime, vector<int>& profit) {
     int N = startTime.size();
     vector<vector<int>> jobs;
-    for (int i = 0; i < N; ++i) jobs.push_back({startTime[i], endTime[i], profit[i]});
+    for (int i = 0; i < N; ++i) { jobs.push_back({startTime[i], endTime[i], profit[i]}); }
     sort(jobs.begin(), jobs.end());
 
     vector<int> cache(N, -1);

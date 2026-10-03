@@ -36,16 +36,16 @@ class LRUCache {
       head = n;
       head->prev = nullptr;
       len++;
-      if (len > cap) remove_node(tail);
+      if (len > cap) { remove_node(tail); }
     }
   }
 
   void remove_node(node* node) {
     cache.erase(node->key);
-    if (node->next != nullptr) node->next->prev = node->prev;
-    if (node->prev != nullptr) node->prev->next = node->next;
-    if (node == head) head = head->next;
-    if (node == tail) tail = tail->prev;
+    if (node->next != nullptr) { node->next->prev = node->prev; }
+    if (node->prev != nullptr) { node->prev->next = node->next; }
+    if (node == head) { head = head->next; }
+    if (node == tail) { tail = tail->prev; }
     delete node;
     len--;
   }
@@ -58,7 +58,7 @@ class LRUCache {
   }
 
   int get(int key) {
-    if (cache.find(key) == cache.end()) return -1;
+    if (cache.find(key) == cache.end()) { return -1; }
     node* node = cache[key];
     int value = node->value;
     remove_node(node);
@@ -68,7 +68,7 @@ class LRUCache {
   }
 
   void put(int key, int value) {
-    if (cache.find(key) != cache.end()) remove_node(cache[key]);
+    if (cache.find(key) != cache.end()) { remove_node(cache[key]); }
     add_node(key, value);
     cache[key] = head;
   }

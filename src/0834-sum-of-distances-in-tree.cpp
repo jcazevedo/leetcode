@@ -11,7 +11,7 @@ class Solution {
       int node, int parent, int currDepth, const vector<vector<int>>& tree, vector<int>& nodes, vector<int>& depths) {
     int n = 1;
     for (const int& neighbor : tree[node]) {
-      if (neighbor == parent) continue;
+      if (neighbor == parent) { continue; }
       dfs1(neighbor, node, currDepth + 1, tree, nodes, depths);
       n += nodes[neighbor];
     }
@@ -27,7 +27,7 @@ class Solution {
             vector<int>& ans) {
     ans[node] = currDistance;
     for (const int& neighbor : tree[node]) {
-      if (neighbor == parent) continue;
+      if (neighbor == parent) { continue; }
       dfs2(neighbor, node, currDistance - nodes[neighbor] + (tree.size() - nodes[neighbor]), tree, nodes, ans);
     }
   }
@@ -43,7 +43,7 @@ class Solution {
     }
     dfs1(0, -1, 0, tree, nodes, depths);
     int startingDistance = 0;
-    for (int v : depths) startingDistance += v;
+    for (int v : depths) { startingDistance += v; }
     vector<int> ans(n);
     dfs2(0, -1, startingDistance, tree, nodes, ans);
     return ans;

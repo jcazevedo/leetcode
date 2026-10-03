@@ -12,7 +12,7 @@ class Solution {
     for (int i = 0; i < 2 * N; ++i) {
       sum += (gas[i % N] - cost[i % N]);
       if (sum < 0) {
-        if (i + 1 >= N) return -1;
+        if (i + 1 >= N) { return -1; }
         sum = 0;
         ans = i + 1;
       }

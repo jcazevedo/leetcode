@@ -29,7 +29,7 @@ class Solution {
       int u;
       tie(currProb, u) = pq.top();
       pq.pop();
-      if (u == end) return currProb;
+      if (u == end) { return currProb; }
       for (int i = 0; i < (int)graph[u].size(); ++i) {
         int v = get<0>(graph[u][i]);
         double nextProb = get<1>(graph[u][i]) * currProb;

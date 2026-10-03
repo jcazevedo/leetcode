@@ -14,7 +14,7 @@ class UnionFind {
   UnionFind(int N) {
     rank.assign(N, 0);
     p.assign(N, 0);
-    for (int i = 0; i < N; i++) p[i] = i;
+    for (int i = 0; i < N; i++) { p[i] = i; }
   }
 
   int findSet(int i) { return (p[i] == i) ? i : (p[i] = findSet(p[i])); }
@@ -25,11 +25,11 @@ class UnionFind {
     if (!connectedSet(i, j)) {
       int x = findSet(i);
       int y = findSet(j);
-      if (rank[x] > rank[y])
+      if (rank[x] > rank[y]) {
         p[y] = x;
-      else {
+      } else {
         p[x] = y;
-        if (rank[x] == rank[y]) rank[y]++;
+        if (rank[x] == rank[y]) { rank[y]++; }
       }
     }
   }

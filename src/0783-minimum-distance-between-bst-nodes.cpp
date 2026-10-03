@@ -22,8 +22,8 @@ class Solution {
     long long diffLeft = abs(root->val - left);
     long long diffRight = abs(root->val - right);
     long long ans = min(diffLeft, diffRight);
-    if (root->left != nullptr) ans = min(ans, getMinimumDifferenceAux(root->left, left, root->val));
-    if (root->right != nullptr) ans = min(ans, getMinimumDifferenceAux(root->right, root->val, right));
+    if (root->left != nullptr) { ans = min(ans, getMinimumDifferenceAux(root->left, left, root->val)); }
+    if (root->right != nullptr) { ans = min(ans, getMinimumDifferenceAux(root->right, root->val, right)); }
     return ans;
   }
 

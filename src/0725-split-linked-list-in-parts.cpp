@@ -30,7 +30,7 @@ class Solution {
     while (head != nullptr) {
       ListNode* prev = head;
       head = head->next;
-      if (currLen == 0) ans.push_back(prev);
+      if (currLen == 0) { ans.push_back(prev); }
 
       currLen++;
       if ((rem > 0 && currLen == size + 1) || (rem == 0 && currLen == size)) {

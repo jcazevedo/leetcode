@@ -13,7 +13,7 @@ class Solution {
     unordered_set<int> visited;
     int ans = -1;
     for (int num : nums) {
-      if (visited.find(-num) != visited.end()) ans = max(ans, abs(num));
+      if (visited.find(-num) != visited.end()) { ans = max(ans, abs(num)); }
       visited.insert(num);
     }
     return ans;

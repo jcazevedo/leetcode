@@ -19,7 +19,7 @@ class Solution {
       q.pop();
       int oranges = curr.first;
       int days = curr.second;
-      if (oranges == 0) return days;
+      if (oranges == 0) { return days; }
       if (oranges % 2 == 0 && visited.find(oranges / 2) == visited.end()) {
         visited.insert(oranges / 2);
         q.push(make_pair(oranges / 2, days + 1));

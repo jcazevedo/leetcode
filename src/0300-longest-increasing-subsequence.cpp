@@ -17,10 +17,11 @@ class Solution {
       int lo = 1, hi = ans;
       while (lo <= hi) {
         int mid = (lo + hi) / 2;
-        if (nums[m[mid]] < nums[i])
+        if (nums[m[mid]] < nums[i]) {
           lo = mid + 1;
-        else
+        } else {
           hi = mid - 1;
+        }
       }
       int newAns = lo;
       p[i] = m[newAns - 1];

@@ -16,17 +16,17 @@ class Solution {
   vector<vector<string>> dp;
 
   vector<string> dfs(int i) {
-    if (i >= N) return {""};
-    if (visited[i]) return dp[i];
+    if (i >= N) { return {""}; }
+    if (visited[i]) { return dp[i]; }
     visited[i] = true;
     vector<string> ans;
     for (int j : can_go[i]) {
       string word = line.substr(i, j - i);
-      if (j == N)
+      if (j == N) {
         ans.push_back(word);
-      else {
+      } else {
         vector<string> next = dfs(j);
-        for (string n : next) ans.push_back(word + " " + n);
+        for (string n : next) { ans.push_back(word + " " + n); }
       }
     }
     return dp[i] = ans;
@@ -36,13 +36,13 @@ class Solution {
   vector<string> wordBreak(string s, vector<string>& wordDict) {
     line = s;
     unordered_set<string> words;
-    for (string word : wordDict) words.insert(word);
+    for (string word : wordDict) { words.insert(word); }
     N = s.size();
     can_go.assign(N, vector<int>());
     for (int i = 0; i < N; ++i) {
       for (int j = i; j < N; ++j) {
         string word = s.substr(i, j - i + 1);
-        if (words.count(word) > 0) can_go[i].push_back(j + 1);
+        if (words.count(word) > 0) { can_go[i].push_back(j + 1); }
       }
     }
     visited.assign(N, false);

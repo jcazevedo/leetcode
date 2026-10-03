@@ -10,26 +10,28 @@ class Solution {
  public:
   int minDays(vector<int>& bloomDay, int m, int k) {
     int n = bloomDay.size();
-    if (((long long)m) * k > n) return -1;
+    if (((long long)m) * k > n) { return -1; }
     int lo = 1;
     int hi = 1000000000;
     while (lo < hi) {
       int mid = lo + (hi - lo) / 2;
       int cnt = 0, curr = 0;
       for (int i = 0; i < n && cnt < m; ++i) {
-        if (bloomDay[i] > mid)
+        if (bloomDay[i] > mid) {
           curr = 0;
-        else
+        } else {
           ++curr;
+        }
         if (curr >= k) {
           ++cnt;
           curr = 0;
         }
       }
-      if (cnt >= m)
+      if (cnt >= m) {
         hi = mid;
-      else
+      } else {
         lo = mid + 1;
+      }
     }
     return lo;
   }

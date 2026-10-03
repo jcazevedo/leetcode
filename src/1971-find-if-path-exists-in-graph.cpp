@@ -8,12 +8,13 @@ using namespace std;
 class Solution {
  private:
   bool dfs(int source, int destination, const vector<vector<int>>& graph, vector<bool>& visited) {
-    if (source == destination) return true;
-    for (int v : graph[source])
+    if (source == destination) { return true; }
+    for (int v : graph[source]) {
       if (!visited[v]) {
         visited[v] = true;
-        if (dfs(v, destination, graph, visited)) return true;
+        if (dfs(v, destination, graph, visited)) { return true; }
       }
+    }
     return false;
   }
 

@@ -13,8 +13,8 @@ class Solution {
     while (x != 0) {
       int digit = x % 10;
       x /= 10;
-      if (ans > maxValue / 10 || (ans == maxValue / 10 && digit > 7)) return 0;
-      if (ans < minValue / 10 || (ans == minValue / 10 && digit < -8)) return 0;
+      if (ans > maxValue / 10 || (ans == maxValue / 10 && digit > 7)) { return 0; }
+      if (ans < minValue / 10 || (ans == minValue / 10 && digit < -8)) { return 0; }
       ans = ans * 10 + digit;
     }
     return ans;

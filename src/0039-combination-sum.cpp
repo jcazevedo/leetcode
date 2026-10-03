@@ -12,7 +12,7 @@ class Solution {
   map<pair<int, int>, set<vector<int>>> cache;
 
   void go(int target, int maxC, const vector<int>& candidates) {
-    if (target <= 0) return;
+    if (target <= 0) { return; }
     if (cache.count({target, maxC}) == 0) {
       set<vector<int>> curr;
       for (int i = maxC; i >= 0; --i) {
@@ -24,7 +24,7 @@ class Solution {
           vv.push_back(n);
           curr.insert(vv);
         }
-        if (next == 0) curr.insert({n});
+        if (next == 0) { curr.insert({n}); }
       }
       cache[{target, maxC}] = curr;
     }
@@ -35,7 +35,7 @@ class Solution {
     cache.clear();
     go(target, candidates.size() - 1, candidates);
     vector<vector<int>> res;
-    for (vector<int> v : cache[{target, candidates.size() - 1}]) res.push_back(v);
+    for (vector<int> v : cache[{target, candidates.size() - 1}]) { res.push_back(v); }
     return res;
   }
 };

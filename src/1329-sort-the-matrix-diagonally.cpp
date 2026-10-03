@@ -13,12 +13,12 @@ class Solution {
     for (int i = 0; i < n; ++i) {
       vector<int> diag;
       int j = 0, k = i;
-      while (j < m && k < n) diag.push_back(mat[j++][k++]);
+      while (j < m && k < n) { diag.push_back(mat[j++][k++]); }
       sort(diag.begin(), diag.end());
       j = 0;
       k = i;
       int d = 0;
-      while (j < m && k < n) mat[j++][k++] = diag[d++];
+      while (j < m && k < n) { mat[j++][k++] = diag[d++]; }
     }
     for (int i = 1; i < m; ++i) {
       vector<int> diag;
@@ -31,7 +31,7 @@ class Solution {
       sort(diag.begin(), diag.end());
       j = i, k = 0;
       int d = 0;
-      while (j < m && k < n) mat[j++][k++] = diag[d++];
+      while (j < m && k < n) { mat[j++][k++] = diag[d++]; }
     }
     return mat;
   }

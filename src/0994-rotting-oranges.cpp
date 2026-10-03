@@ -47,7 +47,7 @@ class Solution {
     for (int i = 0; i < H; ++i) {
       for (int j = 0; j < W; ++j) {
         if (grid[i][j] == 1) {
-          if (dists[i][j] == -1) return -1;
+          if (dists[i][j] == -1) { return -1; }
           ans = max(ans, dists[i][j]);
         }
       }

@@ -18,14 +18,14 @@ class Solution {
  private:
   void go(TreeNode* curr, vector<int>& traversal) {
     traversal.push_back(curr->val);
-    if (curr->left != nullptr) go(curr->left, traversal);
-    if (curr->right != nullptr) go(curr->right, traversal);
+    if (curr->left != nullptr) { go(curr->left, traversal); }
+    if (curr->right != nullptr) { go(curr->right, traversal); }
   }
 
  public:
   vector<int> preorderTraversal(TreeNode* root) {
     vector<int> ans;
-    if (root == nullptr) return ans;
+    if (root == nullptr) { return ans; }
     go(root, ans);
     return ans;
   }

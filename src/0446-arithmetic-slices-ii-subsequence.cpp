@@ -12,7 +12,7 @@ class Solution {
     int N = nums.size();
     vector<unordered_map<long long, int>> dp(N);
     int ans = 0;
-    for (int i = 0; i < N; ++i)
+    for (int i = 0; i < N; ++i) {
       for (int j = 0; j < i; ++j) {
         long long diff = (long long)nums[j] - nums[i];
         dp[i][diff] += 1;
@@ -21,6 +21,7 @@ class Solution {
           ans += dp[j][diff];
         }
       }
+    }
     return ans;
   }
 };

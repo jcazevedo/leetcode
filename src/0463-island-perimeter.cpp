@@ -19,12 +19,13 @@ class Solution {
     for (pair<int, int> dir : dirs) {
       int ni = i + dir.first;
       int nj = j + dir.second;
-      if (ni < 0 || ni >= H || nj < 0 || nj >= W)
+      if (ni < 0 || ni >= H || nj < 0 || nj >= W) {
         cnt++;
-      else if (_grid[ni][nj] == 0)
+      } else if (_grid[ni][nj] == 0) {
         cnt++;
-      else if (!visited[ni][nj])
+      } else if (!visited[ni][nj]) {
         cnt += get_perimeter(ni, nj);
+      }
     }
     return cnt;
   }
@@ -37,7 +38,7 @@ class Solution {
     _grid = grid;
     for (int i = 0; i < H; ++i) {
       for (int j = 0; j < W; ++j) {
-        if (grid[i][j] == 1) return get_perimeter(i, j);
+        if (grid[i][j] == 1) { return get_perimeter(i, j); }
       }
     }
     return 0;

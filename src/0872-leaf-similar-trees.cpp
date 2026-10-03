@@ -17,9 +17,9 @@ struct TreeNode {
 class Solution {
  private:
   void leafValueSequence(TreeNode* root, vector<int>& curr) {
-    if (root == nullptr || (root->left == nullptr && root->right == nullptr)) curr.push_back(root->val);
-    if (root->left != nullptr) leafValueSequence(root->left, curr);
-    if (root->right != nullptr) leafValueSequence(root->right, curr);
+    if (root == nullptr || (root->left == nullptr && root->right == nullptr)) { curr.push_back(root->val); }
+    if (root->left != nullptr) { leafValueSequence(root->left, curr); }
+    if (root->right != nullptr) { leafValueSequence(root->right, curr); }
   }
 
  public:

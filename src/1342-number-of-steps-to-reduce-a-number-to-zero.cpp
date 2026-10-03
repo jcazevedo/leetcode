@@ -6,10 +6,11 @@ class Solution {
   int numberOfSteps(int num) {
     int ans = 0;
     while (num != 0) {
-      if (num % 2 == 0)
+      if (num % 2 == 0) {
         num /= 2;
-      else
+      } else {
         num -= 1;
+      }
       ++ans;
     }
     return ans;

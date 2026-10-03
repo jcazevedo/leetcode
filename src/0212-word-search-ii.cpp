@@ -36,7 +36,7 @@ class Solution {
     if (trie->next[board[i][j] - 'a'] != nullptr) {
       TrieNode* next = trie->next[board[i][j] - 'a'];
       word += board[i][j];
-      if (next->is_end) found.insert(word);
+      if (next->is_end) { found.insert(word); }
       visited[i][j] = true;
       for (pair<int, int> dir : dirs) {
         int ni = i + dir.first;
@@ -62,14 +62,14 @@ class Solution {
  public:
   vector<string> findWords(vector<vector<char>>& board, vector<string>& words) {
     TrieNode* trie = new TrieNode();
-    for (string word : words) insert(trie, word);
+    for (string word : words) { insert(trie, word); }
     int H = board.size();
     int W = board[0].size();
     vector<vector<bool>> visited(H, vector<bool>(W, false));
     found.clear();
     dfs(board, trie, visited, 0, 0, "");
     vector<string> res;
-    for (string word : found) res.push_back(word);
+    for (string word : found) { res.push_back(word); }
     return res;
   }
 };

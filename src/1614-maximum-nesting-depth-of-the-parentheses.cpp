@@ -11,10 +11,11 @@ class Solution {
   int maxDepth(string s) {
     int ans = 0, curr = 0;
     for (const char& ch : s) {
-      if (ch == '(')
+      if (ch == '(') {
         ++curr;
-      else if (ch == ')')
+      } else if (ch == ')') {
         --curr;
+      }
       ans = max(ans, curr);
     }
     return ans;

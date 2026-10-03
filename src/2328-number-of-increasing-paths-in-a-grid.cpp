@@ -17,8 +17,9 @@ class Solution {
       for (int d = 0; d < (int)directions.size(); ++d) {
         int ni = i + directions[d][0];
         int nj = j + directions[d][1];
-        if (ni >= 0 && ni < M && nj >= 0 && nj < N && grid[ni][nj] < grid[i][j])
+        if (ni >= 0 && ni < M && nj >= 0 && nj < N && grid[ni][nj] < grid[i][j]) {
           ans = (ans + pathsEnding(ni, nj, M, N, grid, cache)) % MOD;
+        }
       }
       cache[i][j] = ans;
     }
@@ -31,8 +32,9 @@ class Solution {
     int N = grid[0].size();
     vector<vector<int>> cache = vector<vector<int>>(M, vector<int>(N, -1));
     long long ans = 0;
-    for (int i = 0; i < M; ++i)
-      for (int j = 0; j < N; ++j) ans = (ans + pathsEnding(i, j, M, N, grid, cache)) % MOD;
+    for (int i = 0; i < M; ++i) {
+      for (int j = 0; j < N; ++j) { ans = (ans + pathsEnding(i, j, M, N, grid, cache)) % MOD; }
+    }
     return ans;
   }
 };

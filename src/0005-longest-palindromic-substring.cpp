@@ -17,16 +17,17 @@ class Solution {
       if (s[l] != s[r]) {
         dp[l][r] = 0;
       } else {
-        if (l == r)
+        if (l == r) {
           dp[l][r] = 1;
-        else if (l + 1 == r)
+        } else if (l + 1 == r) {
           dp[l][r] = 2;
-        else {
+        } else {
           int m = go(s, l + 1, r - 1);
-          if (m != 0)
+          if (m != 0) {
             dp[l][r] = 2 + m;
-          else
+          } else {
             dp[l][r] = 0;
+          }
         }
       }
     }
@@ -35,7 +36,7 @@ class Solution {
 
  public:
   string longestPalindrome(string s) {
-    if (s == "") return s;
+    if (s == "") { return s; }
     memset(dp, -1, sizeof(dp));
     int N = s.size();
     int best = 0, l = -1, si = -1;

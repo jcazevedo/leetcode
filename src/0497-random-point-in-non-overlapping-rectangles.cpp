@@ -19,7 +19,7 @@ class Solution {
     for (const vector<int>& rect : rects) {
       int area = (rect[2] - rect[0] + 1) * (rect[3] - rect[1] + 1);
       totArea += area;
-      if (rand() % totArea < area) selectedRectangle = rect;
+      if (rand() % totArea < area) { selectedRectangle = rect; }
     }
     int x = rand() % (selectedRectangle[2] - selectedRectangle[0] + 1) + selectedRectangle[0];
     int y = rand() % (selectedRectangle[3] - selectedRectangle[1] + 1) + selectedRectangle[1];

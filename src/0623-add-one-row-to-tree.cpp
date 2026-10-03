@@ -13,9 +13,9 @@ struct TreeNode {
 class Solution {
  public:
   TreeNode *addOneRow(TreeNode *root, int val, int depth, bool fromLeft = true) {
-    if (depth == 1) return new TreeNode(val, fromLeft ? root : nullptr, !fromLeft ? root : nullptr);
+    if (depth == 1) { return new TreeNode(val, fromLeft ? root : nullptr, !fromLeft ? root : nullptr); }
 
-    if (root == nullptr) return root;
+    if (root == nullptr) { return root; }
 
     root->left = addOneRow(root->left, val, depth - 1, true);
     root->right = addOneRow(root->right, val, depth - 1, false);

@@ -19,8 +19,8 @@ class Solution {
         lo = mid + 1;
       }
     }
-    if (lo >= N) --lo;
-    if (arr[lo] != x && lo > 0 && abs(x - arr[lo - 1]) <= abs(x - arr[lo])) --lo;
+    if (lo >= N) { --lo; }
+    if (arr[lo] != x && lo > 0 && abs(x - arr[lo - 1]) <= abs(x - arr[lo])) { --lo; }
     vector<int> ans = {arr[lo]};
     int left = lo - 1;
     int right = lo + 1;

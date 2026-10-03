@@ -11,7 +11,7 @@ class Solution {
     if (N == (int)nums.size()) {
       vector<int> n;
       for (int i = 0; i < N; i++) {
-        if (include[i]) n.push_back(nums[i]);
+        if (include[i]) { n.push_back(nums[i]); }
       }
       res.push_back(n);
     } else {

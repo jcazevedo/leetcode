@@ -12,17 +12,18 @@ struct ListNode {
 class Solution {
  public:
   ListNode* deleteDuplicates(ListNode* head) {
-    if (head == nullptr) return head;
+    if (head == nullptr) { return head; }
     ListNode* parent = new ListNode(-1);
     parent->next = head;
     ListNode* pre = parent;
     ListNode* curr = head;
     while (curr != nullptr) {
-      while (curr->next != nullptr && curr->val == curr->next->val) curr = curr->next;
-      if (pre->next == curr)
+      while (curr->next != nullptr && curr->val == curr->next->val) { curr = curr->next; }
+      if (pre->next == curr) {
         pre = pre->next;
-      else
+      } else {
         pre->next = curr->next;
+      }
       curr = curr->next;
     }
     return parent->next;

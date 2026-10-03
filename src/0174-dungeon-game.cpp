@@ -14,7 +14,7 @@ class Solution {
     int N = dungeon[0].size();
     vector<vector<int>> dist(M, vector<int>(N, INT_MIN));
     int start = health + dungeon[0][0];
-    if (start <= 0) return false;
+    if (start <= 0) { return false; }
     dist[0][0] = start;
     queue<pair<int, int>> q;
     q.push({0, 0});

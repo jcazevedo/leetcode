@@ -19,7 +19,7 @@ class Solution {
     if (cache[row][col_0][col_1] == UNSET) {
       int curr = 0;
       curr += _grid[row][col_0];
-      if (col_1 != col_0) curr += _grid[row][col_1];
+      if (col_1 != col_0) { curr += _grid[row][col_1]; }
       if (col_0 > row || C - col_1 - 1 > row) {
         cache[row][col_0][col_1] = IMPOSSIBLE;
       } else if (row == 0) {
@@ -29,7 +29,7 @@ class Solution {
         for (int d0 = -1; d0 <= 1; ++d0) {
           for (int d1 = -1; d1 <= 1; ++d1) {
             int next = max_pickup(row - 1, col_0 + d0, col_1 + d1);
-            if (next == IMPOSSIBLE) continue;
+            if (next == IMPOSSIBLE) { continue; }
             best = max(best, curr + next);
           }
         }

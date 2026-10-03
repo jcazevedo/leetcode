@@ -25,10 +25,10 @@ class Solution {
  private:
   vector<vector<int>> ans;
   void go(Node* node, int level) {
-    if (node == nullptr) return;
-    while (level >= (int)ans.size()) ans.push_back({});
+    if (node == nullptr) { return; }
+    while (level >= (int)ans.size()) { ans.push_back({}); }
     ans[level].push_back(node->val);
-    for (Node* child : node->children) go(child, level + 1);
+    for (Node* child : node->children) { go(child, level + 1); }
   }
 
  public:

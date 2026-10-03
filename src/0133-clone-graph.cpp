@@ -46,7 +46,7 @@ class Solution {
 
  public:
   Node* cloneGraph(Node* node) {
-    if (node != nullptr) return copy(node);
+    if (node != nullptr) { return copy(node); }
     return nullptr;
   }
 };

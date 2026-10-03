@@ -10,8 +10,8 @@ class Solution {
       ++n;
       m = n * q / p;
     }
-    if (m % 2 == 0) return 0;
-    if (n % 2 == 1) return 1;
+    if (m % 2 == 0) { return 0; }
+    if (n % 2 == 1) { return 1; }
     return 2;
   }
 };

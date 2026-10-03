@@ -26,15 +26,15 @@ class Solution {
         int open = 0;
         int r = l + 1;
         while (r < N) {
-          if (s[r] == '[') open++;
+          if (s[r] == '[') { open++; }
           if (s[r] == ']') {
-            if (open == 0) break;
+            if (open == 0) { break; }
             open--;
           }
           ++r;
         }
         string to_repeat = decodeString(s.substr(l + 1, r - l - 1));
-        while (cnt--) ans += to_repeat;
+        while (cnt--) { ans += to_repeat; }
         i = r + 1;
       } else {
         ans += s[i++];

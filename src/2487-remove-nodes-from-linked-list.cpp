@@ -19,8 +19,8 @@ class Solution {
     stack<ListNode*> s;
     ListNode* curr = head;
     while (curr != nullptr) {
-      while (!s.empty() && s.top()->val < curr->val) s.pop();
-      if (!s.empty()) s.top()->next = curr;
+      while (!s.empty() && s.top()->val < curr->val) { s.pop(); }
+      if (!s.empty()) { s.top()->next = curr; }
       s.push(curr);
       curr = curr->next;
     }

@@ -23,7 +23,7 @@ class Solution {
         itr++;
       }
       itr = arr.begin();
-      for (int j = 0; j <= i; ++j) itr++;
+      for (int j = 0; j <= i; ++j) { itr++; }
       ans.push_back(target);
       reverse(arr.begin(), itr);
     }

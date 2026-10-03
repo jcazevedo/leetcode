@@ -10,7 +10,7 @@ class Solution {
  public:
   int rand10() {
     int ans = 0;
-    for (int i = 0; i < 10; ++i) ans += (rand7() - 1);
+    for (int i = 0; i < 10; ++i) { ans += (rand7() - 1); }
     return ans % 10 + 1;
   }
 };

@@ -16,23 +16,23 @@ void dp() {
   ops = vector<long long>(MAXN + 1, numeric_limits<int>::max());
   ops[0] = 0L;
   for (int i = 1; i <= MAXN; ++i) {
-    if (i - 2 >= 0) ops[i] = min(ops[i], ops[i - 2] + 1L);
-    if (i - 3 >= 0) ops[i] = min(ops[i], ops[i - 3] + 1L);
+    if (i - 2 >= 0) { ops[i] = min(ops[i], ops[i - 2] + 1L); }
+    if (i - 3 >= 0) { ops[i] = min(ops[i], ops[i - 3] + 1L); }
   }
 }
 
 class Solution {
  public:
   int minOperations(vector<int>& nums) {
-    if (ops.empty()) dp();
+    if (ops.empty()) { dp(); }
 
     unordered_map<int, int> cnts;
-    for (int v : nums) cnts[v]++;
+    for (int v : nums) { cnts[v]++; }
 
     int ans = 0;
     for (unordered_map<int, int>::iterator itr = cnts.begin(); itr != cnts.end(); ++itr) {
       int v = ops[itr->second];
-      if (v == numeric_limits<int>::max()) return -1;
+      if (v == numeric_limits<int>::max()) { return -1; }
       ans += v;
     }
 

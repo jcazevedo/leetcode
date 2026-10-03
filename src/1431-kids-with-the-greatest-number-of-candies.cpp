@@ -13,7 +13,7 @@ class Solution {
     for (int i = 0; i < N; ++i) {
       res[i] = true;
       for (int j = 0; j < N; ++j) {
-        if (i == j) continue;
+        if (i == j) { continue; }
         if (candies[i] + extraCandies < candies[j]) {
           res[i] = false;
           break;

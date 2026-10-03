@@ -18,14 +18,15 @@ class Solution {
            vector<vector<bool>>& visited,
            int H,
            int W) {
-    if (idx >= (int)word.size() - 1) return true;
+    if (idx >= (int)word.size() - 1) { return true; }
     visited[i][j] = true;
     for (pair<int, int> dir : dirs) {
       int ni = i + dir.first;
       int nj = j + dir.second;
       if (ni >= 0 && ni < H && nj >= 0 && nj < W && !visited[ni][nj] && board[ni][nj] == word[idx + 1] &&
-          dfs(ni, nj, idx + 1, word, board, visited, H, W))
+          dfs(ni, nj, idx + 1, word, board, visited, H, W)) {
         return true;
+      }
     }
     visited[i][j] = false;
     return false;
@@ -33,16 +34,16 @@ class Solution {
 
  public:
   bool exist(vector<vector<char>>& board, string word) {
-    if (word.empty()) return true;
+    if (word.empty()) { return true; }
     int H = board.size();
-    if (H == 0) return false;
+    if (H == 0) { return false; }
     int W = board[0].size();
     vector<vector<bool>> visited;
     for (int i = 0; i < H; ++i) {
       for (int j = 0; j < W; ++j) {
         if (board[i][j] == word[0]) {
           visited.assign(H, vector<bool>(W, false));
-          if (dfs(i, j, 0, word, board, visited, H, W)) return true;
+          if (dfs(i, j, 0, word, board, visited, H, W)) { return true; }
         }
       }
     }

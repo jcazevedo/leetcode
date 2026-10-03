@@ -9,9 +9,9 @@ using namespace std;
 class Solution {
  public:
   int strStr(string haystack, string needle) {
-    if (needle.size() == 0) return 0;
+    if (needle.size() == 0) { return 0; }
 
-    if (needle.size() > haystack.size()) return -1;
+    if (needle.size() > haystack.size()) { return -1; }
 
     vector<int> T = vector<int>(needle.size(), 0);
 
@@ -38,13 +38,14 @@ class Solution {
         ++j;
       }
 
-      if (j == (int)needle.size())
+      if (j == (int)needle.size()) {
         return i - j;
-      else if (i < (int)haystack.size() && needle[j] != haystack[i]) {
-        if (j != 0)
+      } else if (i < (int)haystack.size() && needle[j] != haystack[i]) {
+        if (j != 0) {
           j = T[j - 1];
-        else
+        } else {
           ++i;
+        }
       }
     }
 

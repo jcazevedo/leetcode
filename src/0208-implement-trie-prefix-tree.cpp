@@ -35,7 +35,7 @@ class Trie {
   bool search(string word) {
     TrieNode* curr = root;
     for (char ch : word) {
-      if (curr->next[ch - 'a'] == nullptr) return false;
+      if (curr->next[ch - 'a'] == nullptr) { return false; }
       curr = curr->next[ch - 'a'];
     }
     return curr->is_end;
@@ -44,7 +44,7 @@ class Trie {
   bool startsWith(string prefix) {
     TrieNode* curr = root;
     for (char ch : prefix) {
-      if (curr->next[ch - 'a'] == nullptr) return false;
+      if (curr->next[ch - 'a'] == nullptr) { return false; }
       curr = curr->next[ch - 'a'];
     }
     return true;

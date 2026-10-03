@@ -26,19 +26,20 @@ class Solution {
   void go(TreeNode* curr, int level) {
     levels = max(levels, level);
     levelSum[level] += curr->val;
-    if (curr->left != nullptr) go(curr->left, level + 1);
-    if (curr->right != nullptr) go(curr->right, level + 1);
+    if (curr->left != nullptr) { go(curr->left, level + 1); }
+    if (curr->right != nullptr) { go(curr->right, level + 1); }
   }
 
  public:
   int maxLevelSum(TreeNode* root) {
     go(root, 1);
     int ans = 0, best = numeric_limits<int>::min();
-    for (int level = 1; level <= levels; ++level)
+    for (int level = 1; level <= levels; ++level) {
       if (levelSum[level] > best) {
         best = levelSum[level];
         ans = level;
       }
+    }
     return ans;
   }
 };

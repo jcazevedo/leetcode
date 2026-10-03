@@ -22,12 +22,13 @@ class Solution {
     while (lo < hi) {
       int mid = lo + (hi - lo) / 2;
       int v = binaryMatrix.get(row, mid);
-      if (v == 1)
+      if (v == 1) {
         hi = mid;
-      else
+      } else {
         lo = mid + 1;
+      }
     }
-    if (binaryMatrix.get(row, lo) == 0) return -1;
+    if (binaryMatrix.get(row, lo) == 0) { return -1; }
     return lo;
   }
 
@@ -39,7 +40,7 @@ class Solution {
     int best = -1;
     for (int i = 0; i < N; ++i) {
       int at_row = best_at_row(binaryMatrix, i, best == -1 ? M - 1 : best - 1);
-      if (at_row != -1) best = at_row;
+      if (at_row != -1) { best = at_row; }
     }
     return best;
   }

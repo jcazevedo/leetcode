@@ -24,13 +24,13 @@ class Solution {
 
   void dfs(TreeNode* root, int level = 0) {
     res[level].push_back(root->val);
-    if (root->left != nullptr) dfs(root->left, level + 1);
-    if (root->right != nullptr) dfs(root->right, level + 1);
+    if (root->left != nullptr) { dfs(root->left, level + 1); }
+    if (root->right != nullptr) { dfs(root->right, level + 1); }
   }
 
  public:
   vector<vector<int>> levelOrderBottom(TreeNode* root) {
-    if (root == nullptr) return vector<vector<int>>();
+    if (root == nullptr) { return vector<vector<int>>(); }
     res.clear();
     dfs(root);
     vector<vector<int>> answer;

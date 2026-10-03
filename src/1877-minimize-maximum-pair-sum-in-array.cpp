@@ -12,7 +12,7 @@ class Solution {
     int N = nums.size();
     sort(nums.begin(), nums.end());
     int ans = 0;
-    for (int i = 0; i < N / 2; ++i) ans = max(ans, nums[i] + nums[N - i - 1]);
+    for (int i = 0; i < N / 2; ++i) { ans = max(ans, nums[i] + nums[N - i - 1]); }
     return ans;
   }
 };

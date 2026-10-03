@@ -11,7 +11,7 @@ class Solution {
 
  public:
   int numSquares(int n) {
-    if (cache.size() == 0) cache.push_back(0);
+    if (cache.size() == 0) { cache.push_back(0); }
     while ((int)cache.size() <= n) {
       int c = cache.size();
       int best = c;

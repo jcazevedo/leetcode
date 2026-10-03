@@ -16,66 +16,75 @@ class Solution {
     State state = INIT;
     for (const char& ch : s) {
       if (state == INIT) {
-        if (ch == '+' || ch == '-')
+        if (ch == '+' || ch == '-') {
           state = I1;
-        else if (ch >= '0' && ch <= '9')
+        } else if (ch >= '0' && ch <= '9') {
           state = F1;
-        else if (ch == '.')
+        } else if (ch == '.') {
           state = I2;
-        else
+        } else {
           return false;
+        }
       } else if (state == I1) {
-        if (ch >= '0' && ch <= '9')
+        if (ch >= '0' && ch <= '9') {
           state = F1;
-        else if (ch == '.')
+        } else if (ch == '.') {
           state = I2;
-        else
+        } else {
           return false;
+        }
       } else if (state == F1) {
-        if (ch == 'e' || ch == 'E')
+        if (ch == 'e' || ch == 'E') {
           state = I3;
-        else if (ch == '.')
+        } else if (ch == '.') {
           state = F2;
-        else if (ch >= '0' && ch <= '9')
+        } else if (ch >= '0' && ch <= '9') {
           state = F1;
-        else
+        } else {
           return false;
+        }
       } else if (state == I2) {
-        if (ch >= '0' && ch <= '9')
+        if (ch >= '0' && ch <= '9') {
           state = F2;
-        else
+        } else {
           return false;
+        }
       } else if (state == I3) {
-        if (ch >= '0' && ch <= '9')
+        if (ch >= '0' && ch <= '9') {
           state = F3;
-        else if (ch == '+' || ch == '-')
+        } else if (ch == '+' || ch == '-') {
           state = I5;
-        else
+        } else {
           return false;
+        }
       } else if (state == F2) {
-        if (ch == 'e' || ch == 'E')
+        if (ch == 'e' || ch == 'E') {
           state = I4;
-        else if (ch >= '0' && ch <= '9')
+        } else if (ch >= '0' && ch <= '9') {
           state = F2;
-        else
+        } else {
           return false;
+        }
       } else if (state == I4) {
-        if (ch >= '0' && ch <= '9')
+        if (ch >= '0' && ch <= '9') {
           state = F3;
-        else if (ch == '+' || ch == '-')
+        } else if (ch == '+' || ch == '-') {
           state = I5;
-        else
+        } else {
           return false;
+        }
       } else if (state == I5) {
-        if (ch >= '0' && ch <= '9')
+        if (ch >= '0' && ch <= '9') {
           state = F3;
-        else
+        } else {
           return false;
+        }
       } else if (state == F3) {
-        if (ch >= '0' && ch <= '9')
+        if (ch >= '0' && ch <= '9') {
           state = F3;
-        else
+        } else {
           return false;
+        }
       }
     }
     return isFinalState(state);

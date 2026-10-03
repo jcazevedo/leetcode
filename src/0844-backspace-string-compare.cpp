@@ -22,9 +22,9 @@ class Solution {
         if (T[ti] != '#') { del--; }
         ti--;
       }
-      if (ti >= 0 && si >= 0 && T[ti] != S[si]) return false;
-      if (ti < 0 && si >= 0) return false;
-      if (si < 0 && ti >= 0) return false;
+      if (ti >= 0 && si >= 0 && T[ti] != S[si]) { return false; }
+      if (ti < 0 && si >= 0) { return false; }
+      if (si < 0 && ti >= 0) { return false; }
       si--;
       ti--;
     }

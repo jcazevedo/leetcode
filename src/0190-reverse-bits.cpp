@@ -11,7 +11,7 @@ class Solution {
     uint32_t res = 0;
     for (int i = 0; i < 32; ++i) {
       res <<= 1;
-      if ((1 << i) & n) res += 1;
+      if ((1 << i) & n) { res += 1; }
     }
     return res;
   }

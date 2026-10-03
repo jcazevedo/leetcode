@@ -12,7 +12,7 @@ class Solution {
     sort(happiness.begin(), happiness.end());
     reverse(happiness.begin(), happiness.end());
     long long ans = 0L;
-    for (int i = 0; i < k; ++i) ans += max(happiness[i] - i, 0);
+    for (int i = 0; i < k; ++i) { ans += max(happiness[i] - i, 0); }
     return ans;
   }
 };

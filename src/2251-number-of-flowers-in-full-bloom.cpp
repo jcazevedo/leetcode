@@ -19,14 +19,14 @@ class Solution {
       pq.push({flower[0], FLOWER_IN});
       pq.push({flower[1], FLOWER_OUT});
     }
-    for (int i = 0; i < (int)people.size(); ++i) pq.push({people[i], PEOPLE_IN, i});
+    for (int i = 0; i < (int)people.size(); ++i) { pq.push({people[i], PEOPLE_IN, i}); }
     int currFlowers = 0;
     while (!pq.empty()) {
       vector<int> curr = pq.top();
       pq.pop();
-      if (curr[1] == FLOWER_IN) currFlowers++;
-      if (curr[1] == FLOWER_OUT) currFlowers--;
-      if (curr[1] == PEOPLE_IN) ans[curr[2]] = currFlowers;
+      if (curr[1] == FLOWER_IN) { currFlowers++; }
+      if (curr[1] == FLOWER_OUT) { currFlowers--; }
+      if (curr[1] == PEOPLE_IN) { ans[curr[2]] = currFlowers; }
     }
     return ans;
   }

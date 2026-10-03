@@ -12,16 +12,16 @@ class Solution {
 
     vector<int> prefixXor(N);
     prefixXor[0] = arr[0];
-    for (int i = 1; i < N; ++i) prefixXor[i] = prefixXor[i - 1] ^ arr[i];
+    for (int i = 1; i < N; ++i) { prefixXor[i] = prefixXor[i - 1] ^ arr[i]; }
 
     int ans = 0;
     for (int i = 0; i < N; ++i) {
       for (int j = i + 1; j < N; ++j) {
         int a = prefixXor[j - 1];
-        if (i - 1 >= 0) a ^= prefixXor[i - 1];
+        if (i - 1 >= 0) { a ^= prefixXor[i - 1]; }
         for (int k = j; k < N; ++k) {
           int b = prefixXor[k] ^ prefixXor[j - 1];
-          if (a == b) ++ans;
+          if (a == b) { ++ans; }
         }
       }
     }

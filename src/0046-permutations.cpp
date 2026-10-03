@@ -16,7 +16,7 @@ class Solution {
       return res;
     }
     for (int i = 0; i < N; i++) {
-      if (used[i]) continue;
+      if (used[i]) { continue; }
       used[i] = true;
       vector<vector<int>> other = aux(nums, used, T + 1);
       used[i] = false;

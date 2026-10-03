@@ -10,8 +10,9 @@ class Solution {
  private:
   int maxRequests(int curr, vector<int>& buildingDiff, vector<vector<int>>& requests, int count, int bestSoFar) {
     if (curr == (int)requests.size()) {
-      for (int d : buildingDiff)
-        if (d != 0) return -1;
+      for (int d : buildingDiff) {
+        if (d != 0) { return -1; }
+      }
       return max(count, bestSoFar);
     }
 

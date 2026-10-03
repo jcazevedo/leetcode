@@ -16,7 +16,7 @@ class Solution {
     while (ss >> tmp) { st.push(tmp); }
     string res = "";
     while (!st.empty()) {
-      if (!res.empty()) res += " ";
+      if (!res.empty()) { res += " "; }
       res += st.top();
       st.pop();
     }

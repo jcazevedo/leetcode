@@ -20,9 +20,9 @@ class Solution {
     sort(A.begin(), A.end());
     vector<int> best;
     do {
-      if (good(A)) best = A;
+      if (good(A)) { best = A; }
     } while (next_permutation(A.begin(), A.end()));
-    if (best.empty()) return "";
+    if (best.empty()) { return ""; }
     string ans = "";
     ans += best[0] + '0';
     ans += best[1] + '0';

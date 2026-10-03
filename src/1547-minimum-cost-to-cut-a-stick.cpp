@@ -16,14 +16,15 @@ class Solution {
       int best = numeric_limits<int>::max();
       bool hasCutToDo = false;
       for (int cut : cuts) {
-        if (cut <= from || cut >= to) continue;
+        if (cut <= from || cut >= to) { continue; }
         hasCutToDo = true;
         best = min(best, length + bestAux(from, cut, cuts, cache) + bestAux(cut, to, cuts, cache));
       }
-      if (!hasCutToDo)
+      if (!hasCutToDo) {
         cache[{from, to}] = 0;
-      else
+      } else {
         cache[{from, to}] = best;
+      }
     }
     return cache[{from, to}];
   }

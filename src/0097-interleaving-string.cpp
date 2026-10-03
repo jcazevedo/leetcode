@@ -18,10 +18,10 @@ class Solution {
       int prev = i3 - 1;
       for (int i1 = 0; i1 <= min(N1, prev); ++i1) {
         int i2 = prev - i1;
-        if (i2 > N2) continue;
+        if (i2 > N2) { continue; }
         if (dp[i1][i2]) {
-          if (i1 + 1 <= N1) dp[i1 + 1][i2] = s3[i3 - 1] == s1[i1];
-          if (i2 + 1 <= N2) dp[i1][i2 + 1] = s3[i3 - 1] == s2[i2];
+          if (i1 + 1 <= N1) { dp[i1 + 1][i2] = s3[i3 - 1] == s1[i1]; }
+          if (i2 + 1 <= N2) { dp[i1][i2 + 1] = s3[i3 - 1] == s2[i2]; }
         }
       }
     }

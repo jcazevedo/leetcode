@@ -23,9 +23,9 @@ class Node {
 class Solution {
  public:
   int maxDepth(Node* root) {
-    if (root == nullptr) return 0;
+    if (root == nullptr) { return 0; }
     int tot = 1;
-    for (Node* child : root->children) tot = max(tot, 1 + maxDepth(child));
+    for (Node* child : root->children) { tot = max(tot, 1 + maxDepth(child)); }
     return tot;
   }
 };

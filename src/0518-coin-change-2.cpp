@@ -13,7 +13,7 @@ class Solution {
     ways[0] = 1;
     for (int j = 0; j < C; ++j) {
       for (int i = 1; i <= amount; ++i) {
-        if (i - coins[j] >= 0) ways[i] += ways[i - coins[j]];
+        if (i - coins[j] >= 0) { ways[i] += ways[i - coins[j]]; }
       }
     }
     return ways[amount];

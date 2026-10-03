@@ -19,7 +19,7 @@ class Solution {
       ans += (char)((res % 10) + '0');
       carry = res / 10;
     }
-    if (carry) ans += (char)(carry + '0');
+    if (carry) { ans += (char)(carry + '0'); }
     reverse(ans.begin(), ans.end());
     return ans;
   }
@@ -34,19 +34,19 @@ class Solution {
       ans += (char)((res % 10) + '0');
       carry = res / 10;
     }
-    if (carry) ans += (char)(carry + '0');
+    if (carry) { ans += (char)(carry + '0'); }
     reverse(ans.begin(), ans.end());
     return ans;
   }
 
  public:
   string multiply(string num1, string num2) {
-    if (num1 == "0" || num2 == "0") return "0";
+    if (num1 == "0" || num2 == "0") { return "0"; }
     string ans = "0";
     int N = num2.size();
     for (int i = 0; i < N; ++i) {
       string m = mult(num1, num2[N - i - 1]);
-      for (int k = 0; k < i; ++k) m += '0';
+      for (int k = 0; k < i; ++k) { m += '0'; }
       ans = add(ans, m);
     }
     return ans;

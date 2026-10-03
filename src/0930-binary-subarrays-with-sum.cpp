@@ -13,7 +13,7 @@ class Solution {
     unordered_map<int, int> cnt;
     for (int i = 0; i < N; ++i) {
       curr += nums[i];
-      if (curr == goal) ++ans;
+      if (curr == goal) { ++ans; }
       ans += cnt[curr - goal];
       cnt[curr]++;
     }

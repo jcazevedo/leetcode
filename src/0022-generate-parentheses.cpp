@@ -13,8 +13,8 @@ class Solution {
       res.push_back(current);
       return;
     }
-    if (o > c) gen(o, c + 1, n, current + ")", res);
-    if (o < n) gen(o + 1, c, n, current + "(", res);
+    if (o > c) { gen(o, c + 1, n, current + ")", res); }
+    if (o < n) { gen(o + 1, c, n, current + "(", res); }
   }
 
  public:

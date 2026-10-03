@@ -30,7 +30,7 @@ class Solution {
         if (inDegree[v] == 0) { q.push(v); }
       }
     }
-    if (n != 0) return {};
+    if (n != 0) { return {}; }
     return ans;
   }
 
@@ -38,7 +38,7 @@ class Solution {
   vector<vector<int>> buildMatrix(int k, vector<vector<int>>& rowConditions, vector<vector<int>>& colConditions) {
     vector<int> rows = topoSort(rowConditions, k);
     vector<int> columns = topoSort(colConditions, k);
-    if (rows.empty() || columns.empty()) return {};
+    if (rows.empty() || columns.empty()) { return {}; }
     vector<vector<int>> ans(k, vector<int>(k, 0));
     for (int i = 0; i < k; ++i) {
       for (int j = 0; j < k; ++j) {

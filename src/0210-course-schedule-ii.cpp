@@ -19,7 +19,7 @@ class Solution {
       visited[u] = true;
       in_stack[u] = true;
       for (int v : graph[u]) {
-        if ((!visited[v] && has_cycle_dfs(v)) || in_stack[v]) return true;
+        if ((!visited[v] && has_cycle_dfs(v)) || in_stack[v]) { return true; }
       }
     }
     in_stack[u] = false;
@@ -30,7 +30,7 @@ class Solution {
     visited.assign(N, false);
     in_stack.assign(N, false);
     for (int i = 0; i < N; ++i) {
-      if (has_cycle_dfs(i)) return true;
+      if (has_cycle_dfs(i)) { return true; }
     }
     return false;
   }
@@ -38,7 +38,7 @@ class Solution {
   void topological_sort_dfs(int u) {
     visited[u] = true;
     for (int v : graph[u]) {
-      if (!visited[v]) topological_sort_dfs(v);
+      if (!visited[v]) { topological_sort_dfs(v); }
     }
     s.push(u);
   }
@@ -46,7 +46,7 @@ class Solution {
   vector<int> topological_sort() {
     visited.assign(N, false);
     for (int i = 0; i < N; ++i) {
-      if (!visited[i]) topological_sort_dfs(i);
+      if (!visited[i]) { topological_sort_dfs(i); }
     }
     vector<int> res;
     while (!s.empty()) {
@@ -61,7 +61,7 @@ class Solution {
     N = numCourses;
     graph.assign(N, vector<int>());
     for (vector<int> req : prerequisites) { graph[req[1]].push_back(req[0]); }
-    if (has_cycle()) return {};
+    if (has_cycle()) { return {}; }
     return topological_sort();
   }
 };

@@ -14,10 +14,11 @@ class Solution {
   ListNode* deleteDuplicates(ListNode* head) {
     ListNode *curr = head, *prev = nullptr;
     while (curr != nullptr) {
-      if (prev != nullptr && curr->val == prev->val)
+      if (prev != nullptr && curr->val == prev->val) {
         prev->next = curr->next;
-      else
+      } else {
         prev = curr;
+      }
       curr = curr->next;
     }
     return head;

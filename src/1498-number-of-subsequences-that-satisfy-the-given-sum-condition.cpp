@@ -15,7 +15,7 @@ class Solution {
     sort(nums.begin(), nums.end());
     vector<int> pow2(n);
     pow2[0] = 1;
-    for (int i = 1; i < n; ++i) pow2[i] = (pow2[i - 1] * 2) % MOD;
+    for (int i = 1; i < n; ++i) { pow2[i] = (pow2[i - 1] * 2) % MOD; }
     int ans = 0;
     int l = 0, r = n - 1;
     while (l <= r) {

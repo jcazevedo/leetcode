@@ -12,11 +12,11 @@ struct TreeNode {
 class Solution {
  private:
   bool isSymmetricAux(TreeNode* left, TreeNode* right) {
-    if (left == nullptr && right == nullptr) return true;
-    if (left == nullptr || right == nullptr) return false;
+    if (left == nullptr && right == nullptr) { return true; }
+    if (left == nullptr || right == nullptr) { return false; }
     bool outer = isSymmetricAux(left->left, right->right);
-    if (!outer) return outer;
-    if (left->val != right->val) return false;
+    if (!outer) { return outer; }
+    if (left->val != right->val) { return false; }
     return isSymmetricAux(left->right, right->left);
   }
 

@@ -16,7 +16,7 @@ class Solution {
       visited[u] = true;
       stack[u] = true;
       for (int v : graph[u]) {
-        if ((!visited[v] && dfs(v)) || stack[v]) return true;
+        if ((!visited[v] && dfs(v)) || stack[v]) { return true; }
       }
     }
     stack[u] = false;
@@ -30,7 +30,7 @@ class Solution {
     visited.assign(numCourses, false);
     stack.assign(numCourses, false);
     for (int i = 0; i < numCourses; ++i) {
-      if (dfs(i)) return false;
+      if (dfs(i)) { return false; }
     }
     return true;
   }

@@ -12,12 +12,13 @@ class Solution {
  public:
   int maxVowels(string s, int k) {
     int N = s.size(), curr = 0, ans = 0;
-    for (int i = 0; i < k; ++i)
-      if (isVowel(s[i])) ++curr;
+    for (int i = 0; i < k; ++i) {
+      if (isVowel(s[i])) { ++curr; }
+    }
     ans = curr;
     for (int i = k; i < N; ++i) {
-      if (isVowel(s[i - k])) --curr;
-      if (isVowel(s[i])) ++curr;
+      if (isVowel(s[i - k])) { --curr; }
+      if (isVowel(s[i])) { ++curr; }
       ans = max(ans, curr);
     }
     return ans;

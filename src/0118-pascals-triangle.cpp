@@ -12,10 +12,11 @@ class Solution {
     for (int i = 0; i < numRows; ++i) {
       vector<int> curr;
       for (int j = 0; j <= i; ++j) {
-        if (j == 0 || j == i)
+        if (j == 0 || j == i) {
           curr.push_back(1);
-        else
+        } else {
           curr.push_back(ans.back()[j - 1] + ans.back()[j]);
+        }
       }
       ans.push_back(curr);
     }

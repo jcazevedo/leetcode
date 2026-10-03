@@ -10,10 +10,11 @@ class Solution {
   string defangIPaddr(string address) {
     string res = "";
     for (char ch : address) {
-      if (ch == '.')
+      if (ch == '.') {
         res += "[.]";
-      else
+      } else {
         res += ch;
+      }
     }
     return res;
   }

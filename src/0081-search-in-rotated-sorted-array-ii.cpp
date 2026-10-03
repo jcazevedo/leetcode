@@ -12,17 +12,19 @@ class Solution {
     int m, l = 0, r = N - 1;
     while (l <= r) {
       m = l + (r - l) / 2;
-      if (nums[m] == target) return true;
+      if (nums[m] == target) { return true; }
       if (nums[m] < nums[r]) {
-        if (nums[m] < target && target <= nums[r])
+        if (nums[m] < target && target <= nums[r]) {
           l = m + 1;
-        else
+        } else {
           r = m - 1;
+        }
       } else if (nums[m] > nums[r]) {
-        if (nums[m] > target && target >= nums[l])
+        if (nums[m] > target && target >= nums[l]) {
           r = m - 1;
-        else
+        } else {
           l = m + 1;
+        }
       } else {
         r--;
       }

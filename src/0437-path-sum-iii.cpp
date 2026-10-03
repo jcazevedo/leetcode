@@ -22,10 +22,10 @@ class Solution {
   unordered_map<int, int> sums;
 
   int n_paths(TreeNode* curr, int target_sum, int curr_sum) {
-    if (curr == nullptr) return 0;
+    if (curr == nullptr) { return 0; }
     int ans = 0;
     curr_sum += curr->val;
-    if (curr_sum == target_sum) ans++;
+    if (curr_sum == target_sum) { ans++; }
     ans += sums[curr_sum - target_sum];
     sums[curr_sum]++;
     ans += n_paths(curr->left, target_sum, curr_sum);

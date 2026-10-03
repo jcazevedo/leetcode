@@ -25,7 +25,7 @@ class NumArray {
     N = nums.size();
     bit = vector<int>(N, 0);
     prev = vector<int>(N, 0);
-    for (int i = 0; i < N; ++i) update(i, nums[i]);
+    for (int i = 0; i < N; ++i) { update(i, nums[i]); }
   }
 
   void update(int index, int val) {

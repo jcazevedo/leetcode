@@ -12,8 +12,8 @@ class Solution {
   int score[10001];
   int dp[10001];
   int go(int n) {
-    if (n < 0) return 0;
-    if (dp[n] == -1) dp[n] = max(score[n] + go(n - 2), go(n - 1));
+    if (n < 0) { return 0; }
+    if (dp[n] == -1) { dp[n] = max(score[n] + go(n - 2), go(n - 1)); }
     return dp[n];
   }
 

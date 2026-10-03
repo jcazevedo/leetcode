@@ -10,7 +10,7 @@ class Solution {
     while (a * a <= c / 2) {
       int bSq = c - a * a;
       int b = sqrt(bSq);
-      if (b * b == bSq) return true;
+      if (b * b == bSq) { return true; }
       ++a;
     }
     return false;

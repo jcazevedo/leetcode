@@ -21,7 +21,7 @@ struct TreeNode {
 class Solution {
  private:
   pair<long long, long long> go(TreeNode* root) {
-    if (root == nullptr) return {INT_MIN, INT_MIN};
+    if (root == nullptr) { return {INT_MIN, INT_MIN}; }
     long long curr = root->val;
     pair<long long, long long> left = go(root->left);
     pair<long long, long long> right = go(root->right);

@@ -23,10 +23,11 @@ class SnapshotArray {
     int lo = 0, hi = values[index].size() - 1;
     while (lo < hi) {
       int mid = lo + (hi - lo + 1) / 2;
-      if (values[index][mid].first > snap_id)
+      if (values[index][mid].first > snap_id) {
         hi = mid - 1;
-      else
+      } else {
         lo = mid;
+      }
     }
     return values[index][lo].second;
   }

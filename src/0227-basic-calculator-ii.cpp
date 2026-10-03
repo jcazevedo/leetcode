@@ -23,18 +23,18 @@ class Solution {
     char op = '+';
     string trimmed = "";
     for (char ch : s) {
-      if (ch != ' ') trimmed += ch;
+      if (ch != ' ') { trimmed += ch; }
     }
     int N = trimmed.size();
     for (int i = 0; i < N; ++i) {
       if (trimmed[i] != ' ') {
-        if (isdigit(trimmed[i])) curr += trimmed[i];
+        if (isdigit(trimmed[i])) { curr += trimmed[i]; }
         if (!isdigit(trimmed[i]) || i + 1 == N) {
-          if (op == '+')
+          if (op == '+') {
             nums.push(string_to_int(curr));
-          else if (op == '-')
+          } else if (op == '-') {
             nums.push(-string_to_int(curr));
-          else if (op == '*') {
+          } else if (op == '*') {
             int n = nums.top();
             nums.pop();
             nums.push(n * string_to_int(curr));

@@ -18,7 +18,7 @@ class Solution {
         product /= nums[l];
         l++;
       }
-      if (l <= r) ans += (r - l) + 1;
+      if (l <= r) { ans += (r - l) + 1; }
     }
     return ans;
   }

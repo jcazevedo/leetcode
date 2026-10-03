@@ -27,7 +27,7 @@ class Solution {
         int curr = q.front();
         q.pop();
         for (int j = 0; j < N; ++j) {
-          if (visited[j]) continue;
+          if (visited[j]) { continue; }
           if (inCircle(bombs[j][0], bombs[j][1], bombs[curr][0], bombs[curr][1], bombs[curr][2])) {
             visited[j] = true;
             q.push(j);

@@ -19,9 +19,9 @@ class Solution {
  private:
   void fillParentsAndGetStart(
       TreeNode* curr, int start, TreeNode* prev, unordered_map<TreeNode*, TreeNode*>& parent, TreeNode*& startNode) {
-    if (curr == nullptr) return;
-    if (prev != nullptr) parent[curr] = prev;
-    if (curr->val == start) startNode = curr;
+    if (curr == nullptr) { return; }
+    if (prev != nullptr) { parent[curr] = prev; }
+    if (curr->val == start) { startNode = curr; }
     fillParentsAndGetStart(curr->left, start, curr, parent, startNode);
     fillParentsAndGetStart(curr->right, start, curr, parent, startNode);
   }
@@ -29,11 +29,11 @@ class Solution {
   int infect(TreeNode* curr, unordered_map<TreeNode*, TreeNode*>& parent, TreeNode* prev) {
     int ans = 0;
 
-    if (parent[curr] != nullptr && parent[curr] != prev) ans = max(ans, infect(parent[curr], parent, curr) + 1);
+    if (parent[curr] != nullptr && parent[curr] != prev) { ans = max(ans, infect(parent[curr], parent, curr) + 1); }
 
-    if (curr->left != nullptr && curr->left != prev) ans = max(ans, infect(curr->left, parent, curr) + 1);
+    if (curr->left != nullptr && curr->left != prev) { ans = max(ans, infect(curr->left, parent, curr) + 1); }
 
-    if (curr->right != nullptr && curr->right != prev) ans = max(ans, infect(curr->right, parent, curr) + 1);
+    if (curr->right != nullptr && curr->right != prev) { ans = max(ans, infect(curr->right, parent, curr) + 1); }
 
     return ans;
   }

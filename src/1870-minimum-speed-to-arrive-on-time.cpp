@@ -30,7 +30,7 @@ class Solution {
         lo = mid + 1;
       }
     }
-    if (getTime(dist, lo) <= hour) return lo;
+    if (getTime(dist, lo) <= hour) { return lo; }
     return -1;
   }
 };

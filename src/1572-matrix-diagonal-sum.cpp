@@ -14,7 +14,7 @@ class Solution {
       ans += mat[i][i];
       ans += mat[i][N - i - 1];
     }
-    if (N % 2 != 0) ans -= mat[N / 2][N / 2];
+    if (N % 2 != 0) { ans -= mat[N / 2][N / 2]; }
     return ans;
   }
 };

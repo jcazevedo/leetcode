@@ -26,12 +26,12 @@ class Solution {
   void visit(
       TreeNode* curr, unordered_map<TreeNode*, TreeNode*>& parent, int k, vector<int>& ans, TreeNode* prev = nullptr) {
     if (curr != nullptr) {
-      if (k == 0)
+      if (k == 0) {
         ans.push_back(curr->val);
-      else {
-        if (curr->left != prev) visit(curr->left, parent, k - 1, ans, curr);
-        if (curr->right != prev) visit(curr->right, parent, k - 1, ans, curr);
-        if (parent[curr] != prev) visit(parent[curr], parent, k - 1, ans, curr);
+      } else {
+        if (curr->left != prev) { visit(curr->left, parent, k - 1, ans, curr); }
+        if (curr->right != prev) { visit(curr->right, parent, k - 1, ans, curr); }
+        if (parent[curr] != prev) { visit(parent[curr], parent, k - 1, ans, curr); }
       }
     }
   }

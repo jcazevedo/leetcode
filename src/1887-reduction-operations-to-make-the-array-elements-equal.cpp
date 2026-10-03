@@ -11,8 +11,9 @@ class Solution {
   int reductionOperations(vector<int>& nums) {
     sort(nums.begin(), nums.end());
     int N = nums.size(), ans = 0;
-    for (int i = N - 2; i >= 0; --i)
-      if (nums[i] != nums[i + 1]) ans += N - i - 1;
+    for (int i = N - 2; i >= 0; --i) {
+      if (nums[i] != nums[i + 1]) { ans += N - i - 1; }
+    }
     return ans;
   }
 };

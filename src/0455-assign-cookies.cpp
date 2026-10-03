@@ -16,7 +16,7 @@ class Solution {
     int j = 0;
     int ans = 0;
     for (int i = 0; i < G; ++i) {
-      while (j < S && s[j] < g[i]) ++j;
+      while (j < S && s[j] < g[i]) { ++j; }
       if (j < S && s[j] >= g[i]) {
         ++ans;
         ++j;

@@ -28,7 +28,7 @@ class PeekingIterator : public Iterator {
  public:
   PeekingIterator(const vector<int>& nums) : Iterator(nums) {
     _hasNext = Iterator::hasNext();
-    if (_hasNext) _next = Iterator::next();
+    if (_hasNext) { _next = Iterator::next(); }
   }
 
   int peek() { return _next; }
@@ -36,7 +36,7 @@ class PeekingIterator : public Iterator {
   int next() {
     int ans = _next;
     _hasNext = Iterator::hasNext();
-    if (_hasNext) _next = Iterator::next();
+    if (_hasNext) { _next = Iterator::next(); }
     return ans;
   }
 

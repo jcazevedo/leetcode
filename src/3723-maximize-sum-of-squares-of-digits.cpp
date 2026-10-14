@@ -9,11 +9,11 @@ using namespace std;
 class Solution {
  public:
   string maxSumOfSquares(int num, int sum) {
-    string answer = "";
+    string answer(num, ' ');
     for (int i = 0; i < num; ++i) {
       int digit = min(9, sum);
       sum -= digit;
-      answer += digit + '0';
+      answer[i] = digit + '0';
     }
     if (sum > 0) { return ""; }
     return answer;

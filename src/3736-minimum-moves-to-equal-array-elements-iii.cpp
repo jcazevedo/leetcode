@@ -11,9 +11,11 @@ class Solution {
   int minMoves(vector<int>& nums) {
     int n = nums.size();
     int maximum = nums[0];
-    for (int i = 1; i < n; ++i) { maximum = max(maximum, nums[i]); }
-    int ans = 0;
-    for (int i = 0; i < n; ++i) { ans += maximum - nums[i]; }
-    return ans;
+    int sum = nums[0];
+    for (int i = 1; i < n; ++i) {
+      maximum = max(maximum, nums[i]);
+      sum += nums[i];
+    }
+    return maximum * n - sum;
   }
 };

@@ -1,0 +1,23 @@
+// 3041. Maximize Consecutive Elements in an Array After Modification
+// https://leetcode.com/problems/maximize-consecutive-elements-in-an-array-after-modification/
+
+#include <algorithm>
+#include <unordered_map>
+#include <vector>
+
+using namespace std;
+
+class Solution {
+ public:
+  int maxSelectedElements(vector<int>& nums) {
+    sort(nums.begin(), nums.end());
+    unordered_map<int, int> dp;
+    int ans = 0;
+    for (int x : nums) {
+      dp[x + 1] = max(dp[x + 1], dp[x] + 1);
+      dp[x] = max(dp[x], dp[x - 1] + 1);
+      ans = max({ans, dp[x], dp[x + 1]});
+    }
+    return ans;
+  }
+};
